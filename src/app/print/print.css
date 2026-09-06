@@ -1,0 +1,624 @@
+/*
+ * Print-only stylesheet for the Ebook and Planner PDF exports.
+ * Deliberately independent from globals.css / Tailwind: these documents
+ * are paginated fixed-size (US Letter) print layouts, not responsive
+ * screen pages, so precise CSS box control is used instead of utility
+ * classes. Brand tokens below are copied 1:1 from tailwind.config.ts —
+ * keep them in sync if the site palette changes.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --brand-50: #f1faf6;
+  --brand-100: #dcf2e8;
+  --brand-200: #bce4d3;
+  --brand-300: #8ccfb5;
+  --brand-500: #339672;
+  --brand-600: #23795b;
+  --brand-700: #1c604a;
+  --brand-800: #194c3d;
+  --brand-900: #153f33;
+  --brand-950: #0a231c;
+  --gold-300: #efbf5d;
+  --gold-400: #eaa938;
+  --gold-500: #e0912a;
+  --gold-600: #c47222;
+  --ink-300: #a1a9a0;
+  --ink-400: #788178;
+  --ink-500: #5d655d;
+  --ink-600: #495049;
+  --ink-700: #3c413c;
+  --ink-800: #2b2f2b;
+  --ink-900: #1a1d1a;
+  --ink-950: #0f110f;
+  --cream: #faf7f0;
+  --dot-grid: radial-gradient(circle, rgba(255, 255, 255, 0.09) 1px, transparent 1px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: var(--ink-900);
+  font-family: "Inter", sans-serif;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+@page {
+  size: letter;
+  margin: 0;
+}
+
+.doc {
+  width: 8.5in;
+}
+
+/* One .page = exactly one printed sheet */
+.page {
+  position: relative;
+  width: 8.5in;
+  height: 11in;
+  overflow: hidden;
+  break-after: page;
+  page-break-after: always;
+  display: flex;
+  flex-direction: column;
+}
+
+.page:last-child {
+  break-after: auto;
+  page-break-after: auto;
+}
+
+.page-body {
+  flex: 1;
+  padding: 0.35in 0.75in 0.55in 0.75in;
+  overflow: hidden;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4in 0.75in 10pt 0.75in;
+  border-bottom: 1px solid #ececec;
+  font-size: 8pt;
+  color: var(--ink-400);
+}
+
+.page-header .mark {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  color: var(--ink-700);
+}
+
+.page-header .mark .sq {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  background: var(--ink-950);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Playfair Display", serif;
+  font-size: 7pt;
+  font-weight: 800;
+}
+
+.page-header .section-name {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-400);
+}
+
+.page-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.75in 0.4in 0.75in;
+  font-size: 8.5pt;
+  color: var(--ink-400);
+  letter-spacing: 0.02em;
+}
+
+.page-footer .brandmark {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  color: var(--ink-500);
+}
+
+.page-footer .dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--brand-500);
+}
+
+/* ---------- Typography ---------- */
+
+.eyebrow {
+  display: inline-block;
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-700);
+  background: var(--brand-100);
+  border-radius: 999px;
+  padding: 4px 12px;
+}
+
+.eyebrow--on-dark {
+  color: var(--gold-300);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+h1.display,
+h2.display,
+h3.display {
+  font-family: "Playfair Display", serif;
+  font-weight: 800;
+  color: var(--ink-900);
+  margin: 0;
+}
+
+h1.display {
+  font-size: 30pt;
+  line-height: 1.15;
+}
+
+h2.display {
+  font-size: 22pt;
+  line-height: 1.2;
+}
+
+h3.display {
+  font-size: 15pt;
+  line-height: 1.25;
+}
+
+p.body {
+  font-size: 10.5pt;
+  line-height: 1.65;
+  color: var(--ink-700);
+  margin: 0 0 10pt 0;
+}
+
+p.lede {
+  font-size: 12pt;
+  line-height: 1.6;
+  color: var(--ink-600);
+  margin: 10pt 0 0 0;
+}
+
+.small {
+  font-size: 8.5pt;
+  color: var(--ink-500);
+}
+
+/* ---------- Cover ---------- */
+
+.cover {
+  background-color: var(--ink-950);
+  background-image: var(--dot-grid), radial-gradient(circle at 20% 0%, var(--brand-800), transparent 55%);
+  background-size: 22px 22px, 100% 100%;
+  color: white;
+  justify-content: space-between;
+  padding: 0.9in 0.85in;
+}
+
+.cover .brand-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cover .brand-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Playfair Display", serif;
+  font-weight: 800;
+  font-size: 16pt;
+  color: var(--gold-300);
+}
+
+.cover .brand-name {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 13pt;
+}
+
+.cover .brand-name b {
+  color: var(--gold-300);
+}
+
+.cover .cover-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  font-size: 46pt;
+  line-height: 1.08;
+  max-width: 5.6in;
+}
+
+.cover .cover-subtitle {
+  margin-top: 18pt;
+  font-size: 13pt;
+  line-height: 1.55;
+  color: var(--brand-100);
+  max-width: 5in;
+}
+
+.cover .cover-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 16pt;
+  font-size: 9pt;
+  color: var(--brand-200);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ---------- Table of contents ---------- */
+
+.toc-columns {
+  margin-top: 20pt;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 26pt;
+}
+
+.toc-list {
+  border-top: 1px solid #ececec;
+}
+
+.toc-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8pt;
+  padding: 8pt 0;
+  border-bottom: 1px solid #ececec;
+  font-size: 9.7pt;
+}
+
+.toc-row .toc-num {
+  font-family: "Playfair Display", serif;
+  font-weight: 800;
+  color: var(--brand-600);
+  width: 26pt;
+  flex-shrink: 0;
+}
+
+.toc-row .toc-title {
+  flex: 1;
+  font-weight: 600;
+  color: var(--ink-900);
+}
+
+.toc-row .toc-page {
+  color: var(--ink-400);
+  font-variant-numeric: tabular-nums;
+}
+
+.toc-section-label {
+  margin-top: 18pt;
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brand-700);
+}
+
+/* ---------- Chapter page ---------- */
+
+.chapter-kicker {
+  display: flex;
+  align-items: baseline;
+  gap: 10pt;
+}
+
+.chapter-kicker .chapter-number {
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  font-size: 30pt;
+  color: var(--brand-100);
+}
+
+.chapter-image {
+  margin-top: 16pt;
+  width: 100%;
+  height: 2.05in;
+  border-radius: 10pt;
+  object-fit: cover;
+  display: block;
+}
+
+.chapter-text {
+  margin-top: 14pt;
+}
+
+/* ---------- Phase divider ---------- */
+
+.phase-divider {
+  background-color: var(--ink-950);
+  background-image: var(--dot-grid), linear-gradient(160deg, var(--brand-900), transparent 70%);
+  background-size: 22px 22px, 100% 100%;
+  color: white;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1in 0.9in;
+}
+
+.phase-divider .phase-num {
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  font-size: 60pt;
+  color: rgba(255, 255, 255, 0.14);
+  line-height: 1;
+}
+
+.phase-divider .phase-name {
+  margin-top: 6pt;
+  font-family: "Playfair Display", serif;
+  font-weight: 800;
+  font-size: 32pt;
+}
+
+.phase-divider .phase-range {
+  margin-top: 4pt;
+  font-size: 11pt;
+  color: var(--gold-300);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.phase-divider .phase-desc {
+  margin-top: 16pt;
+  font-size: 12.5pt;
+  line-height: 1.6;
+  color: var(--brand-100);
+  max-width: 4.8in;
+}
+
+/* ---------- Day page (ebook) ---------- */
+
+.day-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.day-badge {
+  display: flex;
+  align-items: center;
+  gap: 10pt;
+}
+
+.day-badge .num {
+  width: 40pt;
+  height: 40pt;
+  border-radius: 10pt;
+  background: var(--brand-100);
+  color: var(--brand-800);
+  font-family: "Playfair Display", serif;
+  font-weight: 800;
+  font-size: 16pt;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.day-badge .meta {
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--brand-700);
+}
+
+.day-title {
+  margin-top: 3pt;
+  font-family: "Playfair Display", serif;
+  font-weight: 800;
+  font-size: 19pt;
+  color: var(--ink-900);
+}
+
+.day-focus {
+  margin-top: 8pt;
+  font-size: 10.5pt;
+  line-height: 1.55;
+  color: var(--ink-600);
+  font-style: italic;
+}
+
+.day-grid {
+  margin-top: 14pt;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8pt;
+}
+
+.day-block {
+  border: 1px solid #ececec;
+  border-radius: 9pt;
+  padding: 9pt 10pt;
+  break-inside: avoid;
+}
+
+.day-block .label {
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--brand-600);
+}
+
+.day-block .text {
+  margin-top: 3pt;
+  font-size: 9.3pt;
+  line-height: 1.45;
+  color: var(--ink-700);
+}
+
+.day-motivation {
+  margin-top: 10pt;
+  background: var(--gold-50, #fdf8ee);
+  border: 1px solid var(--gold-300);
+  border-radius: 9pt;
+  padding: 10pt 12pt;
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 11pt;
+  color: var(--ink-900);
+}
+
+/* ---------- Checklist ---------- */
+
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8pt;
+  padding: 7pt 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 10pt;
+  color: var(--ink-700);
+}
+
+.checkbox {
+  width: 12pt;
+  height: 12pt;
+  border: 1.4pt solid var(--brand-600);
+  border-radius: 3pt;
+  flex-shrink: 0;
+  margin-top: 1pt;
+}
+
+/* ---------- Planner ---------- */
+
+.planner-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10pt;
+  border-bottom: 2px solid var(--brand-800);
+}
+
+.planner-section {
+  margin-top: 13pt;
+}
+
+.planner-section .label {
+  font-size: 8.5pt;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-700);
+  margin-bottom: 5pt;
+}
+
+.field-line {
+  border-bottom: 1px dotted var(--ink-300);
+  height: 15pt;
+}
+
+.tracker-row {
+  display: flex;
+  gap: 10pt;
+}
+
+.tracker-box {
+  flex: 1;
+  border: 1px solid #ececec;
+  border-radius: 8pt;
+  padding: 7pt 9pt;
+}
+
+.tracker-box .t-label {
+  font-size: 7.5pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-400);
+}
+
+.dot-row {
+  display: flex;
+  gap: 4pt;
+  margin-top: 4pt;
+}
+
+.dot-cell {
+  width: 9pt;
+  height: 9pt;
+  border-radius: 2pt;
+  border: 1px solid var(--brand-400);
+}
+
+.completion-row {
+  margin-top: 12pt;
+  display: flex;
+  align-items: center;
+  gap: 8pt;
+  border: 1.4pt solid var(--brand-700);
+  border-radius: 9pt;
+  padding: 9pt 12pt;
+  font-weight: 700;
+  font-size: 10.5pt;
+  color: var(--brand-800);
+}
+
+.completion-row .checkbox {
+  border-color: var(--brand-800);
+}
+
+/* ---------- Review grid ---------- */
+
+.review-grid {
+  margin-top: 14pt;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6pt;
+}
+
+.review-cell {
+  border: 1px solid #ececec;
+  border-radius: 6pt;
+  padding: 6pt 4pt;
+  text-align: center;
+}
+
+.review-cell .n {
+  font-size: 8pt;
+  color: var(--ink-400);
+  font-weight: 700;
+}
+
+.review-cell .box {
+  margin: 4pt auto 0 auto;
+  width: 11pt;
+  height: 11pt;
+  border: 1.2pt solid var(--brand-600);
+  border-radius: 3pt;
+}

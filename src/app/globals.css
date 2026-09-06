@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    @apply overflow-x-hidden;
+  }
+
+  body {
+    @apply bg-cream text-ink-900 antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  ::selection {
+    @apply bg-brand-200 text-brand-900;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3.5 text-sm font-bold tracking-wide transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .btn-primary {
+    @apply btn bg-ink-950 text-white hover:bg-brand-800 focus-visible:ring-brand-600;
+  }
+
+  .btn-gold {
+    @apply btn bg-gold-400 text-ink-950 hover:bg-gold-300 focus-visible:ring-gold-500;
+  }
+
+  .btn-secondary {
+    @apply btn border-2 border-ink-900 bg-transparent text-ink-900 hover:bg-ink-900 hover:text-white focus-visible:ring-ink-900;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent text-ink-700 hover:bg-ink-900/5;
+  }
+
+  .card {
+    @apply rounded-xl border border-ink-900/10 bg-white;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:border-ink-900/20 hover:shadow-lift;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full bg-brand-100 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-brand-700;
+  }
+
+  .section-pad {
+    @apply py-20 sm:py-28;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

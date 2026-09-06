@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx --yes create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm --no-turbopack)",
+      "Bash(awk '{print}')",
+      "Bash(printf '%s\\\\n' ~/Desktop/planner*)",
+      "Bash(npx --yes create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm --disable-git)",
+      "Bash(echo \"INSTALL_EXIT_CODE:$?\")",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"meal-plan:%{http_code}\\\\n\" http://localhost:3000/meal-plan)",
+      "Bash(curl -s -o /dev/null -w \"workouts:%{http_code}\\\\n\" http://localhost:3000/workouts)",
+      "Bash(curl -s -o /dev/null -w \"bonuses:%{http_code}\\\\n\" http://localhost:3000/bonuses)",
+      "Bash(curl -s -o /dev/null -w \"ebook:%{http_code}\\\\n\" http://localhost:3000/ebook)",
+      "Bash(curl -s -o /dev/null -w \"faq:%{http_code}\\\\n\" http://localhost:3000/faq)",
+      "Bash(rm -rf .next && npm run build 2>&1 | tail -60)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" --max-time 6 \"https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=100\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" --max-time 6 \"https://picsum.photos/id/292/100\")",
+      "Bash(python3 \"/private/tmp/claude-501/-Users-mb-Desktop-planner-healty-/2b94f289-de9f-40a4-bb5a-07360e5cb61d/scratchpad/insert_mindset.py\")",
+      "Bash(./node_modules/.bin/tsc --noEmit -p tsconfig.json)"
+    ],
+    "additionalDirectories": [
+      "/Users/mb/Desktop/planner healty ",
+      "/Users/mb/Desktop/planner healty /node_modules",
+      "/Users/mb/Desktop/planner healty /src/app",
+      "/Users/mb/Desktop/planner healty /.next",
+      "/Users/mb/Desktop/planner healty /src/lib",
+      "/Users/mb/Desktop/planner healty /src/data",
+      "/Users/mb/Desktop/planner healty /src/app/day/[day]",
+      "/Users/mb/Desktop/planner healty /src/data/blog",
+      "/Users/mb/Desktop/planner healty /src/components",
+      "/Users/mb/Desktop/planner healty /src/data/blog/articles",
+      "/Users/mb/Desktop/planner healty /src/app/blog",
+      "/Users/mb/Desktop/planner healty /src/app/ebook",
+      "/Users/mb/Desktop/planner healty /src/app/bonuses",
+      "/Users/mb/Desktop/planner healty /src/app/checkout",
+      "/Users/mb/Desktop/planner healty /src/app/planner"
+    ]
+  }
+}

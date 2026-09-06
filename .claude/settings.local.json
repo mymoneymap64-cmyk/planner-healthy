@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)"
+    ],
+    "additionalDirectories": [
+      "/Users/mb/Desktop/planner healty /src/data/blog/articles"
+    ]
+  }
+}
