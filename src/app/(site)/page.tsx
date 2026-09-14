@@ -19,7 +19,7 @@ import PricingCard from "@/components/PricingCard";
 import LibraryHeroStack from "@/components/LibraryHeroStack";
 import PlannerMockup from "@/components/PlannerMockup";
 import NewsletterCTA from "@/components/NewsletterCTA";
-import { PRODUCTS, BONUS_PRODUCTS } from "@/data/products";
+import { PRODUCTS, BONUS_PRODUCTS, BUNDLE_PRICE } from "@/data/products";
 import { FAQS } from "@/data/faq";
 import { buildMetadata } from "@/lib/seo";
 
@@ -103,8 +103,8 @@ export default function Home() {
             </div>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              <Link href="/library" className="btn-gold">
-                Explore the Library <ArrowRight size={16} />
+              <Link href="/checkout" className="btn-gold">
+                Get the Complete Library <ArrowRight size={16} />
               </Link>
               <Link href="#included" className="btn border-2 border-white/20 text-white hover:bg-white/10">
                 See What&apos;s Included
@@ -116,7 +116,7 @@ export default function Home() {
               <span>·</span>
               <span>Works on any device</span>
               <span>·</span>
-              <span>Bundle pricing coming soon</span>
+              <span>${BUNDLE_PRICE} one-time payment</span>
             </div>
           </div>
         </div>

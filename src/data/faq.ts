@@ -51,4 +51,14 @@ export const FAQS: FaqItem[] = [
     answer:
       "No. These guides are educational wellness resources only. They do not diagnose, treat, cure, or prevent any disease, and they are not a substitute for professional medical advice. Consult a qualified healthcare professional before making changes to your health, nutrition, or wellness routine.",
   },
+  {
+    question: "Is the bundle a one-time purchase?",
+    answer:
+      "Yes. The complete library is a single one-time payment of $17.99 for lifetime access to all 7 ebooks, their matching planners and 30-day systems, and both free bonus guides — no subscription, no recurring charge.",
+  },
+  {
+    question: "Do you offer refunds?",
+    answer:
+      "Refund policy details will be published here once finalized. If you have a question before then, please reach out and we'll help directly.",
+  },
 ];

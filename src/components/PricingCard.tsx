@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { BookOpen, Check, ClipboardList, Gift, ListChecks } from "lucide-react";
-import { PRODUCTS, BONUS_PRODUCTS } from "@/data/products";
+import { PRODUCTS, BONUS_PRODUCTS, BUNDLE_PRICE } from "@/data/products";
 
 const STACK = [
   { icon: BookOpen, count: PRODUCTS.length, label: "Premium Wellness Ebooks" },
@@ -45,10 +45,10 @@ export default function PricingCard() {
         </p>
       )}
       <div className="mt-1 flex items-end gap-3">
-        <span className="font-display text-3xl font-black text-ink-900">Bundle price coming soon</span>
+        <span className="font-display text-4xl font-black text-ink-900">${BUNDLE_PRICE}</span>
       </div>
       <p className="mt-1 text-sm text-ink-500">
-        Final bundle pricing will be confirmed before launch.
+        One-time payment · Instant digital access to everything.
       </p>
 
       <ul className="mt-7 space-y-3">

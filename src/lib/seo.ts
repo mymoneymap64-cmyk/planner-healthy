@@ -5,16 +5,11 @@ export const SITE_TAGLINE = "Your Complete Wellness Library — In One Place";
 
 /**
  * Production domain — single source of truth for canonical URLs, Open
- * Graph URLs, JSON-LD, and the sitemap.
- *
- * IMPORTANT: no real production domain has been configured for this
- * project yet (no .env file, no vercel.json, no package.json field).
- * "https://example.com" below is a placeholder. Before deploying to
- * production, set the NEXT_PUBLIC_SITE_URL environment variable in
- * Vercel (Project Settings → Environment Variables) to your real
- * domain, e.g. https://your-actual-domain.com — no code changes needed.
+ * Graph URLs, JSON-LD, and the sitemap. Defaults to the live production
+ * domain; set NEXT_PUBLIC_SITE_URL in Vercel to override this (e.g. for a
+ * staging deployment) without a code change.
  */
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com";
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.healthyguide.online";
 
 export function buildMetadata({
   title,

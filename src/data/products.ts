@@ -1,5 +1,8 @@
 import { Product } from "@/lib/types";
 
+/** The complete library bundle's one-time price, set by the client. */
+export const BUNDLE_PRICE = 17.99;
+
 /**
  * Core product catalog — 7 real wellness ebooks. All copy (subtitle,
  * tagline, benefit bullets) is transcribed directly from the real cover

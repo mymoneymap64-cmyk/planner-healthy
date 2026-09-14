@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, Check, Lock, ShieldCheck } from "lucide-react";
-import { PRODUCTS, BONUS_PRODUCTS } from "@/data/products";
+import { PRODUCTS, BONUS_PRODUCTS, BUNDLE_PRICE } from "@/data/products";
 import ProductCover from "@/components/ProductCover";
 
 // There's no single bundle cover asset, so this composes one from real
@@ -78,10 +78,9 @@ export default function CheckoutClient() {
               </p>
               <p className="mt-2 text-xs leading-relaxed text-ink-500">
                 This is a placeholder checkout page — no payment processing
-                occurs here, and bundle pricing has not been finalized yet.
-                Connect the &ldquo;Get the Complete Library&rdquo; button below
-                to your Shopify checkout URL or Buy Button to accept real
-                payments once pricing is set.
+                occurs here yet. Connect the &ldquo;Get the Complete
+                Library&rdquo; button below to your Shopify checkout URL or
+                Buy Button, set to ${BUNDLE_PRICE}, to accept real payments.
               </p>
             </div>
           </div>
@@ -109,10 +108,10 @@ export default function CheckoutClient() {
                 <p className="text-sm font-medium text-ink-700">
                   The Complete Wellness Library
                 </p>
-                <p className="text-sm font-bold text-ink-900">Price coming soon</p>
+                <p className="text-sm font-bold text-ink-900">${BUNDLE_PRICE}</p>
               </div>
               <p className="mt-4 text-sm text-ink-500">
-                Final bundle pricing will be confirmed before launch.
+                One-time payment · Instant digital access to everything.
               </p>
 
               <button
