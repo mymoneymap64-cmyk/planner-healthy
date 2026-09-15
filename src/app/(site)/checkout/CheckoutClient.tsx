@@ -22,17 +22,24 @@ const BUNDLE_STACK = [
 export default function CheckoutClient() {
   const [loading, setLoading] = useState(false);
 
-  // NOTE: This is a placeholder purchase handler. Replace this function's
-  // contents with your Shopify Buy Button / Checkout API redirect logic.
-  // Keep the UI below as-is, or adapt it to match your Shopify theme.
-  function handlePurchaseClick() {
+  async function handlePurchaseClick() {
     setLoading(true);
-    window.setTimeout(() => {
+    try {
+      const res = await fetch("/api/paypal/create-order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ slug: "bundle" }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.url) {
+        throw new Error(data.error ?? "Checkout failed to start.");
+      }
+      window.location.href = data.url;
+    } catch (error) {
+      console.error(error);
       setLoading(false);
-      alert(
-        "This is a placeholder checkout. Connect this button to your Shopify checkout to process real payments."
-      );
-    }, 600);
+      alert("Something went wrong starting checkout. Please try again.");
+    }
   }
 
   return (
@@ -72,16 +79,11 @@ export default function CheckoutClient() {
               ))}
             </ul>
 
-            <div className="mt-8 rounded-2xl border border-dashed border-ink-900/[0.15] bg-cream p-5">
-              <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-ink-500">
-                <ShieldCheck size={14} /> Developer note
-              </p>
-              <p className="mt-2 text-xs leading-relaxed text-ink-500">
-                This is a placeholder checkout page — no payment processing
-                occurs here yet. Connect the &ldquo;Get the Complete
-                Library&rdquo; button below to your Shopify checkout URL or
-                Buy Button, set to ${BUNDLE_PRICE}, to accept real payments.
-              </p>
+            <div className="mt-8 flex items-start gap-2 rounded-2xl border border-ink-900/[0.1] bg-cream p-5 text-xs leading-relaxed text-ink-500">
+              <ShieldCheck size={15} className="mt-0.5 shrink-0 text-brand-700" />
+              Secure checkout powered by PayPal. You&apos;ll be redirected to
+              complete your payment, then brought straight back with instant
+              access to your files.
             </div>
           </div>
 
@@ -123,7 +125,7 @@ export default function CheckoutClient() {
                 {loading ? "Processing..." : "Get the Complete Library"}
               </button>
               <p className="mt-3 text-center text-xs text-ink-400">
-                Payment processing not yet connected — see developer note.
+                One-time payment. No subscription.
               </p>
             </div>
           </div>

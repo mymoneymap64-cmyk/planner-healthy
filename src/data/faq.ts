@@ -59,6 +59,6 @@ export const FAQS: FaqItem[] = [
   {
     question: "Do you offer refunds?",
     answer:
-      "Refund policy details will be published here once finalized. If you have a question before then, please reach out and we'll help directly.",
+      "Yes. If a guide isn't right for you, contact us within 14 days of purchase for a full refund.",
   },
 ];
