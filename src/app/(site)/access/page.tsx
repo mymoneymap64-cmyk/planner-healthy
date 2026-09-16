@@ -1,5 +1,6 @@
 import { ShieldCheck } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
+import AccessTokenForm from "@/components/AccessTokenForm";
 
 export const metadata = buildMetadata({
   title: "Find Your Access Link | Natural Wellness Library",
@@ -28,6 +29,8 @@ export default function AccessPage() {
             Can&apos;t find it? Reply to your order confirmation email and
             we&apos;ll help you recover access.
           </p>
+
+          <AccessTokenForm />
         </div>
       </div>
     </div>

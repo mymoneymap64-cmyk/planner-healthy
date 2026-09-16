@@ -12,6 +12,7 @@ const LINKS = [
   { href: "/#how-it-works", label: "How It Works" },
   { href: "/blog", label: "Blog" },
   { href: "/faq", label: "FAQ" },
+  { href: "/access", label: "Wellness System" },
 ];
 
 const SEARCH_INDEX = [

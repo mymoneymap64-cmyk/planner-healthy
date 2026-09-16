@@ -118,6 +118,13 @@ export default function Home() {
               <span>·</span>
               <span>${BUNDLE_PRICE} one-time payment</span>
             </div>
+
+            <p className="mt-5 text-sm text-ink-400">
+              Already own a guide?{" "}
+              <Link href="/access" className="font-semibold text-gold-300 underline hover:text-gold-200">
+                Access Your Wellness System
+              </Link>
+            </p>
           </div>
         </div>
       </section>
