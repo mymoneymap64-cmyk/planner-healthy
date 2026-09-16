@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BookOpen } from "lucide-react";
+import { BookOpen, Sparkles } from "lucide-react";
 import { notFound } from "next/navigation";
 import { buildMetadata } from "@/lib/seo";
 import { PRODUCTS, BONUS_PRODUCTS, getProduct } from "@/data/products";
@@ -44,12 +44,14 @@ export default async function AccessTokenPage({
               link and works anytime.
             </p>
 
-            <Link
-              href={`/reader/${token}`}
-              className="btn-gold mt-6 inline-flex"
-            >
-              <BookOpen size={16} /> Open in HealthyGuide Reader
-            </Link>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+              <Link href={`/reader/${token}`} className="btn-gold inline-flex">
+                <BookOpen size={16} /> Open in HealthyGuide Reader
+              </Link>
+              <Link href={`/wellness/${token}`} className="btn-secondary inline-flex !border-white !text-white hover:!bg-white/10">
+                <Sparkles size={16} /> Open Wellness System
+              </Link>
+            </div>
           </div>
 
           <AccessLibrary
