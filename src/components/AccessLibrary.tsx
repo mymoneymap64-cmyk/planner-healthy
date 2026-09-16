@@ -29,7 +29,7 @@ function FileRow({
             <Eye size={15} />
           </a>
           <a
-            href={href}
+            href={`${href}?download=1`}
             download
             aria-label={`Download ${label}`}
             className="flex h-9 w-9 items-center justify-center rounded-md bg-gold-400 text-ink-950 hover:bg-gold-300"
@@ -46,7 +46,12 @@ function FileRow({
   );
 }
 
-function ProductFiles({ product }: { product: Product }) {
+/** Builds a protected streaming URL — never the raw public asset path. */
+function fileUrl(token: string, slug: string, asset: "ebook" | "planner" | "system"): string {
+  return `/api/files/${token}/${slug}/${asset}`;
+}
+
+function ProductFiles({ token, product }: { token: string; product: Product }) {
   return (
     <div className="overflow-hidden rounded-xl border border-white/10 bg-white/[0.04] p-4">
       <ProductCover product={product} className="aspect-[3/4] w-full" />
@@ -54,18 +59,34 @@ function ProductFiles({ product }: { product: Product }) {
         <h2 className="font-display text-base font-bold text-white">{product.title}</h2>
         <div className="mt-3 space-y-2">
           {product.isBonus ? (
-            <FileRow label="Guide" href={product.ebookPdf} pages={product.pageCount} />
+            <FileRow
+              label="Guide"
+              href={product.ebookPdf ? fileUrl(token, product.slug, "ebook") : null}
+              pages={product.pageCount}
+            />
           ) : (
             <>
-              <FileRow label="Ebook" href={product.ebookPdf} pages={product.pageCount} />
+              <FileRow
+                label="Ebook"
+                href={product.ebookPdf ? fileUrl(token, product.slug, "ebook") : null}
+                pages={product.pageCount}
+              />
               {product.plannerAndSystemIncludedInEbook ? (
                 <p className="rounded-lg border border-dashed border-white/10 px-4 py-3 text-xs text-ink-400">
                   Planner and 30-day system are included inside this ebook.
                 </p>
               ) : (
                 <>
-                  <FileRow label="Planner" href={product.plannerPdf} pages={product.plannerPageCount} />
-                  <FileRow label="30-Day System" href={product.systemPdf} pages={product.systemPageCount} />
+                  <FileRow
+                    label="Planner"
+                    href={product.plannerPdf ? fileUrl(token, product.slug, "planner") : null}
+                    pages={product.plannerPageCount}
+                  />
+                  <FileRow
+                    label="30-Day System"
+                    href={product.systemPdf ? fileUrl(token, product.slug, "system") : null}
+                    pages={product.systemPageCount}
+                  />
                 </>
               )}
             </>
@@ -82,9 +103,11 @@ function ProductFiles({ product }: { product: Product }) {
  * bundle purchase; single-product orders never include the free bonuses.
  */
 export default function AccessLibrary({
+  token,
   mainProducts,
   bonusProducts,
 }: {
+  token: string;
   mainProducts: Product[];
   bonusProducts?: Product[];
 }) {
@@ -95,7 +118,7 @@ export default function AccessLibrary({
       </p>
       <div className="mx-auto mt-4 grid max-w-6xl gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {mainProducts.map((p) => (
-          <ProductFiles key={p.slug} product={p} />
+          <ProductFiles key={p.slug} token={token} product={p} />
         ))}
       </div>
 
@@ -106,7 +129,7 @@ export default function AccessLibrary({
           </p>
           <div className="mx-auto mt-4 grid max-w-6xl gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {bonusProducts.map((b) => (
-              <ProductFiles key={b.slug} product={b} />
+              <ProductFiles key={b.slug} token={token} product={b} />
             ))}
           </div>
         </>

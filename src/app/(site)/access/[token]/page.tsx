@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { BookOpen } from "lucide-react";
 import { notFound } from "next/navigation";
 import { buildMetadata } from "@/lib/seo";
 import { PRODUCTS, BONUS_PRODUCTS, getProduct } from "@/data/products";
@@ -41,9 +43,17 @@ export default async function AccessTokenPage({
               email or bookmark this page — it&apos;s your personal access
               link and works anytime.
             </p>
+
+            <Link
+              href={`/reader/${token}`}
+              className="btn-gold mt-6 inline-flex"
+            >
+              <BookOpen size={16} /> Open in HealthyGuide Reader
+            </Link>
           </div>
 
           <AccessLibrary
+            token={token}
             mainProducts={isBundle ? PRODUCTS : [product!]}
             bonusProducts={isBundle ? BONUS_PRODUCTS : undefined}
           />
