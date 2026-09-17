@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { requireEntitledProduct } from "@/lib/readerAuth";
 import { getWellnessTools } from "@/data/wellnessTools";
-import WellnessShell from "@/components/wellness/WellnessShell";
+import DashboardShell from "@/components/wellness-dashboard/DashboardShell";
 import ProductWorkspace from "@/components/wellness/ProductWorkspace";
 
 export const dynamic = "force-dynamic";
@@ -18,8 +18,8 @@ export default async function WellnessProductPage({
   const tools = getWellnessTools(slug);
 
   return (
-    <WellnessShell token={token}>
+    <DashboardShell token={token}>
       <ProductWorkspace token={token} product={result.product} tools={tools} />
-    </WellnessShell>
+    </DashboardShell>
   );
 }

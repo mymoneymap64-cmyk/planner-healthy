@@ -2,18 +2,18 @@ import { notFound } from "next/navigation";
 import { requireOrder, getEntitledProducts } from "@/lib/readerAuth";
 import { buildMetadata } from "@/lib/seo";
 import DashboardShell from "@/components/wellness-dashboard/DashboardShell";
-import HomeDashboard from "@/components/wellness-dashboard/HomeDashboard";
+import FavoritesPageClient from "@/components/wellness-dashboard/FavoritesPageClient";
 
 export const dynamic = "force-dynamic";
 
 export const metadata = buildMetadata({
-  title: "HealthyGuide Wellness System | Natural Wellness Library",
-  description: "Your daily wellness dashboard — checklists, progress, and journal in one place.",
+  title: "Favorites | HealthyGuide Wellness System",
+  description: "Guides, checklists, and notes you've saved.",
   path: "/wellness",
   noindex: true,
 });
 
-export default async function WellnessHomePage({ params }: { params: Promise<{ token: string }> }) {
+export default async function FavoritesPage({ params }: { params: Promise<{ token: string }> }) {
   const { token } = await params;
   const order = await requireOrder(token);
   if (!order) notFound();
@@ -22,7 +22,7 @@ export default async function WellnessHomePage({ params }: { params: Promise<{ t
 
   return (
     <DashboardShell token={token}>
-      <HomeDashboard token={token} products={products} />
+      <FavoritesPageClient token={token} products={products} />
     </DashboardShell>
   );
 }

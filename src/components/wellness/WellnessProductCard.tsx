@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Product } from "@/lib/types";
 import ProductCover from "@/components/ProductCover";
 import ProgressBar from "@/components/reader/ProgressBar";
+import FavoriteButton from "@/components/wellness-dashboard/FavoriteButton";
 
 export type WellnessLibraryEntry = {
   product: Product;
@@ -9,12 +10,29 @@ export type WellnessLibraryEntry = {
   checklistPercent: number | null;
 };
 
-export default function WellnessProductCard({ token, entry }: { token: string; entry: WellnessLibraryEntry }) {
+export default function WellnessProductCard({
+  token,
+  entry,
+  isFavorite,
+  onToggleFavorite,
+}: {
+  token: string;
+  entry: WellnessLibraryEntry;
+  isFavorite?: boolean;
+  onToggleFavorite?: () => void;
+}) {
   const { product, ebookPercent, checklistPercent } = entry;
 
   return (
     <div className="card flex flex-col overflow-hidden p-4 sm:p-5">
-      <ProductCover product={product} className="aspect-[3/4] w-full" />
+      <div className="relative">
+        <ProductCover product={product} className="aspect-[3/4] w-full" />
+        {onToggleFavorite && (
+          <div className="absolute right-2 top-2">
+            <FavoriteButton active={Boolean(isFavorite)} onToggle={onToggleFavorite} />
+          </div>
+        )}
+      </div>
       <div className="mt-4 flex flex-1 flex-col">
         <span className="text-[11px] font-bold uppercase tracking-wide text-brand-600">
           {product.categoryLabel}

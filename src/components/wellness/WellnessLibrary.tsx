@@ -1,6 +1,16 @@
 import WellnessProductCard, { WellnessLibraryEntry } from "@/components/wellness/WellnessProductCard";
 
-export default function WellnessLibrary({ token, entries }: { token: string; entries: WellnessLibraryEntry[] }) {
+export default function WellnessLibrary({
+  token,
+  entries,
+  favorites,
+  onToggleFavorite,
+}: {
+  token: string;
+  entries: WellnessLibraryEntry[];
+  favorites?: string[];
+  onToggleFavorite?: (slug: string) => void;
+}) {
   return (
     <div className="section-pad">
       <div className="container-page">
@@ -12,7 +22,13 @@ export default function WellnessLibrary({ token, entries }: { token: string; ent
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {entries.map((entry) => (
-            <WellnessProductCard key={entry.product.slug} token={token} entry={entry} />
+            <WellnessProductCard
+              key={entry.product.slug}
+              token={token}
+              entry={entry}
+              isFavorite={favorites?.includes(entry.product.slug)}
+              onToggleFavorite={onToggleFavorite ? () => onToggleFavorite(entry.product.slug) : undefined}
+            />
           ))}
         </div>
       </div>
