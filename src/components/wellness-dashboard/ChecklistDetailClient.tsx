@@ -69,7 +69,7 @@ export default function ChecklistDetailClient({ token, checklistId }: { token: s
                 type="button"
                 onClick={() => dispatch({ type: "toggleChecklistItem", checklistId, itemId: item.id })}
                 className={`flex w-full items-center gap-3 rounded-lg border px-4 py-3 text-left text-sm transition-colors ${
-                  item.done ? "border-brand-300 bg-brand-50 text-ink-900" : "border-ink-900/10 bg-white text-ink-700"
+                  item.done ? "border-brand-300 bg-brand-50" : "border-ink-900/10 bg-white text-ink-700"
                 }`}
               >
                 <span
@@ -79,7 +79,7 @@ export default function ChecklistDetailClient({ token, checklistId }: { token: s
                 >
                   <Check size={13} strokeWidth={3} />
                 </span>
-                {item.label}
+                <span className={item.done ? "text-ink-500 line-through" : "text-ink-800"}>{item.label}</span>
               </button>
             ))}
           </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Quote as QuoteIcon, Flame, BookOpen, CalendarCheck2, Sparkles } from "lucide-react";
+import { Quote as QuoteIcon, Flame, BookOpen, Sun, CalendarRange, Sparkles } from "lucide-react";
 import { Product } from "@/lib/types";
 import { formatDateLong, getDailyQuote, greetingForNow, todayISO } from "@/lib/wellnessDashboard";
 import { useWellnessDashboard } from "@/components/wellness-dashboard/useWellnessDashboard";
@@ -17,9 +17,10 @@ function WeekChart({ week }: { week: { label: string; percent: number }[] }) {
         const height = isFuture ? 6 : Math.max(6, (day.percent / 100) * 48);
         return (
           <div key={i} className="flex flex-1 flex-col items-center gap-1.5">
-            <div className="flex h-12 w-full items-end justify-center">
+            <div className="relative flex h-12 w-full items-end justify-center">
+              <div className="absolute bottom-0 h-1.5 w-2.5 rounded-full bg-ink-900/[0.06]" />
               <div
-                className={`w-2.5 rounded-full transition-all ${isFuture ? "bg-ink-900/[0.06]" : "bg-brand-600"}`}
+                className={`relative w-2.5 rounded-full transition-all ${isFuture ? "bg-ink-900/[0.06]" : "bg-brand-600"}`}
                 style={{ height }}
               />
             </div>
@@ -45,7 +46,7 @@ export default function HomeDashboard({ token, products }: { token: string; prod
     <div className="section-pad !pt-8">
       <div className="container-page">
         <span className="eyebrow">
-          <Sparkles size={13} /> {greetingForNow()}
+          <Sparkles size={13} /> Your Wellness Journey
         </span>
         <h1 className="mt-3 font-display text-3xl font-bold text-ink-900 sm:text-4xl">
           {greetingForNow() === "Good Morning" ? "Good Morning ☀️" : greetingForNow() === "Good Afternoon" ? "Good Afternoon ☀️" : "Good Evening ☀️"}
@@ -90,8 +91,8 @@ export default function HomeDashboard({ token, products }: { token: string; prod
             <h2 className="font-display text-lg font-bold text-ink-900">My Progress</h2>
             <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-4">
               {[
-                { label: "Daily", value: `${stats.dailyPercent}%`, icon: CalendarCheck2 },
-                { label: "Weekly", value: `${stats.weeklyPercent}%`, icon: CalendarCheck2 },
+                { label: "Daily", value: `${stats.dailyPercent}%`, icon: Sun },
+                { label: "Weekly", value: `${stats.weeklyPercent}%`, icon: CalendarRange },
                 { label: "Current Streak", value: `${stats.currentStreak}d`, icon: Flame },
                 { label: "Wellness Days", value: `${stats.totalWellnessDays}`, icon: BookOpen },
               ].map((s) => (
