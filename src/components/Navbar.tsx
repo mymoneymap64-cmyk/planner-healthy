@@ -12,7 +12,7 @@ const LINKS = [
   { href: "/#how-it-works", label: "How It Works" },
   { href: "/blog", label: "Blog" },
   { href: "/faq", label: "FAQ" },
-  { href: "/access", label: "Wellness System" },
+  { href: "/wellness-system", label: "Wellness System" },
 ];
 
 const SEARCH_INDEX = [
@@ -30,6 +30,11 @@ const SEARCH_INDEX = [
   { label: "Blog", href: "/blog", keywords: "blog articles habits nutrition sleep mindset" },
   { label: "FAQ", href: "/faq", keywords: "faq questions help support" },
   { label: "The Complete Bundle", href: "/checkout", keywords: "checkout buy price bundle pricing" },
+  {
+    label: "Wellness System",
+    href: "/wellness-system",
+    keywords: "wellness system dashboard checklist notes progress tracker",
+  },
 ];
 
 export default function Navbar() {
