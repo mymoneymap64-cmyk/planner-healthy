@@ -79,6 +79,14 @@ export default function BlogArticleView({
               ))}
             </div>
 
+            {/* HBAgency In-Article placement (ID 342812) — exact markup/classes
+                as provided, unmodified. */}
+            <div className="hb-ad-inpage">
+              <div className="hb-ad-inner">
+                <div className="hbagency_cls hbagency_space_342812" />
+              </div>
+            </div>
+
             <div className="mt-8 lg:hidden">
               <TableOfContents sections={post.sections} />
             </div>
