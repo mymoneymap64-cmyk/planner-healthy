@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { Search, Trash2 } from "lucide-react";
 import { useWellnessDashboard } from "@/components/wellness-dashboard/useWellnessDashboard";
 import FavoriteButton from "@/components/wellness-dashboard/FavoriteButton";
+import DashboardLoading from "@/components/wellness-dashboard/DashboardLoading";
 import { formatDateLong } from "@/lib/wellnessDashboard";
 
 const MAX_NOTE_LENGTH = 5000;
@@ -15,6 +16,7 @@ export default function NotesPageClient({ token }: { token: string }) {
   const [query, setQuery] = useState("");
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editDraft, setEditDraft] = useState("");
+  const [error, setError] = useState<string | null>(null);
 
   const filtered = useMemo(() => {
     if (!state) return [];
@@ -24,7 +26,7 @@ export default function NotesPageClient({ token }: { token: string }) {
   }, [state, query]);
 
   if (!loaded || !state) {
-    return <div className="section-pad text-center text-sm text-ink-400">Loading your journal...</div>;
+    return <DashboardLoading label="Loading your journal..." />;
   }
 
   async function handleSave() {
@@ -33,18 +35,32 @@ export default function NotesPageClient({ token }: { token: string }) {
     if (result.ok) {
       setDraft("");
       setActivePrompt(null);
+      setError(null);
+    } else {
+      setError(result.error ?? "Couldn't save that entry. Please try again.");
     }
   }
 
   async function handleUpdate(id: string) {
     if (!editDraft.trim()) return;
     const result = await dispatch({ type: "updateJournalEntry", id, body: editDraft });
-    if (result.ok) setEditingId(null);
+    if (result.ok) {
+      setEditingId(null);
+      setError(null);
+    } else {
+      setError(result.error ?? "Couldn't save that change. Please try again.");
+    }
   }
 
   async function handleDelete(id: string) {
     if (!window.confirm("Delete this note? This can't be undone.")) return;
-    await dispatch({ type: "deleteJournalEntry", id });
+    const result = await dispatch({ type: "deleteJournalEntry", id });
+    if (!result.ok) setError(result.error ?? "Couldn't delete this note. Please try again.");
+  }
+
+  async function handleToggleFavorite(id: string) {
+    const result = await dispatch({ type: "toggleFavorite", kind: "notes", id });
+    if (!result.ok) setError(result.error ?? "Something went wrong. Please try again.");
   }
 
   return (
@@ -53,6 +69,10 @@ export default function NotesPageClient({ token }: { token: string }) {
         <span className="eyebrow">Your Journal</span>
         <h1 className="mt-3 font-display text-3xl font-bold text-ink-900 sm:text-4xl">Notes &amp; Journal</h1>
         <p className="mt-2 text-ink-500">A calm, private place for reflections, ideas, and reminders.</p>
+
+        {error && (
+          <p className="mt-4 rounded-lg bg-red-50 px-3.5 py-2.5 text-xs font-semibold text-red-600">{error}</p>
+        )}
 
         <div className="card mt-8 p-6">
           <div className="flex flex-wrap gap-2">
@@ -79,6 +99,7 @@ export default function NotesPageClient({ token }: { token: string }) {
             value={draft}
             onChange={(e) => setDraft(e.target.value.slice(0, MAX_NOTE_LENGTH))}
             placeholder={activePrompt ?? "Write what's on your mind..."}
+            aria-label="Write a new journal entry"
             rows={4}
             className="mt-4 w-full rounded-lg border border-ink-900/15 bg-white p-3 text-sm text-ink-800 focus:border-brand-500 focus:outline-none"
           />
@@ -98,6 +119,7 @@ export default function NotesPageClient({ token }: { token: string }) {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search your notes..."
+            aria-label="Search notes"
             className="w-full rounded-lg border border-ink-900/15 bg-white py-2.5 pl-10 pr-4 text-sm focus:border-brand-500 focus:outline-none"
           />
         </div>
@@ -123,7 +145,7 @@ export default function NotesPageClient({ token }: { token: string }) {
                   <div className="flex shrink-0 items-center gap-1">
                     <FavoriteButton
                       active={isFavorite}
-                      onToggle={() => dispatch({ type: "toggleFavorite", kind: "notes", id: note.id })}
+                      onToggle={() => handleToggleFavorite(note.id)}
                       className="flex h-7 w-7 items-center justify-center rounded-full text-ink-400 hover:text-red-500"
                     />
                     <button
@@ -142,6 +164,7 @@ export default function NotesPageClient({ token }: { token: string }) {
                     <textarea
                       value={editDraft}
                       onChange={(e) => setEditDraft(e.target.value.slice(0, MAX_NOTE_LENGTH))}
+                      aria-label="Edit journal entry"
                       rows={3}
                       className="w-full rounded-lg border border-ink-900/15 bg-white p-3 text-sm focus:border-brand-500 focus:outline-none"
                     />

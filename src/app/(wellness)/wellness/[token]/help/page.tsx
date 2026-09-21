@@ -8,7 +8,7 @@ export const dynamic = "force-dynamic";
 export const metadata = buildMetadata({
   title: "Help | HealthyGuide Wellness System",
   description: "Answers to common questions about using your Wellness System.",
-  path: "/wellness",
+  path: "/wellness/help",
   noindex: true,
 });
 

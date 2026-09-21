@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import { useWellnessDashboard } from "@/components/wellness-dashboard/useWellnessDashboard";
 import TaskList from "@/components/wellness-dashboard/TaskList";
 import ProgressRing from "@/components/wellness-dashboard/ProgressRing";
+import DashboardLoading from "@/components/wellness-dashboard/DashboardLoading";
 import { DailyPlanSection, todayISO } from "@/lib/wellnessDashboard";
 
 const SECTIONS: { key: DailyPlanSection; label: string }[] = [
@@ -13,15 +15,21 @@ const SECTIONS: { key: DailyPlanSection; label: string }[] = [
 
 export default function DailyPlanClient({ token }: { token: string }) {
   const { state, loaded, dispatch } = useWellnessDashboard(token);
+  const [error, setError] = useState<string | null>(null);
 
   if (!loaded || !state) {
-    return <div className="section-pad text-center text-sm text-ink-400">Loading your daily plan...</div>;
+    return <DashboardLoading label="Loading your daily plan..." />;
   }
 
   const doneToday = state.activity[todayISO()] ?? [];
   const allTasks = [...state.dailyPlan.morning, ...state.dailyPlan.afternoon, ...state.dailyPlan.evening];
   const completed = allTasks.filter((t) => doneToday.includes(t.id)).length;
   const percent = allTasks.length > 0 ? Math.round((completed / allTasks.length) * 100) : 0;
+
+  async function handle(action: Parameters<typeof dispatch>[0]) {
+    const result = await dispatch(action);
+    setError(result.ok ? null : result.error ?? "Something went wrong. Please try again.");
+  }
 
   return (
     <div className="section-pad !pt-8">
@@ -37,6 +45,10 @@ export default function DailyPlanClient({ token }: { token: string }) {
           <ProgressRing percent={percent} size={84} label="Today" />
         </div>
 
+        {error && (
+          <p className="mt-4 rounded-lg bg-red-50 px-3.5 py-2.5 text-xs font-semibold text-red-600">{error}</p>
+        )}
+
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
           {SECTIONS.map((section) => (
             <div key={section.key} className="card p-6">
@@ -45,11 +57,11 @@ export default function DailyPlanClient({ token }: { token: string }) {
                 <TaskList
                   tasks={state.dailyPlan[section.key]}
                   doneIds={doneToday}
-                  onToggle={(taskId) => dispatch({ type: "toggleTaskToday", taskId })}
-                  onAdd={(label) => dispatch({ type: "addDailyPlanTask", section: section.key, label })}
-                  onDelete={(taskId) => dispatch({ type: "deleteDailyPlanTask", section: section.key, taskId })}
+                  onToggle={(taskId) => handle({ type: "toggleTaskToday", taskId })}
+                  onAdd={(label) => handle({ type: "addDailyPlanTask", section: section.key, label })}
+                  onDelete={(taskId) => handle({ type: "deleteDailyPlanTask", section: section.key, taskId })}
                   onReorder={(taskId, direction) =>
-                    dispatch({ type: "reorderDailyPlanTask", section: section.key, taskId, direction })
+                    handle({ type: "reorderDailyPlanTask", section: section.key, taskId, direction })
                   }
                 />
               </div>

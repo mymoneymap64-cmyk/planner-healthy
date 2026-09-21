@@ -1,5 +1,5 @@
 import { randomUUID } from "crypto";
-import { getKv } from "@/lib/kv";
+import { getKv, withLock } from "@/lib/kv";
 import { getChecklistItemIds } from "@/data/wellnessTools";
 
 export type ChecklistState = Record<string, boolean>;
@@ -39,11 +39,13 @@ export async function toggleChecklistItem(token: string, slug: string, itemId: s
     throw new Error("Unknown checklist item.");
   }
 
-  const kv = getKv();
-  const current = await getChecklistState(token, slug);
-  const next: ChecklistState = { ...current, [itemId]: !current[itemId] };
-  await kv.set(checklistKey(token, slug), next);
-  return next;
+  return withLock(`lock:${checklistKey(token, slug)}`, async () => {
+    const kv = getKv();
+    const current = await getChecklistState(token, slug);
+    const next: ChecklistState = { ...current, [itemId]: !current[itemId] };
+    await kv.set(checklistKey(token, slug), next);
+    return next;
+  });
 }
 
 export async function getNotes(token: string, slug: string): Promise<WellnessNote[]> {
@@ -52,31 +54,37 @@ export async function getNotes(token: string, slug: string): Promise<WellnessNot
 }
 
 export async function addNote(token: string, slug: string, body: string): Promise<WellnessNote[]> {
-  const kv = getKv();
-  const current = await getNotes(token, slug);
-  if (current.length >= MAX_NOTES_PER_PRODUCT) {
-    throw new Error("Note limit reached.");
-  }
+  return withLock(`lock:${notesKey(token, slug)}`, async () => {
+    const kv = getKv();
+    const current = await getNotes(token, slug);
+    if (current.length >= MAX_NOTES_PER_PRODUCT) {
+      throw new Error("Note limit reached.");
+    }
 
-  const now = new Date().toISOString();
-  const note: WellnessNote = { id: randomUUID(), body, createdAt: now, updatedAt: now };
-  const next = [note, ...current];
-  await kv.set(notesKey(token, slug), next);
-  return next;
+    const now = new Date().toISOString();
+    const note: WellnessNote = { id: randomUUID(), body, createdAt: now, updatedAt: now };
+    const next = [note, ...current];
+    await kv.set(notesKey(token, slug), next);
+    return next;
+  });
 }
 
 export async function updateNote(token: string, slug: string, noteId: string, body: string): Promise<WellnessNote[]> {
-  const kv = getKv();
-  const current = await getNotes(token, slug);
-  const next = current.map((n) => (n.id === noteId ? { ...n, body, updatedAt: new Date().toISOString() } : n));
-  await kv.set(notesKey(token, slug), next);
-  return next;
+  return withLock(`lock:${notesKey(token, slug)}`, async () => {
+    const kv = getKv();
+    const current = await getNotes(token, slug);
+    const next = current.map((n) => (n.id === noteId ? { ...n, body, updatedAt: new Date().toISOString() } : n));
+    await kv.set(notesKey(token, slug), next);
+    return next;
+  });
 }
 
 export async function deleteNote(token: string, slug: string, noteId: string): Promise<WellnessNote[]> {
-  const kv = getKv();
-  const current = await getNotes(token, slug);
-  const next = current.filter((n) => n.id !== noteId);
-  await kv.set(notesKey(token, slug), next);
-  return next;
+  return withLock(`lock:${notesKey(token, slug)}`, async () => {
+    const kv = getKv();
+    const current = await getNotes(token, slug);
+    const next = current.filter((n) => n.id !== noteId);
+    await kv.set(notesKey(token, slug), next);
+    return next;
+  });
 }

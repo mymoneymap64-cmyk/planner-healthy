@@ -10,7 +10,7 @@ export const dynamic = "force-dynamic";
 export const metadata = buildMetadata({
   title: "Settings | HealthyGuide Wellness System",
   description: "Manage your access and account details.",
-  path: "/wellness",
+  path: "/wellness/settings",
   noindex: true,
 });
 

@@ -32,7 +32,9 @@ const MOBILE_TABS = [
   { path: "", label: "Home", icon: Home, exact: true },
   { path: "/library", label: "Library", icon: Library, exact: false },
   { path: "/plan", label: "Plan", icon: ListChecks, exact: false },
+  { path: "/checklists", label: "Checklists", icon: CheckSquare, exact: false },
   { path: "/notes", label: "Notes", icon: NotebookPen, exact: false },
+  { path: "/favorites", label: "Favorites", icon: Heart, exact: false },
   { path: "/settings", label: "Profile", icon: Settings, exact: false },
 ];
 
@@ -107,18 +109,18 @@ export default function DashboardShell({ token, children }: { token: string; chi
       </div>
 
       {/* Mobile bottom nav */}
-      <nav className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-5 border-t border-ink-900/10 bg-white pb-[env(safe-area-inset-bottom)] lg:hidden">
+      <nav className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-7 border-t border-ink-900/10 bg-white pb-[env(safe-area-inset-bottom)] lg:hidden">
         {MOBILE_TABS.map((tab) => {
           const active = isActivePath(pathname, base, tab.path, tab.exact);
           return (
             <Link
               key={tab.label}
               href={`${base}${tab.path}`}
-              className={`flex flex-col items-center gap-1 py-2.5 text-[11px] font-semibold ${
+              className={`flex flex-col items-center gap-1 px-0.5 py-2.5 text-center text-[9px] font-semibold leading-tight ${
                 active ? "text-brand-700" : "text-ink-400"
               }`}
             >
-              <tab.icon size={19} strokeWidth={active ? 2.5 : 2} />
+              <tab.icon size={17} strokeWidth={active ? 2.5 : 2} />
               {tab.label}
             </Link>
           );

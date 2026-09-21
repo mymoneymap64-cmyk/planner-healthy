@@ -19,9 +19,10 @@ import PricingCard from "@/components/PricingCard";
 import LibraryHeroStack from "@/components/LibraryHeroStack";
 import PlannerMockup from "@/components/PlannerMockup";
 import NewsletterCTA from "@/components/NewsletterCTA";
+import JsonLd from "@/components/JsonLd";
 import { PRODUCTS, BONUS_PRODUCTS, BUNDLE_PRICE } from "@/data/products";
 import { FAQS } from "@/data/faq";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, productJsonLd } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title: "Premium Wellness Ebooks, Planners & 30-Day Wellness Systems | Natural Wellness Library",
@@ -68,6 +69,8 @@ const WHO_ITS_FOR = [
 export default function Home() {
   return (
     <>
+      <JsonLd data={productJsonLd({ price: BUNDLE_PRICE, path: "/" })} />
+
       {/* HERO */}
       <section className="relative overflow-hidden bg-ink-950">
         <div className="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(circle,#fff_1px,transparent_1px)] [background-size:22px_22px]" />

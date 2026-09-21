@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, Check, Lock, ShieldCheck } from "lucide-react";
 import { PRODUCTS, BONUS_PRODUCTS, BUNDLE_PRICE } from "@/data/products";
 import ProductCover from "@/components/ProductCover";
+import { usePaypalCheckout } from "@/lib/usePaypalCheckout";
 
 // There's no single bundle cover asset, so this composes one from real
 // covers — tightly stacked and centered (not spread into a row) so it reads
@@ -20,27 +20,7 @@ const BUNDLE_STACK = [
 ];
 
 export default function CheckoutClient() {
-  const [loading, setLoading] = useState(false);
-
-  async function handlePurchaseClick() {
-    setLoading(true);
-    try {
-      const res = await fetch("/api/paypal/create-order", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ slug: "bundle" }),
-      });
-      const data = await res.json();
-      if (!res.ok || !data.url) {
-        throw new Error(data.error ?? "Checkout failed to start.");
-      }
-      window.location.href = data.url;
-    } catch (error) {
-      console.error(error);
-      setLoading(false);
-      alert("Something went wrong starting checkout. Please try again.");
-    }
-  }
+  const { loading, handlePurchaseClick } = usePaypalCheckout("bundle");
 
   return (
     <div className="section-pad">

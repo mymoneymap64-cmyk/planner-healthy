@@ -9,7 +9,7 @@ export const dynamic = "force-dynamic";
 export const metadata = buildMetadata({
   title: "Daily Plan | HealthyGuide Wellness System",
   description: "Your morning, afternoon, and evening wellness routine.",
-  path: "/wellness",
+  path: "/wellness/plan",
   noindex: true,
 });
 

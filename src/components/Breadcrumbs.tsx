@@ -28,7 +28,7 @@ export default function Breadcrumbs({
           return (
             <li key={item.href} className="flex items-center gap-1.5">
               {isLast ? (
-                <span className={`font-medium ${current}`} aria-current="page">
+                <span className={`max-w-[55vw] truncate font-medium sm:max-w-none ${current}`} aria-current="page">
                   {item.name}
                 </span>
               ) : (

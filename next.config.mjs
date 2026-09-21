@@ -19,6 +19,21 @@ const nextConfig = {
       "/api/files/[token]/[slug]/[asset]": ["./content/**/*"],
     },
   },
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          // Private-order URLs contain unguessable tokens in the path
+          // (e.g. /reader/<token>/...); a permissive referrer policy could
+          // leak that token to a third-party resource loaded on the page.
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;

@@ -1,9 +1,17 @@
 import { notFound } from "next/navigation";
 import { requireEntitledProduct } from "@/lib/readerAuth";
+import { buildMetadata } from "@/lib/seo";
 import ReaderShell from "@/components/reader/ReaderShell";
 import DayDetail from "@/components/reader/DayDetail";
 
 export const dynamic = "force-dynamic";
+
+export const metadata = buildMetadata({
+  title: "Daily Plan | HealthyGuide Reader",
+  description: "Your day-by-day plan.",
+  path: "/reader",
+  noindex: true,
+});
 
 export default async function ReaderDayPage({
   params,

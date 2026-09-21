@@ -117,8 +117,11 @@ export default function DayDetail({ token, product, day }: { token: string; prod
             </p>
           )}
 
-          <label className="mt-6 block text-xs font-bold uppercase tracking-wide text-ink-500">Your notes</label>
+          <label htmlFor="day-note" className="mt-6 block text-xs font-bold uppercase tracking-wide text-ink-500">
+            Your notes
+          </label>
           <textarea
+            id="day-note"
             value={note}
             onChange={(e) => saveNote(e.target.value)}
             rows={4}

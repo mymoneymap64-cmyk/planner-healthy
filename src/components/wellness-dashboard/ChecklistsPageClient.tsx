@@ -6,15 +6,17 @@ import { Plus, X } from "lucide-react";
 import { useWellnessDashboard } from "@/components/wellness-dashboard/useWellnessDashboard";
 import ProgressBar from "@/components/reader/ProgressBar";
 import FavoriteButton from "@/components/wellness-dashboard/FavoriteButton";
+import DashboardLoading from "@/components/wellness-dashboard/DashboardLoading";
 
 export default function ChecklistsPageClient({ token }: { token: string }) {
   const { state, loaded, dispatch } = useWellnessDashboard(token);
   const [creating, setCreating] = useState(false);
   const [title, setTitle] = useState("");
   const [itemsText, setItemsText] = useState("");
+  const [error, setError] = useState<string | null>(null);
 
   if (!loaded || !state) {
-    return <div className="section-pad text-center text-sm text-ink-400">Loading your checklists...</div>;
+    return <DashboardLoading label="Loading your checklists..." />;
   }
 
   async function handleCreate() {
@@ -25,7 +27,15 @@ export default function ChecklistsPageClient({ token }: { token: string }) {
       setTitle("");
       setItemsText("");
       setCreating(false);
+      setError(null);
+    } else {
+      setError(result.error ?? "Couldn't create that checklist. Please try again.");
     }
+  }
+
+  async function handleToggleFavorite(checklistId: string) {
+    const result = await dispatch({ type: "toggleFavorite", kind: "checklists", id: checklistId });
+    if (!result.ok) setError(result.error ?? "Something went wrong. Please try again.");
   }
 
   return (
@@ -41,6 +51,10 @@ export default function ChecklistsPageClient({ token }: { token: string }) {
           </button>
         </div>
 
+        {error && (
+          <p className="mt-4 rounded-lg bg-red-50 px-3.5 py-2.5 text-xs font-semibold text-red-600">{error}</p>
+        )}
+
         {creating && (
           <div className="card mt-6 p-5">
             <div className="flex items-center justify-between">
@@ -53,12 +67,14 @@ export default function ChecklistsPageClient({ token }: { token: string }) {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="Checklist name"
+              aria-label="Checklist name"
               className="mt-3 w-full rounded-lg border border-ink-900/15 bg-white px-3 py-2 text-sm focus:border-brand-500 focus:outline-none"
             />
             <textarea
               value={itemsText}
               onChange={(e) => setItemsText(e.target.value)}
               placeholder={"One item per line, e.g.\nDrink water\nStretch\nPlan tomorrow"}
+              aria-label="Checklist items, one per line"
               rows={4}
               className="mt-2 w-full rounded-lg border border-ink-900/15 bg-white px-3 py-2 text-sm focus:border-brand-500 focus:outline-none"
             />
@@ -85,7 +101,7 @@ export default function ChecklistsPageClient({ token }: { token: string }) {
                   <h3 className="font-display text-base font-bold text-ink-900">{checklist.title}</h3>
                   <FavoriteButton
                     active={isFavorite}
-                    onToggle={() => dispatch({ type: "toggleFavorite", kind: "checklists", id: checklist.id })}
+                    onToggle={() => handleToggleFavorite(checklist.id)}
                     className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-ink-400 hover:text-red-500"
                   />
                 </div>

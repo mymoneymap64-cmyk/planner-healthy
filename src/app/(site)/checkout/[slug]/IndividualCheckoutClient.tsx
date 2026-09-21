@@ -1,13 +1,14 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, Check, Lock, ShieldCheck } from "lucide-react";
 import { Product } from "@/lib/types";
 import ProductCover from "@/components/ProductCover";
+import PriceBadge from "@/components/PriceBadge";
+import { usePaypalCheckout } from "@/lib/usePaypalCheckout";
 
 export default function IndividualCheckoutClient({ product }: { product: Product }) {
-  const [loading, setLoading] = useState(false);
+  const { loading, handlePurchaseClick } = usePaypalCheckout(product.slug);
   const integrated = product.plannerAndSystemIncludedInEbook;
 
   const includes = [
@@ -15,26 +16,6 @@ export default function IndividualCheckoutClient({ product }: { product: Product
     integrated ? "Planner (included inside the ebook)" : "Matching Planner",
     integrated ? "30-Day System (included inside the ebook)" : "30-Day System",
   ];
-
-  async function handlePurchaseClick() {
-    setLoading(true);
-    try {
-      const res = await fetch("/api/paypal/create-order", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ slug: product.slug }),
-      });
-      const data = await res.json();
-      if (!res.ok || !data.url) {
-        throw new Error(data.error ?? "Checkout failed to start.");
-      }
-      window.location.href = data.url;
-    } catch (error) {
-      console.error(error);
-      setLoading(false);
-      alert("Something went wrong starting checkout. Please try again.");
-    }
-  }
 
   return (
     <div className="section-pad">
@@ -102,19 +83,8 @@ export default function IndividualCheckoutClient({ product }: { product: Product
               </div>
 
               {product.price !== null && product.price > 0 && (
-                <div className="mt-4 flex items-end justify-between gap-3 rounded-lg border border-gold-400/25 bg-gold-50/60 px-3 py-2.5">
-                  <div>
-                    <p className="text-[9px] font-bold uppercase tracking-wide text-ink-500">Launch Price</p>
-                    <span className="font-display text-2xl font-black leading-none text-ink-950">
-                      ${product.price}
-                    </span>
-                  </div>
-                  {product.compareAtPrice != null && (
-                    <div className="pb-0.5 text-right">
-                      <p className="text-[9px] font-bold uppercase tracking-wide text-ink-400">Guide Value</p>
-                      <span className="text-sm font-semibold text-ink-500">${product.compareAtPrice}</span>
-                    </div>
-                  )}
+                <div className="mt-4">
+                  <PriceBadge price={product.price} compareAtPrice={product.compareAtPrice} showOfferHeader={false} />
                 </div>
               )}
 

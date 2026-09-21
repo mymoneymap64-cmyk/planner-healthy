@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Eye } from "lucide-react";
 import { Product } from "@/lib/types";
 import ProductCover from "./ProductCover";
+import PriceBadge from "./PriceBadge";
 
 export default function ProductCard({ product }: { product: Product }) {
   return (
@@ -38,32 +39,7 @@ export default function ProductCard({ product }: { product: Product }) {
           ) : product.price === 0 ? (
             <span className="font-display text-lg font-bold text-ink-950">Free</span>
           ) : (
-            <div className="rounded-lg border border-gold-400/25 bg-gold-50/60 px-3 py-2.5">
-              <div className="flex items-center justify-between">
-                <p className="text-[9px] font-bold uppercase tracking-wide text-gold-700">Launch Offer</p>
-                {product.compareAtPrice != null && product.compareAtPrice > product.price && (
-                  <span className="rounded-full bg-ink-950 px-2 py-0.5 text-[8px] font-bold uppercase tracking-wide text-gold-300">
-                    Save {Math.round(100 - (product.price / product.compareAtPrice) * 100)}%
-                  </span>
-                )}
-              </div>
-              <div className="mt-1.5 flex items-end justify-between gap-3">
-                <div>
-                  <p className="text-[9px] font-bold uppercase tracking-wide text-ink-500">Launch Price</p>
-                  <span className="font-display text-2xl font-black leading-none text-ink-950">
-                    ${product.price}
-                  </span>
-                </div>
-                {product.compareAtPrice != null && (
-                  <div className="pb-0.5 text-right">
-                    <p className="text-[9px] font-bold uppercase tracking-wide text-ink-400">Guide Value</p>
-                    <span className="text-sm font-semibold text-ink-400 line-through decoration-ink-300">
-                      ${product.compareAtPrice}
-                    </span>
-                  </div>
-                )}
-              </div>
-            </div>
+            <PriceBadge price={product.price} compareAtPrice={product.compareAtPrice} />
           )}
 
           <div className="mt-3 flex items-center justify-between">

@@ -9,7 +9,7 @@ export const dynamic = "force-dynamic";
 export const metadata = buildMetadata({
   title: "Favorites | HealthyGuide Wellness System",
   description: "Guides, checklists, and notes you've saved.",
-  path: "/wellness",
+  path: "/wellness/favorites",
   noindex: true,
 });
 

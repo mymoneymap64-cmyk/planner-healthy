@@ -41,7 +41,7 @@ export default function WellnessProductCard({
 
         <div className="mt-3 space-y-2.5">
           {ebookPercent !== null && <ProgressBar value={ebookPercent} label="Ebook progress" />}
-          {checklistPercent !== null && <ProgressBar value={checklistPercent} label="Checklist" />}
+          {checklistPercent !== null && <ProgressBar value={checklistPercent} label="Reading Checklist" />}
         </div>
 
         <Link

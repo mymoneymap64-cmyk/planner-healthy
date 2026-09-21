@@ -65,3 +65,10 @@
     text-wrap: balance;
   }
 }
+
+/* Hide HBAgency ad slots if the header-bidding script fails to load
+   (e.g. a DNS/CDN outage), so a broken ad slot doesn't leave an empty
+   placeholder box visible to readers. See HBAgencyAdScript.tsx. */
+body.hb-ad-failed .hb-ad-inpage {
+  display: none;
+}

@@ -1,10 +1,18 @@
 import { notFound } from "next/navigation";
 import { requireEntitledProduct } from "@/lib/readerAuth";
 import { getReaderProgress } from "@/lib/readerProgress";
+import { buildMetadata } from "@/lib/seo";
 import ReaderShell from "@/components/reader/ReaderShell";
 import ProductDashboard from "@/components/reader/ProductDashboard";
 
 export const dynamic = "force-dynamic";
+
+export const metadata = buildMetadata({
+  title: "Your Guide | HealthyGuide Reader",
+  description: "Read, plan, and track this guide.",
+  path: "/reader",
+  noindex: true,
+});
 
 export default async function ReaderProductPage({
   params,

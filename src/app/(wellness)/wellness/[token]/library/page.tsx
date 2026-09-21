@@ -13,7 +13,7 @@ export const dynamic = "force-dynamic";
 export const metadata = buildMetadata({
   title: "My Library | HealthyGuide Wellness System",
   description: "Every guide included in your purchase, in one organized space.",
-  path: "/wellness",
+  path: "/wellness/library",
   noindex: true,
 });
 

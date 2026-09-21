@@ -1,17 +1,20 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { Product } from "@/lib/types";
 import { useWellnessDashboard } from "@/components/wellness-dashboard/useWellnessDashboard";
 import ProductCover from "@/components/ProductCover";
 import FavoriteButton from "@/components/wellness-dashboard/FavoriteButton";
+import DashboardLoading from "@/components/wellness-dashboard/DashboardLoading";
 import { formatDateLong } from "@/lib/wellnessDashboard";
 
 export default function FavoritesPageClient({ token, products }: { token: string; products: Product[] }) {
   const { state, loaded, dispatch } = useWellnessDashboard(token);
+  const [error, setError] = useState<string | null>(null);
 
   if (!loaded || !state) {
-    return <div className="section-pad text-center text-sm text-ink-400">Loading your favorites...</div>;
+    return <DashboardLoading label="Loading your favorites..." />;
   }
 
   const favoriteGuides = products.filter((p) => state.favorites.guides.includes(p.slug));
@@ -20,12 +23,21 @@ export default function FavoritesPageClient({ token, products }: { token: string
 
   const nothingYet = favoriteGuides.length + favoriteChecklists.length + favoriteNotes.length === 0;
 
+  async function handleToggleGuide(slug: string) {
+    const result = await dispatch({ type: "toggleFavorite", kind: "guides", id: slug });
+    if (!result.ok) setError(result.error ?? "Something went wrong. Please try again.");
+  }
+
   return (
     <div className="section-pad !pt-8">
       <div className="container-page">
         <span className="eyebrow">Saved For You</span>
         <h1 className="mt-3 font-display text-3xl font-bold text-ink-900 sm:text-4xl">Favorites</h1>
         <p className="mt-2 text-ink-500">Guides, checklists, and notes you&apos;ve marked as favorites.</p>
+
+        {error && (
+          <p className="mt-4 rounded-lg bg-red-50 px-3.5 py-2.5 text-xs font-semibold text-red-600">{error}</p>
+        )}
 
         {nothingYet && (
           <p className="mt-10 text-sm text-ink-400">
@@ -42,10 +54,7 @@ export default function FavoritesPageClient({ token, products }: { token: string
                   <div className="relative">
                     <ProductCover product={product} className="aspect-[3/4] w-full" />
                     <div className="absolute right-2 top-2">
-                      <FavoriteButton
-                        active
-                        onToggle={() => dispatch({ type: "toggleFavorite", kind: "guides", id: product.slug })}
-                      />
+                      <FavoriteButton active onToggle={() => handleToggleGuide(product.slug)} />
                     </div>
                   </div>
                   <Link

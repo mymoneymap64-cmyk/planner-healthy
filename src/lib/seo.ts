@@ -91,10 +91,11 @@ export function articleJsonLd({
 }
 
 export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
+  const withHome = [{ name: "Home", path: "/" }, ...items];
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    itemListElement: items.map((item, i) => ({
+    itemListElement: withHome.map((item, i) => ({
       "@type": "ListItem",
       position: i + 1,
       name: item.name,
@@ -136,7 +137,13 @@ export function organizationJsonLd() {
   };
 }
 
-export function productJsonLd() {
+export function productJsonLd({
+  price,
+  path = "/",
+}: {
+  price: number;
+  path?: string;
+}) {
   return {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -146,6 +153,13 @@ export function productJsonLd() {
     brand: {
       "@type": "Brand",
       name: SITE_NAME,
+    },
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "USD",
+      price: price.toFixed(2),
+      availability: "https://schema.org/InStock",
+      url: `${SITE_URL}${path}`,
     },
   };
 }

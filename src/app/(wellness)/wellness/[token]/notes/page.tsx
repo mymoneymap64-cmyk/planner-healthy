@@ -2,25 +2,25 @@ import { notFound } from "next/navigation";
 import { requireOrder } from "@/lib/readerAuth";
 import { buildMetadata } from "@/lib/seo";
 import DashboardShell from "@/components/wellness-dashboard/DashboardShell";
-import ChecklistsPageClient from "@/components/wellness-dashboard/ChecklistsPageClient";
+import NotesPageClient from "@/components/wellness-dashboard/NotesPageClient";
 
 export const dynamic = "force-dynamic";
 
 export const metadata = buildMetadata({
-  title: "Checklists | HealthyGuide Wellness System",
-  description: "Reusable wellness checklists you can check off, reset, and customize.",
-  path: "/wellness",
+  title: "Notes & Journal | HealthyGuide Wellness System",
+  description: "A calm, private place for your reflections and reminders.",
+  path: "/wellness/notes",
   noindex: true,
 });
 
-export default async function ChecklistsPage({ params }: { params: Promise<{ token: string }> }) {
+export default async function NotesPage({ params }: { params: Promise<{ token: string }> }) {
   const { token } = await params;
   const order = await requireOrder(token);
   if (!order) notFound();
 
   return (
     <DashboardShell token={token}>
-      <ChecklistsPageClient token={token} />
+      <NotesPageClient token={token} />
     </DashboardShell>
   );
 }
