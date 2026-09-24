@@ -102,7 +102,9 @@ export const article07: BlogPost = {
     "Drinking more water rarely comes down to willpower — it comes down to making water the easy, visible default instead of something you have to consciously remember. Attach it to habits you already have, keep it within arm's reach, and add flavor if plain water isn't appealing on its own.",
   ],
   ctaText:
-    "Looking for more practical nutrition guidance? Explore the Natural Wellness Library of wellness ebooks.",
+    "Small daily habits like this add up alongside better meals. The Healthy Eating Guide focuses on balanced, real-food eating that fits a busy schedule.",
+  ctaHref: "/library/healthy-eating-guide",
+  ctaLabel: "See the Healthy Eating Guide",
   relatedSlugs: [
     "how-much-water-should-you-drink-every-day",
     "how-to-make-healthy-eating-easier",

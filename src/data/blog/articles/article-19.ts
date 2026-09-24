@@ -24,7 +24,7 @@ export const article19: BlogPost = {
       level: 2,
       paragraphs: [
         "Environment shapes behavior more than most people give it credit for. If chips are at eye level in the pantry and cut vegetables are buried in the back of the fridge, guess which one gets grabbed during a busy afternoon. Small changes in visibility and accessibility can meaningfully shift what you reach for without any extra willpower involved.",
-        "This works both directions — make the better option more visible and convenient, and add just a little friction to the less helpful one. You don't have to ban anything from your kitchen; simply moving it to a less convenient spot is often enough to change how often it gets chosen.",
+        "This works both directions — make the better option more visible and convenient, and add just a little friction to the less helpful one. You don't have to ban anything from your kitchen; simply moving it to a less convenient spot is often enough to change how often it gets chosen. Snacks are the easiest place to start — see [easy healthy snacks to keep at home](/blog/easy-healthy-snacks-to-keep-at-home).",
       ],
       list: [
         "Keep washed, cut produce at eye level in the fridge, ready to grab",
@@ -38,7 +38,7 @@ export const article19: BlogPost = {
       level: 2,
       paragraphs: [
         "Deciding what to eat three times a day, seven days a week, adds up to dozens of small decisions weekly — and decision fatigue is real. By evening, after a full day of decisions at work and home, most people default to whatever's fastest, which often isn't the most nutritious option.",
-        "A simpler system is to build a short rotation of go-to meals you don't have to think hard about — three or four breakfasts, five or six lunches and dinners you know how to make and actually enjoy. Repetition isn't a failure of creativity; it's what frees up mental energy for everything else in your day.",
+        "A simpler system is to build a short rotation of go-to meals you don't have to think hard about — three or four breakfasts, five or six lunches and dinners you know how to make and actually enjoy. Repetition isn't a failure of creativity; it's what frees up mental energy for everything else in your day. [Easy healthy meals for busy people](/blog/easy-healthy-meals-for-busy-people) gives a simple formula for this.",
       ],
     },
     {
@@ -91,10 +91,13 @@ export const article19: BlogPost = {
   conclusion: [
     "Healthy eating gets easier not through more discipline, but through fewer daily obstacles standing between you and the better choice. A visible bowl of fruit, a short rotation of go-to meals, and a backup plan for hard days do more for consistency than any amount of motivation on a good day.",
   ],
+  updatedAt: "2026-09-24",
   ctaText:
-    "Looking for more practical nutrition guidance? Explore the Natural Wellness Library of wellness ebooks.",
+    "If you want structure for eating well without extreme rules, the Healthy Eating Guide is built around balanced meals and sustainable habits.",
+  ctaHref: "/library/healthy-eating-guide",
+  ctaLabel: "See the Healthy Eating Guide",
   relatedSlugs: [
-    "how-to-make-healthy-habits-easier-to-follow",
+    "how-to-build-healthy-habits-that-actually-last",
     "simple-ways-to-reduce-processed-foods",
     "easy-healthy-meals-for-busy-people",
     "healthy-meal-planning-for-beginners",

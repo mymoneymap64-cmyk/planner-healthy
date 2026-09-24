@@ -146,13 +146,37 @@ export default function BlogArticleView({
               ))}
             </div>
 
+            {post.sources && post.sources.length > 0 && (
+              <div className="mt-10 rounded-2xl border border-ink-900/10 bg-white p-6">
+                <h2 className="font-display text-lg font-bold text-ink-900">Sources</h2>
+                <ul className="mt-3 space-y-2 text-sm leading-relaxed text-ink-600">
+                  {post.sources.map((source) => (
+                    <li key={source.url}>
+                      <a
+                        href={source.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-medium text-brand-700 underline decoration-brand-300 underline-offset-2 hover:text-brand-800"
+                      >
+                        {source.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-4 text-xs leading-relaxed text-ink-400">
+                  General wellness information, not medical advice. Talk with a qualified healthcare
+                  professional about your own situation.
+                </p>
+              </div>
+            )}
+
             <div className="mt-10 rounded-3xl bg-brand-900 p-7 text-white sm:p-9">
               <p className="text-base leading-relaxed text-brand-50">
                 {post.ctaText ??
                   "Want more practical guidance like this? Browse the Natural Wellness Library of wellness ebooks."}
               </p>
-              <Link href="/library" className="btn-gold mt-5">
-                Browse the Library <ArrowRight size={16} />
+              <Link href={post.ctaHref ?? "/library"} className="btn-gold mt-5">
+                {post.ctaLabel ?? "Browse the Library"} <ArrowRight size={16} />
               </Link>
             </div>
           </div>

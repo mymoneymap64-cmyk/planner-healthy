@@ -38,7 +38,7 @@ export const article34: BlogPost = {
       heading: "Start With the Smallest Habit on Your List",
       level: 2,
       paragraphs: [
-        "This is also a good moment to lean on your \"minimum version\" of each habit, if you defined one at the start of your challenge — today doesn't need to be a full-intensity day to count as a good day.",
+        "This is also a good moment to lean on your \"minimum version\" of each habit, if you defined one when you set the habit up — and if you haven't, the rule \"do the smallest version of it\" works fine — today doesn't need to be a full-intensity day to count as a good day.",
       ],
     },
     {
@@ -60,14 +60,16 @@ export const article34: BlogPost = {
       heading: "Log It and Move On",
       level: 2,
       paragraphs: [
+        "Before you close out the day, take thirty seconds to write down what happened: what the off day looked like, what set it off, and the one thing you'll do differently tomorrow. Keep it to a line or two. The point isn't a detailed post-mortem or a punishment — it's turning a vague feeling of having failed into a small, specific piece of information you can actually use.",
+        "Then let it go. An off day that gets logged and answered with a plan is finished; one that gets replayed all evening is the one that turns into a second bad day. Mark it in your tracker without judgment, and pick the smallest habit on your list to start with tomorrow. A simple record helps you see the bigger pattern; [how to track progress without obsessing over results](/blog/how-to-track-progress-without-obsessing-over-results) explains how. And if it's the urge to quit that's the problem, see [how to stay motivated when you want to quit](/blog/how-to-stay-motivated-when-you-want-to-quit).",
       ],
     },
   ],
   faqs: [
     {
-      question: "Should I restart my challenge from day 1 after a bad day?",
+      question: "Should I start over from the beginning after a bad day?",
       answer:
-        "Usually not necessary. Unless you genuinely want a clean restart for your own motivation, picking back up on the next day preserves more of your progress and momentum than starting over.",
+        "Usually not necessary. Unless you genuinely want a clean restart for your own motivation, picking back up the next day preserves more of your progress and momentum than starting over.",
     },
     {
       question: "How do I stop feeling guilty about an off day?",
@@ -88,8 +90,11 @@ export const article34: BlogPost = {
   conclusion: [
     "One off day changes very little about your overall progress — what changes it is how you respond the next morning. Skip the compensating, skip the all-or-nothing story, and just resume your normal plan, starting with whatever's easiest.",
   ],
+  updatedAt: "2026-09-24",
   ctaText:
-    "Looking for more on building consistency and mindset? Explore the Natural Wellness Library of wellness guides.",
+    "A bad day is easier to shake off with a calmer mindset. The Mental Wellness Guide includes mindset tools and calm-habit routines.",
+  ctaHref: "/library/mental-wellness-guide",
+  ctaLabel: "Explore the Mental Wellness Guide",
   relatedSlugs: [
     "how-to-stay-motivated-when-you-want-to-quit",
     "why-consistency-matters-more-than-motivation",

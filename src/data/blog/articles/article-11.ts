@@ -110,7 +110,9 @@ export const article11: BlogPost = {
     "A workable breakfast on a busy morning doesn't need to be elaborate — it just needs to require almost no active effort at the moment you're eating it. Whether that means grabbing something that needs zero prep or pulling a jar of overnight oats out of the fridge, having two or three go-to options ready removes the morning decision entirely.",
   ],
   ctaText:
-    "Looking for more practical nutrition guidance? Explore the Natural Wellness Library of wellness ebooks.",
+    "Breakfast is easier when the week is planned. The Healthy Eating Guide's 30-day meal plan is built around balanced, everyday eating.",
+  ctaHref: "/library/healthy-eating-guide",
+  ctaLabel: "See the Healthy Eating Guide",
   relatedSlugs: [
     "how-to-stop-skipping-breakfast",
     "healthy-lunch-ideas-for-beginners",

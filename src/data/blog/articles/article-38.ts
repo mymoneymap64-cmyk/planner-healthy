@@ -24,7 +24,7 @@ export const article38: BlogPost = {
       level: 2,
       paragraphs: [
         "There's a common misconception that sustainable automatically means gradual or low-effort. That's not quite it. A sustainable lifestyle can involve real, meaningful effort — the difference is that it's designed to survive contact with an imperfect week. A routine that only works when everything goes right isn't sustainable, no matter how effective it looks on a good day.",
-        "The test isn't \"does this work when I have time and energy?\" It's \"does this survive a Tuesday where I'm exhausted, the kids are sick, and I have twenty minutes before bed?\" If the answer is no for most of your habits, the routine needs to be rebuilt around your real week, not your ideal one.",
+        "The test isn't \"does this work when I have time and energy?\" It's \"does this survive a Tuesday where I'm exhausted, the kids are sick, and I have twenty minutes before bed?\" If the answer is no for most of your habits, the routine needs to be rebuilt around your real week, not your ideal one. Common early stumbling blocks are covered in [healthy lifestyle mistakes beginners should avoid](/blog/healthy-lifestyle-mistakes-beginners-should-avoid).",
       ],
     },
     {
@@ -49,11 +49,17 @@ export const article38: BlogPost = {
       ],
     },
     {
-      heading: "Make the Healthy Choice the Easy Choice",
+      heading: "Build the Pillars One at a Time",
       level: 2,
       paragraphs: [
-        "Willpower is a limited, exhaustible resource, and relying on it to power your entire lifestyle is a losing bet over the long run. The more sustainable approach is to reduce how much willpower each choice requires — pre-cutting vegetables so a healthy snack takes ten seconds, keeping walking shoes by the door, laying out gym clothes the night before. Every bit of friction you remove from a good habit makes it more likely to survive a low-motivation day.",
-        "The same logic works in reverse for less helpful habits: adding a small amount of friction (keeping less healthy snacks out of easy reach, for example) reduces how often you default to them without requiring constant conscious restraint.",
+        "A healthy lifestyle isn't one habit; it's a handful of areas that support each other. Trying to fix all of them at once is the fastest route back to your old routine, so pick one pillar, keep it steady for a few weeks, then add the next. Each pillar below has a practical starting point.",
+      ],
+      list: [
+        "Eating: start with a repeatable plate and a short grocery list — see [how to build a balanced plate](/blog/how-to-build-a-balanced-plate) and [healthy meal planning for beginners](/blog/healthy-meal-planning-for-beginners)",
+        "Movement: start with walking before anything else — see the [beginner walking plan](/blog/beginner-walking-plan-for-better-fitness)",
+        "Sleep: a fixed wake-up time supports every other habit — see [how to create a better sleep routine](/blog/how-to-create-a-better-sleep-routine)",
+        "Routines: a light weekly structure keeps the rest running — see the [Sunday reset routine](/blog/sunday-reset-routine-for-a-healthier-week)",
+        "Making any of these stick: see [how to build healthy habits that actually last](/blog/how-to-build-healthy-habits-that-actually-last)",
       ],
     },
     {
@@ -77,7 +83,7 @@ export const article38: BlogPost = {
     {
       question: "How long does it take to build a sustainable healthy lifestyle?",
       answer:
-        "There's no universal timeline, since it depends on how many habits you're changing and how different they are from your current routine. Many people find that a structured few weeks — like a 21-day reset — is enough to establish real momentum, though fully settling into a lifestyle often takes a few months of consistent practice.",
+        "There's no universal timeline, since it depends on how many habits you're changing and how different they are from your current routine. Many people find that a focused few weeks is enough to establish real momentum, though fully settling into a new routine often takes a few months of consistent practice. Research on habit formation backs up how variable this is: in one widely cited study, the time it took for a behavior to feel automatic ranged from about 18 days to more than 8 months.",
     },
     {
       question: "What's the difference between a diet and a sustainable lifestyle?",
@@ -93,8 +99,17 @@ export const article38: BlogPost = {
   conclusion: [
     "A sustainable healthy lifestyle isn't the most intense version of healthy living you can imagine — it's the version realistic enough to survive your actual week, month, and year. That usually means fewer extreme rules, more habits built around your real constraints, and a plan for getting back on track quickly when life inevitably interrupts you.",
   ],
+  updatedAt: "2026-09-24",
+  sources: [
+    {
+      label: "Lally et al. (2010), How are habits formed: Modelling habit formation in the real world, European Journal of Social Psychology",
+      url: "https://onlinelibrary.wiley.com/doi/10.1002/ejsp.674",
+    },
+  ],
   ctaText:
-    "Want more practical guidance for everyday wellness? Browse the Natural Wellness Library of ebooks.",
+    "If you'd like a full set of guides to build a lifestyle from, the Natural Wellness Library brings together nutrition, sleep, mental wellness, and more, each with a planner and 30-day system.",
+  ctaHref: "/library",
+  ctaLabel: "Browse the Library",
   relatedSlugs: [
     "healthy-lifestyle-mistakes-beginners-should-avoid",
     "how-to-create-a-weekly-wellness-routine",

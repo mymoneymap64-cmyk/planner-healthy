@@ -36,7 +36,7 @@ export const article12: BlogPost = {
       heading: "Leftovers Are a Legitimate Lunch Strategy",
       level: 2,
       paragraphs: [
-        "One of the simplest ways to handle lunch is to stop treating it as its own separate meal to plan. Cooking a slightly larger portion at dinner and packing the extra for lunch the next day covers the meal with zero additional effort — no new recipe, no new grocery items, no extra time in the kitchen.",
+        "One of the simplest ways to handle lunch is to stop treating it as its own separate meal to plan. Cooking a slightly larger portion at dinner and packing the extra for lunch the next day covers the meal with zero additional effort — no new recipe, no new grocery items, no extra time in the kitchen. Per USDA food safety guidance, eat refrigerated leftovers within 3 to 4 days and reheat them to 165°F; [how to meal prep for a busy week](/blog/how-to-meal-prep-for-a-busy-week) covers storage in more detail.",
       ],
     },
     {
@@ -93,8 +93,17 @@ export const article12: BlogPost = {
     "Lunch doesn't need a learning curve. A short list of no-cook combinations, a habit of packing extra dinner portions, and a basic formula to fall back on cover most days without requiring new cooking skills or extra planning time.",
     "It's also worth remembering that lunch doesn't have to be perfect to count. A cobbled-together plate of whatever's left in the fridge, eaten in ten minutes at a desk, still does the job most days — the goal is a meal that gets you through the afternoon, not a photo-ready spread.",
   ],
+  updatedAt: "2026-09-24",
+  sources: [
+    {
+      label: "USDA Food Safety and Inspection Service — Leftovers and Food Safety",
+      url: "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety",
+    },
+  ],
   ctaText:
-    "Looking for more practical nutrition guidance? Explore the Natural Wellness Library of wellness ebooks.",
+    "Packing lunch gets easier with a plan. The Healthy Eating Guide includes a planner alongside its real-food recipes.",
+  ctaHref: "/library/healthy-eating-guide",
+  ctaLabel: "See the Healthy Eating Guide",
   relatedSlugs: [
     "healthy-breakfast-ideas-for-busy-mornings",
     "healthy-dinner-ideas-for-a-simple-lifestyle",

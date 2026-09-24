@@ -24,14 +24,14 @@ export const article41: BlogPost = {
       level: 2,
       paragraphs: [
         "The fastest way to add a habit to a busy day is to attach it to something you're already doing, rather than carving out new time for it. Drink a glass of water while the coffee brews. Do a two-minute stretch while waiting for the microwave. Take a short walk during a phone call instead of sitting through it. None of these require new time in your day — they borrow time you're already spending on something else.",
-        "This approach, sometimes called habit stacking, works because it removes the biggest obstacle busy schedules create: finding an empty slot. There usually isn't one. But there are dozens of small windows — waiting, commuting, transitioning between tasks — that a habit can quietly attach itself to.",
+        "This approach, sometimes called habit stacking, works because it removes the biggest obstacle busy schedules create: finding an empty slot. There usually isn't one. But there are dozens of small windows — waiting, commuting, transitioning between tasks — that a habit can quietly attach itself to. [How to build healthy habits that actually last](/blog/how-to-build-healthy-habits-that-actually-last) explains habit stacking in more depth.",
       ],
     },
     {
       heading: "Use Movement in 10-Minute Blocks, Not Hour-Long Sessions",
       level: 2,
       paragraphs: [
-        "If an hour-long workout is the only version of exercise you're aiming for, a busy week will beat you almost every time. Movement broken into smaller blocks — a 10-minute walk after lunch, 10 minutes of bodyweight exercises before a shower, a few flights of stairs instead of the elevator — adds up meaningfully over a week and fits into gaps a full session never could.",
+        "If an hour-long workout is the only version of exercise you're aiming for, a busy week will beat you almost every time. Movement broken into smaller blocks — a 10-minute walk after lunch, 10 minutes of bodyweight exercises before a shower, a few flights of stairs instead of the elevator — adds up meaningfully over a week and fits into gaps a full session never could. See [how to stay active during a busy day](/blog/how-to-stay-active-during-a-busy-day) for more ways to fit movement in.",
       ],
       list: [
         "10-minute walk during a lunch break or after dinner",
@@ -45,7 +45,7 @@ export const article41: BlogPost = {
       level: 2,
       paragraphs: [
         "A common trade-off for busy people is skipping meals or defaulting to whatever's fastest, which is often the least nutritious option available. The fix usually isn't more elaborate cooking — it's fewer decisions. Keep two or three go-to meals on repeat that take under 15 minutes and require minimal thought: eggs and toast with fruit, a pre-made grain bowl, a simple protein-and-vegetable stir-fry.",
-        "Batch-cooking one component — a pot of grains, roasted vegetables, or grilled protein — on a lower-key day can cut daily cooking time significantly for the rest of the week.",
+        "Batch-cooking one component — a pot of grains, roasted vegetables, or grilled protein — on a lower-key day can cut daily cooking time significantly for the rest of the week. [Easy healthy meals for busy people](/blog/easy-healthy-meals-for-busy-people) gives a 15-minute formula.",
       ],
     },
     {
@@ -93,12 +93,14 @@ export const article41: BlogPost = {
   conclusion: [
     "A busy schedule doesn't rule out healthy habits — it just rules out the versions that assume unlimited free time. Habits stacked onto your existing routine, movement broken into short blocks, and meals simplified rather than skipped can realistically fit into even a packed week.",
   ],
+  updatedAt: "2026-09-24",
   ctaText:
-    "Want more structured guidance for building habits like this? Browse the Natural Wellness Library for in-depth wellness ebooks.",
+    "Busy weeks need low-effort tracking. The free 30-Day Healthy Habits Challenge is a simple daily checklist that comes with the Natural Wellness Library.",
+  ctaHref: "/library/30-day-healthy-habits-challenge",
+  ctaLabel: "See the 30-Day Habits Checklist",
   relatedSlugs: [
     "how-to-build-healthy-habits-that-actually-last",
     "21-simple-healthy-habits-to-try",
-    "how-to-make-healthy-habits-easier-to-follow",
     "how-to-stay-active-during-a-busy-day",
   ],
 };

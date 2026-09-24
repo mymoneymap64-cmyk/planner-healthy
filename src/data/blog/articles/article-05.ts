@@ -31,7 +31,7 @@ export const article05: BlogPost = {
       level: 2,
       paragraphs: [
         "Most people plan around a bedtime — \"I'll be asleep by 10:30\" — but skip planning the transition into it. Without a wind-down window, the hour before bed often gets absorbed by whatever's on a screen, and bedtime arrives more abruptly than expected.",
-        "Instead, pick a wind-down start time roughly 30–45 minutes before your target bedtime. That's the point where the evening shifts from \"anything goes\" to a shorter, more repeatable sequence of habits.",
+        "Instead, pick a wind-down start time roughly 30–45 minutes before your target bedtime. That's the point where the evening shifts from \"anything goes\" to a shorter, more repeatable sequence of habits. (This guide is about the evening itself. For the other half — a steady wake-up time, how much sleep to aim for, and what to do on nights you can't fall asleep — see [how to create a better sleep routine](/blog/how-to-create-a-better-sleep-routine).)",
       ],
     },
     {
@@ -88,7 +88,7 @@ export const article05: BlogPost = {
     {
       question: "Is it okay to have caffeine in the evening?",
       answer:
-        "Caffeine can stay in your system for several hours, and sensitivity varies quite a bit from person to person. Many people find that avoiding caffeine within roughly six to eight hours of bedtime makes falling asleep easier, though this is worth adjusting to your own tolerance.",
+        "Caffeine can stay in your system for hours, and the FDA notes there is wide variation in how sensitive people are to it and how quickly they clear it. The CDC\'s sleep tips include avoiding caffeine in the afternoon or evening, so if you have trouble falling asleep, moving your last cup earlier in the day is a reasonable first experiment.",
     },
     {
       question: "What if my evenings are unpredictable because of work or family?",
@@ -104,8 +104,21 @@ export const article05: BlogPost = {
   conclusion: [
     "A healthy evening routine doesn't need to be long or rigid — it needs to be short, repeatable, and consistent enough that your body starts to recognize it as the signal to wind down. Set a wind-down start time, keep the sequence to a handful of steps, and protect the last fifteen minutes even on chaotic nights.",
   ],
+  updatedAt: "2026-09-24",
+  sources: [
+    {
+      label: "CDC — About Sleep (sleep needs and tips for better sleep)",
+      url: "https://www.cdc.gov/sleep/about/index.html",
+    },
+    {
+      label: "FDA — Spilling the Beans: How Much Caffeine Is Too Much?",
+      url: "https://www.fda.gov/consumers/consumer-updates/spilling-beans-how-much-caffeine-too-much",
+    },
+  ],
   ctaText:
-    "Want more practical guidance for everyday wellness? Browse the Natural Wellness Library of ebooks.",
+    "For a fuller wind-down system — evening routines, an environment checklist, and recovery trackers — see the Sleep & Recovery Handbook.",
+  ctaHref: "/library/sleep-recovery-handbook",
+  ctaLabel: "See the Sleep & Recovery Handbook",
   relatedSlugs: [
     "how-to-create-a-healthy-morning-routine",
     "how-to-create-a-better-sleep-routine",

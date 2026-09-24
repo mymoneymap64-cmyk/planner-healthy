@@ -122,13 +122,20 @@ export interface BlogPost {
   publishedAt: string;
   updatedAt?: string;
   readingTimeMinutes?: number;
+  /** One article the editors chose to lead the blog index. */
   featured?: boolean;
-  popular?: boolean;
+  /** Hand-picked "start here" article. Not a popularity claim. */
+  editorsPick?: boolean;
   intro: string[];
   sections: BlogSection[];
   faqs?: FaqItem[];
   conclusion: string[];
   ctaText?: string;
+  /** Internal path the CTA button links to (defaults to /library). */
+  ctaHref?: string;
+  ctaLabel?: string;
+  /** Real external sources backing the article's health-related claims. */
+  sources?: { label: string; url: string }[];
   relatedSlugs: string[];
 }
 

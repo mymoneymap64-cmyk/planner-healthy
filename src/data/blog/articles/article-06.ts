@@ -22,15 +22,15 @@ export const article06: BlogPost = {
       heading: "The Short Answer (and Why \"8 Glasses\" Isn't Quite Right)",
       level: 2,
       paragraphs: [
-        "For most healthy adults, somewhere between 91 and 125 ounces of total fluid per day (from all beverages and food combined) is a commonly cited general range, according to U.S. National Academies guidance — roughly 11.5 cups for women and 15.5 cups for men, including water from food, which typically supplies around 20% of total fluid intake. That's higher than the classic \"eight glasses,\" which was always more of a rounded, easy-to-remember guideline than a precise target.",
+        "The National Academies of Sciences, Engineering, and Medicine set an adequate intake of about 3.7 liters (125 ounces) of total water a day for men and 2.7 liters (91 ounces) for women. \"Total\" means everything — beverages plus the water in food, which typically supplies about 20% of the total. Take the food share out and that's roughly 9 cups of beverages for women and 12.5 cups for men. These figures describe what adequately hydrated healthy adults typically consume, not a requirement, and the classic \"eight glasses\" (64 ounces) was always more of a rounded, easy-to-remember guideline than a precise target.",
         "The honest answer is that there's no single number that's right for everyone. Body size, activity level, climate, and overall diet all shift the number meaningfully, which is why a personalized estimate tends to be more useful than a flat rule.",
       ],
     },
     {
-      heading: "A More Personalized Way to Estimate Your Needs",
+      heading: "A Rough Way to Personalize It",
       level: 2,
       paragraphs: [
-        "A commonly used starting formula is to drink roughly half your body weight in ounces of water per day. So a 160-pound person would aim for around 80 ounces (about 10 cups) as a baseline, before accounting for activity or heat.",
+        "Some people use a rule of thumb of roughly half their body weight in ounces of water per day. It's an informal shortcut, not official guidance, but it lands in the same neighborhood as the totals above for many adults, and it scales up for larger people. Treat it as a rough starting point to adjust from, not a target to hit exactly.",
       ],
       list: [
         "150 lb person: roughly 75 oz baseline (about 9 cups)",
@@ -58,14 +58,14 @@ export const article06: BlogPost = {
       level: 2,
       paragraphs: [
         "Yes, mostly. Coffee and tea do have a mild diuretic effect, but modern research suggests they still contribute net positive hydration for regular drinkers, not a deficit. You don't need to \"cancel out\" your morning coffee with extra water.",
-        "Food also matters more than most people realize — fruits and vegetables in particular can be 85–95% water by weight. Watermelon, cucumbers, oranges, and lettuce all meaningfully contribute to daily fluid intake, which is part of why building more produce into meals supports hydration too, not just nutrition.",
+        "Food also matters more than most people realize — fruits and vegetables in particular can be 85–95% water by weight. Watermelon, cucumbers, oranges, and lettuce all meaningfully contribute to daily fluid intake, which is part of why building more produce into meals supports hydration too, not just nutrition. Building more produce into your meals helps here too — see [how to build a balanced plate](/blog/how-to-build-a-balanced-plate).",
       ],
     },
     {
       heading: "Signs You're Probably Not Drinking Enough",
       level: 2,
       paragraphs: [
-        "Rather than tracking ounces obsessively, a few simple signals can tell you most of what you need to know day to day.",
+        "Rather than tracking ounces obsessively, a few simple signals can tell you most of what you need to know day to day. If you'd like practical ways to close the gap, see [easy ways to drink more water](/blog/easy-ways-to-drink-more-water).",
       ],
       list: [
         "Urine color is dark yellow rather than pale straw",
@@ -88,7 +88,7 @@ export const article06: BlogPost = {
     {
       question: "Is 8 glasses of water a day still a reasonable target?",
       answer:
-        "It's a reasonable minimum for many people, but it tends to underestimate needs for larger or more active individuals. Using roughly half your body weight in ounces as a starting point, then adjusting for activity and climate, tends to be more accurate.",
+        "It's a reasonable rough target — 64 ounces is close to the beverage portion of the National Academies figure for many women — but it's not an exact requirement, and larger or more active people, or those in hot climates, often need more. Thirst and urine color are more useful daily guides than a fixed number.",
     },
     {
       question: "Does sparkling water count toward daily water intake?",
@@ -107,10 +107,19 @@ export const article06: BlogPost = {
     },
   ],
   conclusion: [
-    "There's no single perfect number, but a baseline of roughly half your body weight in ounces, adjusted upward for activity, heat, and diet, is a far more useful starting point than a flat \"eight glasses\" rule. Pay attention to urine color and thirst as simple daily check-ins rather than tracking every ounce.",
+    "There's no single perfect number. The National Academies figures give a realistic range for healthy adults, and adjusting upward for activity, heat, and diet gets you closer to your own. Pay attention to thirst and urine color as simple daily check-ins rather than tracking every ounce — and if you have a medical condition or take medications that affect fluid balance, ask your healthcare provider what amount is right for you.",
+  ],
+  updatedAt: "2026-09-24",
+  sources: [
+    {
+      label: "National Academies — Report Sets Dietary Intake Levels for Water, Salt, and Potassium",
+      url: "https://www.nationalacademies.org/news/report-sets-dietary-intake-levels-for-water-salt-and-potassium-to-maintain-health-and-reduce-chronic-disease-risk",
+    },
   ],
   ctaText:
-    "Looking for more practical nutrition guidance? Explore the Natural Wellness Library of wellness ebooks.",
+    "Water is one small part of eating well. The Healthy Eating Guide covers real-food meals and everyday habits, with a matching planner and 30-day meal plan.",
+  ctaHref: "/library/healthy-eating-guide",
+  ctaLabel: "See the Healthy Eating Guide",
   relatedSlugs: [
     "easy-ways-to-drink-more-water",
     "how-to-make-healthy-eating-easier",

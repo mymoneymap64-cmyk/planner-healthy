@@ -40,7 +40,7 @@ export const article43: BlogPost = {
       level: 2,
       paragraphs: [
         "Not every habit belongs in the same bucket. Some genuinely benefit from daily repetition — hydration, a short walk, a consistent bedtime. Others are more naturally weekly — a longer workout, meal prep, a deeper self-care activity, a check-in on your goals. Forcing a weekly-shaped habit into a daily mold (like trying to meal prep every single day) usually just creates unnecessary friction.",
-        "Mapping this out explicitly — which habits are daily, which are weekly — makes the whole routine feel far more achievable, because you're no longer holding yourself to a daily standard for things that were never meant to happen that often.",
+        "Mapping this out explicitly — which habits are daily, which are weekly — makes the whole routine feel far more achievable, because you're no longer holding yourself to a daily standard for things that were never meant to happen that often. Self-care is a good example of a weekly-shaped habit; see [simple self-care habits for everyday life](/blog/simple-self-care-habits-for-everyday-life).",
       ],
       list: [
         "Daily: hydration, movement (even short), sleep consistency, a quick evening wind-down",
@@ -54,6 +54,20 @@ export const article43: BlogPost = {
       level: 2,
       paragraphs: [
         "Most weeks have a natural rhythm — busier days, lighter days, and days that are unpredictable. A weekly wellness routine works with that rhythm instead of ignoring it. Save your longer workout or meal prep for a day you know tends to have more time. Keep your busiest weekday light on obligations beyond the basics. Use a lower-key evening for a more intentional self-care activity rather than trying to squeeze it in after your longest day.",
+      ],
+    },
+    {
+      heading: "A Sample Weekly Layout",
+      level: 2,
+      paragraphs: [
+        "For a sense of how this looks in practice, here is one way to lay out a week. It's a template, not a prescription — swap days around to fit your own rhythm. For movement, the CDC\'s adult guidelines call for at least 150 minutes of moderate-intensity activity a week plus muscle-strengthening activity on at least 2 days, so a good weekly layout gives those a home.",
+      ],
+      list: [
+        "Every day: a consistent wake-up time, water with meals, a 10-minute walk, a short wind-down",
+        "Monday and Thursday: a 20–30 minute strength session (see [easy beginner exercises you can do at home](/blog/easy-beginner-exercises-you-can-do-at-home))",
+        "Wednesday: your lightest evening — a slow walk, stretching, or an early night",
+        "Saturday: a longer walk or an activity you enjoy, plus your grocery run",
+        "Sunday: a planning and reset session, plus a small round of [meal prep](/blog/how-to-meal-prep-for-a-busy-week)",
       ],
     },
     {
@@ -89,11 +103,20 @@ export const article43: BlogPost = {
   conclusion: [
     "A weekly wellness routine takes the pressure off treating every habit as a daily requirement and instead builds a well-rounded week out of habits placed where they actually fit — some daily, some weekly, all planned around your real schedule instead of an idealized one.",
   ],
+  updatedAt: "2026-09-24",
+  sources: [
+    {
+      label: "CDC — Adult Activity: An Overview (weekly activity guidelines)",
+      url: "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html",
+    },
+  ],
   ctaText:
-    "Want more practical guidance for everyday wellness? Browse the Natural Wellness Library of ebooks.",
+    "A weekly routine is easier to keep when it's written down. Every Natural Wellness Library guide comes with a matching planner and 30-day system.",
+  ctaHref: "/library",
+  ctaLabel: "Browse the Library",
   relatedSlugs: [
     "sunday-reset-routine-for-a-healthier-week",
-    "how-to-prepare-for-a-healthy-week",
+    "how-to-meal-prep-for-a-busy-week",
     "simple-self-care-habits-for-everyday-life",
     "how-to-create-a-sustainable-healthy-lifestyle",
   ],

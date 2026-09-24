@@ -17,8 +17,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!post) return {};
 
   const image = getImage(post.imageKey);
+  // Keep the brand suffix only when the full title stays within roughly what
+  // search results display; otherwise the descriptive part gets cut off.
+  const suffix = " | Natural Wellness Library";
+  const seoTitle = post.title.length + suffix.length <= 65 ? `${post.title}${suffix}` : post.title;
   return buildMetadata({
-    title: `${post.title} | Natural Wellness Library`,
+    title: seoTitle,
     description: post.metaDescription,
     path: `/blog/${post.slug}`,
     imageUrl: image.url,

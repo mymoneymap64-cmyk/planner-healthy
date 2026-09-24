@@ -48,7 +48,7 @@ export const article27: BlogPost = {
       heading: "Form Basics That Matter More Than Flexibility",
       level: 3,
       paragraphs: [
-        "You don't need to be flexible to stretch correctly — you need to stretch consistently and safely. A few basics apply across every stretch in the sequence above: move into each position slowly rather than bouncing into it, stop well before any sharp or pinching sensation, and hold each stretch long enough (20–30 seconds minimum) for the muscle to actually release rather than rushing through the sequence.",
+        "You don't need to be flexible to stretch correctly — you need to stretch consistently and safely. A few basics apply across every stretch in the sequence above: move into each position slowly rather than bouncing into it, stop well before any sharp or pinching sensation, and hold each stretch long enough (a common guideline is around 20–30 seconds) for the muscle to actually release rather than rushing through the sequence.",
       ],
     },
     {
@@ -107,8 +107,17 @@ export const article27: BlogPost = {
   conclusion: [
     "A good stretching routine doesn't need to be complicated or long to be effective — 10 focused minutes, done consistently, covers the areas that tend to get tightest for most beginners. Start with the sequence above, adjust hold times as needed, and let it become a steady part of your week rather than an afterthought.",
   ],
+  updatedAt: "2026-09-24",
+  sources: [
+    {
+      label: "National Institute on Aging (NIH) — Types of exercise, including flexibility",
+      url: "https://www.nia.nih.gov/health/exercise-and-physical-activity/four-types-exercise-can-improve-your-health-and-physical",
+    },
+  ],
   ctaText:
-    "Want to go deeper on movement and fitness? Browse the Natural Wellness Library for more wellness guides.",
+    "Stretching fits naturally into an evening wind-down. The Sleep & Recovery Handbook builds calm, restorative evening routines with a matching planner.",
+  ctaHref: "/library/sleep-recovery-handbook",
+  ctaLabel: "See the Sleep & Recovery Handbook",
   relatedSlugs: [
     "easy-beginner-exercises-you-can-do-at-home",
     "how-to-build-a-consistent-workout-routine",

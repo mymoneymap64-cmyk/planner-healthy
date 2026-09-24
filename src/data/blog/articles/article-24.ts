@@ -5,7 +5,7 @@ export const article24: BlogPost = {
   slug: "walking-vs-running-for-beginners",
   title: "Walking vs Running for Beginners",
   metaDescription:
-    "Trying to decide between walking and running as a beginner? Here's an honest comparison of both, plus how to know when — and if — you should progress to running.",
+    "Walking or running as a beginner? An honest comparison of both, plus how to know when — and if — you should progress from walking to running.",
   h1: "Walking vs Running for Beginners",
   category: "walking-movement",
   tags: ["walking", "running", "beginners", "cardio"],
@@ -23,7 +23,7 @@ export const article24: BlogPost = {
       heading: "The Real Difference Isn't Just Speed",
       level: 2,
       paragraphs: [
-        "The most important distinction between walking and running has less to do with how fast you're moving and more to do with impact. Walking is a low-impact activity — at least one foot is on the ground at all times, so your joints absorb roughly 1.5 times your body weight with each step. Running is high-impact: there's a brief airborne phase in every stride, and the impact force when your foot lands can be two to three times your body weight.",
+        "The most important distinction between walking and running has less to do with how fast you're moving and more to do with impact. Walking is a low-impact activity — at least one foot is on the ground at all times, so the load on your joints with each step is commonly estimated at around 1.5 times your body weight. Running is high-impact: there's a brief airborne phase in every stride, and commonly cited estimates put the force when your foot lands at two to three times your body weight.",
         "That difference matters most in the first few weeks of a new routine, before your joints, tendons, and connective tissue have adapted to consistent activity. It's a big part of why so many beginner running attempts end with shin splints, sore knees, or a nagging ache in the Achilles tendon within the first two weeks — the cardiovascular system often adapts faster than the joints and tendons do.",
       ],
     },
@@ -112,8 +112,21 @@ export const article24: BlogPost = {
   conclusion: [
     "Walking and running aren't really competitors — they're two points on the same path, and where you start should depend on your current fitness, your joints, and what you can realistically repeat several times a week. For most beginners, that starting point is walking, with running as an optional next step once a solid base is in place.",
   ],
+  updatedAt: "2026-09-24",
+  sources: [
+    {
+      label: "CDC — Benefits of Physical Activity",
+      url: "https://www.cdc.gov/physical-activity-basics/benefits/index.html",
+    },
+    {
+      label: "CDC — Adult Activity: An Overview (weekly activity guidelines)",
+      url: "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html",
+    },
+  ],
   ctaText:
-    "Looking for more ways to stay active? Explore the Natural Wellness Library of practical wellness guides.",
+    "If you'd like to keep a walking habit going, the free 30-Day Healthy Habits Challenge is a simple daily checklist that comes with the Natural Wellness Library.",
+  ctaHref: "/library/30-day-healthy-habits-challenge",
+  ctaLabel: "See the 30-Day Habits Checklist",
   relatedSlugs: [
     "beginner-walking-plan-for-better-fitness",
     "how-to-stay-active-during-a-busy-day",

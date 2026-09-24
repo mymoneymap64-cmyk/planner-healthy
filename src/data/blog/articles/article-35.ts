@@ -23,7 +23,7 @@ export const article35: BlogPost = {
       level: 2,
       paragraphs: [
         "A common mistake is equating discipline with intensity: more habits, stricter rules, less flexibility. In practice, the opposite tends to work better. A person who reliably does three simple things every day is more disciplined, in any meaningful sense, than someone who attempts twelve and completes four inconsistently.",
-        "Overcomplicated systems fail for a structural reason, not a willpower one — the more moving parts a routine has, the more points of failure it has. Simplifying isn't a lesser version of discipline; for most people, it's what makes discipline achievable at all.",
+        "Overcomplicated systems fail for a structural reason, not a willpower one — the more moving parts a routine has, the more points of failure it has. Simplifying isn't a lesser version of discipline; for most people, it's what makes discipline achievable at all. For the bigger picture on why structure beats motivation, see [why consistency matters more than motivation](/blog/why-consistency-matters-more-than-motivation).",
       ],
     },
     {
@@ -47,11 +47,11 @@ export const article35: BlogPost = {
       ],
     },
     {
-      heading: "Use Environment Instead of Willpower Wherever Possible",
+      heading: "Write If–Then Rules for the Predictable Hard Moments",
       level: 2,
       paragraphs: [
-        "The most disciplined-looking people often rely less on raw willpower than it appears — they've simply removed friction from the habits they want and added friction to the ones they don't. Willpower is a limited, fatiguing resource; environment design isn't.",
-        "Keeping walking shoes by the door, pre-portioning snacks instead of keeping a large bag open in the pantry, or charging your phone outside the bedroom are all small environment shifts that reduce how much willpower a habit requires in the moment.",
+        "Most breakdowns in discipline happen at predictable moments: the 3pm slump, the night you get home late, the weekend without structure. Instead of deciding in the moment — when you're least equipped to — write a one-line rule for each moment you already know is hard.",
+        "\"If I get home after 7pm, then dinner is the 15-minute meal from my backup list.\" \"If I don't feel like the full walk, then I do ten minutes.\" Rules like these turn a fresh negotiation with yourself into a decision you already made on a calm day. (For the design side — shrinking habits and removing steps — see [how to build healthy habits that actually last](/blog/how-to-build-healthy-habits-that-actually-last).)",
       ],
     },
     {
@@ -66,7 +66,7 @@ export const article35: BlogPost = {
       heading: "Judge Yourself by the Pattern, Not the Perfect Day",
       level: 2,
       paragraphs: [
-        "A disciplined life doesn't look like a flawless log. It looks like a pattern that holds up over weeks and months even with normal variation — a missed walk here, a skipped habit there, absorbed without derailing the whole system. If you're tracking your days, look at your overall trend over a week or two rather than obsessing over any single day.",
+        "A disciplined life doesn't look like a flawless log. It looks like a pattern that holds up over weeks and months even with normal variation — a missed walk here, a skipped habit there, absorbed without derailing the whole system. If you're tracking your days, look at your overall trend over a week or two rather than obsessing over any single day. [How to track progress without obsessing over results](/blog/how-to-track-progress-without-obsessing-over-results) shows what to look at.",
       ],
     },
   ],
@@ -95,12 +95,14 @@ export const article35: BlogPost = {
   conclusion: [
     "Real discipline isn't about how demanding your routine looks from the outside — it's about how reliably you follow a simple system, including on the days you don't feel like it. Fewer non-negotiables, an environment that supports them, and planned room for recovery will get you further than an elaborate routine you can't actually maintain.",
   ],
+  updatedAt: "2026-09-24",
   ctaText:
-    "Looking for more on building consistency and mindset? Explore the Natural Wellness Library of wellness guides.",
+    "Discipline is easier with a short, clear list. The free 30-Day Healthy Habits Challenge is a simple daily checklist that comes with the Natural Wellness Library.",
+  ctaHref: "/library/30-day-healthy-habits-challenge",
+  ctaLabel: "See the 30-Day Habits Checklist",
   relatedSlugs: [
     "why-consistency-matters-more-than-motivation",
     "how-to-set-realistic-health-goals",
-    "how-to-make-healthy-habits-easier-to-follow",
     "how-to-build-healthy-habits-that-actually-last",
   ],
 };

@@ -50,10 +50,23 @@ export function getFeaturedPost(): BlogPost {
   return BLOG_POSTS.find((p) => p.featured) ?? getAllPosts()[0];
 }
 
-export function getPopularPosts(limit = 5): BlogPost[] {
-  const popular = BLOG_POSTS.filter((p) => p.popular);
-  const pool = popular.length ? popular : getAllPosts();
-  return pool.slice(0, limit);
+/**
+ * Hand-picked "start here" articles. Deliberately not named or labeled
+ * "popular": there is no traffic data behind this list, only an editorial
+ * choice, so the UI must not imply otherwise.
+ */
+export function getEditorsPicks(limit = 4): BlogPost[] {
+  return BLOG_POSTS.filter((p) => p.editorsPick && !p.featured).slice(0, limit);
+}
+
+/** Last meaningful content change: `updatedAt` when set, else the publish date. */
+export function getPostLastModified(post: BlogPost): Date {
+  return new Date(post.updatedAt ?? post.publishedAt);
+}
+
+export function getLatestModified(posts: BlogPost[]): Date | undefined {
+  if (posts.length === 0) return undefined;
+  return new Date(Math.max(...posts.map((p) => getPostLastModified(p).getTime())));
 }
 
 export function getRelatedPosts(post: BlogPost, limit = 3): BlogPost[] {

@@ -32,7 +32,7 @@ export const article18: BlogPost = {
       level: 2,
       paragraphs: [
         "A common mistake is treating breakfast as all-or-nothing — either a full plate with eggs and toast, or nothing at all. If mornings are tight, that's an unrealistic bar to clear every single day. A far more sustainable approach is picking one or two go-to options that take under two minutes and require zero decision-making.",
-        "The goal early on isn't a perfectly balanced meal — it's simply building the habit of eating something. Once that's automatic, upgrading the quality is easy. Trying to nail both at once is usually what causes people to give up in the first week.",
+        "The goal early on isn't a perfectly balanced meal — it's simply building the habit of eating something. Once that's automatic, upgrading the quality is easy. Trying to nail both at once is usually what causes people to give up in the first week. Need ideas? [Healthy breakfast ideas for busy mornings](/blog/healthy-breakfast-ideas-for-busy-mornings) is organized by how much time you have.",
       ],
       list: [
         "A banana with a spoonful of peanut butter",
@@ -92,8 +92,11 @@ export const article18: BlogPost = {
   conclusion: [
     "Skipping breakfast usually isn't a discipline problem — it's a friction problem, an appetite problem, or both. Once you identify which one is actually driving it, the fix tends to be much simpler than expected: a smaller, easier meal, prepped the night before, with no pressure to make it perfect.",
   ],
+  updatedAt: "2026-09-24",
   ctaText:
-    "Looking for more practical nutrition guidance? Explore the Natural Wellness Library of wellness ebooks.",
+    "Making breakfast a habit takes a plan, not willpower. The Healthy Eating Guide focuses on sustainable, everyday eating habits.",
+  ctaHref: "/library/healthy-eating-guide",
+  ctaLabel: "See the Healthy Eating Guide",
   relatedSlugs: [
     "healthy-breakfast-ideas-for-busy-mornings",
     "how-to-create-a-healthy-morning-routine",

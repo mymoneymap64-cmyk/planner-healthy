@@ -26,7 +26,7 @@ export const article46: BlogPost = {
       paragraphs: [
         "New workout plan, complete diet overhaul, new sleep schedule, meditation, and cold showers — all starting Monday. This is the single most common way a healthy lifestyle attempt collapses within a week. Willpower and attention are limited resources, and trying to overhaul five habits simultaneously spreads that limited resource so thin that none of the changes get enough attention to stick.",
         "What works better: pick one or two changes to focus on for the first two weeks. Once those feel close to automatic, add the next one. It feels slower at the start, but it's dramatically more likely to still be in place three months later.",
-        "A helpful way to check yourself here: if you couldn't recite your current habit list from memory without checking a note, you're probably tracking too many things at once.",
+        "A helpful way to check yourself here: if you couldn't recite your current habit list from memory without checking a note, you're probably tracking too many things at once. [How to build healthy habits that actually last](/blog/how-to-build-healthy-habits-that-actually-last) shows how to start smaller.",
       ],
     },
     {
@@ -35,7 +35,7 @@ export const article46: BlogPost = {
       paragraphs: [
         "Missing one workout doesn't ruin a fitness routine. Eating pizza at a friend's birthday doesn't undo a week of good choices. But all-or-nothing thinking treats every imperfect day as proof the whole effort has failed — which often leads to abandoning the routine entirely rather than simply continuing from where you are.",
         "What works better: decide in advance that a missed day is data, not a verdict. The people who see lasting change aren't the ones who never slip — they're the ones who get back to their routine the very next day without treating the slip as the end of the story.",
-        "It can help to name this pattern before it happens. Deciding ahead of time that \"one off day means I continue tomorrow, not that I quit\" takes the decision out of the heat of the moment, when it's hardest to think clearly about it.",
+        "It can help to name this pattern before it happens. Deciding ahead of time that \"one off day means I continue tomorrow, not that I quit\" takes the decision out of the heat of the moment, when it's hardest to think clearly about it. After a slip, [how to get back on track after a bad day](/blog/how-to-get-back-on-track-after-a-bad-day) is the practical next step.",
       ],
     },
     {
@@ -60,7 +60,7 @@ export const article46: BlogPost = {
       level: 2,
       paragraphs: [
         "A routine that works well for a fitness influencer with a flexible schedule, no kids, and years of training history often doesn't translate to a beginner with a 9-to-5 and a family to manage. Copying it exactly usually sets up a comparison that a real life can't win, which erodes motivation fast.",
-        "What works better: use others' routines as inspiration, not a template. Adapt the underlying principle — more movement, more sleep, more consistent meals — to what actually fits your week.",
+        "What works better: use others' routines as inspiration, not a template. Adapt the underlying principle — more movement, more sleep, more consistent meals — to what actually fits your week. For a plan built around your own constraints, see [how to create a sustainable healthy lifestyle](/blog/how-to-create-a-sustainable-healthy-lifestyle).",
       ],
     },
     {
@@ -106,11 +106,15 @@ export const article46: BlogPost = {
   conclusion: [
     "None of these mistakes reflect a lack of willpower — they're just common, avoidable setup errors that almost every beginner runs into at least once. The fix for each one is usually simpler than it sounds: fewer changes at once, more flexibility around imperfect days, real attention to sleep, some form of tracking, a routine built for your actual life, a gentler starting point with food, and a start date that's today rather than some hypothetical better week.",
   ],
+  updatedAt: "2026-09-24",
   ctaText:
-    "Want more practical guidance for everyday wellness? Browse the Natural Wellness Library of ebooks.",
+    "Avoid the classic beginner mistakes with some structure. The free 30-Day Healthy Habits Challenge is a daily checklist for building routines gradually.",
+  ctaHref: "/library/30-day-healthy-habits-challenge",
+  ctaLabel: "See the 30-Day Habits Checklist",
   relatedSlugs: [
     "how-to-build-healthy-habits-that-actually-last",
-    "how-to-make-healthy-habits-easier-to-follow",
     "how-to-create-a-sustainable-healthy-lifestyle",
+    "how-to-get-back-on-track-after-a-bad-day",
+    "why-consistency-matters-more-than-motivation",
   ],
 };

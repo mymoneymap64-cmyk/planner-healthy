@@ -70,7 +70,7 @@ export const article42: BlogPost = {
       level: 3,
       paragraphs: [
         "One of the most practical things you can do is write down three or four small self-care actions ahead of time, so on a genuinely rough day you're not trying to think of one from scratch while already depleted. Keep the list realistic — a hot shower, a short walk outside, texting a friend, ten minutes with no phone — rather than aspirational things you'd only do with a free afternoon.",
-        "Having this list ready removes a small but real barrier: on the days you need self-care most, you often have the least energy to plan it, so a pre-made list does that thinking for you in advance.",
+        "Having this list ready removes a small but real barrier: on the days you need self-care most, you often have the least energy to plan it, so a pre-made list does that thinking for you in advance. A [weekly wellness routine](/blog/how-to-create-a-weekly-wellness-routine) is a good place to schedule a few of these.",
       ],
     },
   ],
@@ -94,8 +94,11 @@ export const article42: BlogPost = {
   conclusion: [
     "Self-care doesn't need to look like a retreat or a shopping list of products to be effective. The habits that genuinely support how you feel day to day are usually smaller and less visible — consistent sleep, a short daily wind-down, a boundary honored instead of ignored, a quick check-in with someone you care about.",
   ],
+  updatedAt: "2026-09-24",
   ctaText:
-    "Want more practical guidance for everyday wellness? Browse the Natural Wellness Library of ebooks.",
+    "Self-care is easier with a few good tools. The Mental Wellness Guide covers stress relief and calm daily habits.",
+  ctaHref: "/library/mental-wellness-guide",
+  ctaLabel: "Explore the Mental Wellness Guide",
   relatedSlugs: [
     "how-to-build-a-healthy-evening-routine",
     "how-to-create-a-weekly-wellness-routine",

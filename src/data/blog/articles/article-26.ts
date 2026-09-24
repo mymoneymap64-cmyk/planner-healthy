@@ -24,7 +24,7 @@ export const article26: BlogPost = {
       level: 2,
       paragraphs: [
         "There's a common instinct, especially at the start of a new fitness push, to go all in — daily workouts, every day of the week. It's an understandable impulse, but it works against most beginners for two connected reasons. First, muscles, joints, and connective tissue need recovery time to adapt to new stress, and that adaptation is where the actual fitness gains happen — not during the workout itself, but in the rest between sessions. Second, daily exercise for someone whose body isn't used to it dramatically raises the odds of burnout or minor injury within the first two weeks, which is often what ends a new routine entirely.",
-        "U.S. physical activity guidelines generally recommend at least 150 minutes of moderate-intensity activity per week for adults, spread across multiple days. Three to four structured sessions of 30–45 minutes each — plus some everyday walking — comfortably meets that target without requiring daily formal workouts.",
+        "The CDC's physical activity guidelines for adults call for at least 150 minutes of moderate-intensity activity a week (or 75 minutes of vigorous activity), plus muscle-strengthening activity on at least 2 days, and say the time can be spread across the week in smaller chunks. Three to four sessions of 30–45 minutes each — plus some everyday walking — can meet that target without requiring a formal workout every day.",
       ],
     },
     {
@@ -75,7 +75,7 @@ export const article26: BlogPost = {
       ],
     },
     {
-      heading: "What This Looks Like Over a Full 21 Days",
+      heading: "What This Adds Up To Over Three Weeks",
       level: 3,
       paragraphs: [
         "Applied across three weeks, a 3–4 day frequency generally means something like nine to twelve structured sessions total, spaced out with rest and light-walking days in between. That's a realistic, sustainable target for a beginner — enough repetition to notice real changes in strength and stamina by the end, without asking for more recovery than a new exerciser's body can reasonably provide.",
@@ -103,7 +103,7 @@ export const article26: BlogPost = {
     {
       question: "Does walking count toward my weekly exercise days?",
       answer:
-        "Yes. Walking counts as moderate-intensity activity and can either supplement structured workout days or serve as your primary form of exercise, especially in the early weeks of a new routine.",
+        "Yes. Brisk walking counts as moderate-intensity activity and can either supplement structured workout days or serve as your primary form of exercise, especially in the early weeks of a new routine.",
     },
     {
       question: "How long should each session be?",
@@ -112,10 +112,13 @@ export const article26: BlogPost = {
     },
   ],
   conclusion: [
-    "Three to four structured workout days a week, with rest or light walking on the days in between, gives most beginners enough consistency to build real fitness without outpacing their body's ability to recover. It's a specific, evidence-informed range — not a guess — and it's flexible enough to adjust as your fitness improves.",
+    "Three to four structured workout days a week, with rest or light walking on the days in between, gives most beginners enough consistency to build real fitness without outpacing their body's ability to recover. It's a practical starting range built around the national activity guidelines rather than a fixed rule, and it's flexible enough to adjust as your fitness improves.",
   ],
+  updatedAt: "2026-09-24",
   ctaText:
-    "Want to go deeper on movement and fitness? Browse the Natural Wellness Library for more wellness guides.",
+    "A weekly plan is easier to follow when it's written down. Every guide in the Natural Wellness Library includes a matching planner and 30-day system.",
+  ctaHref: "/library",
+  ctaLabel: "Browse the Library",
   relatedSlugs: [
     "how-to-build-a-consistent-workout-routine",
     "easy-beginner-exercises-you-can-do-at-home",

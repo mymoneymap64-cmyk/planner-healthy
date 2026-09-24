@@ -22,7 +22,7 @@ export const article03: BlogPost = {
       heading: "Nutrition Habits Worth Trying",
       level: 2,
       paragraphs: [
-        "Nutrition habits tend to have the most day-to-day options because there are so many small entry points — you don't need to overhaul your diet to feel a difference in how meals fit into your day.",
+        "Nutrition habits tend to have the most day-to-day options because there are so many small entry points — you don't need to overhaul your diet to feel a difference in how meals fit into your day. If you want to see what these can look like on a plate, [how to build a balanced plate](/blog/how-to-build-a-balanced-plate) is a simple place to start.",
       ],
       list: [
         "Add a vegetable to lunch and dinner, even a simple one like baby carrots or a side salad",
@@ -64,7 +64,7 @@ export const article03: BlogPost = {
       heading: "Mindset Habits Worth Trying",
       level: 2,
       paragraphs: [
-        "These habits take the least time on this entire list — most take under a minute — but they tend to have a real effect on how consistent you stay with everything else.",
+        "These habits take the least time on this entire list — most take under a minute — but they tend to have a real effect on how consistent you stay with everything else. To make any of these stick, see [how to build healthy habits that actually last](/blog/how-to-build-healthy-habits-that-actually-last); if your schedule is packed, [healthy habits for people with busy schedules](/blog/healthy-habits-for-people-with-busy-schedules) is built for that.",
       ],
       list: [
         "Write down one thing that went well before bed, even something small",
@@ -110,11 +110,15 @@ export const article03: BlogPost = {
   conclusion: [
     "The value of a list like this isn't in doing everything on it — it's in having enough options to find the two or three habits that actually fit your life. Small, realistic changes repeated consistently tend to add up to far more than an ambitious plan that only lasts a week.",
   ],
+  updatedAt: "2026-09-24",
   ctaText:
-    "Want more structured guidance for building habits like this? Browse the Natural Wellness Library for in-depth wellness ebooks.",
+    "If you'd rather have a checklist than a list, the free 30-Day Healthy Habits Challenge that comes with the Natural Wellness Library turns a few of these into a daily routine you can tick off.",
+  ctaHref: "/library/30-day-healthy-habits-challenge",
+  ctaLabel: "See the 30-Day Habits Checklist",
   relatedSlugs: [
     "how-to-build-healthy-habits-that-actually-last",
-    "how-to-make-healthy-habits-easier-to-follow",
     "healthy-habits-for-people-with-busy-schedules",
+    "how-to-build-a-balanced-plate",
+    "beginner-walking-plan-for-better-fitness",
   ],
 };

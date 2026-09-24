@@ -90,8 +90,21 @@ export const article22: BlogPost = {
   conclusion: [
     "Starting to exercise when you feel out of shape doesn't require confidence, a gym membership, or a body that's already somewhat fit — it requires permission to start small, privately if needed, and without comparing day one to anyone else's day one hundred. The discomfort of beginning fades faster than most people expect, and it fades specifically because they kept showing up.",
   ],
+  updatedAt: "2026-09-24",
+  sources: [
+    {
+      label: "CDC — Benefits of Physical Activity",
+      url: "https://www.cdc.gov/physical-activity-basics/benefits/index.html",
+    },
+    {
+      label: "CDC — Adult Activity: An Overview (weekly activity guidelines)",
+      url: "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html",
+    },
+  ],
   ctaText:
-    "Want to go deeper on movement and fitness? Browse the Natural Wellness Library for more wellness guides.",
+    "Starting again is easier with structure. Every guide in the Natural Wellness Library includes a planner and a 30-day system to keep you on track.",
+  ctaHref: "/library",
+  ctaLabel: "Browse the Library",
   relatedSlugs: [
     "beginner-walking-plan-for-better-fitness",
     "easy-beginner-exercises-you-can-do-at-home",

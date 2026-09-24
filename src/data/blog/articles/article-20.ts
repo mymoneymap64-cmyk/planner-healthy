@@ -31,7 +31,7 @@ export const article20: BlogPost = {
       heading: "Start With Swaps, Not Bans",
       level: 2,
       paragraphs: [
-        "Banning foods outright tends to backfire — it creates a sense of restriction that often leads to overcorrecting later. A gentler and more durable approach is to swap one commonly-eaten processed item at a time for a closer-to-whole alternative, without necessarily changing anything else about your routine.",
+        "Banning foods outright tends to backfire — it creates a sense of restriction that often leads to overcorrecting later. A gentler and more durable approach is to swap one commonly-eaten processed item at a time for a closer-to-whole alternative, without necessarily changing anything else about your routine. If willpower is the sticking point, see [how to make healthy eating easier](/blog/how-to-make-healthy-eating-easier).",
       ],
       list: [
         "Flavored yogurt cups → plain Greek yogurt with your own fruit or honey",
@@ -46,7 +46,7 @@ export const article20: BlogPost = {
       level: 3,
       paragraphs: [
         "You don't need to memorize chemical names to spot a heavily processed product — a quick heuristic works well enough for daily shopping. If the ingredient list is long, includes several kinds of added sugar under different names (corn syrup, dextrose, cane sugar), and contains ingredients you don't recognize as food, it's likely closer to the ultra-processed end of the spectrum.",
-        "This isn't about judging every item that fails the test — it's about noticing patterns across your typical week, so you can decide where a swap might actually be worth the effort.",
+        "This isn't about judging every item that fails the test — it's about noticing patterns across your typical week, so you can decide where a swap might actually be worth the effort. The FDA notes that the Added Sugars line on the Nutrition Facts label shows sugars added during processing. For a quick label-reading routine, see [simple grocery shopping tips for healthy eating](/blog/simple-grocery-shopping-tips-for-healthy-eating).",
       ],
     },
     {
@@ -91,8 +91,21 @@ export const article20: BlogPost = {
   conclusion: [
     "Reducing processed food isn't about achieving a perfectly \"clean\" pantry — it's about gradually shifting the balance toward whole foods in the categories where it matters most: what you drink, what you snack on, and what fills in the gaps on busy days. A handful of consistent swaps go further than a single dramatic overhaul.",
   ],
+  updatedAt: "2026-09-24",
+  sources: [
+    {
+      label: "FDA — How to Understand and Use the Nutrition Facts Label",
+      url: "https://www.fda.gov/food/nutrition-facts-label/how-understand-and-use-nutrition-facts-label",
+    },
+    {
+      label: "Dietary Guidelines for Americans (USDA and HHS)",
+      url: "https://www.dietaryguidelines.gov/",
+    },
+  ],
   ctaText:
-    "Looking for more practical nutrition guidance? Explore the Natural Wellness Library of wellness ebooks.",
+    "Swapping foods gets easier with real recipes to swap in. The Healthy Eating Guide is built around real food and balanced meals.",
+  ctaHref: "/library/healthy-eating-guide",
+  ctaLabel: "See the Healthy Eating Guide",
   relatedSlugs: [
     "how-to-make-healthy-eating-easier",
     "how-to-build-a-balanced-plate",

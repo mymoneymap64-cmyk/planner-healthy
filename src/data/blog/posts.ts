@@ -39,16 +39,15 @@ import { article38 } from "./articles/article-38";
 import { article41 } from "./articles/article-41";
 import { article42 } from "./articles/article-42";
 import { article43 } from "./articles/article-43";
-import { article44 } from "./articles/article-44";
 import { article45 } from "./articles/article-45";
 import { article46 } from "./articles/article-46";
-import { article47 } from "./articles/article-47";
 
 /**
  * Aggregates every surviving article data file into one list consumed by
  * src/lib/blog.ts. Articles 01, 39, 40, 48, 49, 50 were unpublished because
  * they were built entirely around the retired 21-Day Transformation
- * product. As new article-NN.ts files are added under
+ * product. Articles 44 and 47 were merged into 09 and 02 (same search intent);
+ * their old URLs 301-redirect in next.config.mjs. As new article-NN.ts files are added under
  * src/data/blog/articles/, import and append them here.
  */
 export const BLOG_POSTS: BlogPost[] = [
@@ -60,6 +59,5 @@ export const BLOG_POSTS: BlogPost[] = [
   article26, article27, article28, article29, article30,
   article31, article32, article33, article34, article35,
   article36, article37, article38, article41,
-  article42, article43, article44, article45,
-  article46, article47,
+  article42, article43, article45, article46,
 ];

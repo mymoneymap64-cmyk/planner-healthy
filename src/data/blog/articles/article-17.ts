@@ -23,7 +23,7 @@ export const article17: BlogPost = {
       heading: "Start With a Framework, Not a Fixed List",
       level: 2,
       paragraphs: [
-        "No single grocery list works for everyone — budgets, household size, and taste preferences vary too much. What does work universally is a framework: fill roughly half your cart with produce, a solid quarter with protein sources, and the rest with whole grains, dairy, and a handful of pantry staples. The categories below follow that same rough split, so you can swap items freely without losing the overall balance.",
+        "No single grocery list works for everyone — budgets, household size, and taste preferences vary too much. What does work universally is a framework: fill roughly half your cart with produce, a solid quarter with protein sources, and the rest with whole grains, dairy, and a handful of pantry staples. The categories below follow that same rough split, so you can swap items freely without losing the overall balance. Once the list is in hand, [these grocery shopping tips](/blog/simple-grocery-shopping-tips-for-healthy-eating) cover how to shop the store itself.",
       ],
     },
     {
@@ -84,7 +84,7 @@ export const article17: BlogPost = {
       heading: "Pantry and Frozen Staples",
       level: 2,
       paragraphs: [
-        "These are the background ingredients that make everything else usable — the difference between plain chicken and rice and an actual meal you'd want to eat again.",
+        "These are the background ingredients that make everything else usable — the difference between plain chicken and rice and an actual meal you'd want to eat again. For snack ideas that fit this shelf, see [easy healthy snacks to keep at home](/blog/easy-healthy-snacks-to-keep-at-home).",
       ],
       list: [
         "Olive oil and a neutral cooking oil",
@@ -120,8 +120,11 @@ export const article17: BlogPost = {
   conclusion: [
     "A healthy grocery list doesn't need to be complicated or exotic — it needs to be repeatable. Once you've settled on a core set of produce, protein, grains, and pantry staples that you actually enjoy, grocery shopping stops being a weekly guessing game and becomes closer to routine.",
   ],
+  updatedAt: "2026-09-24",
   ctaText:
-    "Want more help planning meals like this? The Natural Wellness Library includes in-depth guides on nutrition and healthy living.",
+    "Turn this list into a week of meals with the Healthy Eating Guide's recipes and 30-day meal plan.",
+  ctaHref: "/library/healthy-eating-guide",
+  ctaLabel: "See the Healthy Eating Guide",
   relatedSlugs: [
     "simple-grocery-shopping-tips-for-healthy-eating",
     "healthy-meal-planning-for-beginners",

@@ -13,6 +13,7 @@ export const article15: BlogPost = {
     "The plate method skips calorie counting entirely and instead uses simple portion sections you can eyeball at any meal, anywhere.",
   imageKey: "healthyMealsAlt",
   publishedAt: "2026-02-03",
+  featured: true,
   intro: [
     "If tracking calories or macros has never felt sustainable, you're far from alone — most people who try detailed tracking stop within a few weeks, not because it doesn't work for anyone, but because it takes ongoing time and attention that a normal life doesn't always allow for. The plate method is the low-effort alternative: instead of numbers, it uses simple visual portions that work at home, at a restaurant, or standing in front of an open fridge.",
     "It's not a new idea — variations of it have been used by dietitians for years — but it's worth explaining clearly, because once the basic proportions click, building a reasonably balanced meal stops requiring any math at all.",
@@ -22,7 +23,7 @@ export const article15: BlogPost = {
       heading: "The Basic Layout",
       level: 2,
       paragraphs: [
-        "Picture a standard dinner plate divided into three sections. This isn't a rule that needs to be followed with a ruler — it's a rough visual guide meant to make balance the default without any counting.",
+        "Picture a standard dinner plate divided into three sections. This isn't a rule that needs to be followed with a ruler — it's a rough visual guide meant to make balance the default without any counting. It's a simplified cousin of USDA's MyPlate, which also pictures fruits and vegetables filling half the plate and adds dairy and fruit as their own groups.",
       ],
       list: [
         "Half the plate: non-starchy vegetables — broccoli, salad greens, peppers, green beans, tomatoes, zucchini",
@@ -115,8 +116,17 @@ export const article15: BlogPost = {
   conclusion: [
     "The plate method works because it removes the need for tracking altogether — half vegetables, a quarter protein, a quarter carbohydrate is simple enough to remember and flexible enough to apply almost anywhere, from a home kitchen to a restaurant table.",
   ],
+  updatedAt: "2026-09-24",
+  sources: [
+    {
+      label: "USDA — MyPlate: What Is MyPlate?",
+      url: "https://www.myplate.gov/eat-healthy/what-is-myplate",
+    },
+  ],
   ctaText:
-    "Looking for more practical nutrition guidance? Explore the Natural Wellness Library of wellness ebooks.",
+    "The plate method is one tool in a bigger picture. The Healthy Eating Guide builds it out into recipes, a planner, and a 30-day meal plan.",
+  ctaHref: "/library/healthy-eating-guide",
+  ctaLabel: "See the Healthy Eating Guide",
   relatedSlugs: [
     "healthy-lunch-ideas-for-beginners",
     "healthy-dinner-ideas-for-a-simple-lifestyle",

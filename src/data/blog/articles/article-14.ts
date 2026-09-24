@@ -62,7 +62,7 @@ export const article14: BlogPost = {
       heading: "The Portion-Out-in-Advance Trick",
       level: 2,
       paragraphs: [
-        "Snacks bought in a large bag — nuts, trail mix, crackers — tend to get over-eaten simply because there's no natural stopping point while eating straight from the bag. Portioning a large bag into smaller containers or bags as soon as you get home from the store adds a built-in pause and makes it much easier to eat a reasonable amount without needing to measure anything in the moment.",
+        "Snacks bought in a large bag — nuts, trail mix, crackers — tend to get over-eaten simply because there's no natural stopping point while eating straight from the bag. Portioning a large bag into smaller containers or bags as soon as you get home from the store adds a built-in pause and makes it much easier to eat a reasonable amount without needing to measure anything in the moment. More ideas along these lines are in [how to make healthy eating easier](/blog/how-to-make-healthy-eating-easier).",
       ],
     },
     {
@@ -77,7 +77,7 @@ export const article14: BlogPost = {
       level: 2,
       paragraphs: [
         "Not all snacking has the same cause, and it can help to notice which one applies before automatically opening the pantry. Genuine hunger between meals — especially if there's a long stretch between lunch and dinner — usually calls for something with protein or fiber, since that's what tends to actually satisfy it. Boredom or stress snacking, on the other hand, often isn't really solved by any specific food, and noticing that distinction in the moment is sometimes enough to prompt a short walk or a glass of water instead, without needing to treat the craving as a moral issue either way.",
-        "This isn't about overanalyzing every craving — it's just a useful pause before defaulting to whatever's closest, especially on days when snacking has started to feel automatic rather than intentional.",
+        "This isn't about overanalyzing every craving — it's just a useful pause before defaulting to whatever's closest, especially on days when snacking has started to feel automatic rather than intentional. The same thinking works for full meals; see [how to build a balanced plate](/blog/how-to-build-a-balanced-plate).",
       ],
     },
     {
@@ -115,8 +115,11 @@ export const article14: BlogPost = {
     "Better snacking usually isn't a willpower problem — it's a stocking problem. Keeping a rotating set of fridge, pantry, and freezer staples on hand means the easy option and the reasonable option are usually the same thing, which takes most of the daily decision-making out of it.",
     "None of this requires a dramatic kitchen overhaul. Swapping in even three or four of the staples above, and keeping them visible rather than buried, is usually enough to shift what actually gets reached for on a normal afternoon.",
   ],
+  updatedAt: "2026-09-24",
   ctaText:
-    "Looking for more practical nutrition guidance? Explore the Natural Wellness Library of wellness ebooks.",
+    "Stocking the kitchen is the easy part once you have a plan. The Healthy Eating Guide covers balanced meals and sustainable everyday eating.",
+  ctaHref: "/library/healthy-eating-guide",
+  ctaLabel: "See the Healthy Eating Guide",
   relatedSlugs: [
     "healthy-grocery-list-for-beginners",
     "simple-grocery-shopping-tips-for-healthy-eating",

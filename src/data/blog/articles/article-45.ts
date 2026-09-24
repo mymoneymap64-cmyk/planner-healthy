@@ -24,9 +24,9 @@ export const article45: BlogPost = {
       heading: "Why a Weekly Reset Works Better Than Daily Improvising",
       level: 2,
       paragraphs: [
-        "Making decisions all day, every day, is genuinely tiring — a phenomenon researchers call decision fatigue. By the time you've decided what to wear, what to eat, when to leave, and what to prioritize at work, you have less mental energy left for the harder decisions, like whether to go for a walk or skip it, or whether to cook or order in.",
+        "Making decisions all day, every day, is genuinely tiring — a tiredness often described as decision fatigue. By the time you've decided what to wear, what to eat, when to leave, and what to prioritize at work, you have less mental energy left for the harder decisions, like whether to go for a walk or skip it, or whether to cook or order in.",
         "A reset routine batches the low-stakes but frequent decisions — outfits, meals, schedule logistics — into one sitting, so your weekday self isn't relitigating them one at a time under time pressure.",
-        "There's also a psychological benefit that's easy to underestimate: a completed reset gives you a tangible sense of being prepared, which tends to lower the low-grade anxiety that builds up over an unplanned week. Walking into Monday with a rough sense of the whole week ahead feels categorically different from walking in blind.",
+        "There's also a psychological benefit that's easy to underestimate: a completed reset gives you a tangible sense of being prepared, which tends to lower the low-grade anxiety that builds up over an unplanned week. Walking into Monday with a rough sense of the whole week ahead feels categorically different from walking in blind. If you'd rather spread habits across the week than batch them, see [how to create a weekly wellness routine](/blog/how-to-create-a-weekly-wellness-routine).",
       ],
     },
     {
@@ -77,7 +77,7 @@ export const article45: BlogPost = {
       heading: "Do a Light Pass on Meals, Not a Full Prep Session",
       level: 3,
       paragraphs: [
-        "A Sunday reset isn't the same as full meal prep — it's lighter. Rough out what you'll eat for the week, check what you already have, and jot a quick grocery list if needed. If you want to go further into batch cooking specifically, [how to prepare for a healthy week](/blog/how-to-prepare-for-a-healthy-week) covers that in more depth. For the reset itself, keep this step to 10–15 minutes.",
+        "A Sunday reset isn't the same as full meal prep — it's lighter. Rough out what you'll eat for the week, check what you already have, and jot a quick grocery list if needed. If you want to go further into batch cooking specifically, [how to meal prep for a busy week](/blog/how-to-meal-prep-for-a-busy-week) covers that in more depth. For the reset itself, keep this step to 10–15 minutes.",
       ],
     },
     {
@@ -121,10 +121,13 @@ export const article45: BlogPost = {
   conclusion: [
     "A Sunday reset isn't about squeezing more productivity out of your weekend — it's about handing your future self a week that's already been thought through once. Reset your space, glance at what's coming, prep just enough food to avoid a scramble, pick one habit to prioritize, and set out Monday morning before you go to bed. None of it takes long, and the payoff compounds every week you keep doing it.",
   ],
+  updatedAt: "2026-09-24",
   ctaText:
-    "Want more practical guidance for everyday wellness? Browse the Natural Wellness Library of ebooks.",
+    "Set the week up on paper. Each guide in the Natural Wellness Library includes a matching planner to plan it in.",
+  ctaHref: "/library",
+  ctaLabel: "Browse the Library",
   relatedSlugs: [
-    "how-to-prepare-for-a-healthy-week",
+    "how-to-meal-prep-for-a-busy-week",
     "how-to-create-a-weekly-wellness-routine",
     "how-to-create-a-healthy-morning-routine",
     "how-to-build-a-healthy-evening-routine",

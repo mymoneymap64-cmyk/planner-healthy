@@ -13,6 +13,7 @@ export const article21: BlogPost = {
     "Walking is one of the most accessible ways to build fitness — no gym, no equipment, no experience required. Here's a simple 4-week plan to start with.",
   imageKey: "walking",
   publishedAt: "2026-02-15",
+  editorsPick: true,
   intro: [
     "Walking gets overlooked as \"real\" exercise, which is a shame, because it might be the single most sustainable form of movement there is. It requires no equipment beyond a decent pair of shoes, no gym membership, no learning curve, and it's something almost everybody's body can do, regardless of current fitness level.",
     "The problem most beginners run into isn't walking itself — it's not knowing how to structure it. Walk too little and it doesn't feel like it's doing anything; walk too far too soon and sore feet or a flare of shin pain can end the habit before it starts. A simple, gradual progression solves both problems.",
@@ -61,7 +62,7 @@ export const article21: BlogPost = {
       level: 2,
       paragraphs: [
         "By the end of week 4, most people notice walking 25–30 minutes feels noticeably easier than it did in week 1 — a good sign your baseline fitness is genuinely improving. From here, you have a few reasonable directions: extend your walks further, add more frequent brisk intervals, incorporate hills or stairs, or start layering in bodyweight strength work on alternating days.",
-        "If you're curious how walking compares to picking up the pace into jogging, [Walking vs Running for Beginners](/blog/walking-vs-running-for-beginners) breaks down how to know when — or whether — that transition makes sense for you.",
+        "If you're curious how walking compares to picking up the pace into jogging, [Walking vs Running for Beginners](/blog/walking-vs-running-for-beginners) breaks down how to know when — or whether — that transition makes sense for you. If you're coming back after a long break and even this feels like a lot, start with [how to start exercising when you are out of shape](/blog/how-to-start-exercising-when-you-are-out-of-shape).",
       ],
     },
   ],
@@ -90,8 +91,17 @@ export const article21: BlogPost = {
   conclusion: [
     "A beginner walking plan doesn't need to be complicated to work — it needs to start small enough to actually finish and progress slowly enough to stick. Four weeks of consistent, gradually increasing walks builds a real fitness foundation, plus the kind of momentum that makes the next step, whatever you choose, feel far more approachable.",
   ],
+  updatedAt: "2026-09-24",
+  sources: [
+    {
+      label: "CDC — Adult Activity: An Overview (weekly activity guidelines)",
+      url: "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html",
+    },
+  ],
   ctaText:
-    "Looking for more ways to stay active? Explore the Natural Wellness Library of practical wellness guides.",
+    "Walking pairs well with a plan on paper. Every guide in the Natural Wellness Library comes with a matching planner and 30-day system.",
+  ctaHref: "/library",
+  ctaLabel: "Browse the Library",
   relatedSlugs: [
     "walking-vs-running-for-beginners",
     "how-to-stay-active-during-a-busy-day",

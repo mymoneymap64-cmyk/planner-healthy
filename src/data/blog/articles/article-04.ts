@@ -51,7 +51,7 @@ export const article04: BlogPost = {
       heading: "A Sample Realistic Morning Routine (25–30 Minutes)",
       level: 2,
       paragraphs: [
-        "If you're not sure where to start, here's a version that fits most schedules without requiring an earlier alarm than you're used to.",
+        "If you're not sure where to start, here's a version that fits most schedules without requiring an earlier alarm than you're used to. For ideas on what to eat, see [healthy breakfast ideas for busy mornings](/blog/healthy-breakfast-ideas-for-busy-mornings).",
       ],
       list: [
         "0–2 min: Drink a glass of water",
@@ -97,14 +97,23 @@ export const article04: BlogPost = {
     {
       question: "How long does it take for a morning routine to feel automatic?",
       answer:
-        "Most people find a simple routine starts to feel automatic somewhere in the range of a few weeks of consistent repetition, though this varies by person and by how many steps the routine has.",
+        "It varies a lot. Research on habit formation has found anything from a few weeks to several months before a behavior feels automatic, and simpler routines tend to get there sooner than complicated ones.",
     },
   ],
   conclusion: [
     "A healthy morning routine isn't about waking up at 5 a.m. or fitting in an hour of self-care before work — it's about a short, repeatable sequence that gets you hydrated, moving a little, and oriented toward your day before screens take over. Ten to thirty minutes, done consistently, will outperform an elaborate routine you only manage twice a week.",
   ],
+  updatedAt: "2026-09-24",
+  sources: [
+    {
+      label: "Lally et al. (2010), How are habits formed: Modelling habit formation in the real world, European Journal of Social Psychology",
+      url: "https://onlinelibrary.wiley.com/doi/10.1002/ejsp.674",
+    },
+  ],
   ctaText:
-    "Want more practical guidance for everyday wellness? Browse the Natural Wellness Library of ebooks.",
+    "A morning routine sticks better with a plan on paper. The Mental Wellness Guide includes calm-habit routines and a matching planner and 30-day system.",
+  ctaHref: "/library/mental-wellness-guide",
+  ctaLabel: "Explore the Mental Wellness Guide",
   relatedSlugs: [
     "how-to-build-a-healthy-evening-routine",
     "sunday-reset-routine-for-a-healthier-week",

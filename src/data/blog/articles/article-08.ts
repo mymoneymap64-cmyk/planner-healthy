@@ -59,10 +59,10 @@ export const article08: BlogPost = {
       heading: "Batch Cook Two or Three Components, Not Every Meal",
       level: 2,
       paragraphs: [
-        "A common beginner mistake is trying to fully cook every meal for the week in one sitting, which turns meal prep into a multi-hour ordeal that's easy to burn out on. A more sustainable approach is prepping two or three components that can be mixed and matched across several meals.",
+        "As a beginner, you don't need a full prep system yet — just a couple of head starts. Cooking two or three components that can be mixed and matched across several meals is enough to make weeknights easier. When you're ready for the full routine, [how to meal prep for a busy week](/blog/how-to-meal-prep-for-a-busy-week) covers timing, storage, and keeping it going.",
       ],
       list: [
-        "Cook a large batch of a grain (rice, quinoa, farro) that keeps well for 4–5 days",
+        "Cook a large batch of a grain (rice, quinoa, farro) that keeps well for 3–4 days in the fridge",
         "Roast a full sheet pan of vegetables — they reheat easily and work in bowls, wraps, or as a side",
         "Cook one protein in bulk (grilled chicken, baked salmon, a pot of beans) to portion across meals",
         "Wash and chop raw vegetables for snacking, even if you don't cook them yet",
@@ -107,12 +107,20 @@ export const article08: BlogPost = {
   conclusion: [
     "Beginner-friendly meal planning is really just three things: a loose framework for what goes on your plate, a grocery list built around that framework, and a couple of prepped components so weeknights don't require decisions from scratch. None of it requires perfection, and a partial plan still beats no plan at all.",
   ],
+  updatedAt: "2026-09-24",
+  sources: [
+    {
+      label: "USDA Food Safety and Inspection Service — Leftovers and Food Safety",
+      url: "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety",
+    },
+  ],
   ctaText:
-    "Want more help planning meals like this? The Natural Wellness Library includes in-depth guides on nutrition and healthy living.",
+    "Want the recipes and a ready-made 30-day meal plan behind a week of planning? The Healthy Eating Guide includes both.",
+  ctaHref: "/library/healthy-eating-guide",
+  ctaLabel: "See the Healthy Eating Guide",
   relatedSlugs: [
     "how-to-meal-prep-for-a-busy-week",
     "healthy-grocery-list-for-beginners",
     "simple-grocery-shopping-tips-for-healthy-eating",
-    "how-to-prepare-for-a-healthy-week",
   ],
 };

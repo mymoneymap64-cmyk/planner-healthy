@@ -22,14 +22,14 @@ export const article31: BlogPost = {
       heading: "Get Morning Sunlight Within an Hour of Waking",
       level: 2,
       paragraphs: [
-        "This is one of the most underrated sleep habits, mostly because it doesn't happen at night. Exposure to natural light shortly after waking helps set your circadian rhythm, which in turn affects when your body naturally starts producing melatonin later that evening. Even 10 minutes on a porch, balcony, or short walk can make a measurable difference.",
+        "This is one of the most underrated sleep habits, mostly because it doesn't happen at night. Exposure to natural light shortly after waking is generally understood to help set your circadian rhythm, the internal clock that influences when you feel sleepy later. Even 10 minutes on a porch, balcony, or short walk is an easy thing to try for a week.",
       ],
     },
     {
       heading: "Move Your Body — Timing Matters More Than Intensity",
       level: 2,
       paragraphs: [
-        "Regular movement is consistently linked with better sleep quality, but when you exercise matters almost as much as whether you exercise. Vigorous workouts within about 1–2 hours of bedtime can leave some people too alert to wind down easily, while the same workout done in the morning or early afternoon tends to support better sleep that night.",
+        "Regular physical activity is linked with better sleep quality — the CDC lists better sleep among its benefits — and for some people, timing matters too. Vigorous workouts close to bedtime can leave some people too alert to wind down easily, while the same workout earlier in the day often causes no trouble. Notice how your own body responds.",
         "If evenings are your only available window, gentler movement — walking, stretching, light yoga — is far less likely to interfere with falling asleep than a high-intensity session.",
       ],
     },
@@ -37,10 +37,10 @@ export const article31: BlogPost = {
       heading: "Watch What (and When) You Eat and Drink in the Evening",
       level: 2,
       paragraphs: [
-        "A heavy, rich meal too close to bedtime can keep digestion active while your body is trying to wind down, and alcohol — despite feeling like it helps you fall asleep faster — tends to fragment sleep in the second half of the night, leading to more wake-ups you may not even remember. A lighter dinner finished 2–3 hours before bed tends to work better for most people than eating right up until lights-out.",
+        "The CDC\'s sleep tips include avoiding large meals and alcohol before bedtime. A heavy, rich meal too close to bed can leave you uncomfortable while your body is trying to wind down, and alcohol — despite feeling like it helps you fall asleep — can disrupt sleep later in the night. A lighter dinner finished a couple of hours before bed works better for many people than eating right up until lights-out.",
       ],
       list: [
-        "Finish your last full meal at least 2–3 hours before bed",
+        "Finish your last large meal a couple of hours before bed when you can",
         "If you get hungry later, choose something light rather than skipping or overeating",
         "Limit alcohol close to bedtime, even though it can feel relaxing in the moment",
         "Stay hydrated earlier in the day so you're not drinking large amounts right before bed",
@@ -50,14 +50,14 @@ export const article31: BlogPost = {
       heading: "Keep Your Sleep and Wake Times Consistent, Even on Weekends",
       level: 2,
       paragraphs: [
-        "Sleeping in by two or three hours on weekends feels like a reward, but it functions a lot like short-distance jet lag — sometimes called \"social jet lag\" — and can make Monday mornings noticeably harder. Keeping your wake-up time within about an hour of your weekday schedule, even when you don't have to, helps your body maintain a steadier internal rhythm.",
+        "The CDC\'s first tip for better sleep is going to bed and getting up at the same time every day. Big weekend swings can make Monday mornings noticeably harder, so keeping your wake-up time fairly close to your weekday schedule helps. [How to create a better sleep routine](/blog/how-to-create-a-better-sleep-routine) covers how to build a schedule around a fixed wake-up time.",
       ],
     },
     {
       heading: "Create a Short Buffer Between Screens and Sleep",
       level: 2,
       paragraphs: [
-        "You don't need a strict no-screens rule to benefit here — a 20–30 minute buffer where you switch from active scrolling to something more passive (an audiobook, low-volume music, a few pages of a book) is often enough. The goal isn't eliminating screens; it's avoiding mentally stimulating content right as you're trying to relax.",
+        "The CDC suggests turning off electronic devices at least 30 minutes before bedtime. You don't need a strict no-screens rule to benefit — the goal is avoiding mentally stimulating content right as you're trying to relax. The full evening version of this is in [how to build a healthy evening routine](/blog/how-to-build-a-healthy-evening-routine).",
       ],
     },
     {
@@ -93,8 +93,21 @@ export const article31: BlogPost = {
   conclusion: [
     "Better sleep rarely comes from one dramatic change — it tends to come from a handful of small, consistent habits stacked throughout the day, not just the hour before bed. Morning light, workout timing, a lighter evening meal, and a steady wake-up time all pull in the same direction.",
   ],
+  updatedAt: "2026-09-24",
+  sources: [
+    {
+      label: "CDC — About Sleep (sleep needs and tips for better sleep)",
+      url: "https://www.cdc.gov/sleep/about/index.html",
+    },
+    {
+      label: "CDC — Benefits of Physical Activity",
+      url: "https://www.cdc.gov/physical-activity-basics/benefits/index.html",
+    },
+  ],
   ctaText:
-    "Want more guidance on building routines like this? Browse the Natural Wellness Library of wellness ebooks.",
+    "Sleep habits work best when you can see them. The Sleep & Recovery Handbook includes recovery trackers and a 30-day reset.",
+  ctaHref: "/library/sleep-recovery-handbook",
+  ctaLabel: "See the Sleep & Recovery Handbook",
   relatedSlugs: [
     "how-to-create-a-better-sleep-routine",
     "how-sleep-affects-your-daily-routine",

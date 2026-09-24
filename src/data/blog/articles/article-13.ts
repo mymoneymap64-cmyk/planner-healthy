@@ -49,7 +49,7 @@ export const article13: BlogPost = {
       heading: "Keep 3–4 Dinners on Repeat",
       level: 2,
       paragraphs: [
-        "Trying to cook something different every single night adds a layer of pressure that most simple lifestyles don't need. It's genuinely fine — and often easier to sustain — to settle into three or four dinners you rotate through most weeks, saving new recipes for when you actually feel like experimenting rather than treating it as a nightly requirement.",
+        "Trying to cook something different every single night adds a layer of pressure that most simple lifestyles don't need. It's genuinely fine — and often easier to sustain — to settle into three or four dinners you rotate through most weeks, saving new recipes for when you actually feel like experimenting rather than treating it as a nightly requirement. For faster weeknight formulas, see [easy healthy meals for busy people](/blog/easy-healthy-meals-for-busy-people).",
       ],
     },
     {
@@ -102,8 +102,11 @@ export const article13: BlogPost = {
     "A simple dinner routine isn't about mastering new recipes — it's about lowering the number of decisions each meal requires. Sheet pan meals, one-pot dinners, and a rotisserie chicken shortcut can cover most weeknights with very little active cooking time or cleanup.",
     "Give yourself permission to let dinner be repetitive and unglamorous most nights. A kitchen that runs on three or four reliable, low-effort meals tends to produce far more consistent eating over months and years than one that's chasing a new recipe every night and burning out within a few weeks.",
   ],
+  updatedAt: "2026-09-24",
   ctaText:
-    "Looking for more practical nutrition guidance? Explore the Natural Wellness Library of wellness ebooks.",
+    "Looking for more low-effort dinners? The Healthy Eating Guide is written for people who want to eat better without overhauling their lives.",
+  ctaHref: "/library/healthy-eating-guide",
+  ctaLabel: "See the Healthy Eating Guide",
   relatedSlugs: [
     "healthy-lunch-ideas-for-beginners",
     "easy-healthy-meals-for-busy-people",

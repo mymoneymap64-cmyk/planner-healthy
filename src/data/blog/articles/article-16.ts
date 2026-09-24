@@ -45,7 +45,7 @@ export const article16: BlogPost = {
       level: 3,
       paragraphs: [
         "You don't need to analyze every nutrition label in detail to shop better — that's how a 45-minute grocery run turns into two hours. A faster approach: flip the package over and glance at the ingredient list before the nutrition panel. If it reads like a recipe you could recognize (oats, almonds, cinnamon), that's a good sign. If it's a long string of unfamiliar additives and multiple types of added sugar, it's worth a second look.",
-        "For packaged staples like bread, yogurt, and pasta sauce — foods that sound healthy but often aren't — a quick check of added sugar and sodium per serving is usually enough. A jarred marinara with 3 grams of sugar per serving is a different product than one with 12, even though they look nearly identical on the shelf.",
+        "For packaged staples like bread, yogurt, and pasta sauce — foods that sound healthy but often aren't — a quick check of added sugar and sodium per serving is usually enough. A jarred marinara with 3 grams of sugar per serving is a different product than one with 12, even though they look nearly identical on the shelf. For a closer look at cutting back on heavily processed foods, see [simple ways to reduce processed foods](/blog/simple-ways-to-reduce-processed-foods).",
       ],
     },
     {
@@ -68,7 +68,7 @@ export const article16: BlogPost = {
       heading: "Build a Repeatable Core Cart",
       level: 2,
       paragraphs: [
-        "One of the most underrated ways to shop healthier is to stop reinventing your grocery list every single week. Most people who eat consistently well have a rotating set of 15–20 staples they buy on repeat, with just a few items changing week to week for variety. This cuts decision fatigue dramatically and makes it much easier to walk in, shop fast, and walk out with a cart that matches your plan.",
+        "One of the most underrated ways to shop healthier is to stop reinventing your grocery list every single week. Most people who eat consistently well have a rotating set of 15–20 staples they buy on repeat, with just a few items changing week to week for variety. This cuts decision fatigue dramatically and makes it much easier to walk in, shop fast, and walk out with a cart that matches your plan. Not sure what belongs in that core cart? [A healthy grocery list for beginners](/blog/healthy-grocery-list-for-beginners) lays it out by category, and [easy healthy snacks to keep at home](/blog/easy-healthy-snacks-to-keep-at-home) covers the snack shelf.",
       ],
     },
   ],
@@ -97,12 +97,20 @@ export const article16: BlogPost = {
   conclusion: [
     "You don't need a perfect cart every week to eat well — you need a shopping routine that makes the healthy option the easy option most of the time. Starting with a list, shopping the perimeter first, and building a repeatable set of staples takes most of the daily decision-making out of eating well.",
   ],
+  updatedAt: "2026-09-24",
+  sources: [
+    {
+      label: "FDA — How to Understand and Use the Nutrition Facts Label",
+      url: "https://www.fda.gov/food/nutrition-facts-label/how-understand-and-use-nutrition-facts-label",
+    },
+  ],
   ctaText:
-    "Want more help planning meals like this? The Natural Wellness Library includes in-depth guides on nutrition and healthy living.",
+    "Shopping is easier when you know what you're cooking. The Healthy Eating Guide pairs balanced recipes with a 30-day meal plan to shop from.",
+  ctaHref: "/library/healthy-eating-guide",
+  ctaLabel: "See the Healthy Eating Guide",
   relatedSlugs: [
     "healthy-grocery-list-for-beginners",
     "healthy-meal-planning-for-beginners",
     "how-to-meal-prep-for-a-busy-week",
-    "how-to-prepare-for-a-healthy-week",
   ],
 };

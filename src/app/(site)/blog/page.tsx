@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { ArrowRight, Flame } from "lucide-react";
+import { ArrowRight, BookMarked } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import BlogPostCard from "@/components/BlogPostCard";
 import BlogExplorer from "@/components/BlogExplorer";
 import NewsletterCTA from "@/components/NewsletterCTA";
 import ResponsiveImage from "@/components/ResponsiveImage";
-import { getAllPosts, getFeaturedPost, getPopularPosts } from "@/lib/blog";
+import { getAllPosts, getEditorsPicks, getFeaturedPost } from "@/lib/blog";
 import { BLOG_CATEGORIES } from "@/data/blog/categories";
 import { buildMetadata } from "@/lib/seo";
 
@@ -19,7 +19,7 @@ export const metadata = buildMetadata({
 export default function BlogPage() {
   const posts = getAllPosts();
   const featured = getFeaturedPost();
-  const popular = getPopularPosts(4).filter((p) => p.slug !== featured.slug);
+  const picks = getEditorsPicks(4);
   const latest = posts.filter((p) => p.slug !== featured.slug);
 
   return (
@@ -65,14 +65,14 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {popular.length > 0 && (
+      {picks.length > 0 && (
         <section className="section-pad !pb-10">
           <div className="container-page">
             <p className="mb-5 flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-gold-600">
-              <Flame size={14} /> Popular Articles
+              <BookMarked size={14} /> Editor&apos;s Picks — Good Places to Start
             </p>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {popular.map((p) => (
+              {picks.map((p) => (
                 <BlogPostCard key={p.slug} post={p} />
               ))}
             </div>

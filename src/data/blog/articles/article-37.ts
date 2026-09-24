@@ -46,7 +46,7 @@ export const article37: BlogPost = {
       level: 2,
       paragraphs: [
         "One of the most effective changes you can make is deciding, in advance, how often you'll actually look at outcome numbers — and sticking to that schedule instead of checking on impulse. A common, sustainable rhythm is a weekly weigh-in on the same day and under the same conditions (first thing in the morning, before eating), progress photos every two weeks, and body measurements once a month.",
-        "If daily weigh-ins have historically wrecked your mood, it's completely reasonable to remove the scale from your routine entirely for the length of a challenge and rely on process tracking and how you feel instead.",
+        "If daily weigh-ins have historically wrecked your mood, it's completely reasonable to remove the scale from your routine entirely for the next month or two and rely on process tracking and how you feel instead.",
       ],
     },
     {
@@ -70,7 +70,7 @@ export const article37: BlogPost = {
       level: 2,
       paragraphs: [
         "Plateaus are a normal, expected part of almost any health routine, not a sign that something has gone wrong. Bodies adapt, and progress that was fast at first often slows or briefly stalls even when your habits haven't changed at all. The instinct in this moment is often to add more — more restriction, more workouts, more rules — but the more useful move is usually to check your process metrics first.",
-        "If you're still hitting your habits consistently, a plateau is often just biology catching its breath, not a reason to overhaul everything. If you're realistic about what a plateau means (see [how to set realistic health goals](/blog/how-to-set-realistic-health-goals) for more on this), it becomes a lot easier to stay steady through it instead of abandoning habits that were working.",
+        "If you're still hitting your habits consistently, a plateau is often just biology catching its breath, not a reason to overhaul everything. If you're realistic about what a plateau means (see [how to set realistic health goals](/blog/how-to-set-realistic-health-goals) for more on this), it becomes a lot easier to stay steady through it instead of abandoning habits that were working. A slow stretch is also a common moment to want to quit — see [how to get back on track after a bad day](/blog/how-to-get-back-on-track-after-a-bad-day).",
       ],
     },
   ],
@@ -99,8 +99,11 @@ export const article37: BlogPost = {
   conclusion: [
     "Tracking is meant to be a flashlight, not a scoreboard — something that helps you see where you are, not something that grades you every single day. The version of tracking that actually supports long-term change focuses on what you did, checked in on a reasonable schedule, and reads results as trends instead of daily verdicts.",
   ],
+  updatedAt: "2026-09-24",
   ctaText:
-    "Looking for more on building consistency and mindset? Explore the Natural Wellness Library of wellness guides.",
+    "Tracking should support you, not stress you. The Mental Wellness Guide includes a planner and a 30-day system for building calm, repeatable habits.",
+  ctaHref: "/library/mental-wellness-guide",
+  ctaLabel: "Explore the Mental Wellness Guide",
   relatedSlugs: [
     "why-consistency-matters-more-than-motivation",
     "how-to-set-realistic-health-goals",

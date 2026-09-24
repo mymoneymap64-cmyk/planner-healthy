@@ -19,6 +19,23 @@ const nextConfig = {
       "/api/files/[token]/[slug]/[asset]": ["./content/**/*"],
     },
   },
+  async redirects() {
+    // Two overlapping articles were consolidated into their stronger
+    // counterparts. statusCode 301 (not `permanent`, which is a 308) keeps
+    // these as classic permanent redirects for search engines.
+    return [
+      {
+        source: "/blog/how-to-make-healthy-habits-easier-to-follow",
+        destination: "/blog/how-to-build-healthy-habits-that-actually-last",
+        statusCode: 301,
+      },
+      {
+        source: "/blog/how-to-prepare-for-a-healthy-week",
+        destination: "/blog/how-to-meal-prep-for-a-busy-week",
+        statusCode: 301,
+      },
+    ];
+  },
   async headers() {
     return [
       {

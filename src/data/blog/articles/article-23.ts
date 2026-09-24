@@ -89,7 +89,7 @@ export const article23: BlogPost = {
       level: 2,
       paragraphs: [
         "Progress in bodyweight training doesn't have to mean adding difficulty every single session — that's actually a common way beginners burn out or get discouraged in the first two weeks. Instead, aim to add one small change every week or two: a few extra reps, a slightly lower incline push-up surface, or an extra 10 seconds on the plank. Small, steady increases beat dramatic jumps you can't sustain.",
-        "It's also worth logging what you did so you can actually see that progression happening.",
+        "It's also worth logging what you did so you can actually see that progression happening. Pair this routine with [a simple stretching routine](/blog/simple-stretching-routine-for-beginners), and see [how many days a week beginners should exercise](/blog/how-many-days-a-week-should-beginners-exercise) for scheduling it. If you're nervous about starting at all, [how to start exercising when you are out of shape](/blog/how-to-start-exercising-when-you-are-out-of-shape) is for you.",
       ],
     },
   ],
@@ -118,8 +118,17 @@ export const article23: BlogPost = {
   conclusion: [
     "Building strength doesn't require a gym membership, expensive equipment, or hours of free time. A chair, a wall, and 15 minutes a few times a week are genuinely enough to get started — and the exercises above give you a specific, repeatable place to begin rather than a vague idea of \"working out.\"",
   ],
+  updatedAt: "2026-09-24",
+  sources: [
+    {
+      label: "CDC — Adult Activity: An Overview (weekly activity guidelines)",
+      url: "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html",
+    },
+  ],
   ctaText:
-    "Want to go deeper on movement and fitness? Browse the Natural Wellness Library for more wellness guides.",
+    "A simple daily checklist helps a new routine stick. The free 30-Day Healthy Habits Challenge that comes with the Natural Wellness Library is one way to keep track.",
+  ctaHref: "/library/30-day-healthy-habits-challenge",
+  ctaLabel: "See the 30-Day Habits Checklist",
   relatedSlugs: [
     "how-to-start-exercising-when-you-are-out-of-shape",
     "how-to-build-a-consistent-workout-routine",

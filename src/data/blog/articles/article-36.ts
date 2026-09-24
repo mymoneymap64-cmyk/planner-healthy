@@ -44,7 +44,7 @@ export const article36: BlogPost = {
       level: 2,
       paragraphs: [
         "Outcome goals (a specific number on the scale, a specific mile time) describe where you want to end up, but they're only partly within your control — genetics, starting point, and life circumstances all play a role, and outcomes can plateau even when your habits are solid. Process goals (what you'll actually do, daily or weekly) are fully within your control and tend to produce more consistent follow-through.",
-        "A practical approach is to keep one outcome goal in the background for direction, but make your day-to-day targets process goals — the specific actions you're actually responsible for completing.",
+        "A practical approach is to keep one outcome goal in the background for direction, but make your day-to-day targets process goals — the specific actions you're actually responsible for completing. [How to track progress without obsessing over results](/blog/how-to-track-progress-without-obsessing-over-results) covers which numbers are worth watching.",
       ],
     },
     {
@@ -52,7 +52,7 @@ export const article36: BlogPost = {
       level: 2,
       paragraphs: [
         "Big goals with distant deadlines (\"lose weight by summer,\" six months away) are easy to postpone, because any single day feels inconsequential to a far-off target. Shorter timelines create more useful urgency and let you actually see whether your approach is working before too much time passes.",
-        "A 21-day window works well for this reason — long enough to build real evidence about whether a routine is sustainable, short enough to stay motivated and course-correct quickly if something isn't working.",
+        "A window of two to four weeks works well for this reason — long enough to build real evidence about whether a routine is sustainable, short enough to stay motivated and course-correct quickly if something isn't working. A simple daily checklist, like the one in the free [30-Day Healthy Habits Challenge](/library/30-day-healthy-habits-challenge) that comes with the Natural Wellness Library, is one easy way to see that evidence build up.",
       ],
     },
     {
@@ -67,7 +67,7 @@ export const article36: BlogPost = {
       level: 2,
       paragraphs: [
         "Realistic goals aren't set once and left untouched — they're checked and adjusted along the way. If a goal turns out to be too ambitious in week one (three workouts a week isn't happening with your current schedule), scaling it back to two isn't failure, it's calibration. If a goal turns out too easy, that's useful information too.",
-        "A brief weekly check-in — what worked, what didn't, what needs to change — keeps your goal realistic throughout the process instead of only in hindsight.",
+        "A brief weekly check-in — what worked, what didn't, what needs to change — keeps your goal realistic throughout the process instead of only in hindsight. If a goal stalls, see [how to stay motivated when you want to quit](/blog/how-to-stay-motivated-when-you-want-to-quit).",
       ],
     },
   ],
@@ -96,8 +96,11 @@ export const article36: BlogPost = {
   conclusion: [
     "A realistic health goal is specific enough to act on today and reasonable enough to sustain for weeks, not just a single motivated afternoon. Trading vague intentions like \"get healthier\" for a specific, measurable, time-bound target is one of the simplest changes that actually improves follow-through.",
   ],
+  updatedAt: "2026-09-24",
   ctaText:
-    "Looking for more on building consistency and mindset? Explore the Natural Wellness Library of wellness guides.",
+    "Goals work best with a plan behind them. The Mental Wellness Guide pairs mindset tools with a matching planner and 30-day system.",
+  ctaHref: "/library/mental-wellness-guide",
+  ctaLabel: "Explore the Mental Wellness Guide",
   relatedSlugs: [
     "why-consistency-matters-more-than-motivation",
     "how-to-build-discipline-without-overcomplicating-your-life",

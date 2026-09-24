@@ -23,7 +23,7 @@ export const article10: BlogPost = {
       level: 2,
       paragraphs: [
         "Instead of memorizing recipes, it helps to memorize one flexible formula: a protein, a vegetable, and a carb, combined with a sauce or seasoning that ties them together. Once this pattern is second nature, you can build a reasonable meal out of almost any combination of ingredients in the kitchen, without needing to follow a written recipe at all.",
-        "The sauce or seasoning step matters more than people expect — it's what keeps the same base ingredients from feeling repetitive. Rotating between a few go-to flavor directions (a squeeze of lime with chili powder, a spoon of pesto, soy sauce with ginger, or just olive oil, garlic, and lemon) can turn the same chicken-and-rice base into three or four completely different-feeling meals across a week.",
+        "The sauce or seasoning step matters more than people expect — it's what keeps the same base ingredients from feeling repetitive. Rotating between a few go-to flavor directions (a squeeze of lime with chili powder, a spoon of pesto, soy sauce with ginger, or just olive oil, garlic, and lemon) can turn the same chicken-and-rice base into three or four completely different-feeling meals across a week. The [balanced plate method](/blog/how-to-build-a-balanced-plate) is the same idea in visual form.",
       ],
     },
     {
@@ -65,7 +65,7 @@ export const article10: BlogPost = {
       heading: "Where a Little Planning Still Pays Off",
       level: 2,
       paragraphs: [
-        "Even a loose, five-minute plan on Sunday — jotting down which two or three dinners you'll lean on that week — removes a surprising amount of daily decision fatigue. You're not committing to a rigid schedule, just narrowing the options so 6 p.m. on a Tuesday isn't the moment you're deciding from scratch.",
+        "Even a loose, five-minute plan on Sunday — jotting down which two or three dinners you'll lean on that week — removes a surprising amount of daily decision fatigue. You're not committing to a rigid schedule, just narrowing the options so 6 p.m. on a Tuesday isn't the moment you're deciding from scratch. A [healthy grocery list](/blog/healthy-grocery-list-for-beginners) and a small round of [meal prep](/blog/how-to-meal-prep-for-a-busy-week) make these 15-minute meals even faster.",
       ],
     },
     {
@@ -109,8 +109,11 @@ export const article10: BlogPost = {
   conclusion: [
     "Eating well on a busy schedule isn't about finding more time — it's about lowering the amount of decision-making and effort each meal requires. A simple formula, a small stock of backup ingredients, and permission to repeat meals on purpose can make healthy eating realistic even on the weeks that feel too full for it.",
   ],
+  updatedAt: "2026-09-24",
   ctaText:
-    "Want more help planning meals like this? The Natural Wellness Library includes in-depth guides on nutrition and healthy living.",
+    "For more real-food dinners that fit a busy week, see the recipes and 30-day meal plan in the Healthy Eating Guide.",
+  ctaHref: "/library/healthy-eating-guide",
+  ctaLabel: "See the Healthy Eating Guide",
   relatedSlugs: [
     "how-to-meal-prep-for-a-busy-week",
     "healthy-meal-planning-for-beginners",

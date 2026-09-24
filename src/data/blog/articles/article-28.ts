@@ -16,7 +16,7 @@ export const article28: BlogPost = {
   intro: [
     "\"I don't have time to exercise\" is one of the most common reasons people give for staying sedentary — and it's usually less about time than about the assumption that movement only counts if it comes in a 45-minute block with a gym bag involved. That assumption keeps a lot of genuinely busy people from getting any activity at all on the days that matter most.",
     "The truth is that movement accumulates. Ten minutes here, five minutes there, a set of stairs instead of an elevator — none of it looks like a workout in the moment, but added up across a day it can meaningfully offset the hours most people now spend sitting. This article covers specific, realistic ways to build that movement into a day that's already full, without needing to carve out a dedicated exercise slot.",
-    "This matters beyond just calories. Long unbroken stretches of sitting are linked with stiffness, lower energy, and a flatter mood by the end of the day — effects that a handful of short movement breaks can meaningfully soften, independent of whether you also get a formal workout in.",
+    "This matters beyond just calories. Long unbroken stretches of sitting can leave many people feeling stiff and low on energy by the end of the day — something a handful of short movement breaks can help with, whether or not you also get a formal workout in. The CDC\'s adult activity guidelines note that activity can be spread out during the week and broken into smaller chunks of time.",
   ],
   sections: [
     {
@@ -77,7 +77,7 @@ export const article28: BlogPost = {
       level: 2,
       paragraphs: [
         "\"Busy\" looks different depending on the day, and it helps to have more than one fallback ready. On a desk-bound day full of back-to-back meetings, the opportunities are mostly in the gaps — standing during calls, a lap around the office or the block between meetings, stretching at your desk. On a day that's busy with errands, driving kids around, or other logistics, the opportunities look more like parking farther away, taking a longer walking route where possible, or carrying groceries in two trips instead of one.",
-        "On the rare day where even five-minute windows don't materialize, it's fine to treat that as an outlier rather than a failure. One low-movement day doesn't undo the pattern you've built on the other six — the goal is a realistic weekly average, not a perfect daily record.",
+        "On the rare day where even five-minute windows don't materialize, it's fine to treat that as an outlier rather than a failure. One low-movement day doesn't undo the pattern you've built on the other six — the goal is a realistic weekly average, not a perfect daily record. If you want a structured starting point for walking, see the [beginner walking plan](/blog/beginner-walking-plan-for-better-fitness); for habits built around full calendars, see [healthy habits for people with busy schedules](/blog/healthy-habits-for-people-with-busy-schedules).",
       ],
     },
   ],
@@ -106,8 +106,17 @@ export const article28: BlogPost = {
   conclusion: [
     "Staying active on a busy day rarely comes down to finding a spare hour — it comes down to noticing and using the small windows that are already there. A two-minute stretch, a flight of stairs, a short walk after lunch: none of these require rearranging your schedule, and together they add up to real movement across the week.",
   ],
+  updatedAt: "2026-09-24",
+  sources: [
+    {
+      label: "CDC — Adult Activity: An Overview (weekly activity guidelines)",
+      url: "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html",
+    },
+  ],
   ctaText:
-    "Looking for more ways to stay active? Explore the Natural Wellness Library of practical wellness guides.",
+    "Fitting movement into a full day works best with a plan. Each guide in the Natural Wellness Library comes with a planner and a 30-day system.",
+  ctaHref: "/library",
+  ctaLabel: "Browse the Library",
   relatedSlugs: [
     "beginner-walking-plan-for-better-fitness",
     "walking-vs-running-for-beginners",

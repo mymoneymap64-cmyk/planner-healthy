@@ -10,7 +10,7 @@ export const article33: BlogPost = {
   category: "mindset",
   tags: ["staying motivated", "quitting", "mindset", "habit building"],
   excerpt:
-    "If you're mid-challenge and seriously thinking about quitting, this is for that exact moment — practical steps to get through it instead of just powering through on willpower.",
+    "If you're a few days or weeks into a new habit and seriously thinking about quitting, this is for that exact moment — practical steps to get through it instead of just powering through on willpower.",
   imageKey: "motivationAlt",
   publishedAt: "2026-03-11",
   intro: [
@@ -22,7 +22,7 @@ export const article33: BlogPost = {
       heading: "First, Recognize This Moment for What It Is",
       level: 2,
       paragraphs: [
-        "Wanting to quit partway through a habit or challenge isn't a sign you've picked the wrong goal or that you lack discipline — it's an extremely common, almost predictable part of the process. Initial excitement fades, the routine becomes less novel, and the actual daily effort is still there. Most people who eventually succeed at a habit hit this exact wall at some point; the difference is what they do next, not that they never feel it.",
+        "Wanting to quit partway through a new habit or routine isn't a sign you've picked the wrong goal or that you lack discipline — it's an extremely common, almost predictable part of the process. Initial excitement fades, the routine becomes less novel, and the actual daily effort is still there. Most people who eventually succeed at a habit hit this exact wall at some point; the difference is what they do next, not that they never feel it.",
         "Naming it — \"this is the day-9 wall, not proof this isn't working\" — takes some of the emotional charge out of the moment and makes it easier to respond to practically instead of reactively.",
       ],
     },
@@ -30,7 +30,7 @@ export const article33: BlogPost = {
       heading: "Shrink the Commitment to the Next 24 Hours Only",
       level: 2,
       paragraphs: [
-        "When quitting feels appealing, it's usually because your brain is weighing today's effort against an overwhelming mental picture of \"the rest of this challenge\" or \"forever.\" That comparison is almost always going to lose. Instead, narrow the question from \"can I do this for 12 more days\" to \"can I do a reduced version of this today.\"",
+        "When quitting feels appealing, it's usually because your brain is weighing today's effort against an overwhelming mental picture of \"the rest of this routine\" or \"forever.\" That comparison is almost always going to lose. Instead, narrow the question from \"can I do this for 12 more days\" to \"can I do a reduced version of this today.\"",
         "You're not deciding whether to commit to the next two weeks. You're deciding whether to do one more day — and specifically, whether to do a smaller, easier version of today rather than the full plan.",
       ],
     },
@@ -38,7 +38,7 @@ export const article33: BlogPost = {
       heading: "Use Your Minimum Version, Not the Full Plan",
       level: 2,
       paragraphs: [
-        "This is the moment your fallback plan exists for. If your full workout is 30 minutes, do 5. If your full meal plan calls for cooking, order the healthiest realistic option instead. The goal on a quit-moment day isn't excellence — it's keeping the chain unbroken so tomorrow starts from \"still going\" instead of \"starting over.\"",
+        "This is the moment your fallback plan exists for. If your full workout is 30 minutes, do 5. If your full meal plan calls for cooking, order the healthiest realistic option instead. The goal on a quit-moment day isn't excellence — it's keeping the chain unbroken so tomorrow starts from \"still going\" instead of \"starting over.\" The idea comes from [why consistency matters more than motivation](/blog/why-consistency-matters-more-than-motivation).",
       ],
       list: [
         "Movement: swap the full workout for a 5-minute walk or stretch",
@@ -58,7 +58,7 @@ export const article33: BlogPost = {
       heading: "Remove the Decision From Tomorrow Morning",
       level: 2,
       paragraphs: [
-        "Quit-moments are more dangerous at night, when willpower is naturally lower and the whole challenge feels abstract. Rather than deciding tonight whether you're continuing, make tomorrow's first action so small and so pre-decided that it doesn't require a fresh decision — lay out your walking shoes, pre-portion tomorrow's breakfast, or simply open your planner to tomorrow's page before bed.",
+        "Quit-moments are more dangerous at night, when willpower is naturally lower and the whole routine feels abstract. Rather than deciding tonight whether you're continuing, make tomorrow's first action so small and so pre-decided that it doesn't require a fresh decision — lay out your walking shoes, pre-portion tomorrow's breakfast, or simply open your planner to tomorrow's page before bed.",
         "Morning-you, with a night of sleep and a pre-decided first step, is almost always more willing to continue than tonight-you is.",
       ],
     },
@@ -66,13 +66,13 @@ export const article33: BlogPost = {
       heading: "If You Do Miss a Day, Don't Turn It Into Two",
       level: 2,
       paragraphs: [
-        "Sometimes, despite all of this, you miss a day anyway. That's not the same as quitting — quitting is a decision, missing a day is just a data point. The real risk isn't the missed day itself; it's the story that one missed day means the whole thing is over, which is what actually leads to giving up completely. Pick the next day back up exactly where you left off, no extra penance, no starting the count over unless you genuinely want a clean restart.",
+        "Sometimes, despite all of this, you miss a day anyway. That's not the same as quitting — quitting is a decision, missing a day is just a data point. The real risk isn't the missed day itself; it's the story that one missed day means the whole thing is over, which is what actually leads to giving up completely. Pick the next day back up exactly where you left off, no extra penance, no starting the count over unless you genuinely want a clean restart. [How to get back on track after a bad day](/blog/how-to-get-back-on-track-after-a-bad-day) has a fuller plan for the morning after.",
       ],
     },
   ],
   faqs: [
     {
-      question: "Is it normal to want to quit multiple times during a 21-day challenge?",
+      question: "Is it normal to want to quit more than once while building a new habit?",
       answer:
         "Yes. Many people hit this feeling more than once, often around similar points each week. It tends to get less intense with each pass as you build evidence that the feeling doesn't actually mean the plan is failing.",
     },
@@ -95,8 +95,11 @@ export const article33: BlogPost = {
   conclusion: [
     "The moment you want to quit isn't a verdict on whether the habit is working — it's a normal, predictable low point that almost everyone hits at some point. What gets you through it isn't a fresh wave of motivation; it's a smaller version of the plan, a specific reason to keep going, and tomorrow's first step already decided.",
   ],
+  updatedAt: "2026-09-24",
   ctaText:
-    "Looking for more on building consistency and mindset? Explore the Natural Wellness Library of wellness guides.",
+    "A simple daily checklist can make the hard days easier to get through. The free 30-Day Healthy Habits Challenge is one you can start with.",
+  ctaHref: "/library/30-day-healthy-habits-challenge",
+  ctaLabel: "See the 30-Day Habits Checklist",
   relatedSlugs: [
     "how-to-get-back-on-track-after-a-bad-day",
     "why-consistency-matters-more-than-motivation",

@@ -28,11 +28,11 @@ export const article25: BlogPost = {
       ],
     },
     {
-      heading: "Anchor Workouts to Something That Already Happens",
+      heading: "Anchor the Workout to Your Day and Shrink the Start",
       level: 2,
       paragraphs: [
-        "Habits that depend on remembering to do them are fragile. Habits that are attached to an existing part of your day are much sturdier, because the existing routine acts as the reminder. If you already make coffee every morning, your workout clothes can live next to the coffee maker. If you take a lunch break at a consistent time, that's a natural slot for a 15-minute session.",
-        "This is sometimes called habit stacking, and it works because it removes the decision-making step. You're not asking \"should I work out today?\" — you're just continuing a sequence that's already in motion.",
+        "A workout that depends on remembering it is fragile; one attached to something that already happens is sturdier. If you make coffee every morning, your workout clothes can live next to the coffee maker. If you take a lunch break at a consistent time, that's a natural slot for a 15-minute session. Then remove the friction in the two minutes before it starts: shoes by the door, clothes laid out the night before, water bottle filled.",
+        "These are general habit-design moves, covered in more depth in [how to build healthy habits that actually last](/blog/how-to-build-healthy-habits-that-actually-last). The workout-specific point is that the start is where routines are lost: if getting going takes three small chores, it's easy to postpone indefinitely.",
       ],
     },
     {
@@ -56,14 +56,6 @@ export const article25: BlogPost = {
       ],
     },
     {
-      heading: "Make the First Step Effortless",
-      level: 2,
-      paragraphs: [
-        "A surprising amount of whether a workout happens comes down to friction in the two minutes before it starts. If your shoes are in the closet, your workout clothes are in a drawer across the room, and you have to hunt for a water bottle, that's three small decision points where you could talk yourself out of it. Laying out everything the night before — clothes, shoes, water, even a specific playlist queued up — removes those decision points entirely.",
-        "This sounds minor, but it's one of the more reliable levers for consistency precisely because it doesn't rely on motivation at all. You're not more likely to skip a workout because you're lazy; you're more likely to skip it because starting felt like a small chore, and small chores are easy to postpone indefinitely.",
-      ],
-    },
-    {
       heading: "Track Completion, Not Just Performance",
       level: 2,
       paragraphs: [
@@ -78,11 +70,16 @@ export const article25: BlogPost = {
       ],
     },
     {
-      heading: "Build In a Plan for Off Days",
+      heading: "Plan Three Session Sizes, Not One",
       level: 2,
       paragraphs: [
-        "Every consistent routine eventually meets a day where the full workout isn't going to happen — a late meeting, a sick kid, low energy. Decide in advance what your minimum version looks like: if your planned session is 30 minutes, what's the 10-minute version you'll do instead of nothing? A short walk, a handful of stretches, or a few sets of squats keeps the habit alive even when the full plan doesn't fit.",
-        "This matters more than it sounds like it should. Missing one workout rarely derails a routine. What derails it is treating that miss as evidence the routine has already failed, which leads to skipping the next one too.",
+        "Every consistent routine eventually meets a day where the full workout isn't going to happen — a late meeting, a sick kid, low energy. Rather than a single all-or-nothing session, decide in advance on three sizes and pick the one that fits the day.",
+        "Missing one workout rarely derails a routine. What derails it is treating that miss as evidence the routine has already failed, which leads to skipping the next one too. Having a small version ready keeps the pattern alive.",
+      ],
+      list: [
+        "Full: your normal session, for example 30 minutes of the [home exercise routine](/blog/easy-beginner-exercises-you-can-do-at-home)",
+        "Short: 15 minutes, keeping the same first and last exercise",
+        "Minimum: 5 minutes of movement or a [short stretching routine](/blog/simple-stretching-routine-for-beginners)",
       ],
     },
   ],
@@ -90,7 +87,7 @@ export const article25: BlogPost = {
     {
       question: "How long does it take for a workout routine to feel automatic?",
       answer:
-        "It varies by person and by habit, but many people notice a workout routine starting to feel more automatic somewhere around three to six weeks of consistent repetition — closer to six if the routine includes multiple new habits at once.",
+        "It varies a lot. In a widely cited habit-formation study (Lally et al., 2010), the time it took for behaviors to feel automatic ranged from 18 to 254 days, and more demanding behaviors tended to take longer than simple ones. Exercise sits toward the demanding end, so give a new routine months rather than weeks before judging whether it has become automatic.",
     },
     {
       question: "What if I miss several days in a row?",
@@ -111,8 +108,21 @@ export const article25: BlogPost = {
   conclusion: [
     "A consistent workout routine isn't the product of extra motivation or a more ambitious plan — it's usually the product of a smaller, more realistic plan that's easier to protect. Start with a frequency you can actually sustain, anchor it to something already happening in your day, and build in a fallback for the days that don't go as planned.",
   ],
+  updatedAt: "2026-09-24",
+  sources: [
+    {
+      label: "CDC — Adult Activity: An Overview (weekly activity guidelines)",
+      url: "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html",
+    },
+    {
+      label: "Lally et al. (2010), How are habits formed: Modelling habit formation in the real world, European Journal of Social Psychology",
+      url: "https://onlinelibrary.wiley.com/doi/10.1002/ejsp.674",
+    },
+  ],
   ctaText:
-    "Want to go deeper on movement and fitness? Browse the Natural Wellness Library for more wellness guides.",
+    "Consistency is easier to see on paper. The free 30-Day Healthy Habits Challenge is a simple daily checklist for building routines that last.",
+  ctaHref: "/library/30-day-healthy-habits-challenge",
+  ctaLabel: "See the 30-Day Habits Checklist",
   relatedSlugs: [
     "how-many-days-a-week-should-beginners-exercise",
     "easy-beginner-exercises-you-can-do-at-home",

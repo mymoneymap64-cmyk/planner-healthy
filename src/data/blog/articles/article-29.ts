@@ -31,7 +31,7 @@ export const article29: BlogPost = {
       heading: "Sleep and Food Choices Are More Connected Than They Seem",
       level: 2,
       paragraphs: [
-        "Poor sleep is associated with changes in the hormones that regulate hunger and fullness — ghrelin, which signals hunger, tends to rise, while leptin, which signals satiety, tends to drop. In practical terms, many people notice they're hungrier, crave higher-calorie foods, and find it harder to stick to planned meals after a short night of sleep, even without consciously deciding to eat differently.",
+        "Some research links short sleep to changes in the hormones that regulate hunger and fullness — in a well-known study of healthy young men, sleep restriction was associated with higher ghrelin (a hunger signal), lower leptin (a fullness signal), and more reported hunger and appetite, though later studies have been less consistent about the hormone mechanism. In practical terms, many people notice they're hungrier, crave higher-calorie foods, and find it harder to stick to planned meals after a short night of sleep, even without consciously deciding to eat differently.",
         "This makes sleep a quiet variable behind a lot of \"why did I have no willpower today\" moments. If you're working on [building a balanced plate](/blog/how-to-build-a-balanced-plate) or generally eating more intentionally, a consistent sleep schedule supports that effort in the background, even though it doesn't look related on the surface.",
       ],
     },
@@ -39,7 +39,7 @@ export const article29: BlogPost = {
       heading: "Sleep Affects Whether Your Workout Actually Happens",
       level: 2,
       paragraphs: [
-        "Beyond just feeling more tired, insufficient sleep affects reaction time, coordination, and perceived effort — a workout that would normally feel moderate can feel considerably harder after a poor night, which makes it more likely to get skipped altogether. Over time, this can quietly undermine [a consistent workout routine](/blog/how-to-build-a-consistent-workout-routine) far more than any single missed session would on its own.",
+        "Beyond just feeling more tired, insufficient sleep can affect alertness, judgment, and perceived effort — a workout that would normally feel moderate can feel considerably harder after a poor night, which makes it more likely to get skipped altogether. Over time, this can quietly undermine [a consistent workout routine](/blog/how-to-build-a-consistent-workout-routine) far more than any single missed session would on its own.",
         "It also affects recovery after the workouts you do complete. Muscle repair and much of the body's recovery processing happen during sleep, so consistently short sleep can slow how quickly you bounce back between sessions, even if the workouts themselves are going well.",
       ],
     },
@@ -47,7 +47,7 @@ export const article29: BlogPost = {
       heading: "Sleep and Mood: The Loop That Feeds Itself",
       level: 2,
       paragraphs: [
-        "Sleep and mood influence each other in both directions — poor sleep is strongly linked to irritability, lower stress tolerance, and reduced motivation, and stress or a low mood in turn make it harder to fall or stay asleep. Left unaddressed, this can become a loop where a rough night leads to a harder day, which leads to another rough night.",
+        "Sleep and mood influence each other in both directions — the NHLBI notes that sleep deficiency can leave you feeling frustrated, cranky, or worried, and stress or a low mood in turn can make it harder to fall or stay asleep. Left unaddressed, this can become a loop where a rough night leads to a harder day, which leads to another rough night.",
         "Breaking that loop usually starts on the sleep side, since it's often more directly actionable than trying to will your way into a better mood. A consistent wind-down routine gives your body a repeated, predictable signal that sleep is coming, which can help interrupt the cycle over time.",
       ],
     },
@@ -55,15 +55,15 @@ export const article29: BlogPost = {
       heading: "The Bedroom Environment Plays a Bigger Role Than Most People Think",
       level: 3,
       paragraphs: [
-        "Beyond schedule and habits, the physical environment you sleep in has a measurable effect on sleep quality. A room that's too warm, too bright, or too noisy can fragment sleep even when total time in bed looks adequate on paper. Simple changes — a cooler room temperature, blackout curtains or an eye mask, and keeping phones out of reach rather than on the nightstand — tend to have a disproportionately positive effect relative to how little effort they take to set up.",
+        "Beyond schedule and habits, the room you sleep in matters. The CDC\'s sleep tips include keeping your bedroom quiet, relaxing, and cool. A few simple changes — a cooler room, blackout curtains or an eye mask, and keeping your phone out of reach — take little effort to try. [How to create a better sleep routine](/blog/how-to-create-a-better-sleep-routine) walks through the basics.",
       ],
     },
     {
       heading: "How Much Sleep Most Adults Actually Need",
       level: 2,
       paragraphs: [
-        "Sleep needs vary somewhat by individual, but most adults function best on somewhere between 7 and 9 hours a night. Consistently sleeping less than that creates what's sometimes called sleep debt — a cumulative shortfall that tends to show up as the compounding effects described above, even if any single short night doesn't feel like a big deal on its own.",
-        "If your schedule makes 7–9 hours difficult most nights, even small adjustments — going to bed 20–30 minutes earlier, or setting a consistent wake time — tend to have an outsized effect over a few weeks compared to trying to overhaul your entire schedule at once.",
+        "Sleep needs vary somewhat by individual, but the CDC says adults aged 18–60 need 7 or more hours a night (7–9 hours for ages 61–64, 7–8 for 65 and older). Consistently sleeping less than that builds up what's sometimes called sleep debt — a shortfall that can show up as the effects described above, even if any single short night doesn't feel like a big deal on its own.",
+        "If your schedule makes 7–9 hours difficult most nights, even small adjustments — going to bed 20–30 minutes earlier, or setting a consistent wake time — tend to have an outsized effect over a few weeks compared to trying to overhaul your entire schedule at once. For daytime habits that support better sleep, see [simple ways to improve your sleep habits](/blog/simple-ways-to-improve-your-sleep-habits).",
       ],
     },
     {
@@ -85,12 +85,12 @@ export const article29: BlogPost = {
     {
       question: "How many hours of sleep do most adults need?",
       answer:
-        "Most adults function best with 7 to 9 hours of sleep per night, though individual needs can vary. Consistency in your sleep and wake times often matters as much as hitting an exact number.",
+        "The CDC says adults aged 18–60 need 7 or more hours a night, with slightly narrower ranges suggested for older adults. Individual needs vary, and a consistent sleep and wake time matters too.",
     },
     {
       question: "Can poor sleep really affect what I eat the next day?",
       answer:
-        "Yes. Sleep influences the hormones that regulate hunger and fullness, and many people find they're hungrier and crave higher-calorie foods after a short night, even without deciding to eat differently.",
+        "It can. Some studies link short sleep to greater hunger and more snacking, and many people notice they crave higher-calorie foods after a short night, even without deciding to eat differently.",
     },
     {
       question: "What's the fastest way to improve sleep quality?",
@@ -106,8 +106,25 @@ export const article29: BlogPost = {
   conclusion: [
     "Sleep isn't a separate item on your wellness checklist — it's closer to the foundation the rest of the checklist rests on. When sleep is consistent, everything from food choices to workouts to mood tends to feel more manageable. When it's not, those same habits can feel disproportionately hard, even when nothing else about your routine has changed.",
   ],
+  updatedAt: "2026-09-24",
+  sources: [
+    {
+      label: "CDC — About Sleep (sleep needs and tips for better sleep)",
+      url: "https://www.cdc.gov/sleep/about/index.html",
+    },
+    {
+      label: "NHLBI (NIH) — Sleep Deprivation and Deficiency",
+      url: "https://www.nhlbi.nih.gov/health/sleep-deprivation",
+    },
+    {
+      label: "Spiegel et al. (2004), Sleep curtailment in healthy young men is associated with decreased leptin levels, elevated ghrelin levels, and increased hunger and appetite, Annals of Internal Medicine (PubMed)",
+      url: "https://pubmed.ncbi.nlm.nih.gov/15583226/",
+    },
+  ],
   ctaText:
-    "Want more guidance on building routines like this? Browse the Natural Wellness Library of wellness ebooks.",
+    "Sleep supports everything else you're building. The Sleep & Recovery Handbook covers wind-down routines, environment checklists, and recovery trackers.",
+  ctaHref: "/library/sleep-recovery-handbook",
+  ctaLabel: "See the Sleep & Recovery Handbook",
   relatedSlugs: [
     "how-to-create-a-better-sleep-routine",
     "simple-ways-to-improve-your-sleep-habits",
