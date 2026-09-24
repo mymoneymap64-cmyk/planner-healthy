@@ -5,8 +5,7 @@ import BlogPostCard from "@/components/BlogPostCard";
 import BlogExplorer from "@/components/BlogExplorer";
 import NewsletterCTA from "@/components/NewsletterCTA";
 import ResponsiveImage from "@/components/ResponsiveImage";
-import { getAllPosts, getEditorsPicks, getFeaturedPost } from "@/lib/blog";
-import { BLOG_CATEGORIES } from "@/data/blog/categories";
+import { getActiveCategories, getAllPosts, getEditorsPicks, getFeaturedPost } from "@/lib/blog";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
@@ -85,7 +84,7 @@ export default function BlogPage() {
           <p className="mb-5 text-xs font-bold uppercase tracking-wide text-ink-400">
             Browse All Articles
           </p>
-          <BlogExplorer posts={latest} categories={BLOG_CATEGORIES} />
+          <BlogExplorer posts={latest} categories={getActiveCategories()} />
         </div>
       </section>
 

@@ -4,12 +4,12 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import BlogPostCard from "@/components/BlogPostCard";
 import SectionHeading from "@/components/SectionHeading";
 import JsonLd from "@/components/JsonLd";
-import { BLOG_CATEGORIES, getCategory } from "@/data/blog/categories";
-import { getPostsByCategory } from "@/lib/blog";
+import { getCategory } from "@/data/blog/categories";
+import { getActiveCategories, getPostsByCategory } from "@/lib/blog";
 import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 
 export function generateStaticParams() {
-  return BLOG_CATEGORIES.map((c) => ({ category: c.slug }));
+  return getActiveCategories().map((c) => ({ category: c.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ category: string }> }): Promise<Metadata> {
@@ -30,6 +30,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
   if (!category) notFound();
 
   const posts = getPostsByCategory(category.slug);
+  if (posts.length === 0) notFound();
 
   return (
     <div>

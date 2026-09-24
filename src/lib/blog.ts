@@ -1,5 +1,6 @@
 import { BlogPost } from "./types";
 import { BLOG_POSTS } from "@/data/blog/posts";
+import { BLOG_CATEGORIES } from "@/data/blog/categories";
 
 export function slugifyHeading(heading: string): string {
   return heading
@@ -44,6 +45,15 @@ export function getPostBySlug(slug: string): BlogPost | undefined {
 
 export function getPostsByCategory(category: string): BlogPost[] {
   return getAllPosts().filter((p) => p.category === category);
+}
+
+/**
+ * Categories that have at least one published article. Used for the category
+ * pages, the sitemap, and the filter chips so a category with no articles
+ * never appears as an empty, thin page.
+ */
+export function getActiveCategories() {
+  return BLOG_CATEGORIES.filter((c) => BLOG_POSTS.some((p) => p.category === c.slug));
 }
 
 export function getFeaturedPost(): BlogPost {

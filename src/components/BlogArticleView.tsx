@@ -146,6 +146,15 @@ export default function BlogArticleView({
               ))}
             </div>
 
+            {post.careNote && (
+              <div className="mt-10 rounded-2xl border border-brand-200 bg-brand-50 p-6">
+                <h2 className="font-display text-lg font-bold text-ink-900">When to Get Support</h2>
+                <p className="mt-2 text-sm leading-relaxed text-ink-700">
+                  <RichText text={post.careNote} />
+                </p>
+              </div>
+            )}
+
             {post.sources && post.sources.length > 0 && (
               <div className="mt-10 rounded-2xl border border-ink-900/10 bg-white p-6">
                 <h2 className="font-display text-lg font-bold text-ink-900">Sources</h2>

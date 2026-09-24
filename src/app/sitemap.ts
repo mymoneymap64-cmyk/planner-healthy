@@ -1,7 +1,6 @@
 import { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/seo";
-import { getAllPosts, getLatestModified, getPostLastModified, getPostsByCategory } from "@/lib/blog";
-import { BLOG_CATEGORIES } from "@/data/blog/categories";
+import { getActiveCategories, getAllPosts, getLatestModified, getPostLastModified, getPostsByCategory } from "@/lib/blog";
 import { ALL_PRODUCTS } from "@/data/products";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -26,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const categoryRoutes: MetadataRoute.Sitemap = BLOG_CATEGORIES.map((c) => ({
+  const categoryRoutes: MetadataRoute.Sitemap = getActiveCategories().map((c) => ({
     url: `${SITE_URL}/blog/category/${c.slug}`,
     lastModified: getLatestModified(getPostsByCategory(c.slug)),
     changeFrequency: "weekly",

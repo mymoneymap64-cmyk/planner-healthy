@@ -38,6 +38,13 @@ export const BLOG_CATEGORIES: BlogCategory[] = [
     icon: "Moon",
   },
   {
+    slug: "mental-wellness",
+    name: "Mental Wellness",
+    description:
+      "Practical, non-medical ways to handle everyday stress, overwhelm, focus, and digital overload, with clear guidance on when to talk to a professional.",
+    icon: "Leaf",
+  },
+  {
     slug: "mindset",
     name: "Mindset",
     description: "Motivation, discipline, and staying consistent long-term.",

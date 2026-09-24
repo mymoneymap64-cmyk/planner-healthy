@@ -92,6 +92,7 @@ export type BlogCategorySlug =
   | "fitness"
   | "walking-movement"
   | "sleep"
+  | "mental-wellness"
   | "mindset"
   | "lifestyle";
 
@@ -136,8 +137,20 @@ export interface BlogPost {
   ctaLabel?: string;
   /** Real external sources backing the article's health-related claims. */
   sources?: { label: string; url: string }[];
+  /**
+   * Short "when to get support" note, sized to the topic. Supports
+   * [text](url) links. Only mention crisis lines where the topic warrants it.
+   */
+  careNote?: string;
   relatedSlugs: string[];
 }
+
+/**
+ * A finished article that is not yet published: no unique image assigned and
+ * no publish date. Lives in src/data/blog/drafts/ and is NOT registered in
+ * posts.ts until its image exists and it is ready to go live.
+ */
+export type BlogPostDraft = Omit<BlogPost, "imageKey" | "publishedAt">;
 
 export interface BlogManifestEntry {
   number: number;
