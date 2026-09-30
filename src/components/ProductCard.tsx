@@ -7,6 +7,7 @@ import PriceBadge from "./PriceBadge";
 export default function ProductCard({ product }: { product: Product }) {
   const hasPlanner = Boolean(product.plannerPdf) || Boolean(product.plannerAndSystemIncludedInEbook);
   const hasSystem = Boolean(product.systemPdf) || Boolean(product.plannerAndSystemIncludedInEbook);
+  const viewLabel = product.category === "baking" ? "View Ebook" : "View Guide";
 
   return (
     <div className="card card-hover flex flex-col overflow-hidden p-4 sm:p-5">
@@ -50,7 +51,7 @@ export default function ProductCard({ product }: { product: Product }) {
               href={`/library/${product.slug}`}
               className="inline-flex items-center gap-1 text-sm font-bold text-brand-700 hover:text-brand-800"
             >
-              <Eye size={14} /> View Guide
+              <Eye size={14} /> {viewLabel}
             </Link>
             <Link
               href={product.isBonus ? "/checkout" : `/checkout/${product.slug}`}

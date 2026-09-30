@@ -8,6 +8,7 @@ import { PRODUCTS, BONUS_PRODUCTS, STANDALONE_PRODUCTS } from "@/data/products";
 
 const LINKS = [
   { href: "/library", label: "Library" },
+  { href: "/ebooks", label: "Ebooks" },
   { href: "/bonuses", label: "Bonuses" },
   { href: "/#how-it-works", label: "How It Works" },
   { href: "/blog", label: "Blog" },
@@ -32,6 +33,7 @@ const SEARCH_INDEX = [
     keywords: `${p.categoryLabel} ${p.subtitle}`,
   })),
   { label: "The Full Library", href: "/library", keywords: "library ebooks guides catalog collection" },
+  { label: "Ebook Library", href: "/ebooks", keywords: "ebooks standalone books cookbook baking recipes" },
   { label: "Blog", href: "/blog", keywords: "blog articles habits nutrition sleep mindset" },
   { label: "FAQ", href: "/faq", keywords: "faq questions help support" },
   { label: "The Complete Bundle", href: "/checkout", keywords: "checkout buy price bundle pricing" },
