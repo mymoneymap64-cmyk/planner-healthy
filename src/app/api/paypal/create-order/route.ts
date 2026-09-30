@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createPaypalOrder } from "@/lib/paypal";
-import { PRODUCTS, BUNDLE_PRICE } from "@/data/products";
+import { getProduct, BUNDLE_PRICE } from "@/data/products";
 import { SITE_URL } from "@/lib/seo";
 
 export const runtime = "nodejs";
@@ -21,7 +21,10 @@ export async function POST(request: NextRequest) {
     name = "The Complete Wellness Library";
     price = BUNDLE_PRICE;
   } else {
-    const product = PRODUCTS.find((p) => p.slug === slug);
+    // getProduct checks the full catalog (core guides, bonuses, and
+    // standalone products like the cookbook) — price is always looked up
+    // here, server-side, never taken from the client.
+    const product = getProduct(slug ?? "");
     if (!product || product.price === null || product.price <= 0) {
       return NextResponse.json({ error: "Unknown or unpurchasable product." }, { status: 400 });
     }

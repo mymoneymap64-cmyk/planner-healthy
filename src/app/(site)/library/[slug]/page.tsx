@@ -15,7 +15,7 @@ import ProductCover from "@/components/ProductCover";
 import ProductCard from "@/components/ProductCard";
 import CTASection from "@/components/CTASection";
 import JsonLd from "@/components/JsonLd";
-import { ALL_PRODUCTS, PRODUCTS, getProduct } from "@/data/products";
+import { ALL_PRODUCTS, PRODUCTS, STANDALONE_PRODUCTS, getProduct } from "@/data/products";
 import { buildMetadata, breadcrumbJsonLd, productDetailJsonLd, SITE_URL } from "@/lib/seo";
 
 export async function generateStaticParams() {
@@ -62,6 +62,11 @@ const SEO_COPY: Record<string, { title: string; description: string }> = {
     description:
       "A healthy eating ebook and guide with balanced meal guidance, a matching healthy meal planner, and a 30-day system.",
   },
+  "the-cake-cookbook": {
+    title: "The Cake Cookbook | 40 Easy Homemade Cake Recipes",
+    description:
+      "Discover The Cake Cookbook with 40 delicious homemade cake recipes, plus 5 easy frostings and glazes for birthdays, holidays, and everyday baking.",
+  },
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
@@ -92,8 +97,18 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
   const product = getProduct(slug);
   if (!product) notFound();
 
-  const related = PRODUCTS.filter((p) => p.slug !== product.slug).slice(0, 3);
+  // Wellness core guides keep their existing cross-sell (recommend the other
+  // wellness guides). A standalone product like the cookbook isn't part of
+  // that collection, so it only ever recommends other standalone products
+  // in the same category — which correctly shows nothing today rather than
+  // incongruously recommending wellness ebooks on a cookbook page.
+  const isWellnessCoreGuide = PRODUCTS.some((p) => p.slug === product.slug);
+  const related = isWellnessCoreGuide
+    ? PRODUCTS.filter((p) => p.slug !== product.slug).slice(0, 3)
+    : STANDALONE_PRODUCTS.filter((p) => p.category === product.category && p.slug !== product.slug).slice(0, 3);
   const integrated = product.plannerAndSystemIncludedInEbook;
+  const hasPlanner = Boolean(product.plannerPdf) || Boolean(integrated);
+  const hasSystem = Boolean(product.systemPdf) || Boolean(integrated);
 
   return (
     <div>
@@ -153,7 +168,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                 </ul>
               )}
 
-              {!product.isBonus && (
+              {hasPlanner && hasSystem && (
                 <p className="mt-5 text-xs font-bold uppercase tracking-wide text-gold-300">
                   Ebook + Planner + 30-Day System
                 </p>
@@ -229,13 +244,17 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           <div className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-2">
             {[
               { icon: BookOpen, label: "Full Ebook PDF", detail: product.pageCount ? `${product.pageCount} pages` : undefined },
-              ...(!product.isBonus
+              ...(hasPlanner
                 ? [
                     {
                       icon: ClipboardList,
                       label: "Matching Planner",
                       detail: integrated ? "Included inside the ebook" : product.plannerPageCount ? `${product.plannerPageCount} pages` : undefined,
                     },
+                  ]
+                : []),
+              ...(hasSystem
+                ? [
                     {
                       icon: ListChecks,
                       label: "30-Day System",
@@ -260,7 +279,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
       </section>
 
       {/* PLANNER SECTION */}
-      {!product.isBonus && (
+      {hasPlanner && (
         <section className="section-pad bg-white">
           <div className="container-page">
             <div className="mx-auto grid max-w-5xl gap-10 lg:grid-cols-2 lg:items-center">
@@ -304,7 +323,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
       )}
 
       {/* 30-DAY SYSTEM SECTION */}
-      {!product.isBonus && (
+      {hasSystem && (
         <section className="section-pad">
           <div className="container-page">
             <SectionHeading

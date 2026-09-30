@@ -77,7 +77,7 @@ export default function ProductDashboard({
             )}
           </div>
 
-          {!product.isBonus && (
+          {(capabilities.systemPdfAvailable || capabilities.systemIncludedInEbook) && (
             <div className="card flex flex-col p-5">
               <Calendar size={20} className="text-brand-700" />
               <h2 className="mt-3 font-display text-lg font-bold text-ink-900">📅 30-Day System</h2>

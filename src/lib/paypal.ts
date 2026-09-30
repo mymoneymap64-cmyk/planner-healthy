@@ -107,6 +107,8 @@ export type CapturedPaypalOrder = {
   status: string;
   slug: string | null;
   payerEmail: string | null;
+  /** The amount PayPal actually captured — verified server-side against the expected price before any entitlement is granted. */
+  amount: { currencyCode: string; value: string } | null;
 };
 
 /**
@@ -141,6 +143,9 @@ export async function capturePaypalOrder(orderId: string): Promise<CapturedPaypa
     status: data.status,
     slug: purchaseUnit?.custom_id ?? capture?.custom_id ?? null,
     payerEmail: data.payer?.email_address ?? null,
+    amount: capture?.amount
+      ? { currencyCode: capture.amount.currency_code, value: capture.amount.value }
+      : null,
   };
 }
 

@@ -44,7 +44,7 @@ export default function LibraryGrid({ token, entries }: { token: string; entries
                     Open Planner
                   </Link>
                 )}
-                {!product.isBonus && (
+                {(capabilities.systemPdfAvailable || capabilities.systemIncludedInEbook) && (
                   <Link
                     href={`/reader/${token}/${product.slug}/system`}
                     className="rounded-md border border-ink-900/15 px-3 py-2 text-center text-xs font-bold text-ink-800 hover:border-brand-400"

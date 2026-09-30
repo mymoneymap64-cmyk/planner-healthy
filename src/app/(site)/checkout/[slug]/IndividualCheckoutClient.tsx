@@ -10,11 +10,15 @@ import { usePaypalCheckout } from "@/lib/usePaypalCheckout";
 export default function IndividualCheckoutClient({ product }: { product: Product }) {
   const { loading, handlePurchaseClick } = usePaypalCheckout(product.slug);
   const integrated = product.plannerAndSystemIncludedInEbook;
+  const hasPlanner = Boolean(product.plannerPdf) || integrated;
+  const hasSystem = Boolean(product.systemPdf) || integrated;
 
+  // Only list what this specific product actually includes — a standalone
+  // product like the cookbook has no planner or 30-day system.
   const includes = [
     "Full Ebook PDF",
-    integrated ? "Planner (included inside the ebook)" : "Matching Planner",
-    integrated ? "30-Day System (included inside the ebook)" : "30-Day System",
+    ...(hasPlanner ? [integrated ? "Planner (included inside the ebook)" : "Matching Planner"] : []),
+    ...(hasSystem ? [integrated ? "30-Day System (included inside the ebook)" : "30-Day System"] : []),
   ];
 
   return (
@@ -53,11 +57,17 @@ export default function IndividualCheckoutClient({ product }: { product: Product
               <span>
                 Secure checkout powered by PayPal. You&apos;ll be redirected
                 to complete your payment, then brought straight back with
-                instant access to this guide. Want everything instead?{" "}
-                <Link href="/checkout" className="font-semibold text-brand-700 underline hover:text-brand-800">
-                  See the complete library bundle
-                </Link>
-                .
+                instant access to this guide.
+                {product.includedInBundle && (
+                  <>
+                    {" "}
+                    Want everything instead?{" "}
+                    <Link href="/checkout" className="font-semibold text-brand-700 underline hover:text-brand-800">
+                      See the complete library bundle
+                    </Link>
+                    .
+                  </>
+                )}
               </span>
             </div>
           </div>

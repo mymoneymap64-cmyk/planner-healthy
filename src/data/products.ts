@@ -285,7 +285,45 @@ export const BONUS_PRODUCTS: Product[] = [
   },
 ];
 
-export const ALL_PRODUCTS: Product[] = [...PRODUCTS, ...BONUS_PRODUCTS];
+/**
+ * Standalone products sold on their own — never part of the wellness
+ * bundle and never granted by a bundle purchase. Deliberately kept out of
+ * `PRODUCTS` (which drives the "7 wellness guides" counts and the bundle's
+ * own entitlement/contents everywhere) and out of `BONUS_PRODUCTS` (which
+ * is always free and always bundle-included). A standalone product is only
+ * ever entitled by buying that exact slug.
+ */
+export const STANDALONE_PRODUCTS: Product[] = [
+  {
+    id: "standalone-01",
+    slug: "the-cake-cookbook",
+    title: "The Cake Cookbook",
+    subtitle: "40 Delicious Homemade Cakes for Every Occasion",
+    tagline: "Baking & Recipes",
+    description:
+      "A practical digital cookbook for home bakers featuring 40 approachable homemade cake recipes, plus 5 easy frostings and glazes, a simple cake decorating cheat sheet, and baking notes.",
+    category: "baking",
+    categoryLabel: "Baking & Recipes",
+    benefits: [
+      "40 homemade cake recipes for every occasion",
+      "5 bonus frostings & glazes, plus a decorating cheat sheet",
+      "Simple, step-by-step methods anyone can follow",
+    ],
+    price: 2.97,
+    compareAtPrice: 9.99,
+    pageCount: 46,
+    badge: "Baking & Recipes",
+    includedInBundle: false,
+    coverImage: "/the-cake-cookbook/cover.jpg",
+    ebookPdf: "/the-cake-cookbook/ebook.pdf",
+    plannerPdf: null,
+    plannerPageCount: null,
+    systemPdf: null,
+    systemPageCount: null,
+  },
+];
+
+export const ALL_PRODUCTS: Product[] = [...PRODUCTS, ...BONUS_PRODUCTS, ...STANDALONE_PRODUCTS];
 
 export function getProduct(slug: string): Product | undefined {
   return ALL_PRODUCTS.find((p) => p.slug === slug);

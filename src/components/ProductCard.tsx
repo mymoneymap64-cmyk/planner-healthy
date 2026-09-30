@@ -5,6 +5,9 @@ import ProductCover from "./ProductCover";
 import PriceBadge from "./PriceBadge";
 
 export default function ProductCard({ product }: { product: Product }) {
+  const hasPlanner = Boolean(product.plannerPdf) || Boolean(product.plannerAndSystemIncludedInEbook);
+  const hasSystem = Boolean(product.systemPdf) || Boolean(product.plannerAndSystemIncludedInEbook);
+
   return (
     <div className="card card-hover flex flex-col overflow-hidden p-4 sm:p-5">
       <div className="relative">
@@ -27,7 +30,7 @@ export default function ProductCard({ product }: { product: Product }) {
           <p className="mt-2 text-xs font-medium text-ink-600">{product.benefits[0]}</p>
         )}
 
-        {!product.isBonus && (
+        {hasPlanner && hasSystem && (
           <p className="mt-3 text-[10px] font-bold uppercase tracking-wide text-ink-400">
             Ebook + Planner + 30-Day System
           </p>

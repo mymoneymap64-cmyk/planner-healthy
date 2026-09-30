@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Lock, Sparkles, Zap } from "lucide-react";
-import { PRODUCTS } from "@/data/products";
+import { PRODUCTS, STANDALONE_PRODUCTS } from "@/data/products";
 
 const COLUMNS = [
   {
@@ -15,6 +15,7 @@ const COLUMNS = [
       { href: "/library", label: "Browse the Library" },
       { href: "/bonuses", label: "Free Bonus Guides" },
       { href: "/checkout", label: "The Complete Library" },
+      ...STANDALONE_PRODUCTS.map((p) => ({ href: `/library/${p.slug}`, label: p.title })),
     ],
   },
   {

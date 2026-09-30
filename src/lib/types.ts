@@ -12,7 +12,8 @@ export type ProductCategory =
   | "mens-wellness"
   | "herbal-remedies"
   | "sleep-recovery"
-  | "healthy-eating";
+  | "healthy-eating"
+  | "baking";
 
 export interface Product {
   id: string;

@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { requireEntitledProduct } from "@/lib/readerAuth";
+import { getReaderCapabilities } from "@/data/readerContent";
 import { buildMetadata } from "@/lib/seo";
 import ReaderShell from "@/components/reader/ReaderShell";
 import ThirtyDaySystem from "@/components/reader/ThirtyDaySystem";
@@ -20,7 +21,13 @@ export default async function ReaderSystemPage({
 }) {
   const { token, slug } = await params;
   const result = await requireEntitledProduct(token, slug);
-  if (!result || result.product.isBonus) notFound();
+  if (!result) notFound();
+
+  // A 30-day system only exists if this product actually has one (as a
+  // separate PDF or built into the ebook) — not just "isn't a free bonus".
+  // Standalone products like the cookbook have neither, same as bonuses.
+  const capabilities = getReaderCapabilities(result.product);
+  if (!capabilities.systemPdfAvailable && !capabilities.systemIncludedInEbook) notFound();
 
   return (
     <ReaderShell token={token}>

@@ -2,7 +2,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import SectionHeading from "@/components/SectionHeading";
 import ProductCard from "@/components/ProductCard";
 import CTASection from "@/components/CTASection";
-import { PRODUCTS, BONUS_PRODUCTS } from "@/data/products";
+import { PRODUCTS, BONUS_PRODUCTS, STANDALONE_PRODUCTS } from "@/data/products";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
@@ -55,6 +55,22 @@ export default function LibraryPage() {
           </div>
         </div>
       </section>
+
+      {/* Standalone products (e.g. the cookbook) — sold on their own, not
+          part of the wellness bundle, shown in their own section so they
+          stay clearly separate from the 7-guide wellness collection. */}
+      {STANDALONE_PRODUCTS.length > 0 && (
+        <section className="section-pad">
+          <div className="container-page">
+            <SectionHeading eyebrow="Baking & Recipes" title="More from the shop" align="left" />
+            <div className="mx-auto mt-10 grid max-w-6xl gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {STANDALONE_PRODUCTS.map((p) => (
+                <ProductCard key={p.slug} product={p} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <CTASection />
     </div>

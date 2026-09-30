@@ -52,15 +52,22 @@ function fileUrl(token: string, slug: string, asset: "ebook" | "planner" | "syst
 }
 
 function ProductFiles({ token, product }: { token: string; product: Product }) {
+  // A single-file product (a free bonus, or a standalone product like the
+  // cookbook, which has no planner/system) gets one simple row instead of
+  // the Ebook/Planner/System layout built for the wellness core guides.
+  const hasPlannerOrSystem =
+    Boolean(product.plannerPdf) || Boolean(product.systemPdf) || Boolean(product.plannerAndSystemIncludedInEbook);
+  const singleFileLabel = product.category === "baking" ? "Cookbook" : "Guide";
+
   return (
     <div className="overflow-hidden rounded-xl border border-white/10 bg-white/[0.04] p-4">
       <ProductCover product={product} className="aspect-[3/4] w-full" />
       <div className="pt-4">
         <h2 className="font-display text-base font-bold text-white">{product.title}</h2>
         <div className="mt-3 space-y-2">
-          {product.isBonus ? (
+          {!hasPlannerOrSystem ? (
             <FileRow
-              label="Guide"
+              label={singleFileLabel}
               href={product.ebookPdf ? fileUrl(token, product.slug, "ebook") : null}
               pages={product.pageCount}
             />

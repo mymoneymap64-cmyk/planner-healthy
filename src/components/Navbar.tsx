@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Menu, Search, ShoppingBag, X } from "lucide-react";
-import { PRODUCTS, BONUS_PRODUCTS } from "@/data/products";
+import { PRODUCTS, BONUS_PRODUCTS, STANDALONE_PRODUCTS } from "@/data/products";
 
 const LINKS = [
   { href: "/library", label: "Library" },
@@ -25,6 +25,11 @@ const SEARCH_INDEX = [
     label: b.title,
     href: `/library/${b.slug}`,
     keywords: "free bonus guide",
+  })),
+  ...STANDALONE_PRODUCTS.map((p) => ({
+    label: p.title,
+    href: `/library/${p.slug}`,
+    keywords: `${p.categoryLabel} ${p.subtitle}`,
   })),
   { label: "The Full Library", href: "/library", keywords: "library ebooks guides catalog collection" },
   { label: "Blog", href: "/blog", keywords: "blog articles habits nutrition sleep mindset" },

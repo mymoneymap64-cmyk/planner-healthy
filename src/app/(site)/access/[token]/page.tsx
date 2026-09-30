@@ -28,6 +28,12 @@ export default async function AccessTokenPage({
   const product = isBundle ? null : getProduct(order.slug);
   if (!isBundle && !product) notFound();
 
+  // The Wellness System dashboard and the "Your Wellness Library" framing
+  // only make sense for the wellness collection (the bundle, or a single
+  // wellness core guide) — a standalone purchase like the cookbook gets its
+  // own title/description and no Wellness System entry point.
+  const isWellnessOrder = isBundle || (product ? PRODUCTS.some((p) => p.slug === product.slug) : false);
+
   return (
     <div>
       <section className="relative overflow-hidden bg-ink-950 section-pad !pb-16">
@@ -36,21 +42,23 @@ export default async function AccessTokenPage({
           <div className="mx-auto max-w-2xl text-center">
             <span className="eyebrow bg-white/10 text-gold-300">Order Confirmed</span>
             <h1 className="mt-5 font-display text-3xl font-bold text-balance text-white sm:text-4xl">
-              Your Wellness Library
+              {isWellnessOrder ? "Your Wellness Library" : product!.title}
             </h1>
             <p className="mt-4 text-balance text-base leading-relaxed text-ink-300">
-              View or download your files below. Keep your confirmation
-              email or bookmark this page — it&apos;s your personal access
-              link and works anytime.
+              {isWellnessOrder
+                ? "View or download your files below. Keep your confirmation email or bookmark this page — it's your personal access link and works anytime."
+                : `${product!.subtitle} View or download it below. Keep your confirmation email or bookmark this page — it's your personal access link and works anytime.`}
             </p>
 
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
               <Link href={`/reader/${token}`} className="btn-gold inline-flex">
-                <BookOpen size={16} /> Open in HealthyGuide Reader
+                <BookOpen size={16} /> {isWellnessOrder ? "Open in HealthyGuide Reader" : "Read or Download Your Cookbook"}
               </Link>
-              <Link href={`/wellness/${token}`} className="btn-secondary inline-flex !border-white !text-white hover:!bg-white/10">
-                <Sparkles size={16} /> Open Wellness System
-              </Link>
+              {isWellnessOrder && (
+                <Link href={`/wellness/${token}`} className="btn-secondary inline-flex !border-white !text-white hover:!bg-white/10">
+                  <Sparkles size={16} /> Open Wellness System
+                </Link>
+              )}
             </div>
           </div>
 

@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { requireEntitledProduct } from "@/lib/readerAuth";
+import { getReaderCapabilities } from "@/data/readerContent";
 import { buildMetadata } from "@/lib/seo";
 import ReaderShell from "@/components/reader/ReaderShell";
 import DayDetail from "@/components/reader/DayDetail";
@@ -22,7 +23,10 @@ export default async function ReaderDayPage({
   const result = await requireEntitledProduct(token, slug);
   const dayNumber = Number(day);
 
-  if (!result || result.product.isBonus || !Number.isInteger(dayNumber) || dayNumber < 1 || dayNumber > 30) {
+  const capabilities = result ? getReaderCapabilities(result.product) : null;
+  const hasSystem = Boolean(capabilities?.systemPdfAvailable || capabilities?.systemIncludedInEbook);
+
+  if (!result || !hasSystem || !Number.isInteger(dayNumber) || dayNumber < 1 || dayNumber > 30) {
     notFound();
   }
 
