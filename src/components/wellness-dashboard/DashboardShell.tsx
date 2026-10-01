@@ -12,12 +12,14 @@ import {
   ListChecks,
   NotebookPen,
   Settings,
+  UtensilsCrossed,
 } from "lucide-react";
 
 const NAV = [
   { key: "home", path: "", label: "Home", icon: Home, exact: true },
   { key: "library", path: "/library", label: "My Library", icon: Library, exact: false },
   { key: "plan", path: "/plan", label: "Daily Plan", icon: ListChecks, exact: false },
+  { key: "meal-planner", path: "/meal-planner", label: "Meal Planner", icon: UtensilsCrossed, exact: false },
   { key: "checklists", path: "/checklists", label: "Checklists", icon: CheckSquare, exact: false },
   { key: "notes", path: "/notes", label: "Notes", icon: NotebookPen, exact: false },
   { key: "favorites", path: "/favorites", label: "Favorites", icon: Heart, exact: false },
@@ -32,6 +34,7 @@ const MOBILE_TABS = [
   { path: "", label: "Home", icon: Home, exact: true },
   { path: "/library", label: "Library", icon: Library, exact: false },
   { path: "/plan", label: "Plan", icon: ListChecks, exact: false },
+  { path: "/meal-planner", label: "Meals", icon: UtensilsCrossed, exact: false },
   { path: "/checklists", label: "Checklists", icon: CheckSquare, exact: false },
   { path: "/notes", label: "Notes", icon: NotebookPen, exact: false },
   { path: "/favorites", label: "Favorites", icon: Heart, exact: false },
@@ -109,14 +112,14 @@ export default function DashboardShell({ token, children }: { token: string; chi
       </div>
 
       {/* Mobile bottom nav */}
-      <nav className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-7 border-t border-ink-900/10 bg-white pb-[env(safe-area-inset-bottom)] lg:hidden">
+      <nav className="fixed inset-x-0 bottom-0 z-40 flex overflow-x-auto border-t border-ink-900/10 bg-white pb-[env(safe-area-inset-bottom)] lg:hidden">
         {MOBILE_TABS.map((tab) => {
           const active = isActivePath(pathname, base, tab.path, tab.exact);
           return (
             <Link
               key={tab.label}
               href={`${base}${tab.path}`}
-              className={`flex flex-col items-center gap-1 px-0.5 py-2.5 text-center text-[9px] font-semibold leading-tight ${
+              className={`flex min-w-[64px] flex-1 flex-col items-center gap-1 px-0.5 py-2.5 text-center text-[9px] font-semibold leading-tight ${
                 active ? "text-brand-700" : "text-ink-400"
               }`}
             >

@@ -7,6 +7,7 @@ import {
   ClipboardList,
   Eye,
   ListChecks,
+  UtensilsCrossed,
   Zap,
 } from "lucide-react";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -259,6 +260,15 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                       icon: ListChecks,
                       label: "30-Day System",
                       detail: integrated ? "Included inside the ebook" : product.systemPageCount ? `${product.systemPageCount} pages` : undefined,
+                    },
+                  ]
+                : []),
+              ...(product.slug === "healthy-eating-guide"
+                ? [
+                    {
+                      icon: UtensilsCrossed,
+                      label: "Interactive Meal Planner",
+                      detail: "Plan meals and build a daily routine in your Wellness Dashboard",
                     },
                   ]
                 : []),
