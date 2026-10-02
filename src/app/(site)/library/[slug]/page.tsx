@@ -3,10 +3,15 @@ import { notFound } from "next/navigation";
 import {
   ArrowRight,
   BookOpen,
+  CalendarDays,
   CheckCircle2,
   ClipboardList,
   Eye,
   ListChecks,
+  Printer,
+  Settings2,
+  ShoppingCart,
+  TrendingUp,
   UtensilsCrossed,
   Zap,
 } from "lucide-react";
@@ -16,8 +21,11 @@ import ProductCover from "@/components/ProductCover";
 import ProductCard from "@/components/ProductCard";
 import CTASection from "@/components/CTASection";
 import JsonLd from "@/components/JsonLd";
+import FAQAccordion from "@/components/FAQAccordion";
+import MealPlannerPreview from "@/components/MealPlannerPreview";
 import { ALL_PRODUCTS, PRODUCTS, STANDALONE_PRODUCTS, getProduct } from "@/data/products";
 import { buildMetadata, breadcrumbJsonLd, productDetailJsonLd, SITE_URL } from "@/lib/seo";
+import { FaqItem } from "@/lib/types";
 
 export async function generateStaticParams() {
   return ALL_PRODUCTS.map((p) => ({ slug: p.slug }));
@@ -93,6 +101,49 @@ const SYSTEM_WEEKS = [
   { label: "Days 29–30", desc: "Review and plan what comes next" },
 ];
 
+// Healthy Eating Guide only — the Interactive Meal Planner is a universal
+// Wellness Dashboard feature (every order gets it), but this is the one
+// product page where it's the headline story.
+const MEAL_PLANNER_FEATURES = [
+  { icon: BookOpen, label: "Healthy Eating Guide", detail: "Practical digital guide with simple wellness and eating-planning information." },
+  { icon: UtensilsCrossed, label: "Interactive Meal Planner", detail: "Plan your meals by day and time, track completion, and organize your routine." },
+  { icon: CalendarDays, label: "Weekly Meal Planner", detail: "Plan breakfast, lunch, snacks, and dinner across the week." },
+  { icon: ShoppingCart, label: "Grocery List", detail: "Build your grocery list from your planned meals or add items manually." },
+  { icon: ClipboardList, label: "Prep Ahead Checklist", detail: "Organize simple preparation tasks before the week starts." },
+  { icon: TrendingUp, label: "30-Day Progress", detail: "Track your planning routine across 30 days." },
+  { icon: Printer, label: "Printable Plan", detail: "Print or save your personalized plan for offline use." },
+];
+
+const MEAL_PLANNER_HOW_IT_WORKS = [
+  { icon: Settings2, title: "Set Up Your Routine", desc: "Choose your wake time, bedtime, meals, and preferences." },
+  { icon: UtensilsCrossed, title: "Plan Your Meals", desc: "Organize today's meals and your weekly plan." },
+  { icon: ListChecks, title: "Stay Organized", desc: "Track meals, groceries, preparation, and 30-day progress." },
+];
+
+const MEAL_PLANNER_FAQ: FaqItem[] = [
+  {
+    question: "Is the Meal Planner a PDF?",
+    answer:
+      "No. The Meal Planner is an interactive web-based tool. You can plan meals, edit times, track progress, manage groceries, and use the printable version when you want a paper copy.",
+  },
+  {
+    question: "Can I use it on my phone?",
+    answer: "Yes. The planner is designed to work on mobile, tablet, and desktop.",
+  },
+  {
+    question: "Do I need to install an app?",
+    answer: "No. It runs in your web browser, so there is nothing to install.",
+  },
+  {
+    question: "Can I print my plan?",
+    answer: "Yes. The planner includes a print-friendly version of your plan.",
+  },
+  {
+    question: "Is this medical advice?",
+    answer: "No. The Healthy Eating Planner is a general wellness and organization tool and is not medical advice.",
+  },
+];
+
 export default async function ProductDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const product = getProduct(slug);
@@ -110,6 +161,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
   const integrated = product.plannerAndSystemIncludedInEbook;
   const hasPlanner = Boolean(product.plannerPdf) || Boolean(integrated);
   const hasSystem = Boolean(product.systemPdf) || Boolean(integrated);
+  const isHealthyEating = product.slug === "healthy-eating-guide";
 
   return (
     <div>
@@ -147,15 +199,24 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             <div>
               <span className="eyebrow bg-white/10 text-gold-300">{product.categoryLabel}</span>
               <h1 className="mt-5 font-display text-3xl font-bold text-balance text-white sm:text-4xl">
-                {product.marketingHeadline ?? product.title}
+                {isHealthyEating
+                  ? "Build a Healthier Eating Routine — One Simple Day at a Time"
+                  : product.marketingHeadline ?? product.title}
               </h1>
-              {product.marketingHeadline && (
+              {product.marketingHeadline && !isHealthyEating && (
                 <p className="mt-2 text-xs font-bold uppercase tracking-wide text-gold-300">
                   {product.title}
                 </p>
               )}
+              {isHealthyEating && (
+                <p className="mt-2 text-xs font-bold uppercase tracking-wide text-gold-300">
+                  {product.title} + Interactive Meal Planner
+                </p>
+              )}
               <p className="mt-3 text-balance text-base leading-relaxed text-ink-300">
-                {product.marketingSubheadline ?? product.subtitle}
+                {isHealthyEating
+                  ? "Get the Healthy Eating Guide plus an interactive meal planner that helps you organize your meals, plan your week, build a grocery list, and track your 30-day routine."
+                  : product.marketingSubheadline ?? product.subtitle}
               </p>
 
               {product.benefits.length > 0 && (
@@ -169,7 +230,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                 </ul>
               )}
 
-              {hasPlanner && hasSystem && (
+              {hasPlanner && hasSystem && !isHealthyEating && (
                 <p className="mt-5 text-xs font-bold uppercase tracking-wide text-gold-300">
                   Ebook + Planner + 30-Day System
                 </p>
@@ -230,63 +291,85 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                   href={product.isBonus ? "/checkout" : `/checkout/${product.slug}`}
                   className="btn-gold"
                 >
-                  {product.isBonus ? "Get Instant Access" : "Get This Guide"} <ArrowRight size={16} />
+                  {isHealthyEating ? "Get the Healthy Eating Guide" : product.isBonus ? "Get Instant Access" : "Get This Guide"}{" "}
+                  <ArrowRight size={16} />
                 </Link>
               </div>
+              {isHealthyEating && (
+                <p className="mt-3 text-xs font-semibold text-gold-300">
+                  Digital access • Interactive planner • Printable resources
+                </p>
+              )}
             </div>
           </div>
         </div>
       </section>
 
-      {/* WHAT YOU GET */}
-      <section className="section-pad">
-        <div className="container-page">
-          <SectionHeading eyebrow="What You Get" title="Everything included with this guide" align="left" />
-          <div className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-2">
-            {[
-              { icon: BookOpen, label: "Full Ebook PDF", detail: product.pageCount ? `${product.pageCount} pages` : undefined },
-              ...(hasPlanner
-                ? [
-                    {
-                      icon: ClipboardList,
-                      label: "Matching Planner",
-                      detail: integrated ? "Included inside the ebook" : product.plannerPageCount ? `${product.plannerPageCount} pages` : undefined,
-                    },
-                  ]
-                : []),
-              ...(hasSystem
-                ? [
-                    {
-                      icon: ListChecks,
-                      label: "30-Day System",
-                      detail: integrated ? "Included inside the ebook" : product.systemPageCount ? `${product.systemPageCount} pages` : undefined,
-                    },
-                  ]
-                : []),
-              ...(product.slug === "healthy-eating-guide"
-                ? [
-                    {
-                      icon: UtensilsCrossed,
-                      label: "Interactive Meal Planner",
-                      detail: "Plan meals and build a daily routine in your Wellness Dashboard",
-                    },
-                  ]
-                : []),
-              { icon: Zap, label: "Instant Digital Access", detail: "Available right after checkout" },
-            ].map((item) => (
-                <div key={item.label} className="flex items-center gap-4 rounded-xl border border-ink-900/10 bg-white p-5">
+      {/* WHAT YOU GET — Healthy Eating Guide gets its own richer version below */}
+      {isHealthyEating ? (
+        <section className="section-pad">
+          <div className="container-page">
+            <SectionHeading
+              eyebrow="What You Get"
+              title="Everything You Need to Plan Your Eating Routine"
+              align="left"
+            />
+            <div className="mx-auto mt-10 grid max-w-5xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {MEAL_PLANNER_FEATURES.map((item) => (
+                <div key={item.label} className="flex items-start gap-4 rounded-xl border border-ink-900/10 bg-white p-5">
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-brand-100 text-brand-700">
                     <item.icon size={20} />
                   </span>
                   <div>
                     <p className="font-display text-base font-bold text-ink-950">{item.label}</p>
-                    {item.detail && <p className="text-xs text-ink-500">{item.detail}</p>}
+                    <p className="mt-1 text-xs leading-relaxed text-ink-500">{item.detail}</p>
                   </div>
                 </div>
               ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : (
+        <section className="section-pad">
+          <div className="container-page">
+            <SectionHeading eyebrow="What You Get" title="Everything included with this guide" align="left" />
+            <div className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-2">
+              {[
+                { icon: BookOpen, label: "Full Ebook PDF", detail: product.pageCount ? `${product.pageCount} pages` : undefined },
+                ...(hasPlanner
+                  ? [
+                      {
+                        icon: ClipboardList,
+                        label: "Matching Planner",
+                        detail: integrated ? "Included inside the ebook" : product.plannerPageCount ? `${product.plannerPageCount} pages` : undefined,
+                      },
+                    ]
+                  : []),
+                ...(hasSystem
+                  ? [
+                      {
+                        icon: ListChecks,
+                        label: "30-Day System",
+                        detail: integrated ? "Included inside the ebook" : product.systemPageCount ? `${product.systemPageCount} pages` : undefined,
+                      },
+                    ]
+                  : []),
+                { icon: Zap, label: "Instant Digital Access", detail: "Available right after checkout" },
+              ].map((item) => (
+                  <div key={item.label} className="flex items-center gap-4 rounded-xl border border-ink-900/10 bg-white p-5">
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-brand-100 text-brand-700">
+                      <item.icon size={20} />
+                    </span>
+                    <div>
+                      <p className="font-display text-base font-bold text-ink-950">{item.label}</p>
+                      {item.detail && <p className="text-xs text-ink-500">{item.detail}</p>}
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* PLANNER SECTION */}
       {hasPlanner && (
@@ -371,6 +454,73 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
         </section>
       )}
 
+      {/* MEAL PLANNER APP PREVIEW */}
+      {isHealthyEating && (
+        <section className="section-pad bg-white">
+          <div className="container-page">
+            <SectionHeading
+              eyebrow="Inside Your Dashboard"
+              title="See What Your Interactive Planner Can Do"
+              description="A real tool you'll actually use — not just another PDF to download and forget."
+            />
+            <div className="mt-10">
+              <MealPlannerPreview />
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* HOW IT WORKS */}
+      {isHealthyEating && (
+        <section className="section-pad">
+          <div className="container-page">
+            <SectionHeading eyebrow="How It Works" title="Get Started in Three Simple Steps" />
+            <div className="mx-auto mt-10 grid max-w-4xl gap-5 sm:grid-cols-3">
+              {MEAL_PLANNER_HOW_IT_WORKS.map((step, i) => (
+                <div key={step.title} className="card p-6 text-center">
+                  <span className="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-brand-100 text-brand-700">
+                    <step.icon size={20} />
+                  </span>
+                  <p className="mt-4 text-[11px] font-bold uppercase tracking-wide text-brand-600">Step {i + 1}</p>
+                  <p className="mt-1 font-display text-base font-bold text-ink-950">{step.title}</p>
+                  <p className="mt-1.5 text-sm leading-relaxed text-ink-500">{step.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* MORE THAN JUST A PDF */}
+      {isHealthyEating && (
+        <section className="section-pad bg-ink-950">
+          <div className="container-page">
+            <div className="mx-auto max-w-2xl text-center">
+              <span className="eyebrow bg-white/10 text-gold-300">More Than Just a PDF</span>
+              <p className="mt-5 text-balance font-display text-xl font-bold leading-snug text-white sm:text-2xl">
+                This isn&apos;t just another ebook to download and forget. Your purchase includes an
+                interactive meal-planning experience designed to help you actually use what you learn.
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ACCESS EXPLANATION */}
+      {isHealthyEating && (
+        <section className="section-pad">
+          <div className="container-page">
+            <div className="mx-auto max-w-2xl text-center">
+              <h2 className="font-display text-xl font-bold text-ink-950 sm:text-2xl">Getting Access</h2>
+              <p className="mt-3 text-sm leading-relaxed text-ink-600 sm:text-base">
+                After your purchase, you&apos;ll receive access to your digital guide and your HealthyGuide
+                wellness dashboard, including the Interactive Meal Planner.
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
+
       <section className="section-pad bg-white">
         <div className="container-page">
           <SectionHeading eyebrow="About This Guide" title={`Inside ${product.title}`} align="left" />
@@ -379,6 +529,18 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           </p>
         </div>
       </section>
+
+      {/* MEAL PLANNER FAQ */}
+      {isHealthyEating && (
+        <section className="section-pad bg-white">
+          <div className="container-page">
+            <SectionHeading eyebrow="Questions" title="Meal Planner FAQ" align="left" />
+            <div className="mx-auto mt-10 max-w-3xl">
+              <FAQAccordion items={MEAL_PLANNER_FAQ} />
+            </div>
+          </div>
+        </section>
+      )}
 
       {related.length > 0 && (
         <section className="section-pad">
