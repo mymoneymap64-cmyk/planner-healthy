@@ -7,6 +7,7 @@ import {
   ClipboardList,
   LineChart,
   Library,
+  Link2,
   ListChecks,
   Lock,
   Sparkles,
@@ -25,6 +26,29 @@ export const metadata = buildMetadata({
     "Turn your wellness guides into practical daily routines with checklists, personal notes, and progress tracking — the HealthyGuide Wellness System.",
   path: "/wellness-system",
 });
+
+const WHAT_YOU_GET_CARDS = [
+  {
+    emoji: "📖",
+    title: "Digital Guide",
+    desc: "Your complete wellness ebook with practical information, guidance, and resources.",
+  },
+  {
+    emoji: "🗓️",
+    title: "Interactive Wellness System",
+    desc: "Turn your guide into daily actions with your personal dashboard, daily plans, checklists, notes, favorites, and progress tracking.",
+  },
+  {
+    emoji: "🥗",
+    title: "Interactive Meal Planner",
+    desc: "Plan meals, organize your week, manage your grocery list, and track your meal routine.",
+  },
+  {
+    emoji: "📋",
+    title: "Planner + 30-Day System",
+    desc: "Use the included printable planner and 30-day system to stay organized and consistent.",
+  },
+];
 
 const PROBLEM_CARDS = [
   {
@@ -197,6 +221,66 @@ export default function WellnessSystemPage() {
                 Access your Wellness System
               </Link>
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT YOU GET WITH YOUR EBOOK */}
+      <section className="section-pad bg-white">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="One Purchase, Fully Connected"
+            title="What You Get With Your Ebook"
+            description="Your purchase gives you more than a digital guide. It also gives you access to an interactive wellness system that helps you turn the guide into a practical daily routine."
+          />
+
+          {/* Visual relationship: the ebook and the system are one purchase, not two products */}
+          <div className="mx-auto mt-12 flex max-w-3xl flex-col items-center gap-5 sm:flex-row sm:justify-center sm:gap-8">
+            <div className="text-center">
+              <div className="flex -space-x-7">
+                {PRODUCTS.slice(0, 2).map((p) => (
+                  <div key={p.slug} className="w-24 overflow-hidden rounded-lg border-4 border-white shadow-lift sm:w-28">
+                    <ProductCover product={p} className="aspect-[3/4] w-full" />
+                  </div>
+                ))}
+              </div>
+              <p className="mt-4 text-xs font-bold uppercase tracking-wide text-ink-500">Your Digital Guide</p>
+            </div>
+
+            <span className="flex h-11 w-11 shrink-0 rotate-90 items-center justify-center rounded-full bg-brand-100 text-brand-700 sm:rotate-0">
+              <Link2 size={20} />
+            </span>
+
+            <div className="text-center">
+              <div className="w-40 overflow-hidden rounded-xl border border-ink-900/10 shadow-lift sm:w-48">
+                <DemoDashboardUI variant="laptop" />
+              </div>
+              <p className="mt-4 text-xs font-bold uppercase tracking-wide text-ink-500">Your Interactive System</p>
+            </div>
+          </div>
+
+          <div className="mx-auto mt-14 grid max-w-5xl gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {WHAT_YOU_GET_CARDS.map((c) => (
+              <div key={c.title} className="card p-6 text-center">
+                <p className="text-3xl" aria-hidden>
+                  {c.emoji}
+                </p>
+                <h3 className="mt-3 font-display text-base font-bold text-ink-950">{c.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-500">{c.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="font-display text-xl font-bold text-balance text-ink-950 sm:text-2xl">
+              One purchase. Your guide + your interactive wellness system.
+            </p>
+            <Link
+              href="/wellness-system/demo"
+              className="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-brand-700 hover:underline"
+            >
+              See the system before you buy <ArrowRight size={15} />
+            </Link>
           </div>
         </div>
       </section>
