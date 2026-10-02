@@ -175,15 +175,21 @@ export default function WellnessSystemPage() {
               checklists, personal notes, progress tracking, and a simple
               system designed to help you stay consistent.
             </p>
+            <p className="mt-3 text-balance text-sm leading-relaxed text-ink-300">
+              Explore the dashboard and Interactive Meal Planner before you buy.
+            </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              <Link href="#features" className="btn-gold">
-                Explore the Wellness System <ArrowRight size={16} />
+              <Link href="/wellness-system/demo" className="btn-gold">
+                Try the Wellness System Demo <ArrowRight size={16} />
               </Link>
               <Link href="/checkout" className="btn border-2 border-white/20 text-white hover:bg-white/10">
                 Get the Complete Library
               </Link>
             </div>
+            <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-gold-300">
+              Explore the interactive demo — no account needed
+            </p>
 
             <p className="mt-6 text-sm text-ink-400">
               Already own a guide?{" "}
