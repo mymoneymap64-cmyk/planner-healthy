@@ -321,6 +321,34 @@ export const STANDALONE_PRODUCTS: Product[] = [
     systemPdf: null,
     systemPageCount: null,
   },
+  {
+    id: "standalone-02",
+    slug: "complete-guide-home-food-preservation",
+    title: "The Complete Guide to Home Food Preservation",
+    subtitle:
+      "200 Illustrated Recipes for Canning, Pickling, Jams, Jellies, Sauces, Drying, Freezing & Pantry Storage",
+    tagline: "Food Preservation & Canning",
+    description:
+      "A beginner-friendly, illustrated guide to preserving food at home with 200 recipes covering canning, pickling, jams, jellies, sauces, drying, freezing, and pantry storage. The book combines practical preservation methods with illustrated step-by-step guidance, equipment guidance, food-safety information, storage guidance, and reference charts.",
+    category: "food-preservation",
+    categoryLabel: "Food Preservation",
+    benefits: [
+      "200 illustrated, beginner-friendly preservation recipes",
+      "Step-by-step methods for canning, pickling, jams, drying & freezing",
+      "Reference charts, troubleshooting guide & food-safety guidance",
+    ],
+    price: 9.99,
+    compareAtPrice: null,
+    pageCount: 450,
+    badge: "Food Preservation",
+    includedInBundle: false,
+    coverImage: "/complete-guide-home-food-preservation/cover.jpg",
+    ebookPdf: "/complete-guide-home-food-preservation/ebook.pdf",
+    plannerPdf: null,
+    plannerPageCount: null,
+    systemPdf: null,
+    systemPageCount: null,
+  },
 ];
 
 export const ALL_PRODUCTS: Product[] = [...PRODUCTS, ...BONUS_PRODUCTS, ...STANDALONE_PRODUCTS];

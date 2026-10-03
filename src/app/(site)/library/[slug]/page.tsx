@@ -76,6 +76,11 @@ const SEO_COPY: Record<string, { title: string; description: string }> = {
     description:
       "Discover The Cake Cookbook with 40 delicious homemade cake recipes, plus 5 easy frostings and glazes for birthdays, holidays, and everyday baking.",
   },
+  "complete-guide-home-food-preservation": {
+    title: "The Complete Guide to Home Food Preservation | HealthyGuide",
+    description:
+      "200 illustrated, beginner-friendly recipes for canning, pickling, jams, jellies, sauces, drying, freezing, and pantry storage — plus equipment guidance, food-safety information, and reference charts.",
+  },
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
@@ -144,6 +149,29 @@ const MEAL_PLANNER_FAQ: FaqItem[] = [
   },
 ];
 
+const PRESERVATION_CHAPTERS = [
+  { number: "01", title: "Canned Vegetables" },
+  { number: "02", title: "Canned Fruits" },
+  { number: "03", title: "Pickles & Relishes" },
+  { number: "04", title: "Jams & Jellies" },
+  { number: "05", title: "Sauces & Salsas" },
+  { number: "06", title: "Chutneys & Condiments" },
+  { number: "07", title: "Dried & Dehydrated Foods" },
+  { number: "08", title: "Freezer Recipes" },
+  { number: "09", title: "Pantry & Long-Term Storage" },
+  { number: "10", title: "Preserved Meal Components" },
+];
+
+const PRESERVATION_REFERENCE_ITEMS = [
+  "Getting Started & food preservation basics",
+  "Equipment, water-bath & pressure canning guidance",
+  "Food safety & botulism guidance",
+  "Altitude adjustments & reference charts",
+  "Storage life & troubleshooting guides",
+  "Seasonal produce buying guide",
+  "Full recipe index",
+];
+
 export default async function ProductDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const product = getProduct(slug);
@@ -162,6 +190,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
   const hasPlanner = Boolean(product.plannerPdf) || Boolean(integrated);
   const hasSystem = Boolean(product.systemPdf) || Boolean(integrated);
   const isHealthyEating = product.slug === "healthy-eating-guide";
+  const isFoodPreservation = product.slug === "complete-guide-home-food-preservation";
 
   return (
     <div>
@@ -366,6 +395,59 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                     </div>
                   </div>
                 ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* WHAT'S INSIDE — chapters + reference material */}
+      {isFoodPreservation && (
+        <section className="section-pad">
+          <div className="container-page">
+            <SectionHeading
+              eyebrow="What's Inside"
+              title="10 Chapters of Illustrated Recipes"
+              description="200 recipes organized into 10 chapters, plus a full reference section."
+            />
+            <div className="mx-auto mt-10 grid max-w-5xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {PRESERVATION_CHAPTERS.map((c) => (
+                <div key={c.number} className="flex items-center gap-4 rounded-xl border border-ink-900/10 bg-white p-5">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-brand-100 font-display text-sm font-black text-brand-700">
+                    {c.number}
+                  </span>
+                  <p className="font-display text-base font-bold text-ink-950">{c.title}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mx-auto mt-8 max-w-3xl rounded-xl border border-ink-900/10 bg-white p-6">
+              <p className="font-display text-sm font-bold text-ink-950">Plus a full reference section</p>
+              <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+                {PRESERVATION_REFERENCE_ITEMS.map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm leading-relaxed text-ink-600">
+                    <CheckCircle2 size={15} className="mt-0.5 shrink-0 text-brand-600" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* FOOD SAFETY NOTE */}
+      {isFoodPreservation && (
+        <section className="section-pad bg-white">
+          <div className="container-page">
+            <div className="mx-auto max-w-2xl rounded-xl border border-ink-900/10 bg-cream p-6 sm:p-8">
+              <span className="eyebrow">A Note on Safety</span>
+              <p className="mt-4 text-sm leading-relaxed text-ink-600">
+                This guide&apos;s canning procedures follow research-tested guidance from the USDA Complete Guide to
+                Home Canning and the National Center for Home Food Preservation (NCHFP), together with
+                long-established tested practice for jams and jellies. It is written for general educational
+                purposes — always follow tested recipes exactly, and consult current guidance from your local
+                Cooperative Extension office or the NCHFP for the most up-to-date recommendations.
+              </p>
             </div>
           </div>
         </section>
