@@ -5,13 +5,17 @@ import {
   CheckCircle2,
   Circle,
   ClipboardList,
+  Heart,
+  Home,
   LineChart,
   Library,
   Link2,
   ListChecks,
   Lock,
+  NotebookPen,
   Sparkles,
   StickyNote,
+  UtensilsCrossed,
 } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import ProductCover from "@/components/ProductCover";
@@ -30,23 +34,23 @@ export const metadata = buildMetadata({
 const WHAT_YOU_GET_CARDS = [
   {
     emoji: "📖",
-    title: "Digital Guide",
-    desc: "Your complete wellness ebook with practical information, guidance, and resources.",
+    title: "Your Digital Guide",
+    desc: "The ebook you purchased, including the practical guidance, routines, and wellness resources inside it.",
   },
   {
-    emoji: "🗓️",
-    title: "Interactive Wellness System",
-    desc: "Turn your guide into daily actions with your personal dashboard, daily plans, checklists, notes, favorites, and progress tracking.",
+    emoji: "🧭",
+    title: "Your Interactive Wellness System",
+    desc: "Your personal dashboard brings the guide to life with routines, notes, checklists, progress, and saved resources.",
   },
   {
     emoji: "🥗",
-    title: "Interactive Meal Planner",
-    desc: "Plan meals, organize your week, manage your grocery list, and track your meal routine.",
+    title: "Meal Planner Where Included",
+    desc: "When your purchase includes it, you can plan meals, manage meal times, and track your routine in the app.",
   },
   {
     emoji: "📋",
     title: "Planner + 30-Day System",
-    desc: "Use the included printable planner and 30-day system to stay organized and consistent.",
+    desc: "Use the included planner and 30-day system to turn the guide into daily action and build consistency.",
   },
 ];
 
@@ -170,10 +174,67 @@ const FEATURES = [
 ];
 
 const HOW_IT_WORKS = [
-  { step: "01", title: "Choose your guide", desc: "Pick any guide you own, or your complete library." },
-  { step: "02", title: "Open your workspace", desc: "Reach your personal Wellness System from your access page." },
-  { step: "03", title: "Check off & take notes", desc: "Complete your daily checklist and save notes as you go." },
-  { step: "04", title: "Review your progress", desc: "See how far you've come, and keep moving forward." },
+  { step: "01", title: "Buy Your Guide", desc: "Choose a HealthyGuide ebook or the Complete Library." },
+  { step: "02", title: "Get Your Personal Access Link", desc: "After checkout, your personal access link is generated and sent by email." },
+  { step: "03", title: "Open Your Wellness System", desc: "Use the link to enter the interactive dashboard and organize your routines, notes, and planning tools." },
+];
+
+const SYSTEM_SECTION_CARDS = [
+  {
+    icon: Home,
+    title: "Home",
+    desc: "See today's focus, progress, and a quick overview of your wellness routine.",
+  },
+  {
+    icon: Library,
+    title: "My Library",
+    desc: "Access the wellness guides connected to your purchase in one organized space.",
+  },
+  {
+    icon: ListChecks,
+    title: "Daily Plan",
+    desc: "Organize daily wellness tasks and routines so the guidance becomes practical to follow.",
+  },
+  {
+    icon: UtensilsCrossed,
+    title: "Meal Planner",
+    desc: "Plan meals, manage meal times, track completion, and use the interactive meal-planning tools when included.",
+  },
+  {
+    icon: CheckCircle2,
+    title: "Checklists",
+    desc: "Create and complete practical wellness checklists that match your guide and routine.",
+  },
+  {
+    icon: NotebookPen,
+    title: "Notes",
+    desc: "Save personal reflections, reminders, and ideas in one place for easy return.",
+  },
+  {
+    icon: Heart,
+    title: "Favorites",
+    desc: "Keep useful resources and items easy to revisit whenever you need them.",
+  },
+];
+
+const PURCHASE_FLOW = [
+  "Complete checkout.",
+  "Your purchase is recorded.",
+  "A personal access link is generated.",
+  "The access link is sent by email.",
+  "Open the link and enter your Wellness System.",
+  "Access your purchased content and available interactive tools.",
+];
+
+const PDF_VS_SYSTEM = [
+  {
+    title: "Traditional PDF",
+    items: ["Read", "Print", "Reference"],
+  },
+  {
+    title: "HealthyGuide Wellness System",
+    items: ["Organize", "Plan", "Track", "Check off", "Save notes", "Revisit resources"],
+  },
 ];
 
 export default function WellnessSystemPage() {
@@ -188,23 +249,35 @@ export default function WellnessSystemPage() {
           </div>
 
           <div className="order-1 animate-fadeUp lg:order-2">
-            <span className="eyebrow bg-white/10 text-gold-300">
+            <span className="eyebrow bg-brand-100 text-brand-700">
               <Sparkles size={13} /> HealthyGuide Wellness System
             </span>
             <h1 className="mt-5 font-display text-3xl font-bold leading-[1.15] text-balance text-white sm:text-4xl lg:text-[2.75rem]">
-              Your Wellness Journey, Organized in One Place.
+              Your Ebook Comes With More Than a PDF.
             </h1>
             <p className="mt-5 text-balance text-sm leading-relaxed text-ink-200 sm:text-base">
-              Turn your wellness guides into practical daily routines with
-              checklists, personal notes, progress tracking, and a simple
-              system designed to help you stay consistent.
+              Your HealthyGuide purchase gives you access to an interactive Wellness System designed to help you turn your guide into practical daily routines.
             </p>
-            <p className="mt-3 text-balance text-sm leading-relaxed text-ink-300">
-              Explore the dashboard and Interactive Meal Planner before you buy.
+            <p className="mt-4 text-balance text-sm leading-relaxed text-ink-300">
+              It brings together your digital guide, planning tools, progress tracking, personal notes, and your interactive wellness workspace in one place.
             </p>
 
+            <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-brand-300/40 bg-brand-100/10 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.16em] text-brand-100">
+              <span className="h-2 w-2 rounded-full bg-brand-300" />
+              Digital guide + interactive system
+            </div>
+
+            <div className="mt-8 grid gap-3 text-sm text-ink-200 sm:grid-cols-2">
+              <div className="rounded-xl border border-brand-300/20 bg-white/5 p-3 text-brand-50">Digital guide</div>
+              <div className="rounded-xl border border-brand-300/20 bg-white/5 p-3 text-brand-50">Interactive Wellness System</div>
+              <div className="rounded-xl border border-brand-300/20 bg-white/5 p-3 text-brand-50">Planning tools</div>
+              <div className="rounded-xl border border-brand-300/20 bg-white/5 p-3 text-brand-50">Progress tracking</div>
+              <div className="rounded-xl border border-brand-300/20 bg-white/5 p-3 text-brand-50">Meal Planner where included</div>
+              <div className="rounded-xl border border-brand-300/20 bg-white/5 p-3 text-brand-50">Notes, favorites, checklists</div>
+            </div>
+
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              <Link href="/wellness-system/demo" className="btn-gold">
+              <Link href="/wellness-system/demo" className="btn-wellness">
                 Try the Wellness System Demo <ArrowRight size={16} />
               </Link>
               <Link href="/checkout" className="btn border-2 border-white/20 text-white hover:bg-white/10">
@@ -212,7 +285,7 @@ export default function WellnessSystemPage() {
               </Link>
             </div>
             <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-gold-300">
-              Explore the interactive demo — no account needed
+              Explore the dashboard and Interactive Meal Planner before you buy — no account needed.
             </p>
 
             <p className="mt-6 text-sm text-ink-400">
@@ -285,6 +358,56 @@ export default function WellnessSystemPage() {
         </div>
       </section>
 
+      {/* HOW THE WELLNESS SYSTEM WORKS */}
+      <section className="section-pad bg-brand-50">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="How It Works"
+            title="A Simple 3-Step Flow"
+            description="The Wellness System is designed to work alongside the guide you purchase — helping you move from learning to daily action without using separate tools or a confusing setup."
+          />
+
+          <div className="relative mx-auto mt-14 max-w-5xl">
+            <div className="pointer-events-none absolute left-[19px] top-0 h-full w-px bg-brand-900/10 sm:left-0 sm:top-[19px] sm:h-px sm:w-full" />
+            <div className="grid gap-8 sm:grid-cols-3 sm:gap-6">
+              {HOW_IT_WORKS.map((s) => (
+                <div key={s.step} className="relative flex items-start gap-4 sm:flex-col sm:items-start sm:gap-0">
+                  <span className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-800 font-display text-sm font-black text-white shadow-glow">
+                    {s.step}
+                  </span>
+                  <div className="sm:mt-5 rounded-2xl border border-brand-200 bg-white/80 p-4 shadow-soft sm:w-full">
+                    <h3 className="font-display text-base font-bold text-ink-950">{s.title}</h3>
+                    <p className="mt-1.5 text-sm leading-relaxed text-ink-600">{s.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT'S INSIDE YOUR WELLNESS SYSTEM */}
+      <section id="features" className="section-pad bg-white">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="What's Inside Your Wellness System"
+            title="One dashboard for the guide, your routines, and your progress"
+            description="The dashboard is organized around the real sections homeowners and customers use after purchase — not a separate product."
+          />
+          <div className="mx-auto mt-14 grid max-w-6xl gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {SYSTEM_SECTION_CARDS.map(({ icon: Icon, title, desc }) => (
+              <div key={title} className="card card-hover bg-gradient-to-b from-brand-50 to-white p-6">
+                <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-brand-100 text-brand-700 shadow-soft">
+                  <Icon size={20} />
+                </span>
+                <h3 className="mt-4 font-display text-lg font-bold text-ink-950">{title}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-ink-500">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* PROBLEM */}
       <section className="section-pad">
         <div className="container-page">
@@ -351,17 +474,84 @@ export default function WellnessSystemPage() {
         </div>
       </section>
 
-      {/* DASHBOARD SHOWCASE */}
+      {/* SHOW, DON'T JUST TELL */}
       <section className="section-pad bg-ink-950">
         <div className="container-page">
           <SectionHeading
             dark
             eyebrow="See It In Action"
-            title="See Your Wellness Journey at a Glance"
-            description="A realistic look at what your personal dashboard organizes — built with fictional demo data, not a real account."
+            title="Home, Daily Plan, Meal Planner, Notes, and more — all in one workspace"
+            description="This is what the real Wellness System feels like inside: a practical dashboard for your guide, your routine, and the tools you use to keep moving."
           />
           <div className="mx-auto mt-14 max-w-3xl overflow-hidden rounded-2xl border border-white/10 shadow-lift transition-transform duration-500 hover:-translate-y-1">
             <DemoDashboardUI variant="showcase" />
+          </div>
+          <div className="mx-auto mt-8 grid max-w-4xl gap-4 sm:grid-cols-3">
+            {[
+              "Home dashboard",
+              "Daily Plan",
+              "Meal Planner",
+              "Library",
+              "Checklists",
+              "Notes",
+            ].map((item) => (
+              <div key={item} className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-center text-sm font-medium text-ink-100">
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT HAPPENS AFTER YOU BUY */}
+      <section className="section-pad bg-white">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="What Happens After You Buy"
+            title="From checkout to your personal Wellness System"
+            description="Use the real access flow. After purchase, the system becomes available through your personal access link."
+          />
+
+          <div className="mx-auto mt-12 max-w-4xl rounded-2xl border border-ink-900/10 bg-ink-50 p-6 sm:p-8">
+            <ol className="space-y-4">
+              {PURCHASE_FLOW.map((step, index) => (
+                <li key={step} className="flex gap-4">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 font-display text-sm font-black text-white">
+                    {index + 1}
+                  </span>
+                  <p className="pt-1 text-sm leading-relaxed text-ink-600 sm:text-base">{step}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      {/* PDF VS WELLNESS SYSTEM */}
+      <section className="section-pad bg-brand-950 text-white">
+        <div className="container-page">
+          <SectionHeading
+            dark
+            eyebrow="Why It's Different From a PDF"
+            title="A guide gives you the info. The Wellness System helps you use it."
+            description="The value is in turning guidance into a repeatable routine with organization, planning, and progress tracking."
+          />
+          <div className="mx-auto mt-14 grid max-w-5xl gap-5 lg:grid-cols-2">
+            {PDF_VS_SYSTEM.map((group) => (
+              <div key={group.title} className={`rounded-2xl border p-6 ${group.title === "Traditional PDF" ? "border-white/10 bg-white/5" : "border-brand-300/30 bg-brand-900/40"}`}>
+                <h3 className="font-display text-xl font-bold text-white">{group.title}</h3>
+                <ul className="mt-5 space-y-3 text-sm text-brand-50">
+                  {group.items.map((item) => (
+                    <li key={item} className="flex items-center gap-3">
+                      <span className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[10px] font-black ${group.title === "Traditional PDF" ? "bg-gold-400 text-ink-950" : "bg-brand-300 text-brand-900"}`}>
+                        {group.title === "Traditional PDF" ? "•" : "✓"}
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -406,23 +596,18 @@ export default function WellnessSystemPage() {
               <ClipboardList size={13} /> Get Started
             </span>
             <h2 className="mt-5 font-display text-3xl font-bold text-balance text-white sm:text-4xl lg:text-5xl">
-              Make Your Wellness Resources Work for You.
+              Try the Wellness System Demo
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-balance text-base leading-relaxed text-brand-100 sm:text-lg">
-              Explore the HealthyGuide Wellness System and bring your
-              reading, planning, and daily progress together in one
-              organized experience.
+              Explore the dashboard and Interactive Meal Planner before you buy — no account needed. The demo is a preview only; your real system becomes available through your purchase access link.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Link href="/checkout" className="btn-gold w-full sm:w-auto">
-                Get the Complete Library
+              <Link href="/wellness-system/demo" className="btn-wellness w-full sm:w-auto">
+                Try the Wellness System Demo
                 <ArrowRight size={16} />
               </Link>
-              <Link
-                href="/access"
-                className="btn w-full border-2 border-white/20 text-white hover:bg-white/10 sm:w-auto"
-              >
-                Access Your Wellness System
+              <Link href="/checkout" className="btn w-full border-2 border-white/20 text-white hover:bg-white/10 sm:w-auto">
+                Get the Complete Library
               </Link>
             </div>
           </div>

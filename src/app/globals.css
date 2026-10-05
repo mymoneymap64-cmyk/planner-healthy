@@ -35,6 +35,10 @@
     @apply btn bg-gold-400 text-ink-950 hover:bg-gold-300 focus-visible:ring-gold-500;
   }
 
+  .btn-wellness {
+    @apply btn bg-brand-800 text-white shadow-glow hover:bg-brand-700 focus-visible:ring-brand-700;
+  }
+
   .btn-secondary {
     @apply btn border-2 border-ink-900 bg-transparent text-ink-900 hover:bg-ink-900 hover:text-white focus-visible:ring-ink-900;
   }
