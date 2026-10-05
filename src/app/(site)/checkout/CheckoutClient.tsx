@@ -61,9 +61,7 @@ export default function CheckoutClient() {
 
             <div className="mt-8 flex items-start gap-2 rounded-2xl border border-ink-900/[0.1] bg-cream p-5 text-xs leading-relaxed text-ink-500">
               <ShieldCheck size={15} className="mt-0.5 shrink-0 text-brand-700" />
-              Secure checkout powered by PayPal. You&apos;ll be redirected to
-              complete your payment, then brought straight back with instant
-              access to your files.
+              Secure checkout powered by PayPal. After payment, you&apos;ll get a personal access link by email and be taken straight into your HealthyGuide Wellness System.
             </div>
           </div>
 

@@ -24,7 +24,7 @@ export const FAQS: FaqItem[] = [
   {
     question: "How do I access my files?",
     answer:
-      "After checkout, your files are available on your account's download page. You can view or download each ebook, planner, and 30-day system PDF individually.",
+      "After checkout, you'll receive a personal access link by email. Use that link to open your HealthyGuide Wellness System and access your purchased files, resources, and any included planner content.",
   },
   {
     question: "Do I get the bonus guides?",

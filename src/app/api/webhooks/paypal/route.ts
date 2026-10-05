@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
       const token = await fulfillPaypalOrder(orderId);
       const order = await getOrderByToken(token);
       if (order?.email) {
-        await sendAccessEmail(order.email, `${SITE_URL}/access/${token}`);
+        await sendAccessEmail(order.email, `${SITE_URL}/access/${token}`, order.slug);
       }
     } catch (error) {
       console.error("Failed to fulfill PayPal order from webhook:", orderId, error);
