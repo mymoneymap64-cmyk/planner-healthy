@@ -8,6 +8,10 @@ import Script from "next/script";
  * by .hb-ad-inpage collapse instead of showing an empty placeholder box.
  */
 export default function HBAgencyAdScript() {
+  if (process.env.NEXT_PUBLIC_HBAGENCY_ENABLED !== "true") {
+    return null;
+  }
+
   return (
     <Script
       src="https://d3u598arehtfkf.cloudfront.net/prebid_hb_39870_43777.js"
