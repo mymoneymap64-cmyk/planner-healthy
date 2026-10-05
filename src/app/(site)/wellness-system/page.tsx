@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import ProductCover from "@/components/ProductCover";
+import ResponsiveImage from "@/components/ResponsiveImage";
 import HeroDeviceMockup from "@/components/wellness-landing/HeroDeviceMockup";
 import DemoDashboardUI from "@/components/wellness-landing/DemoDashboardUI";
 import { PRODUCTS } from "@/data/products";
@@ -179,6 +180,54 @@ const HOW_IT_WORKS = [
   { step: "03", title: "Open Your Wellness System", desc: "Use the link to enter the interactive dashboard and organize your routines, notes, and planning tools." },
 ];
 
+const VISUAL_JOURNEY = [
+  {
+    title: "Choose your guide",
+    description: "Start with the wellness guide that matches your goals, then open the system created for your purchase.",
+    imageKey: "healthyLifestyle",
+  },
+  {
+    title: "Receive your personal access link",
+    description: "After checkout, the link arrives by email and opens your private dashboard for your specific purchase.",
+    imageKey: "morningRoutineAlt",
+  },
+  {
+    title: "Use your daily plan",
+    description: "Open Home, review your plan, and turn your guide into a realistic routine you can return to each day.",
+    imageKey: "healthyMealsAlt",
+  },
+  {
+    title: "Track meals, notes, and favorites",
+    description: "Save ideas, track meals, and keep the tools you return to most in the same place.",
+    imageKey: "mealPrep",
+  },
+  {
+    title: "Keep the routine sustainable",
+    description: "Move through your plan with checklists, reminders, and a rhythm that feels realistic rather than overwhelming.",
+    imageKey: "walking",
+  },
+] as const satisfies ReadonlyArray<{
+  title: string;
+  description: string;
+  imageKey:
+    | "healthyLifestyle"
+    | "healthyLifestyleAlt"
+    | "healthyMealsAlt"
+    | "morningRoutineAlt"
+    | "mealPrep"
+    | "walking";
+}>;
+
+const ROUTINE_STEPS = [
+  "Open your personal access link from your email.",
+  "Enter your HealthyGuide Wellness System.",
+  "Start from Home and review your daily plan.",
+  "Use Checklists to stay organized.",
+  "Use Notes and Favorites to save useful information.",
+  "Use Meal Planner when your purchase includes it.",
+  "Return regularly and build your routine.",
+];
+
 const SYSTEM_SECTION_CARDS = [
   {
     icon: Home,
@@ -243,22 +292,22 @@ export default function WellnessSystemPage() {
       {/* HERO */}
       <section className="relative overflow-hidden bg-ink-950">
         <div className="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(circle,#fff_1px,transparent_1px)] [background-size:22px_22px]" />
-        <div className="container-page relative grid gap-12 py-14 sm:py-16 lg:grid-cols-2 lg:items-center lg:py-24">
+        <div className="container-page relative grid gap-8 py-10 sm:gap-10 sm:py-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-12 lg:py-24">
           <div className="order-2 lg:order-1">
             <HeroDeviceMockup />
           </div>
 
-          <div className="order-1 animate-fadeUp lg:order-2">
+          <div className="order-1 max-w-xl animate-fadeUp lg:order-2 lg:max-w-none">
             <span className="eyebrow bg-brand-100 text-brand-700">
               <Sparkles size={13} /> HealthyGuide Wellness System
             </span>
-            <h1 className="mt-5 font-display text-3xl font-bold leading-[1.15] text-balance text-white sm:text-4xl lg:text-[2.75rem]">
+            <h1 className="mt-5 font-display text-3xl font-bold leading-[1.08] text-balance text-white sm:text-4xl lg:text-[2.75rem]">
               Your Ebook Comes With More Than a PDF.
             </h1>
-            <p className="mt-5 text-balance text-sm leading-relaxed text-ink-200 sm:text-base">
+            <p className="mt-4 max-w-[38rem] text-balance text-sm leading-relaxed text-ink-200 sm:mt-5 sm:text-base lg:max-w-[34rem]">
               Your HealthyGuide purchase gives you access to an interactive Wellness System designed to help you turn your guide into practical daily routines.
             </p>
-            <p className="mt-4 text-balance text-sm leading-relaxed text-ink-300">
+            <p className="mt-3 max-w-[38rem] text-balance text-sm leading-relaxed text-ink-300 sm:mt-4 lg:max-w-[32rem]">
               It brings together your digital guide, planning tools, progress tracking, personal notes, and your interactive wellness workspace in one place.
             </p>
 
@@ -276,11 +325,11 @@ export default function WellnessSystemPage() {
               <div className="rounded-xl border border-brand-300/20 bg-white/5 p-3 text-brand-50">Notes, favorites, checklists</div>
             </div>
 
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <Link href="/wellness-system/demo" className="btn-wellness">
+            <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
+              <Link href="/wellness-system/demo" className="btn-wellness w-full sm:w-auto">
                 Try the Wellness System Demo <ArrowRight size={16} />
               </Link>
-              <Link href="/checkout" className="btn border-2 border-white/20 text-white hover:bg-white/10">
+              <Link href="/checkout" className="btn w-full border-2 border-white/20 text-white hover:bg-white/10 sm:w-auto">
                 Get the Complete Library
               </Link>
             </div>
@@ -308,9 +357,9 @@ export default function WellnessSystemPage() {
           />
 
           {/* Visual relationship: the ebook and the system are one purchase, not two products */}
-          <div className="mx-auto mt-12 flex max-w-3xl flex-col items-center gap-5 sm:flex-row sm:justify-center sm:gap-8">
+          <div className="mx-auto mt-12 grid max-w-5xl gap-6 lg:grid-cols-[1.1fr_1.2fr_0.9fr] lg:items-center">
             <div className="text-center">
-              <div className="flex -space-x-7">
+              <div className="flex -space-x-7 justify-center">
                 {PRODUCTS.slice(0, 2).map((p) => (
                   <div key={p.slug} className="w-24 overflow-hidden rounded-lg border-4 border-white shadow-lift sm:w-28">
                     <ProductCover product={p} className="aspect-[3/4] w-full" />
@@ -320,15 +369,44 @@ export default function WellnessSystemPage() {
               <p className="mt-4 text-xs font-bold uppercase tracking-wide text-ink-500">Your Digital Guide</p>
             </div>
 
-            <span className="flex h-11 w-11 shrink-0 rotate-90 items-center justify-center rounded-full bg-brand-100 text-brand-700 sm:rotate-0">
-              <Link2 size={20} />
-            </span>
+            <div className="flex justify-center">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-100 text-brand-700 shadow-soft">
+                <Link2 size={20} />
+              </span>
+            </div>
 
             <div className="text-center">
               <div className="w-40 overflow-hidden rounded-xl border border-ink-900/10 shadow-lift sm:w-48">
                 <DemoDashboardUI variant="laptop" />
               </div>
               <p className="mt-4 text-xs font-bold uppercase tracking-wide text-ink-500">Your Interactive System</p>
+            </div>
+          </div>
+
+          <div className="mt-8 overflow-hidden rounded-[1.75rem] border border-brand-100 bg-ink-50 shadow-soft">
+            <div className="grid lg:grid-cols-[1.1fr_0.9fr]">
+              <div className="p-4 sm:p-6">
+                <div className="overflow-hidden rounded-[1.4rem] border border-ink-900/10 bg-white shadow-soft">
+                  <ResponsiveImage
+                    imageKey="healthyLifestyleAlt"
+                    className="h-full min-h-[250px]"
+                    sizes="(min-width: 1024px) 45vw, 100vw"
+                    rounded="rounded-none"
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col justify-center p-6 sm:p-8">
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-brand-700">Your guide gives you the knowledge.</p>
+                <h3 className="mt-3 font-display text-2xl font-bold text-ink-950">Your system helps you turn it into a routine.</h3>
+                <p className="mt-4 text-sm leading-relaxed text-ink-600">
+                  The guide teaches the habit, the checklist helps you follow it, and the dashboard keeps you organized so the learning stays useful in real life.
+                </p>
+                <div className="mt-6 grid gap-3 text-sm text-ink-700">
+                  <div className="rounded-xl border border-ink-900/10 bg-white px-3 py-2">Read the guidance</div>
+                  <div className="rounded-xl border border-ink-900/10 bg-white px-3 py-2">Plan your day</div>
+                  <div className="rounded-xl border border-ink-900/10 bg-white px-3 py-2">Return to what matters</div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -358,27 +436,64 @@ export default function WellnessSystemPage() {
         </div>
       </section>
 
-      {/* HOW THE WELLNESS SYSTEM WORKS */}
+      {/* HOW YOUR HEALTHYGUIDE SYSTEM WORKS */}
       <section className="section-pad bg-brand-50">
         <div className="container-page">
           <SectionHeading
-            eyebrow="How It Works"
-            title="A Simple 3-Step Flow"
-            description="The Wellness System is designed to work alongside the guide you purchase — helping you move from learning to daily action without using separate tools or a confusing setup."
+            eyebrow="How Your HealthyGuide System Works"
+            title="From purchase to daily routine, in a natural rhythm"
+            description="A real wellness system should feel simple and human. The journey is designed to help you learn, plan, and return to what matters without extra friction."
           />
 
-          <div className="relative mx-auto mt-14 max-w-5xl">
-            <div className="pointer-events-none absolute left-[19px] top-0 h-full w-px bg-brand-900/10 sm:left-0 sm:top-[19px] sm:h-px sm:w-full" />
-            <div className="grid gap-8 sm:grid-cols-3 sm:gap-6">
-              {HOW_IT_WORKS.map((s) => (
-                <div key={s.step} className="relative flex items-start gap-4 sm:flex-col sm:items-start sm:gap-0">
-                  <span className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-800 font-display text-sm font-black text-white shadow-glow">
-                    {s.step}
-                  </span>
-                  <div className="sm:mt-5 rounded-2xl border border-brand-200 bg-white/80 p-4 shadow-soft sm:w-full">
-                    <h3 className="font-display text-base font-bold text-ink-950">{s.title}</h3>
-                    <p className="mt-1.5 text-sm leading-relaxed text-ink-600">{s.desc}</p>
+          <div className="mx-auto mt-12 grid max-w-6xl gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {VISUAL_JOURNEY.map((item, index) => (
+              <div key={item.title} className="overflow-hidden rounded-[1.5rem] border border-brand-200 bg-white shadow-soft">
+                <div className="relative h-52 overflow-hidden md:h-56 xl:h-60">
+                  <ResponsiveImage
+                    imageKey={item.imageKey}
+                    className="h-full w-full"
+                    sizes="(min-width: 1280px) 28vw, (min-width: 768px) 45vw, 100vw"
+                    rounded="rounded-none"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-gradient-to-t from-ink-950/70 to-transparent px-3 pb-3 pt-8 text-white">
+                    <span className="font-display text-lg font-black">0{index + 1}</span>
+                    <span className="rounded-full border border-white/30 bg-white/10 px-2 py-1 text-[9px] font-bold uppercase tracking-[0.14em]">
+                      Step
+                    </span>
                   </div>
+                </div>
+                <div className="p-4 sm:p-5">
+                  <h3 className="font-display text-base font-bold text-ink-950 sm:text-lg">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-ink-600">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* HOW I USE IT */}
+      <section className="section-pad bg-white">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="How I Use It"
+            title="Your daily wellness routine, made simple"
+            description="The best system is the one you actually return to. The flow below matches the real experience after purchase: open your access link, review your plan, and use the tools as part of your routine."
+          />
+
+          <div className="mx-auto mt-12 grid max-w-6xl gap-6 lg:grid-cols-[1.12fr_0.88fr] lg:items-center">
+            <div className="order-2 overflow-hidden rounded-[1.75rem] border border-ink-900/10 bg-ink-50 p-3 shadow-soft sm:p-4 lg:order-1">
+              <div className="overflow-hidden rounded-[1.4rem] border border-ink-900/10 bg-white shadow-soft">
+                <DemoDashboardUI variant="laptop" />
+              </div>
+            </div>
+            <div className="order-1 space-y-3 lg:order-2">
+              {ROUTINE_STEPS.map((step, index) => (
+                <div key={step} className="flex gap-3 rounded-2xl border border-ink-900/10 bg-white p-3.5 shadow-soft sm:gap-4 sm:p-4">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 font-display text-sm font-black text-white">
+                    {index + 1}
+                  </span>
+                  <p className="pt-1 text-sm leading-relaxed text-ink-600 sm:text-base">{step}</p>
                 </div>
               ))}
             </div>

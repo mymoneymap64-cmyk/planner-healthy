@@ -7,11 +7,11 @@ import DemoDashboardUI from "@/components/wellness-landing/DemoDashboardUI";
  */
 export default function HeroDeviceMockup() {
   return (
-    <div className="relative mx-auto w-full max-w-lg animate-scaleIn">
-      <div className="pt-[76%]" />
+    <div className="relative mx-auto w-full max-w-[24rem] animate-scaleIn sm:max-w-[30rem] lg:max-w-lg">
+      <div className="pt-[84%] sm:pt-[76%]" />
       <div className="absolute inset-0">
         {/* Laptop */}
-        <div className="absolute left-0 top-0 w-[84%] transition-transform duration-500 hover:-translate-y-1">
+        <div className="absolute left-0 top-2 w-[78%] transition-transform duration-500 hover:-translate-y-1 sm:top-0 sm:w-[82%] lg:w-[84%]">
           <div className="overflow-hidden rounded-t-lg border-[3px] border-b-0 border-ink-800 bg-ink-950 shadow-lift sm:rounded-t-xl sm:border-[5px]">
             <div className="flex items-center gap-1 bg-ink-900 px-2 py-1.5">
               <span className="h-1.5 w-1.5 rounded-full bg-white/20" />
@@ -26,9 +26,9 @@ export default function HeroDeviceMockup() {
           <div className="mx-auto h-[2%] w-[36%] rounded-b-md bg-ink-700" />
         </div>
 
-        {/* Phone, overlapping bottom-right */}
-        <div className="absolute bottom-0 right-0 w-[28%] transition-transform duration-500 hover:-translate-y-1 sm:w-[25%]">
-          <div className="overflow-hidden rounded-[1rem] border-[3px] border-ink-800 bg-ink-950 shadow-lift sm:rounded-[1.35rem] sm:border-[5px]">
+        {/* Phone, toggled to a softer, more supportive companion on mobile */}
+        <div className="absolute bottom-2 right-2 w-[30%] sm:bottom-0 sm:right-0 sm:w-[24%] lg:w-[25%]">
+          <div className="overflow-hidden rounded-[0.9rem] border-[2px] border-ink-800 bg-ink-950 shadow-lift sm:rounded-[1.2rem] sm:border-[4px] lg:rounded-[1.35rem] lg:border-[5px]">
             <div className="aspect-[9/19] w-full overflow-hidden">
               <DemoDashboardUI variant="phone" />
             </div>
