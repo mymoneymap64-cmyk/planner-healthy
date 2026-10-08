@@ -48,6 +48,17 @@ const config: Config = {
           950: "#0f110f",
         },
         cream: "#faf7f0",
+        // Scoped accent palette for the 7-Day Digital Detox feature only —
+        // not a site-wide palette change. Cream + ink remain the foundation
+        // everywhere else; these are used only inside that one feature.
+        detox: {
+          forest: "#1F4D3A",
+          sage: "#718A72",
+          sand: "#F4EFE5",
+          sageLight: "#DCE8DC",
+          terracotta: "#C77A5A",
+          butter: "#E8C978",
+        },
       },
       fontFamily: {
         display: ["var(--font-display)", "serif"],

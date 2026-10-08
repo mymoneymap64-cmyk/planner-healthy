@@ -8,6 +8,7 @@ import {
   Heart,
   HelpCircle,
   Home,
+  Leaf,
   Library,
   ListChecks,
   NotebookPen,
@@ -23,6 +24,7 @@ const NAV = [
   { key: "checklists", path: "/checklists", label: "Checklists", icon: CheckSquare, exact: false },
   { key: "notes", path: "/notes", label: "Notes", icon: NotebookPen, exact: false },
   { key: "favorites", path: "/favorites", label: "Favorites", icon: Heart, exact: false },
+  { key: "digital-detox", path: "/digital-detox", label: "Digital Detox", icon: Leaf, exact: false },
 ];
 
 const BOTTOM_NAV = [
@@ -38,6 +40,7 @@ const MOBILE_TABS = [
   { path: "/checklists", label: "Checklists", icon: CheckSquare, exact: false },
   { path: "/notes", label: "Notes", icon: NotebookPen, exact: false },
   { path: "/favorites", label: "Favorites", icon: Heart, exact: false },
+  { path: "/digital-detox", label: "Detox", icon: Leaf, exact: false },
   { path: "/settings", label: "Profile", icon: Settings, exact: false },
 ];
 

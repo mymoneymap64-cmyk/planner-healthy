@@ -2,11 +2,13 @@ import Link from "next/link";
 import {
   ArrowRight,
   BookOpenCheck,
+  Check,
   CheckCircle2,
   Circle,
   ClipboardList,
   Heart,
   Home,
+  Leaf,
   LineChart,
   Library,
   Link2,
@@ -23,6 +25,7 @@ import ResponsiveImage from "@/components/ResponsiveImage";
 import HeroDeviceMockup from "@/components/wellness-landing/HeroDeviceMockup";
 import DemoDashboardUI from "@/components/wellness-landing/DemoDashboardUI";
 import { PRODUCTS } from "@/data/products";
+import { DETOX_DAYS } from "@/lib/digitalDetox";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
@@ -561,6 +564,56 @@ export default function WellnessSystemPage() {
                 {f.preview}
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* YOUR 7-DAY OFFLINE RESET */}
+      <section className="section-pad bg-detox-sand">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="New Inside Your Wellness System"
+            title="Your 7-Day Offline Reset"
+            description="Small daily actions to help you step away from the screen and reconnect with real life — included free with your Wellness System."
+          />
+
+          <div className="mx-auto mt-14 grid max-w-5xl gap-8 overflow-hidden rounded-[1.75rem] border border-detox-sage/25 bg-white shadow-soft lg:grid-cols-2">
+            <div className="relative min-h-[260px]">
+              <ResponsiveImage
+                imageKey="walking"
+                className="h-full min-h-[260px]"
+                sizes="(min-width: 1024px) 45vw, 100vw"
+                rounded="rounded-none"
+              />
+            </div>
+            <div className="flex flex-col justify-center p-6 sm:p-8">
+              <span className="eyebrow bg-detox-sageLight text-detox-forest">
+                <Leaf size={13} /> 7-Day Digital Detox
+              </span>
+              <h3 className="mt-4 font-display text-2xl font-bold text-ink-950">
+                A real, interactive 7-day challenge — not just an article
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-ink-600">
+                Track each day, mark it complete, and watch your progress build — right inside your Wellness
+                System dashboard, the same way your Daily Plan and Checklists already work.
+              </p>
+              <div className="mt-5 space-y-2">
+                {DETOX_DAYS.slice(0, 3).map((d) => (
+                  <div key={d.day} className="flex items-center gap-3 rounded-lg border border-detox-sage/25 bg-detox-sageLight/30 px-3.5 py-2.5">
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-detox-forest text-white">
+                      <Check size={12} strokeWidth={3} />
+                    </span>
+                    <span className="text-xs font-semibold text-ink-700">
+                      Day {d.day}: {d.title}
+                    </span>
+                  </div>
+                ))}
+                <p className="pl-1 text-xs font-semibold text-detox-terracotta">+ 4 more days to go</p>
+              </div>
+              <Link href="/checkout" className="btn-gold mt-6 w-full justify-center sm:w-auto">
+                Get the Complete Library <ArrowRight size={16} />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
