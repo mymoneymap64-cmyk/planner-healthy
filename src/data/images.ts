@@ -182,6 +182,15 @@ export const IMAGE_LIBRARY: Record<ImageKey, ImageAsset> = {
     height: 800,
     credit: "Unsplash",
   },
+  personPlanningMorning: {
+    key: "personPlanningMorning",
+    url: "https://images.unsplash.com/photo-1634749715333-627ef55abbab?auto=format&fit=crop&w=1200&q=80",
+    alt: "A woman writing in a notebook beside a cup of coffee in a calm, warmly lit setting",
+    filename: "person-planning-notebook-coffee.jpg",
+    width: 1200,
+    height: 800,
+    credit: "Unsplash",
+  },
 };
 
 export function getImage(key: ImageKey): ImageAsset {

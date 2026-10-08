@@ -22,7 +22,6 @@ import {
 import SectionHeading from "@/components/SectionHeading";
 import ProductCover from "@/components/ProductCover";
 import ResponsiveImage from "@/components/ResponsiveImage";
-import HeroDeviceMockup from "@/components/wellness-landing/HeroDeviceMockup";
 import DemoDashboardUI from "@/components/wellness-landing/DemoDashboardUI";
 import { PRODUCTS } from "@/data/products";
 import { DETOX_DAYS } from "@/lib/digitalDetox";
@@ -295,37 +294,21 @@ export default function WellnessSystemPage() {
       {/* HERO */}
       <section className="relative overflow-hidden bg-ink-950">
         <div className="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(circle,#fff_1px,transparent_1px)] [background-size:22px_22px]" />
-        <div className="container-page relative grid gap-8 py-10 sm:gap-10 sm:py-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-12 lg:py-24">
-          <div className="order-2 lg:order-1">
-            <HeroDeviceMockup />
-          </div>
-
-          <div className="order-1 max-w-xl animate-fadeUp lg:order-2 lg:max-w-none">
+        <div className="container-page relative grid gap-8 py-10 sm:gap-10 sm:py-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-14 lg:py-20">
+          <div className="order-1 max-w-xl animate-fadeUp">
             <span className="eyebrow bg-brand-100 text-brand-700">
               <Sparkles size={13} /> HealthyGuide Wellness System
             </span>
             <h1 className="mt-5 font-display text-3xl font-bold leading-[1.08] text-balance text-white sm:text-4xl lg:text-[2.75rem]">
               Your Ebook Comes With More Than a PDF.
             </h1>
-            <p className="mt-4 max-w-[38rem] text-balance text-sm leading-relaxed text-ink-200 sm:mt-5 sm:text-base lg:max-w-[34rem]">
-              Your HealthyGuide purchase gives you access to an interactive Wellness System designed to help you turn your guide into practical daily routines.
-            </p>
-            <p className="mt-3 max-w-[38rem] text-balance text-sm leading-relaxed text-ink-300 sm:mt-4 lg:max-w-[32rem]">
-              It brings together your digital guide, planning tools, progress tracking, personal notes, and your interactive wellness workspace in one place.
+            <p className="mt-4 max-w-[38rem] text-balance text-sm leading-relaxed text-ink-200 sm:mt-5 sm:text-base">
+              Your HealthyGuide purchase gives you an interactive Wellness System alongside it — simple tools that help turn your guide into a routine you actually keep.
             </p>
 
-            <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-brand-300/40 bg-brand-100/10 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.16em] text-brand-100">
+            <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-brand-300/40 bg-brand-100/10 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.16em] text-brand-100">
               <span className="h-2 w-2 rounded-full bg-brand-300" />
               Digital guide + interactive system
-            </div>
-
-            <div className="mt-8 grid gap-3 text-sm text-ink-200 sm:grid-cols-2">
-              <div className="rounded-xl border border-brand-300/20 bg-white/5 p-3 text-brand-50">Digital guide</div>
-              <div className="rounded-xl border border-brand-300/20 bg-white/5 p-3 text-brand-50">Interactive Wellness System</div>
-              <div className="rounded-xl border border-brand-300/20 bg-white/5 p-3 text-brand-50">Planning tools</div>
-              <div className="rounded-xl border border-brand-300/20 bg-white/5 p-3 text-brand-50">Progress tracking</div>
-              <div className="rounded-xl border border-brand-300/20 bg-white/5 p-3 text-brand-50">Meal Planner where included</div>
-              <div className="rounded-xl border border-brand-300/20 bg-white/5 p-3 text-brand-50">Notes, favorites, checklists</div>
             </div>
 
             <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
@@ -346,6 +329,16 @@ export default function WellnessSystemPage() {
                 Access your Wellness System
               </Link>
             </p>
+          </div>
+
+          <div className="order-2">
+            <ResponsiveImage
+              imageKey="personPlanningMorning"
+              className="h-[320px] w-full sm:h-[420px] lg:h-[560px]"
+              sizes="(min-width: 1024px) 55vw, 100vw"
+              rounded="rounded-[1.75rem]"
+              priority
+            />
           </div>
         </div>
       </section>
