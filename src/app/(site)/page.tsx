@@ -20,6 +20,7 @@ import LibraryHeroStack from "@/components/LibraryHeroStack";
 import PlannerMockup from "@/components/PlannerMockup";
 import NewsletterCTA from "@/components/NewsletterCTA";
 import JsonLd from "@/components/JsonLd";
+import ResponsiveImage from "@/components/ResponsiveImage";
 import { PRODUCTS, BONUS_PRODUCTS, BUNDLE_PRICE } from "@/data/products";
 import { FAQS } from "@/data/faq";
 import { buildMetadata, productJsonLd } from "@/lib/seo";
@@ -30,6 +31,24 @@ export const metadata = buildMetadata({
     "A curated collection of 7 premium wellness ebooks — natural healing, mental wellness, women's and men's wellness, herbal recipes, sleep & recovery, and healthy eating — each with a matching wellness planner and 30-day wellness system.",
   path: "/",
 });
+
+const MORE_THAN_A_PDF_BENEFITS = [
+  {
+    number: "01",
+    title: "Digital Guide",
+    desc: "Practical wellness information you can read anytime.",
+  },
+  {
+    number: "02",
+    title: "Interactive Wellness System",
+    desc: "Use your personal access link to enter your private system and turn the guide into daily actions.",
+  },
+  {
+    number: "03",
+    title: "Simple Wellness Tools",
+    desc: "Daily plans, checklists, notes, favorites, and included tools such as the Meal Planner where applicable.",
+  },
+];
 
 const HOW_IT_WORKS = [
   { icon: BookOpen, step: "01", title: "Learn", role: "Ebook", desc: "Read the guide to understand the why behind each habit — practical, plain-language information you can actually use." },
@@ -128,6 +147,54 @@ export default function Home() {
                 Access Your Wellness System
               </Link>
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* MORE THAN A PDF */}
+      <section className="section-pad bg-white">
+        <div className="container-page">
+          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
+            <div className="order-1">
+              <span className="eyebrow">More Than a PDF</span>
+              <h2 className="mt-4 font-display text-3xl font-bold text-balance text-ink-950 sm:text-4xl">
+                Your Ebook Comes With More Than a PDF.
+              </h2>
+              <p className="mt-4 text-balance text-base leading-relaxed text-ink-600">
+                Your HealthyGuide purchase gives you practical wellness knowledge plus an interactive Wellness
+                System designed to help you turn what you learn into a routine you can actually follow.
+              </p>
+
+              <div className="mt-8 space-y-6">
+                {MORE_THAN_A_PDF_BENEFITS.map((b) => (
+                  <div key={b.number} className="flex gap-4">
+                    <span className="font-display text-2xl font-black text-brand-300">{b.number}</span>
+                    <div>
+                      <p className="font-display text-base font-bold text-ink-950">{b.title}</p>
+                      <p className="mt-1 text-sm leading-relaxed text-ink-500">{b.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-9 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
+                <Link href="/wellness-system" className="btn-gold w-full justify-center sm:w-auto">
+                  See the Wellness System <ArrowRight size={16} />
+                </Link>
+                <Link href="/library" className="text-sm font-bold text-brand-700 hover:underline">
+                  Explore the Wellness Library
+                </Link>
+              </div>
+            </div>
+
+            <div className="order-2">
+              <ResponsiveImage
+                imageKey="personPlanningMorning"
+                className="h-[280px] w-full sm:h-[380px] lg:h-[460px]"
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                rounded="rounded-2xl"
+              />
+            </div>
           </div>
         </div>
       </section>
