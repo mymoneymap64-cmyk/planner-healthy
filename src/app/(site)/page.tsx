@@ -21,7 +21,8 @@ import PlannerMockup from "@/components/PlannerMockup";
 import NewsletterCTA from "@/components/NewsletterCTA";
 import JsonLd from "@/components/JsonLd";
 import ResponsiveImage from "@/components/ResponsiveImage";
-import { PRODUCTS, BONUS_PRODUCTS, BUNDLE_PRICE } from "@/data/products";
+import ProductCarousel from "@/components/ProductCarousel";
+import { PRODUCTS, BONUS_PRODUCTS, STANDALONE_PRODUCTS, BUNDLE_PRICE } from "@/data/products";
 import { FAQS } from "@/data/faq";
 import { buildMetadata, productJsonLd } from "@/lib/seo";
 
@@ -213,6 +214,21 @@ export default function Home() {
                 {p.categoryLabel}
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* EBOOK CAROUSEL */}
+      <section className="section-pad bg-cream">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="The Shop"
+            title="Explore Our Wellness Library"
+            description="Practical guides and beautiful resources to support healthier everyday routines."
+            align="left"
+          />
+          <div className="mt-10">
+            <ProductCarousel products={[...PRODUCTS, ...STANDALONE_PRODUCTS]} />
           </div>
         </div>
       </section>
