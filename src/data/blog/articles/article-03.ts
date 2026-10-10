@@ -11,7 +11,7 @@ export const article03: BlogPost = {
   tags: ["healthy habits", "habit ideas", "wellness", "small changes"],
   excerpt:
     "A list of 21 realistic healthy habits worth trying — organized by category, so you can pick two or three instead of attempting all of them at once.",
-  imageKey: "healthyHabits",
+  imageKey: "motivationAlt",
   publishedAt: "2026-01-10",
   intro: [
     "One of the most common mistakes people make with a list like this is trying to adopt all 21 habits starting Monday. That's not ambition, it's a setup for burnout — and it's the opposite of how sustainable change actually works. The point of a list like this isn't to overwhelm you; it's to give you options so you can pick the two or three that fit your actual life right now.",

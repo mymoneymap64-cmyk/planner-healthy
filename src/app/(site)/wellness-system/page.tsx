@@ -201,7 +201,7 @@ const VISUAL_JOURNEY = [
   {
     title: "Track meals, notes, and favorites",
     description: "Save ideas, track meals, and keep the tools you return to most in the same place.",
-    imageKey: "mealPrep",
+    imageKey: "mealPrepAlt",
   },
   {
     title: "Keep the routine sustainable",
@@ -216,7 +216,7 @@ const VISUAL_JOURNEY = [
     | "healthyLifestyleAlt"
     | "healthyMealsAlt"
     | "morningRoutineAlt"
-    | "mealPrep"
+    | "mealPrepAlt"
     | "walking";
 }>;
 

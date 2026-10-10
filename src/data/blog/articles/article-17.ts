@@ -11,7 +11,7 @@ export const article17: BlogPost = {
   tags: ["grocery list", "meal planning", "beginners", "healthy eating"],
   excerpt:
     "Staring at a blank grocery list is harder than it should be. Here's a beginner-friendly list, organized by category, built around foods you can actually find and afford.",
-  imageKey: "mealPrep",
+  imageKey: "groceryShoppingList",
   publishedAt: "2026-02-07",
   intro: [
     "\"Eat healthier\" is easy to say and surprisingly hard to translate into an actual grocery list. If you've stood in a store aisle unsure whether to grab quinoa or brown rice, or wondered whether you really need six different kinds of oil, you're running into a very common problem: most healthy eating advice tells you principles, not products.",

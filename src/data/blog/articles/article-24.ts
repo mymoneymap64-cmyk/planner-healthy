@@ -11,7 +11,7 @@ export const article24: BlogPost = {
   tags: ["walking", "running", "beginners", "cardio"],
   excerpt:
     "Running burns more calories per minute, but that doesn't automatically make it the better choice for beginners. Here's how to think about the decision.",
-  imageKey: "walkingAlt",
+  imageKey: "motivation",
   publishedAt: "2026-02-21",
   intro: [
     "There's a common assumption that running is the \"real\" workout and walking is what you do until you're ready for the real thing. That framing causes a lot of beginners to either push into running before their body is ready, or feel like their walking routine doesn't count. Neither is accurate.",

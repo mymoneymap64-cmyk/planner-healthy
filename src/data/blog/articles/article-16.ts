@@ -60,7 +60,7 @@ export const article16: BlogPost = {
       heading: "Don't Overlook the Frozen and Canned Aisles",
       level: 2,
       paragraphs: [
-        "Frozen and canned foods have a reputation problem they don't fully deserve. Frozen vegetables and fruit are typically flash-frozen at peak ripeness, which means they often retain more nutrients than \"fresh\" produce that's spent a week in transit and on a shelf — and they don't go bad in the back of your fridge before you get to them.",
+        "Frozen and canned foods have a reputation problem they don't fully deserve. Frozen vegetables and fruit are typically flash-frozen at peak ripeness, which can make them a nutritionally comparable — and sometimes better-value — option next to \"fresh\" produce that's spent a week in transit and on a shelf, and they don't go bad in the back of your fridge before you get to them.",
         "Canned beans, tomatoes, and tuna are some of the most useful staples in a healthy kitchen: cheap, shelf-stable, and ready in minutes. The main thing worth checking is the label — look for \"no salt added\" or \"low sodium\" beans, and rinse regular canned beans under water before using, which cuts a meaningful amount of sodium.",
       ],
     },

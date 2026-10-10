@@ -11,7 +11,7 @@ export const article02: BlogPost = {
   tags: ["healthy habits", "habit building", "behavior change", "habit design"],
   excerpt:
     "Most new habits don't fail because of weak willpower — they fail because of how they were built. Here's a more durable approach, from the size of the habit to the setup around it.",
-  imageKey: "healthyHabits",
+  imageKey: "habitTrackerNotebook",
   publishedAt: "2026-01-08",
   editorsPick: true,
   updatedAt: "2026-09-24",

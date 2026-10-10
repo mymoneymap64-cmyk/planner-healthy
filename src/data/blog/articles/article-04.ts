@@ -11,7 +11,7 @@ export const article04: BlogPost = {
   tags: ["morning routine", "lifestyle", "healthy habits", "daily structure"],
   excerpt:
     "You don't need a 5 a.m. wake-up or a 90-minute routine. Here's how to build a healthy morning that fits the time you actually have.",
-  imageKey: "morningRoutine",
+  imageKey: "motivation",
   publishedAt: "2026-01-12",
   intro: [
     "Search \"healthy morning routine\" and you'll mostly find lists built for people with unusual amounts of free time before work — an hour of exercise, twenty minutes of meditation, a green smoothie, journaling, and a cold plunge, all before 7 a.m. For most people juggling a job, a commute, or getting kids out the door, that version isn't a routine, it's a source of guilt.",

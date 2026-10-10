@@ -115,6 +115,12 @@ export const article26: BlogPost = {
     "Three to four structured workout days a week, with rest or light walking on the days in between, gives most beginners enough consistency to build real fitness without outpacing their body's ability to recover. It's a practical starting range built around the national activity guidelines rather than a fixed rule, and it's flexible enough to adjust as your fitness improves.",
   ],
   updatedAt: "2026-09-24",
+  sources: [
+    {
+      label: "CDC — Adult Activity: An Overview (weekly activity guidelines)",
+      url: "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html",
+    },
+  ],
   ctaText:
     "A weekly plan is easier to follow when it's written down. Every guide in the Natural Wellness Library includes a matching planner and 30-day system.",
   ctaHref: "/library",

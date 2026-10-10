@@ -11,7 +11,7 @@ export const article27: BlogPost = {
   tags: ["stretching", "flexibility", "beginner routine", "mobility"],
   excerpt:
     "You don't need a yoga background to stretch effectively. Here's a specific, timed 10-minute stretching sequence you can follow from the very first day.",
-  imageKey: "workoutsAlt",
+  imageKey: "beginnerStretch",
   publishedAt: "2026-02-27",
   intro: [
     "Stretching often gets treated as optional — something to squeeze in if there's time left after the \"real\" workout. For beginners especially, that's backwards. A consistent stretching routine helps maintain range of motion, can ease everyday muscle tightness from sitting or new activity, and gives your body a low-pressure way to build a movement habit before adding anything more demanding.",

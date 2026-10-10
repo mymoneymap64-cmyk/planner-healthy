@@ -70,7 +70,7 @@ export default function BlogArticleView({
 
       <section className="section-pad !pt-12">
         <div className="container-page grid gap-10 lg:grid-cols-[1fr_280px]">
-          <div className="mx-auto w-full max-w-3xl lg:mx-0">
+          <div className="mx-auto w-full max-w-2xl lg:mx-0">
             <div className="space-y-4">
               {post.intro.map((p, i) => (
                 <p key={i} className="text-lg leading-relaxed text-ink-700">

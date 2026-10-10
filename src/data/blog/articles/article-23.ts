@@ -21,7 +21,7 @@ export const article23: BlogPost = {
   sections: [
     {
       heading: "What You'll Need (and What You Won't)",
-      level: 3,
+      level: 2,
       paragraphs: [
         "Beyond a chair and a clear wall, you don't need anything special to do this routine. A yoga mat or folded towel makes the floor exercises more comfortable on your knees and elbows, and closed-toe shoes with some grip help with balance during the standing moves, but neither is strictly required. If you're doing this in a small apartment or a shared space, every exercise below fits comfortably in about a six-by-six-foot area.",
       ],

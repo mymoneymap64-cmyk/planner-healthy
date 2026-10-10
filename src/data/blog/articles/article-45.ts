@@ -11,7 +11,7 @@ export const article45: BlogPost = {
   tags: ["Sunday reset", "weekly routine", "lifestyle", "planning"],
   excerpt:
     "A Sunday reset isn't about cramming in chores before Monday — it's a short, repeatable routine that makes the whole week feel more manageable.",
-  imageKey: "morningRoutineAlt",
+  imageKey: "hydration",
   publishedAt: "2026-04-04",
   readingTimeMinutes: 7,
   intro: [

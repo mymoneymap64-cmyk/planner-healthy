@@ -98,7 +98,7 @@ export const article11: BlogPost = {
     {
       question: "How far ahead can I make overnight oats or egg muffins?",
       answer:
-        "Both typically keep well in the refrigerator for about four to five days, which makes them practical to batch once and eat from all week.",
+        "Both typically keep well in the refrigerator for about three to four days, which makes them practical to batch once and eat from most of the week.",
     },
     {
       question: "Is skipping breakfast entirely a problem?",
@@ -108,6 +108,12 @@ export const article11: BlogPost = {
   ],
   conclusion: [
     "A workable breakfast on a busy morning doesn't need to be elaborate — it just needs to require almost no active effort at the moment you're eating it. Whether that means grabbing something that needs zero prep or pulling a jar of overnight oats out of the fridge, having two or three go-to options ready removes the morning decision entirely.",
+  ],
+  sources: [
+    {
+      label: "USDA Food Safety and Inspection Service — Leftovers and Food Safety",
+      url: "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety",
+    },
   ],
   ctaText:
     "Breakfast is easier when the week is planned. The Healthy Eating Guide's 30-day meal plan is built around balanced, everyday eating.",

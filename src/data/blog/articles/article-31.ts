@@ -11,7 +11,7 @@ export const article31: BlogPost = {
   tags: ["sleep habits", "better sleep", "sleep tips", "healthy sleep"],
   excerpt:
     "You don't need a total sleep overhaul to sleep better. These small, realistic habit changes — during the day and at night — can add up to noticeably better rest.",
-  imageKey: "sleep",
+  imageKey: "sleepAlt",
   publishedAt: "2026-03-07",
   intro: [
     "Most people looking to sleep better aren't looking for a total lifestyle overhaul — they're looking for a handful of realistic changes that actually make a difference. The good news is that sleep quality isn't only about what happens in the hour before bed. Several of the most effective sleep habits actually happen earlier in the day, often without anyone realizing the connection.",

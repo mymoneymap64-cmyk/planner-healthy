@@ -11,7 +11,7 @@ export const article08: BlogPost = {
   tags: ["meal planning", "beginners", "meal prep", "grocery shopping"],
   excerpt:
     "Meal planning doesn't need to mean spreadsheets, strict macros, or cooking every meal from scratch. Here's a simple version to start with.",
-  imageKey: "mealPrep",
+  imageKey: "mealPrepAlt",
   publishedAt: "2026-01-20",
   intro: [
     "Meal planning has a reputation for being either extremely rigid (a spreadsheet with exact macros for every meal) or extremely time-consuming (cooking every single meal from scratch on a Sunday afternoon). Neither version is required to get real benefits from planning ahead, and both are a big reason people try it once and quietly give up.",

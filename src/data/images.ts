@@ -32,8 +32,14 @@ export const IMAGE_LIBRARY: Record<ImageKey, ImageAsset> = {
   mealPrep: {
     key: "mealPrep",
     url: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=1200&q=80",
-    alt: "Weekly meal prep containers filled with portioned vegetables, grains, and protein",
-    filename: "weekly-meal-prep-containers.jpg",
+    // Visually verified: this is a bowl of tomato soup garnished with herbs,
+    // served with a side of almonds — not meal-prep containers. It was
+    // previously used (under this false description) on 2 published
+    // articles and the Wellness System page; all reassigned to
+    // `mealPrepAlt`, which genuinely shows prepped meal bowls. Not
+    // currently used anywhere.
+    alt: "A bowl of creamy tomato soup garnished with herbs, served with a side of almonds",
+    filename: "tomato-soup-almonds.jpg",
     width: 1200,
     height: 800,
     credit: "Unsplash",
@@ -50,8 +56,11 @@ export const IMAGE_LIBRARY: Record<ImageKey, ImageAsset> = {
   walking: {
     key: "walking",
     url: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=1200&q=80",
-    alt: "A person walking along a sunlit outdoor path surrounded by trees",
-    filename: "outdoor-walking-path.jpg",
+    // Visually verified: this is a close-up of a person's legs and running
+    // shoes climbing outdoor concrete steps — not a "sunlit path," despite
+    // the key name. The original alt text was inaccurate; corrected here.
+    alt: "Close-up of a person's legs and sneakers climbing outdoor concrete steps",
+    filename: "outdoor-steps-sneakers.jpg",
     width: 1200,
     height: 800,
     credit: "Unsplash",
@@ -59,8 +68,12 @@ export const IMAGE_LIBRARY: Record<ImageKey, ImageAsset> = {
   walkingAlt: {
     key: "walkingAlt",
     url: "https://images.unsplash.com/photo-1541625602330-2277a4c46182?auto=format&fit=crop&w=1200&q=80",
-    alt: "Close-up of walking shoes on a paved trail during a beginner walking routine",
-    filename: "beginner-walking-shoes-trail.jpg",
+    // Visually verified: this is two cyclists riding road bikes along a
+    // coastal road — not walking shoes on a trail. Not currently used by
+    // any published page; corrected so it isn't reused under a false
+    // description. Needs real walking/running photography before reuse.
+    alt: "Two cyclists riding road bikes along a coastal road",
+    filename: "cyclists-coastal-road.jpg",
     width: 1200,
     height: 800,
     credit: "Unsplash",
@@ -77,8 +90,12 @@ export const IMAGE_LIBRARY: Record<ImageKey, ImageAsset> = {
   workoutsAlt: {
     key: "workoutsAlt",
     url: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1200&q=80",
-    alt: "A person in athletic wear moving outdoors as part of a daily activity routine",
-    filename: "daily-movement-activity-outdoors.jpg",
+    // Visually verified: this is a close-up of a person's legs performing a
+    // barbell deadlift on an indoor gym floor — not an outdoor daily-activity
+    // scene. Not currently used by any published page; corrected so it isn't
+    // reused under a false description.
+    alt: "Close-up of a person's legs performing a barbell deadlift on a gym floor",
+    filename: "gym-barbell-deadlift.jpg",
     width: 1200,
     height: 800,
     credit: "Unsplash",
@@ -95,8 +112,12 @@ export const IMAGE_LIBRARY: Record<ImageKey, ImageAsset> = {
   sleep: {
     key: "sleep",
     url: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=1200&q=80",
-    alt: "A calm, tidy bedroom with soft natural light representing a restful sleep routine",
-    filename: "restful-sleep-bedroom.jpg",
+    // Visually verified: this is a cat asleep under a blanket — not a
+    // bedroom scene. Not currently used by any published page; corrected
+    // so it isn't reused under a false description. Needs a real
+    // human-sleep photo before reuse.
+    alt: "A cat curled up asleep, peeking out from under a white blanket",
+    filename: "cat-asleep-blanket.jpg",
     width: 1200,
     height: 800,
     credit: "Unsplash",
@@ -131,8 +152,12 @@ export const IMAGE_LIBRARY: Record<ImageKey, ImageAsset> = {
   morningRoutine: {
     key: "morningRoutine",
     url: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80",
-    alt: "A warm cup of coffee on a table beside a sunlit window during a morning routine",
-    filename: "calm-morning-coffee-routine.jpg",
+    // Visually verified: this is a silhouette of a person meditating
+    // outdoors at sunrise beneath palm trees — not a coffee-and-window
+    // scene. Not currently used by any published page; corrected so it
+    // isn't reused under a false description.
+    alt: "Silhouette of a person meditating outdoors at sunrise, framed by palm trees",
+    filename: "sunrise-meditation-silhouette.jpg",
     width: 1200,
     height: 800,
     credit: "Unsplash",
@@ -140,8 +165,13 @@ export const IMAGE_LIBRARY: Record<ImageKey, ImageAsset> = {
   morningRoutineAlt: {
     key: "morningRoutineAlt",
     url: "https://images.unsplash.com/photo-1512418490979-92798cec1380?auto=format&fit=crop&w=1200&q=80",
-    alt: "A person journaling and planning their day as part of a morning routine",
-    filename: "morning-journaling-planning.jpg",
+    // Visually verified: this is small kraft-paper gift boxes on a white
+    // wood surface — not a journaling scene. Still used on the Wellness
+    // System page's "receive your personal access link" step, where
+    // "something small arriving for you" is a reasonable fit; corrected
+    // to accurately describe the actual photo.
+    alt: "Small kraft-paper gift boxes tied with string, arranged on a white wood surface",
+    filename: "small-gift-boxes-wood-surface.jpg",
     width: 1200,
     height: 800,
     credit: "Unsplash",
@@ -158,8 +188,14 @@ export const IMAGE_LIBRARY: Record<ImageKey, ImageAsset> = {
   healthyHabits: {
     key: "healthyHabits",
     url: "https://images.unsplash.com/photo-1517971053567-8bde93bc6a58?auto=format&fit=crop&w=1200&q=80",
-    alt: "An open notebook used for tracking daily habits and personal goals",
-    filename: "daily-habit-tracking-notebook.jpg",
+    // Visually verified: this is an aerial view of a tropical bay with
+    // small boats near the coastline — not a notebook. It was previously
+    // used (under this false description) on 4 published habit-building
+    // articles; all 4 have been reassigned to accurately-described images.
+    // Not currently used anywhere. Needs a real notebook/habit-tracking
+    // photo before reuse.
+    alt: "Aerial view of a tropical bay with small boats near a lush coastline",
+    filename: "aerial-tropical-bay-boats.jpg",
     width: 1200,
     height: 800,
     credit: "Unsplash",
@@ -190,6 +226,36 @@ export const IMAGE_LIBRARY: Record<ImageKey, ImageAsset> = {
     width: 1200,
     height: 800,
     credit: "Unsplash",
+  },
+  // Self-hosted (public/blog-images/) rather than hotlinked — visually
+  // verified against the actual photo before use, per the standing rule in
+  // this file: never trust a filename or description without looking.
+  habitTrackerNotebook: {
+    key: "habitTrackerNotebook",
+    url: "/blog-images/habit-tracker-notebook.jpg",
+    alt: "An open planner showing a handwritten habit checklist and a colorful dot-grid habit tracker, with felt-tip pens nearby",
+    filename: "habit-tracker-notebook.jpg",
+    width: 900,
+    height: 1200,
+    credit: "Unsplash — photo by @contentpixie / Prophsee Journals, free Unsplash License",
+  },
+  beginnerStretch: {
+    key: "beginnerStretch",
+    url: "/blog-images/beginner-stretch.jpg",
+    alt: "A woman sitting on a yoga mat at home doing a simple seated forward-fold hamstring stretch",
+    filename: "beginner-stretch.jpg",
+    width: 1200,
+    height: 801,
+    credit: "Pexels — photo by Pavel Danilyuk, free Pexels License",
+  },
+  groceryShoppingList: {
+    key: "groceryShoppingList",
+    url: "/blog-images/grocery-shopping-list.jpg",
+    alt: "A handwritten shopping list (milk, bread, cheese, butter, eggs, fruit, tomatoes) on a notepad with a green pen, on a wood table",
+    filename: "grocery-shopping-list.jpg",
+    width: 1200,
+    height: 800,
+    credit: "Unsplash — photo by Torbjørn Helgesen, free Unsplash License",
   },
 };
 

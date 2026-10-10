@@ -11,7 +11,7 @@ export const article37: BlogPost = {
   tags: ["progress tracking", "mindset", "non-scale victories", "self-monitoring"],
   excerpt:
     "If checking the scale is starting to run your mood for the day, you're not alone. Here's how to track real progress without letting one number decide how you feel.",
-  imageKey: "healthyHabits",
+  imageKey: "breakfast",
   publishedAt: "2026-03-19",
   intro: [
     "Tracking is supposed to help. It tells you whether what you're doing is working, gives you something concrete to look back on, and keeps you honest on the days motivation is low. But for a lot of people, tracking quietly turns into something else — a daily verdict. The scale says one thing on Tuesday and a different thing on Wednesday, and suddenly the whole day's mood is decided before breakfast.",
@@ -23,7 +23,7 @@ export const article37: BlogPost = {
       heading: "Why the Scale Alone Is a Bad Daily Report Card",
       level: 2,
       paragraphs: [
-        "Body weight can swing two to five pounds in a single day from sodium intake, water retention, hormonal cycles, how recently you ate, and even how much you slept the night before. None of that has anything to do with whether your habits are working. Yet a daily weigh-in treats every one of those fluctuations as meaningful data, which means roughly half the time the number is telling you something that isn't true.",
+        "Body weight can noticeably swing within a single day from sodium intake, water retention, hormonal cycles, how recently you ate, and even how much you slept the night before. None of that has anything to do with whether your habits are working. Yet a daily weigh-in treats every one of those fluctuations as meaningful data, which means a lot of the time the number is telling you something that isn't true.",
         "That's not an argument against ever stepping on a scale — it's an argument against making it your only source of information, and definitely against checking it every single day and reacting to each reading. A number that bounces around for reasons unrelated to your effort is a poor judge of whether your effort is working.",
       ],
     },

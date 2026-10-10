@@ -1,5 +1,17 @@
 import Link from "next/link";
-import { ArrowRight, BookMarked } from "lucide-react";
+import {
+  ArrowRight,
+  Apple,
+  BookMarked,
+  Brain,
+  Dumbbell,
+  Footprints,
+  Leaf,
+  Moon,
+  Sparkles,
+  Sunrise,
+  UtensilsCrossed,
+} from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import BlogPostCard from "@/components/BlogPostCard";
 import BlogExplorer from "@/components/BlogExplorer";
@@ -7,6 +19,18 @@ import NewsletterCTA from "@/components/NewsletterCTA";
 import ResponsiveImage from "@/components/ResponsiveImage";
 import { getActiveCategories, getAllPosts, getEditorsPicks, getFeaturedPost } from "@/lib/blog";
 import { buildMetadata } from "@/lib/seo";
+
+const CATEGORY_ICONS: Record<string, typeof Sparkles> = {
+  Sparkles,
+  Apple,
+  UtensilsCrossed,
+  Dumbbell,
+  Footprints,
+  Moon,
+  Leaf,
+  Brain,
+  Sunrise,
+};
 
 export const metadata = buildMetadata({
   title: "Blog — Wellness, Habits & Natural Health Tips | Natural Wellness Library",
@@ -67,19 +91,63 @@ export default function BlogPage() {
       {picks.length > 0 && (
         <section className="section-pad !pb-10">
           <div className="container-page">
-            <p className="mb-5 flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-gold-600">
+            <p className="mb-6 flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-gold-600">
               <BookMarked size={14} /> Editor&apos;s Picks — Good Places to Start
             </p>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {picks.map((p) => (
-                <BlogPostCard key={p.slug} post={p} />
-              ))}
+            <div className="grid gap-6 lg:grid-cols-[1.3fr_1fr]">
+              <BlogPostCard post={picks[0]} size="large" />
+              <div className="flex flex-col gap-4">
+                {picks.slice(1, 4).map((p) => (
+                  <Link
+                    key={p.slug}
+                    href={`/blog/${p.slug}`}
+                    className="card card-hover group flex items-center gap-4 overflow-hidden p-3"
+                  >
+                    <ResponsiveImage
+                      imageKey={p.imageKey}
+                      className="h-20 w-20 shrink-0 sm:h-24 sm:w-24"
+                      sizes="100px"
+                    />
+                    <div className="min-w-0">
+                      <h3 className="font-display text-sm font-bold text-ink-900 transition-colors group-hover:text-brand-700 sm:text-base">
+                        {p.title}
+                      </h3>
+                      <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-ink-500 sm:text-sm">
+                        {p.excerpt}
+                      </p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </section>
       )}
 
-      <section className="section-pad !pt-6">
+      <section className="border-y border-ink-900/[0.06] bg-white py-10">
+        <div className="container-page">
+          <p className="mb-5 text-xs font-bold uppercase tracking-wide text-ink-400">
+            Browse by Topic
+          </p>
+          <div className="flex flex-wrap gap-2.5">
+            {getActiveCategories().map((c) => {
+              const Icon = CATEGORY_ICONS[c.icon] ?? Sparkles;
+              return (
+                <Link
+                  key={c.slug}
+                  href={`/blog/category/${c.slug}`}
+                  className="flex items-center gap-2 rounded-full border border-ink-900/10 bg-cream px-4 py-2 text-xs font-bold uppercase tracking-wide text-ink-700 transition-colors hover:border-brand-300 hover:bg-brand-50 hover:text-brand-700"
+                >
+                  <Icon size={13} />
+                  {c.name}
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-pad !pt-10">
         <div className="container-page">
           <p className="mb-5 text-xs font-bold uppercase tracking-wide text-ink-400">
             Browse All Articles

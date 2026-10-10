@@ -11,7 +11,7 @@ export const article25: BlogPost = {
   tags: ["workout routine", "consistency", "fitness habits", "exercise planning"],
   excerpt:
     "The best workout plan is the one you actually repeat. Here's how to build a routine around your real schedule instead of an idealized version of your week.",
-  imageKey: "workoutsAlt",
+  imageKey: "workouts",
   publishedAt: "2026-02-23",
   intro: [
     "Most people don't struggle to start a workout routine — they struggle to keep one going past week two. The plan looks great on paper: five days a week, an hour each session, maybe a new gym membership to match. Then a busy Tuesday happens, then a tired Thursday, and by the following week the whole plan has quietly dissolved.",

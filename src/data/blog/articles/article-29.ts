@@ -11,7 +11,7 @@ export const article29: BlogPost = {
   tags: ["sleep", "daily routine", "energy", "recovery"],
   excerpt:
     "Sleep isn't just recovery time at the end of the day — it's the foundation that most of your other habits are quietly built on top of.",
-  imageKey: "sleep",
+  imageKey: "sleepAlt",
   publishedAt: "2026-03-03",
   intro: [
     "It's easy to treat sleep as the last item on a long list of habits — something to improve eventually, after the diet is sorted and the workouts are consistent. In practice, the order usually works better in reverse. Sleep has an outsized effect on nearly every other decision you make during the day, from what you reach for at the grocery store to whether your workout feels manageable or miserable.",

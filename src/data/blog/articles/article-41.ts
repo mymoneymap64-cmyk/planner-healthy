@@ -11,7 +11,7 @@ export const article41: BlogPost = {
   tags: ["busy schedule", "time-efficient habits", "healthy habits", "productivity"],
   excerpt:
     "Most healthy habit advice assumes you have an hour to spare. Here's what actually works when your schedule genuinely doesn't have one.",
-  imageKey: "morningRoutineAlt",
+  imageKey: "healthyMeals",
   publishedAt: "2026-03-27",
   intro: [
     "A lot of healthy living advice quietly assumes a version of your day that doesn't exist — an hour for the gym, thirty minutes to meal prep, a leisurely morning routine before anyone else in the house is awake. If your actual schedule is back-to-back meetings, school drop-offs, a commute, and maybe a second job, that advice isn't wrong exactly, it's just not built for you.",

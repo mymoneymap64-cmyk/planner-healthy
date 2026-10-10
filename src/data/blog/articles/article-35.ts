@@ -11,7 +11,7 @@ export const article35: BlogPost = {
   tags: ["discipline", "simple habits", "healthy routine", "mindset"],
   excerpt:
     "Discipline gets marketed as 5am alarms and rigid rules, but the most durable version is much simpler. Here's how to build it without overhauling your entire life.",
-  imageKey: "healthyHabits",
+  imageKey: "healthyLifestyleAlt",
   publishedAt: "2026-03-15",
   intro: [
     "Search \"discipline\" and you'll mostly find extremes: 5am cold plunges, zero rest days, rigid meal timing down to the minute. It's an appealing image, but for most people with a job, a family, and a normal amount of energy, that version of discipline is unsustainable — not because they lack willpower, but because it's simply too complicated to maintain alongside an actual life.",
