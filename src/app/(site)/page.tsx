@@ -15,8 +15,9 @@ import SectionHeading from "@/components/SectionHeading";
 import CTASection from "@/components/CTASection";
 import FAQAccordion from "@/components/FAQAccordion";
 import ProductCard from "@/components/ProductCard";
+import ProductCover from "@/components/ProductCover";
+import PriceBadge from "@/components/PriceBadge";
 import PricingCard from "@/components/PricingCard";
-import LibraryHeroStack from "@/components/LibraryHeroStack";
 import PlannerMockup from "@/components/PlannerMockup";
 import NewsletterCTA from "@/components/NewsletterCTA";
 import JsonLd from "@/components/JsonLd";
@@ -86,6 +87,8 @@ const WHO_ITS_FOR = [
   "You'd rather own a library of guides than pay for another app or subscription",
 ];
 
+const CAKE_COOKBOOK = STANDALONE_PRODUCTS.find((p) => p.slug === "the-cake-cookbook")!;
+
 export default function Home() {
   return (
     <>
@@ -94,21 +97,16 @@ export default function Home() {
       {/* HERO */}
       <section className="relative overflow-hidden bg-ink-950">
         <div className="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(circle,#fff_1px,transparent_1px)] [background-size:22px_22px]" />
-        <div className="container-page relative grid gap-10 py-14 sm:py-16 lg:grid-cols-2 lg:items-center lg:py-24">
+        <div className="container-page relative grid gap-10 py-14 sm:py-16 lg:grid-cols-[9fr_11fr] lg:items-center lg:gap-14 lg:py-24">
           <div className="order-2 lg:order-1">
-            <LibraryHeroStack products={PRODUCTS} />
-          </div>
-
-          <div className="order-1 lg:order-2">
             <span className="eyebrow bg-white/10 text-gold-300">The Complete Wellness Library</span>
             <h1 className="mt-5 font-display text-3xl font-bold leading-[1.15] text-balance text-white sm:text-4xl lg:text-[2.75rem]">
-              Your Complete Wellness Library — In One Place
+              Your Complete Wellness Library — For Real Life.
             </h1>
             <p className="mt-5 text-balance text-sm leading-relaxed text-ink-200 sm:text-base">
-              Explore a curated collection of practical wellness guides
-              designed to help you build better routines, nourish your body,
-              support your wellbeing, improve recovery, and make healthy
-              habits easier to maintain.
+              Explore practical wellness guides and simple tools designed to
+              help you build healthier everyday routines, one small step at
+              a time.
             </p>
 
             <div className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -126,11 +124,11 @@ export default function Home() {
             </div>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              <Link href="/checkout" className="btn-gold">
-                Get the Complete Library <ArrowRight size={16} />
+              <Link href="/library" className="btn-gold">
+                Explore the Wellness Library <ArrowRight size={16} />
               </Link>
-              <Link href="#included" className="btn border-2 border-white/20 text-white hover:bg-white/10">
-                See What&apos;s Included
+              <Link href="/wellness-system" className="btn border-2 border-white/20 text-white hover:bg-white/10">
+                Discover the Wellness System
               </Link>
             </div>
 
@@ -139,7 +137,7 @@ export default function Home() {
               <span>·</span>
               <span>Works on any device</span>
               <span>·</span>
-              <span>${BUNDLE_PRICE} one-time payment</span>
+              <span>One-time payment</span>
             </div>
 
             <p className="mt-5 text-sm text-ink-400">
@@ -148,6 +146,86 @@ export default function Home() {
                 Access Your Wellness System
               </Link>
             </p>
+          </div>
+
+          <div className="order-1 lg:order-2">
+            <ResponsiveImage
+              imageKey="personPlanningMorning"
+              priority
+              className="h-[300px] w-full sm:h-[420px] lg:h-[560px]"
+              sizes="(min-width: 1024px) 55vw, 100vw"
+              rounded="rounded-2xl"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT'S INSIDE — CATEGORIES */}
+      <section id="included" className="border-b border-ink-900/10 bg-white py-8">
+        <div className="container-page">
+          <p className="text-center text-xs font-bold uppercase tracking-wide text-ink-400">What&apos;s Inside</p>
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
+            {PRODUCTS.map((p) => (
+              <Link
+                key={p.slug}
+                href={`/library/${p.slug}`}
+                className="flex items-center gap-2 rounded-full border border-ink-900/10 bg-cream px-4 py-2 text-xs font-bold uppercase tracking-wide text-ink-700 transition-colors hover:border-ink-900/30 hover:bg-ink-50"
+              >
+                {p.categoryLabel}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* EBOOK CAROUSEL */}
+      <section className="section-pad bg-cream">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="The Shop"
+            title="Explore Our Wellness Library"
+            description="Practical guides and beautiful resources to support healthier everyday routines."
+            align="left"
+          />
+          <div className="mt-10">
+            <ProductCarousel products={[...PRODUCTS, ...STANDALONE_PRODUCTS]} />
+          </div>
+        </div>
+      </section>
+
+      {/* CAKE COOKBOOK SPOTLIGHT */}
+      <section className="section-pad bg-white">
+        <div className="container-page">
+          <div className="mx-auto grid max-w-5xl items-center gap-10 overflow-hidden rounded-3xl bg-gold-50 p-6 sm:p-10 lg:grid-cols-2 lg:gap-14 lg:p-14">
+            <div className="relative mx-auto w-full max-w-[260px] sm:max-w-[300px]">
+              <div className="pointer-events-none absolute -inset-6 -z-10 rounded-full bg-gold-200/50 blur-2xl" />
+              <ProductCover product={CAKE_COOKBOOK} className="aspect-[3/4] w-full" />
+            </div>
+
+            <div>
+              <span className="eyebrow bg-gold-100 text-gold-700">Featured Cookbook</span>
+              <h2 className="mt-4 font-display text-3xl font-bold text-balance text-ink-950 sm:text-4xl">
+                Make Something Sweet.
+              </h2>
+              <p className="mt-2 font-display text-lg font-bold text-ink-800">{CAKE_COOKBOOK.title}</p>
+              <p className="mt-3 text-balance text-base leading-relaxed text-ink-600">
+                Discover delicious cake recipes and find inspiration for your next baking day.
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-ink-500">{CAKE_COOKBOOK.description}</p>
+
+              <div className="mt-6 max-w-xs">
+                <PriceBadge price={CAKE_COOKBOOK.price!} compareAtPrice={CAKE_COOKBOOK.compareAtPrice} />
+              </div>
+
+              <div className="mt-7 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
+                <Link href={`/checkout/${CAKE_COOKBOOK.slug}`} className="btn-gold w-full justify-center sm:w-auto">
+                  Get the Cookbook <ArrowRight size={16} />
+                </Link>
+                <Link href={`/library/${CAKE_COOKBOOK.slug}`} className="text-sm font-bold text-brand-700 hover:underline">
+                  View Details
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -200,35 +278,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* WHAT'S INSIDE — CATEGORIES */}
-      <section id="included" className="border-b border-ink-900/10 bg-white py-8">
-        <div className="container-page">
-          <p className="text-center text-xs font-bold uppercase tracking-wide text-ink-400">What&apos;s Inside</p>
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
-            {PRODUCTS.map((p) => (
-              <Link
-                key={p.slug}
-                href={`/library/${p.slug}`}
-                className="flex items-center gap-2 rounded-full border border-ink-900/10 bg-cream px-4 py-2 text-xs font-bold uppercase tracking-wide text-ink-700 transition-colors hover:border-ink-900/30 hover:bg-ink-50"
-              >
-                {p.categoryLabel}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* EBOOK CAROUSEL */}
-      <section className="section-pad bg-cream">
+      {/* HOW IT WORKS — LEARN / PLAN / APPLY */}
+      <section id="how-it-works" className="section-pad bg-brand-950 text-white">
         <div className="container-page">
           <SectionHeading
-            eyebrow="The Shop"
-            title="Explore Our Wellness Library"
-            description="Practical guides and beautiful resources to support healthier everyday routines."
-            align="left"
+            dark
+            eyebrow="How It Works"
+            title="Learn. Plan. Apply."
+            description="For every core guide: the ebook teaches it, the planner plans it, the 30-day system helps you apply it."
           />
-          <div className="mt-10">
-            <ProductCarousel products={[...PRODUCTS, ...STANDALONE_PRODUCTS]} />
+          <div className="mx-auto mt-14 grid max-w-5xl gap-6 sm:grid-cols-3">
+            {HOW_IT_WORKS.map((s) => (
+              <div key={s.step} className="rounded-xl border border-white/10 bg-white/5 p-6">
+                <span className="font-display text-3xl font-black text-brand-300">{s.step}</span>
+                <span className="ml-2 flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 text-gold-300">
+                  <s.icon size={18} />
+                </span>
+                <h3 className="mt-4 font-display text-xl font-bold">{s.title}</h3>
+                <p className="text-xs font-bold uppercase tracking-wide text-gold-300">{s.role}</p>
+                <p className="mt-3 text-sm leading-relaxed text-brand-100">{s.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -250,31 +320,6 @@ export default function Home() {
               <div key={p.title} className="card p-6">
                 <h3 className="font-display text-lg font-bold text-ink-950">{p.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-ink-500">{p.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* HOW IT WORKS — LEARN / PLAN / APPLY */}
-      <section id="how-it-works" className="section-pad bg-brand-950 text-white">
-        <div className="container-page">
-          <SectionHeading
-            dark
-            eyebrow="How It Works"
-            title="Learn. Plan. Apply."
-            description="For every core guide: the ebook teaches it, the planner plans it, the 30-day system helps you apply it."
-          />
-          <div className="mx-auto mt-14 grid max-w-5xl gap-6 sm:grid-cols-3">
-            {HOW_IT_WORKS.map((s) => (
-              <div key={s.step} className="rounded-xl border border-white/10 bg-white/5 p-6">
-                <span className="font-display text-3xl font-black text-brand-300">{s.step}</span>
-                <span className="ml-2 flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 text-gold-300">
-                  <s.icon size={18} />
-                </span>
-                <h3 className="mt-4 font-display text-xl font-bold">{s.title}</h3>
-                <p className="text-xs font-bold uppercase tracking-wide text-gold-300">{s.role}</p>
-                <p className="mt-3 text-sm leading-relaxed text-brand-100">{s.desc}</p>
               </div>
             ))}
           </div>
