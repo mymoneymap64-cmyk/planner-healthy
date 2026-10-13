@@ -12,10 +12,10 @@ function FileRow({
   pages: number | null;
 }) {
   return (
-    <div className="flex items-center justify-between gap-3 rounded-lg border border-white/10 bg-white/[0.04] px-4 py-3">
+    <div className="flex items-center justify-between gap-3 rounded-lg border border-ink-900/8 bg-cream px-4 py-3">
       <div>
-        <p className="text-sm font-semibold text-white">{label}</p>
-        <p className="text-xs text-ink-400">{pages ? `${pages} pages` : "Not available yet"}</p>
+        <p className="text-sm font-semibold text-ink-950">{label}</p>
+        <p className="text-xs text-ink-500">{pages ? `${pages} pages` : "Not available yet"}</p>
       </div>
       {href ? (
         <div className="flex items-center gap-1.5">
@@ -24,7 +24,7 @@ function FileRow({
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`View ${label}`}
-            className="flex h-9 w-9 items-center justify-center rounded-md bg-white/10 text-white hover:bg-white/20"
+            className="flex h-9 w-9 items-center justify-center rounded-md bg-ink-900/5 text-ink-700 hover:bg-ink-900/10"
           >
             <Eye size={15} />
           </a>
@@ -38,7 +38,7 @@ function FileRow({
           </a>
         </div>
       ) : (
-        <span className="rounded-md bg-white/5 px-3 py-1.5 text-xs font-semibold text-ink-500">
+        <span className="rounded-md bg-ink-900/5 px-3 py-1.5 text-xs font-semibold text-ink-500">
           Not yet available
         </span>
       )}
@@ -60,10 +60,10 @@ function ProductFiles({ token, product }: { token: string; product: Product }) {
   const singleFileLabel = product.category === "baking" ? "Cookbook" : "Guide";
 
   return (
-    <div className="overflow-hidden rounded-xl border border-white/10 bg-white/[0.04] p-4">
+    <div className="overflow-hidden rounded-xl border border-ink-900/10 bg-white p-4 shadow-soft">
       <ProductCover product={product} className="aspect-[3/4] w-full" />
       <div className="pt-4">
-        <h2 className="font-display text-base font-bold text-white">{product.title}</h2>
+        <h2 className="font-display text-base font-bold text-ink-950">{product.title}</h2>
         <div className="mt-3 space-y-2">
           {!hasPlannerOrSystem ? (
             <FileRow
@@ -79,7 +79,7 @@ function ProductFiles({ token, product }: { token: string; product: Product }) {
                 pages={product.pageCount}
               />
               {product.plannerAndSystemIncludedInEbook ? (
-                <p className="rounded-lg border border-dashed border-white/10 px-4 py-3 text-xs text-ink-400">
+                <p className="rounded-lg border border-dashed border-ink-900/15 px-4 py-3 text-xs text-ink-500">
                   Planner and 30-day system are included inside this ebook.
                 </p>
               ) : (
@@ -120,7 +120,7 @@ export default function AccessLibrary({
 }) {
   return (
     <>
-      <p className="mx-auto mt-14 max-w-6xl text-xs font-bold uppercase tracking-wide text-gold-300">
+      <p className="mx-auto mt-14 max-w-6xl text-xs font-bold uppercase tracking-wide text-gold-700">
         {mainProducts.length > 1 ? "Main Ebooks" : "Your Guide"}
       </p>
       <div className="mx-auto mt-4 grid max-w-6xl gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -131,7 +131,7 @@ export default function AccessLibrary({
 
       {bonusProducts && bonusProducts.length > 0 && (
         <>
-          <p className="mx-auto mt-14 max-w-6xl text-xs font-bold uppercase tracking-wide text-gold-300">
+          <p className="mx-auto mt-14 max-w-6xl text-xs font-bold uppercase tracking-wide text-gold-700">
             Free Bonuses
           </p>
           <div className="mx-auto mt-4 grid max-w-6xl gap-5 sm:grid-cols-2 lg:grid-cols-3">

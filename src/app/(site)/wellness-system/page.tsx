@@ -292,22 +292,21 @@ export default function WellnessSystemPage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden bg-ink-950">
-        <div className="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(circle,#fff_1px,transparent_1px)] [background-size:22px_22px]" />
+      <section className="relative overflow-hidden bg-gradient-to-b from-brand-50 via-cream to-cream">
         <div className="container-page relative grid gap-8 py-10 sm:gap-10 sm:py-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-14 lg:py-20">
           <div className="order-1 max-w-xl animate-fadeUp">
-            <span className="eyebrow bg-brand-100 text-brand-700">
+            <span className="eyebrow">
               <Sparkles size={13} /> HealthyGuide Wellness System
             </span>
-            <h1 className="mt-5 font-display text-3xl font-bold leading-[1.08] text-balance text-white sm:text-4xl lg:text-[2.75rem]">
+            <h1 className="mt-5 font-display text-3xl font-bold leading-[1.08] text-balance text-ink-950 sm:text-4xl lg:text-[2.75rem]">
               Your Ebook Comes With More Than a PDF.
             </h1>
-            <p className="mt-4 max-w-[38rem] text-balance text-sm leading-relaxed text-ink-200 sm:mt-5 sm:text-base">
+            <p className="mt-4 max-w-[38rem] text-balance text-sm leading-relaxed text-ink-600 sm:mt-5 sm:text-base">
               Your HealthyGuide purchase gives you an interactive Wellness System alongside it — simple tools that help turn your guide into a routine you actually keep.
             </p>
 
-            <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-brand-300/40 bg-brand-100/10 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.16em] text-brand-100">
-              <span className="h-2 w-2 rounded-full bg-brand-300" />
+            <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-brand-300/40 bg-brand-100 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.16em] text-brand-700">
+              <span className="h-2 w-2 rounded-full bg-brand-500" />
               Digital guide + interactive system
             </div>
 
@@ -315,17 +314,17 @@ export default function WellnessSystemPage() {
               <Link href="/wellness-system/demo" className="btn-wellness w-full sm:w-auto">
                 Try the Wellness System Demo <ArrowRight size={16} />
               </Link>
-              <Link href="/checkout" className="btn w-full border-2 border-white/20 text-white hover:bg-white/10 sm:w-auto">
+              <Link href="/checkout" className="btn-secondary w-full sm:w-auto">
                 Get the Complete Library
               </Link>
             </div>
-            <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-gold-300">
+            <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-gold-700">
               Explore the dashboard and Interactive Meal Planner before you buy — no account needed.
             </p>
 
-            <p className="mt-6 text-sm text-ink-400">
+            <p className="mt-6 text-sm text-ink-500">
               Already own a guide?{" "}
-              <Link href="/access" className="font-semibold text-gold-300 underline hover:text-gold-200">
+              <Link href="/access" className="font-semibold text-brand-700 underline hover:text-brand-800">
                 Access your Wellness System
               </Link>
             </p>
@@ -636,7 +635,7 @@ export default function WellnessSystemPage() {
       </section>
 
       {/* SHOW, DON'T JUST TELL */}
-      <section className="section-pad bg-ink-950">
+      <section className="section-pad bg-brand-950">
         <div className="container-page">
           <SectionHeading
             dark
@@ -750,16 +749,16 @@ export default function WellnessSystemPage() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="section-pad bg-brand-900">
+      <section className="section-pad bg-white">
         <div className="container-page">
-          <div className="mx-auto max-w-3xl rounded-2xl bg-brand-800 px-6 py-14 text-center sm:px-14 sm:py-16">
-            <span className="eyebrow bg-white/10 text-gold-300">
+          <div className="mx-auto max-w-3xl rounded-2xl border border-brand-900/10 bg-gradient-to-b from-brand-50 to-cream px-6 py-14 text-center sm:px-14 sm:py-16">
+            <span className="eyebrow">
               <ClipboardList size={13} /> Get Started
             </span>
-            <h2 className="mt-5 font-display text-3xl font-bold text-balance text-white sm:text-4xl lg:text-5xl">
+            <h2 className="mt-5 font-display text-3xl font-bold text-balance text-ink-950 sm:text-4xl lg:text-5xl">
               Try the Wellness System Demo
             </h2>
-            <p className="mx-auto mt-5 max-w-xl text-balance text-base leading-relaxed text-brand-100 sm:text-lg">
+            <p className="mx-auto mt-5 max-w-xl text-balance text-base leading-relaxed text-ink-600 sm:text-lg">
               Explore the dashboard and Interactive Meal Planner before you buy — no account needed. The demo is a preview only; your real system becomes available through your purchase access link.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -767,7 +766,7 @@ export default function WellnessSystemPage() {
                 Try the Wellness System Demo
                 <ArrowRight size={16} />
               </Link>
-              <Link href="/checkout" className="btn w-full border-2 border-white/20 text-white hover:bg-white/10 sm:w-auto">
+              <Link href="/checkout" className="btn-secondary w-full sm:w-auto">
                 Get the Complete Library
               </Link>
             </div>

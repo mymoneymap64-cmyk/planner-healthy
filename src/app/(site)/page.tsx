@@ -95,44 +95,44 @@ export default function Home() {
       <JsonLd data={productJsonLd({ price: BUNDLE_PRICE, path: "/" })} />
 
       {/* HERO */}
-      <section className="relative overflow-hidden bg-ink-950">
-        <div className="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(circle,#fff_1px,transparent_1px)] [background-size:22px_22px]" />
+      <section className="relative overflow-hidden bg-gradient-to-b from-brand-50 via-cream to-cream">
+        <div className="pointer-events-none absolute -right-24 -top-24 h-[420px] w-[420px] rounded-full bg-brand-100/60 blur-3xl" />
         <div className="container-page relative grid gap-10 py-14 sm:py-16 lg:grid-cols-[9fr_11fr] lg:items-center lg:gap-14 lg:py-24">
           <div className="order-2 lg:order-1">
-            <span className="eyebrow bg-white/10 text-gold-300">The Complete Wellness Library</span>
-            <h1 className="mt-5 font-display text-3xl font-bold leading-[1.15] text-balance text-white sm:text-4xl lg:text-[2.75rem]">
+            <span className="eyebrow">The Complete Wellness Library</span>
+            <h1 className="mt-5 font-display text-4xl font-bold leading-[1.1] text-balance text-ink-950 sm:text-5xl lg:text-[3.25rem]">
               Your Complete Wellness Library — For Real Life.
             </h1>
-            <p className="mt-5 text-balance text-sm leading-relaxed text-ink-200 sm:text-base">
+            <p className="mt-5 max-w-lg text-balance text-base leading-relaxed text-ink-600">
               Explore practical wellness guides and simple tools designed to
               help you build healthier everyday routines, one small step at
               a time.
             </p>
 
-            <div className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-4">
+            <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-4 sm:gap-x-8">
               {[
                 { count: PRODUCTS.length, label: "Wellness Ebooks" },
                 { count: PRODUCTS.length, label: "Planners" },
                 { count: PRODUCTS.length, label: "30-Day Systems" },
                 { count: BONUS_PRODUCTS.length, label: "Free Bonuses" },
               ].map((s) => (
-                <div key={s.label} className="rounded-lg border border-white/10 bg-white/5 px-3 py-2.5 text-center">
-                  <p className="font-display text-xl font-black text-white">{s.count}</p>
-                  <p className="text-[10px] font-bold uppercase tracking-wide text-ink-300">{s.label}</p>
+                <div key={s.label}>
+                  <p className="font-display text-3xl font-bold text-brand-700">{s.count}</p>
+                  <p className="mt-0.5 text-[11px] font-bold uppercase tracking-wide text-ink-500">{s.label}</p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-8 flex flex-wrap items-center gap-4">
+            <div className="mt-9 flex flex-wrap items-center gap-4">
               <Link href="/library" className="btn-gold">
                 Explore the Wellness Library <ArrowRight size={16} />
               </Link>
-              <Link href="/wellness-system" className="btn border-2 border-white/20 text-white hover:bg-white/10">
+              <Link href="/wellness-system" className="btn-secondary">
                 Discover the Wellness System
               </Link>
             </div>
 
-            <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-medium text-ink-400">
+            <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-medium text-ink-500">
               <span>Instant digital access</span>
               <span>·</span>
               <span>Works on any device</span>
@@ -140,9 +140,9 @@ export default function Home() {
               <span>One-time payment</span>
             </div>
 
-            <p className="mt-5 text-sm text-ink-400">
+            <p className="mt-5 text-sm text-ink-500">
               Already own a guide?{" "}
-              <Link href="/access" className="font-semibold text-gold-300 underline hover:text-gold-200">
+              <Link href="/access" className="font-semibold text-brand-700 underline hover:text-brand-800">
                 Access Your Wellness System
               </Link>
             </p>
@@ -169,7 +169,7 @@ export default function Home() {
               <Link
                 key={p.slug}
                 href={`/library/${p.slug}`}
-                className="flex items-center gap-2 rounded-full border border-ink-900/10 bg-cream px-4 py-2 text-xs font-bold uppercase tracking-wide text-ink-700 transition-colors hover:border-ink-900/30 hover:bg-ink-50"
+                className="flex items-center gap-2 rounded-full border border-ink-900/10 bg-cream px-4 py-2 text-xs font-bold uppercase tracking-wide text-ink-700 transition-colors hover:border-brand-300 hover:bg-brand-50"
               >
                 {p.categoryLabel}
               </Link>
@@ -279,24 +279,23 @@ export default function Home() {
       </section>
 
       {/* HOW IT WORKS — LEARN / PLAN / APPLY */}
-      <section id="how-it-works" className="section-pad bg-brand-950 text-white">
+      <section id="how-it-works" className="section-pad bg-gradient-to-b from-white to-brand-50/60">
         <div className="container-page">
           <SectionHeading
-            dark
             eyebrow="How It Works"
             title="Learn. Plan. Apply."
             description="For every core guide: the ebook teaches it, the planner plans it, the 30-day system helps you apply it."
           />
           <div className="mx-auto mt-14 grid max-w-5xl gap-6 sm:grid-cols-3">
             {HOW_IT_WORKS.map((s) => (
-              <div key={s.step} className="rounded-xl border border-white/10 bg-white/5 p-6">
-                <span className="font-display text-3xl font-black text-brand-300">{s.step}</span>
-                <span className="ml-2 flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 text-gold-300">
+              <div key={s.step} className="rounded-xl border border-ink-900/8 bg-white p-6 shadow-soft">
+                <span className="font-display text-3xl font-black text-brand-200">{s.step}</span>
+                <span className="ml-2 flex h-9 w-9 items-center justify-center rounded-lg bg-brand-100 text-brand-700">
                   <s.icon size={18} />
                 </span>
-                <h3 className="mt-4 font-display text-xl font-bold">{s.title}</h3>
-                <p className="text-xs font-bold uppercase tracking-wide text-gold-300">{s.role}</p>
-                <p className="mt-3 text-sm leading-relaxed text-brand-100">{s.desc}</p>
+                <h3 className="mt-4 font-display text-xl font-bold text-ink-950">{s.title}</h3>
+                <p className="text-xs font-bold uppercase tracking-wide text-gold-600">{s.role}</p>
+                <p className="mt-3 text-sm leading-relaxed text-ink-500">{s.desc}</p>
               </div>
             ))}
           </div>

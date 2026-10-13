@@ -23,7 +23,7 @@ export default function PriceBadge({
         <div className="flex items-center justify-between">
           <p className="text-[9px] font-bold uppercase tracking-wide text-gold-700">Launch Offer</p>
           {savePercent !== null && (
-            <span className="rounded-full bg-ink-950 px-2 py-0.5 text-[8px] font-bold uppercase tracking-wide text-gold-300">
+            <span className="rounded-full bg-brand-900 px-2 py-0.5 text-[8px] font-bold uppercase tracking-wide text-gold-300">
               Save {savePercent}%
             </span>
           )}

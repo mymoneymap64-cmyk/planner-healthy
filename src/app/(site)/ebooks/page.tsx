@@ -19,16 +19,15 @@ export const metadata = buildMetadata({
 export default function EbooksPage() {
   return (
     <div>
-      <section className="relative overflow-hidden bg-ink-950 section-pad !pb-14">
-        <div className="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(circle,#fff_1px,transparent_1px)] [background-size:22px_22px]" />
+      <section className="relative overflow-hidden bg-gradient-to-b from-brand-50 to-cream section-pad !pb-14">
         <div className="container-page relative">
-          <Breadcrumbs dark items={[{ name: "Ebooks", href: "/ebooks" }]} />
+          <Breadcrumbs items={[{ name: "Ebooks", href: "/ebooks" }]} />
           <div className="mx-auto mt-6 max-w-2xl text-center">
-            <span className="eyebrow bg-white/10 text-gold-300">Ebooks</span>
-            <h1 className="mt-5 font-display text-3xl font-bold text-balance text-white sm:text-4xl">
+            <span className="eyebrow">Ebooks</span>
+            <h1 className="mt-5 font-display text-3xl font-bold text-balance text-ink-950 sm:text-4xl">
               Ebook Library
             </h1>
-            <p className="mt-4 text-balance leading-relaxed text-ink-300">
+            <p className="mt-4 text-balance leading-relaxed text-ink-600">
               Explore practical ebooks made to help you learn, create, cook,
               and enjoy more.
             </p>

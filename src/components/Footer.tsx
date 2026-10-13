@@ -36,10 +36,10 @@ const TRUST_BADGES = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-ink-900/10 bg-ink-950 text-ink-200">
+    <footer className="border-t border-white/5 bg-brand-950 text-brand-100">
       <div className="container-page grid grid-cols-3 gap-4 border-b border-white/10 py-6 text-center sm:flex sm:items-center sm:justify-center sm:gap-10">
         {TRUST_BADGES.map((b) => (
-          <span key={b.label} className="flex flex-col items-center gap-1.5 text-xs font-semibold text-ink-300 sm:flex-row sm:gap-2">
+          <span key={b.label} className="flex flex-col items-center gap-1.5 text-xs font-semibold text-brand-200 sm:flex-row sm:gap-2">
             <b.icon size={14} className="text-gold-400" />
             {b.label}
           </span>
@@ -50,14 +50,14 @@ export default function Footer() {
         <div className="grid grid-cols-2 gap-10 sm:grid-cols-5">
           <div className="col-span-2 sm:col-span-2">
             <Link href="/" className="flex items-center gap-2.5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-md bg-white font-display text-sm font-black text-ink-950">
+              <span className="flex h-9 w-9 items-center justify-center rounded-md bg-white font-display text-sm font-black text-brand-950">
                 N
               </span>
               <span className="font-display text-lg font-bold text-white">
                 Natural Wellness Library
               </span>
             </Link>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink-400">
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-brand-200">
               A digital library of 7 practical wellness ebooks — natural
               healing, mental wellness, women&apos;s and men&apos;s wellness,
               herbal remedies, sleep &amp; recovery, and healthy eating —
@@ -73,7 +73,7 @@ export default function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-ink-400 transition-colors hover:text-gold-300"
+                      className="text-sm text-brand-200 transition-colors hover:text-gold-300"
                     >
                       {link.label}
                     </Link>
@@ -84,7 +84,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-8 text-xs text-ink-500 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-8 text-xs text-brand-300 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} Natural Wellness Library. All rights
             reserved.

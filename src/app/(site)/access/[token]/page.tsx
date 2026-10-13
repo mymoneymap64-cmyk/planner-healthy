@@ -36,15 +36,14 @@ export default async function AccessTokenPage({
 
   return (
     <div>
-      <section className="relative overflow-hidden bg-ink-950 section-pad !pb-16">
-        <div className="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(circle,#fff_1px,transparent_1px)] [background-size:22px_22px]" />
+      <section className="relative overflow-hidden bg-gradient-to-b from-brand-50 to-cream section-pad !pb-16">
         <div className="container-page relative">
           <div className="mx-auto max-w-2xl text-center">
-            <span className="eyebrow bg-white/10 text-gold-300">Order Confirmed</span>
-            <h1 className="mt-5 font-display text-3xl font-bold text-balance text-white sm:text-4xl">
+            <span className="eyebrow">Order Confirmed</span>
+            <h1 className="mt-5 font-display text-3xl font-bold text-balance text-ink-950 sm:text-4xl">
               {isWellnessOrder ? "Your Wellness Library" : product!.title}
             </h1>
-            <p className="mt-4 text-balance text-base leading-relaxed text-ink-300">
+            <p className="mt-4 text-balance text-base leading-relaxed text-ink-600">
               {isWellnessOrder
                 ? "View or download your files below. Keep your confirmation email or bookmark this page — it's your personal access link and works anytime."
                 : `${product!.subtitle} View or download it below. Keep your confirmation email or bookmark this page — it's your personal access link and works anytime.`}
@@ -55,7 +54,7 @@ export default async function AccessTokenPage({
                 <BookOpen size={16} /> {isWellnessOrder ? "Open in HealthyGuide Reader" : "Read or Download Your Cookbook"}
               </Link>
               {isWellnessOrder && (
-                <Link href={`/wellness/${token}`} className="btn-secondary inline-flex !border-white !text-white hover:!bg-white/10">
+                <Link href={`/wellness/${token}`} className="btn-secondary inline-flex">
                   <Sparkles size={16} /> Open Wellness System
                 </Link>
               )}

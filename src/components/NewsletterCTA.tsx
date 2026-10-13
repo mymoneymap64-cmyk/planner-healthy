@@ -16,7 +16,7 @@ export default function NewsletterCTA() {
   }
 
   return (
-    <div className="rounded-2xl bg-ink-950 p-8 text-center text-white sm:p-12">
+    <div className="rounded-2xl bg-brand-950 p-8 text-center text-white sm:p-12">
       <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-lg bg-white/10">
         <Mail size={22} />
       </span>
