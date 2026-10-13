@@ -3,27 +3,27 @@ import { ArrowRight } from "lucide-react";
 
 export default function CTASection() {
   return (
-    <section className="section-pad bg-white">
-      <div className="container-page">
-        <div className="mx-auto max-w-3xl rounded-2xl border border-brand-900/10 bg-gradient-to-b from-brand-50 to-cream px-6 py-14 text-center sm:px-14 sm:py-16">
+    <section className="relative overflow-hidden border-y border-brand-900/10 bg-gradient-to-br from-brand-50 via-cream to-gold-50/50 py-16 sm:py-20">
+      <div className="container-page grid gap-8 lg:grid-cols-[1.3fr_1fr] lg:items-center lg:gap-16">
+        <div>
           <span className="eyebrow">The Complete Library</span>
-          <h2 className="mt-5 font-display text-3xl font-bold text-balance text-ink-950 sm:text-4xl lg:text-5xl">
+          <h2 className="mt-5 max-w-xl font-display text-3xl font-bold text-balance text-ink-950 sm:text-4xl lg:text-5xl">
             Everything You Need to Get Started, In One Collection
           </h2>
-          <p className="mx-auto mt-5 max-w-xl text-balance text-base leading-relaxed text-ink-600 sm:text-lg">
+          <p className="mt-5 max-w-lg text-balance text-base leading-relaxed text-ink-600 sm:text-lg">
             7 practical wellness guides — each with a matching planner and
             30-day system — plus 2 free bonus guides, all in one digital
             library.
           </p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Link href="/checkout" className="btn-gold w-full sm:w-auto">
-              Get the Complete Library
-              <ArrowRight size={16} />
-            </Link>
-            <Link href="/library" className="btn-secondary w-full sm:w-auto">
-              Browse the Library
-            </Link>
-          </div>
+        </div>
+        <div className="flex flex-col items-start gap-3 lg:items-end">
+          <Link href="/checkout" className="btn-gold w-full justify-center lg:w-auto">
+            Get the Complete Library
+            <ArrowRight size={16} />
+          </Link>
+          <Link href="/library" className="btn-secondary w-full justify-center lg:w-auto">
+            Browse the Library
+          </Link>
         </div>
       </div>
     </section>

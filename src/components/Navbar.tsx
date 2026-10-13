@@ -74,7 +74,7 @@ export default function Navbar() {
           <span className="flex h-9 w-9 items-center justify-center rounded-md bg-brand-900 font-display text-sm font-black text-white transition-transform group-hover:scale-105">
             N
           </span>
-          <span className="font-display text-lg font-bold tracking-tight text-ink-950 sm:text-xl">
+          <span className="font-display text-lg italic tracking-tight text-ink-950 sm:text-xl">
             Natural Wellness Library
           </span>
         </Link>
