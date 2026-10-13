@@ -19,7 +19,11 @@ export default function FaqPage() {
       <JsonLd data={faqJsonLd(FAQS)} />
       <section className="bg-gradient-to-b from-brand-50 to-cream section-pad !pb-12">
         <div className="container-page">
-          <SectionHeading eyebrow="Support" title="Frequently Asked Questions" />
+          <SectionHeading
+            eyebrow="Support"
+            title="Frequently Asked Questions"
+            description="Everything you need to know about what's included, how access works, and what to expect before you buy."
+          />
         </div>
       </section>
 
@@ -29,14 +33,14 @@ export default function FaqPage() {
             <FAQAccordion items={FAQS} />
           </div>
 
-          <div className="mx-auto mt-14 max-w-2xl text-center">
-            <h3 className="font-display text-xl font-bold text-ink-900">
+          <div className="mx-auto mt-14 max-w-2xl rounded-2xl bg-brand-950 p-8 text-center sm:p-10">
+            <h3 className="font-display text-xl font-bold text-white">
               Still have a question?
             </h3>
-            <p className="mt-2 text-sm text-ink-500">
+            <p className="mt-2 text-sm text-brand-100">
               Browse the library to see exactly what&apos;s included before you get started.
             </p>
-            <Link href="/checkout" className="btn-primary mt-6">
+            <Link href="/checkout" className="btn-gold mt-6">
               Get the Complete Library <ArrowRight size={16} />
             </Link>
           </div>
