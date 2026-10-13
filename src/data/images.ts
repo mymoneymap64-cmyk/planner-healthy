@@ -257,6 +257,45 @@ export const IMAGE_LIBRARY: Record<ImageKey, ImageAsset> = {
     height: 800,
     credit: "Unsplash — photo by Torbjørn Helgesen, free Unsplash License",
   },
+  choppingFreshVegetables: {
+    key: "choppingFreshVegetables",
+    url: "/product-images/chopping-fresh-vegetables.jpg",
+    alt: "A person in an apron slicing fresh mushrooms on a wooden cutting board, surrounded by tomatoes, lettuce, lemons and herbs",
+    filename: "chopping-fresh-vegetables.jpg",
+    width: 1200,
+    height: 673,
+    credit: "Pexels — photo by Katerina Holmes, free Pexels License",
+  },
+  homeCanningPantry: {
+    key: "homeCanningPantry",
+    url: "/product-images/home-canning-pantry.jpg",
+    alt: "Rustic wooden pantry shelves lined with rows of home-canned jars of preserved vegetables, pickles and jams",
+    filename: "home-canning-pantry.jpg",
+    width: 1200,
+    height: 800,
+    credit: "Unsplash — photo by Ray Shrewsberry, free Unsplash License",
+  },
+  bakingFreshCake: {
+    key: "bakingFreshCake",
+    url: "/product-images/baking-fresh-cake.jpg",
+    alt: "A person lifting the springform ring off a freshly baked cake, with citrus wedges and linen on the table",
+    filename: "baking-fresh-cake.jpg",
+    width: 675,
+    height: 1200,
+    credit: "Pexels — photo by Merve, free Pexels License",
+  },
+  // Dedicated to the Men's Wellness Guide's About section only — the
+  // shared `workouts` key (used elsewhere, e.g. blog articles) stays
+  // exactly as it is and is not reassigned here.
+  mensWellnessStretch: {
+    key: "mensWellnessStretch",
+    url: "/product-images/mens-wellness-stretch.jpg",
+    alt: "A man in a black t-shirt doing a standing side stretch in a bright, sunlit home living room, with a pair of dumbbells visible on the rug",
+    filename: "mens-wellness-stretch.jpg",
+    width: 1200,
+    height: 800,
+    credit: "Pexels — photo by MART PRODUCTION, free Pexels License",
+  },
 };
 
 export function getImage(key: ImageKey): ImageAsset {

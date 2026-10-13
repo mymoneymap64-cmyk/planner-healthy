@@ -23,9 +23,10 @@ import CTASection from "@/components/CTASection";
 import JsonLd from "@/components/JsonLd";
 import FAQAccordion from "@/components/FAQAccordion";
 import MealPlannerPreview from "@/components/MealPlannerPreview";
+import ResponsiveImage from "@/components/ResponsiveImage";
 import { ALL_PRODUCTS, PRODUCTS, STANDALONE_PRODUCTS, getProduct } from "@/data/products";
 import { buildMetadata, breadcrumbJsonLd, productDetailJsonLd, SITE_URL } from "@/lib/seo";
-import { FaqItem } from "@/lib/types";
+import { FaqItem, ImageKey } from "@/lib/types";
 
 export async function generateStaticParams() {
   return ALL_PRODUCTS.map((p) => ({ slug: p.slug }));
@@ -161,6 +162,20 @@ const PRESERVATION_CHAPTERS = [
   { number: "09", title: "Pantry & Long-Term Storage" },
   { number: "10", title: "Preserved Meal Components" },
 ];
+
+// A real, visually verified lifestyle photo per product for the "About This
+// Guide" section below — each chosen for genuine topical fit, not filler.
+const ABOUT_SECTION_IMAGE: Record<string, ImageKey> = {
+  "natural-healing-handbook": "healthyLifestyle",
+  "mental-wellness-guide": "motivation",
+  "womens-wellness-guide": "motivationAlt",
+  "mens-wellness-guide": "mensWellnessStretch",
+  "natural-remedies-herbal-recipes": "healthyLifestyleAlt",
+  "sleep-recovery-handbook": "sleepAlt",
+  "healthy-eating-guide": "choppingFreshVegetables",
+  "the-cake-cookbook": "bakingFreshCake",
+  "complete-guide-home-food-preservation": "homeCanningPantry",
+};
 
 const PRESERVATION_REFERENCE_ITEMS = [
   "Getting Started & food preservation basics",
@@ -605,10 +620,25 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
       <section className="section-pad bg-white">
         <div className="container-page">
-          <SectionHeading eyebrow="About This Guide" title={`Inside ${product.title}`} align="left" />
-          <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-ink-600">
-            {product.description}
-          </p>
+          <div className="mx-auto grid max-w-5xl gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center lg:gap-14">
+            <div>
+              <span className="eyebrow">About This Guide</span>
+              <h2 className="mt-4 font-display text-2xl font-bold text-balance text-ink-950 sm:text-3xl">
+                Inside {product.title}
+              </h2>
+              <p className="mt-5 text-base leading-relaxed text-ink-600">
+                {product.description}
+              </p>
+            </div>
+            {ABOUT_SECTION_IMAGE[product.slug] && (
+              <ResponsiveImage
+                imageKey={ABOUT_SECTION_IMAGE[product.slug]}
+                className="h-[260px] w-full sm:h-[340px] lg:h-[380px]"
+                sizes="(min-width: 1024px) 45vw, 100vw"
+                rounded="rounded-2xl"
+              />
+            )}
+          </div>
         </div>
       </section>
 
