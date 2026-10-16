@@ -71,11 +71,16 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-ink-900/8 bg-cream/95 backdrop-blur-sm">
       <nav className="container-page flex h-16 items-center justify-between sm:h-[72px]">
         <Link href="/" className="flex items-center gap-2.5 group">
-          <span className="flex h-9 w-9 items-center justify-center rounded-md bg-brand-900 font-display text-sm font-black text-white transition-transform group-hover:scale-105">
+          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-900 font-display text-sm font-black text-white transition-transform group-hover:scale-105">
             N
           </span>
-          <span className="font-display text-lg italic tracking-tight text-ink-950 sm:text-xl">
-            Natural Wellness Library
+          <span className="flex flex-col leading-tight">
+            <span className="font-display text-lg italic tracking-tight text-ink-950 sm:text-xl">
+              Natural Wellness Library
+            </span>
+            <span className="hidden text-[9px] font-bold uppercase tracking-[0.18em] text-ink-400 sm:block">
+              Ebooks, Planners &amp; Systems
+            </span>
           </span>
         </Link>
 
@@ -105,13 +110,13 @@ export default function Navbar() {
           <button
             aria-label="Search the site"
             onClick={() => setSearchOpen((v) => !v)}
-            className="flex h-10 w-10 items-center justify-center rounded-md text-ink-500 hover:bg-ink-900/5 hover:text-ink-950"
+            className="flex h-10 w-10 items-center justify-center rounded-full text-ink-500 hover:bg-ink-900/5 hover:text-ink-950"
           >
             <Search size={18} />
           </button>
           <Link
             href="/checkout"
-            className="flex items-center gap-2 rounded-lg bg-brand-900 px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-brand-800"
+            className="flex items-center gap-2 rounded-full bg-brand-900 px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-brand-800"
           >
             <ShoppingBag size={15} />
             Get the Library
@@ -122,7 +127,7 @@ export default function Navbar() {
           <button
             aria-label="Search the site"
             onClick={() => setSearchOpen((v) => !v)}
-            className="flex h-10 w-10 items-center justify-center rounded-md text-ink-500 hover:bg-ink-900/5 hover:text-ink-950"
+            className="flex h-10 w-10 items-center justify-center rounded-full text-ink-500 hover:bg-ink-900/5 hover:text-ink-950"
           >
             <Search size={19} />
           </button>
@@ -131,7 +136,7 @@ export default function Navbar() {
             aria-expanded={open}
             aria-controls="mobile-nav-menu"
             onClick={() => setOpen((v) => !v)}
-            className="flex h-10 w-10 items-center justify-center rounded-md text-ink-950 hover:bg-ink-900/5"
+            className="flex h-10 w-10 items-center justify-center rounded-full text-ink-950 hover:bg-ink-900/5"
           >
             {open ? <X size={22} /> : <Menu size={22} />}
           </button>

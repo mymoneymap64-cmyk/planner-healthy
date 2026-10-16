@@ -99,7 +99,7 @@ export default function Home() {
         <div className="container-page relative grid gap-10 py-14 sm:py-16 lg:grid-cols-[0.95fr_1.3fr] lg:items-start lg:gap-16 lg:py-24">
           <div className="order-2 lg:order-1 lg:pt-10">
             <span className="eyebrow">The Complete Wellness Library</span>
-            <h1 className="mt-5 font-display text-4xl font-bold leading-[1.1] text-balance text-ink-950 sm:text-5xl lg:text-[3.4rem]">
+            <h1 className="mt-5 font-display text-5xl font-bold leading-[1.05] text-balance text-ink-950 sm:text-6xl lg:text-[4.25rem]">
               Your Complete Wellness Library — For Real Life.
             </h1>
             <p className="mt-5 max-w-md text-balance text-base leading-relaxed text-ink-600">
@@ -133,13 +133,13 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="order-1 lg:order-2">
+          <div className="order-1 lg:order-2 lg:relative lg:mr-[calc((100vw-100%)/-2)]">
             <ResponsiveImage
               imageKey="personPlanningMorning"
               priority
               className="h-[320px] w-full sm:h-[440px] lg:h-[640px]"
               sizes="(min-width: 1024px) 55vw, 100vw"
-              rounded="rounded-[2rem]"
+              rounded="rounded-[2rem] lg:rounded-r-none lg:rounded-l-[2.5rem]"
             />
           </div>
         </div>

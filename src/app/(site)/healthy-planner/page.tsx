@@ -85,8 +85,7 @@ export default function HealthyPlannerPage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden bg-ink-950">
-        <div className="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(circle,#fff_1px,transparent_1px)] [background-size:22px_22px]" />
+      <section className="relative overflow-hidden bg-gradient-to-b from-brand-50 via-cream to-cream">
         <div className="container-page relative grid gap-12 py-14 sm:py-16 lg:grid-cols-2 lg:items-center lg:py-24">
           <div className="order-2 flex flex-col gap-8 lg:order-1">
             <LibraryHeroStack products={PRODUCTS} />
@@ -96,13 +95,13 @@ export default function HealthyPlannerPage() {
           </div>
 
           <div className="order-1 animate-fadeUp lg:order-2">
-            <span className="eyebrow bg-white/10 text-gold-300">
+            <span className="eyebrow">
               <Sparkles size={13} /> The Complete Healthy Planner
             </span>
-            <h1 className="mt-5 font-display text-3xl font-bold leading-[1.15] text-balance text-white sm:text-4xl lg:text-[2.75rem]">
-              Your Complete Healthy <span className="text-gold-300">Lifestyle Planner</span> — In One Place
+            <h1 className="mt-5 font-display text-3xl font-bold leading-[1.15] text-balance text-ink-950 sm:text-4xl lg:text-[2.75rem]">
+              Your Complete Healthy <span className="text-brand-700">Lifestyle Planner</span> — In One Place
             </h1>
-            <p className="mt-5 text-balance text-sm leading-relaxed text-ink-200 sm:text-base">
+            <p className="mt-5 text-balance text-sm leading-relaxed text-ink-600 sm:text-base">
               Combine planning, healthy routines, habit tracking, and
               practical wellness resources in one organized system — 7
               guides, 7 matching planners, 7 30-day systems, and the
@@ -113,12 +112,12 @@ export default function HealthyPlannerPage() {
               <Link href="/checkout" className="btn-gold">
                 Get the Healthy Planner <ArrowRight size={16} />
               </Link>
-              <Link href="#included" className="btn border-2 border-white/20 text-white hover:bg-white/10">
+              <Link href="#included" className="btn-secondary">
                 See What&apos;s Included
               </Link>
             </div>
 
-            <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-medium text-ink-400">
+            <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-medium text-ink-500">
               <span>Instant access after purchase</span>
               <span>·</span>
               <span>Works on any device</span>
@@ -126,9 +125,9 @@ export default function HealthyPlannerPage() {
               <span>Secure one-time payment</span>
             </div>
 
-            <p className="mt-5 text-sm text-ink-400">
+            <p className="mt-5 text-sm text-ink-500">
               Already own it?{" "}
-              <Link href="/access" className="font-semibold text-gold-300 underline hover:text-gold-200">
+              <Link href="/access" className="font-semibold text-brand-700 underline hover:text-brand-800">
                 Access your Wellness System
               </Link>
             </p>
@@ -188,7 +187,7 @@ export default function HealthyPlannerPage() {
       </section>
 
       {/* APP SHOWCASE */}
-      <section className="section-pad bg-ink-950">
+      <section className="section-pad bg-brand-950">
         <div className="container-page">
           <SectionHeading
             dark
@@ -277,18 +276,23 @@ export default function HealthyPlannerPage() {
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section className="section-pad bg-brand-950 text-white">
+      {/* HOW IT WORKS — connected timeline, matching the homepage's pattern */}
+      <section className="section-pad bg-gradient-to-b from-white to-brand-50/60">
         <div className="container-page">
-          <SectionHeading dark eyebrow="How It Works" title="Plan. Practice. Track." />
-          <div className="mx-auto mt-14 grid max-w-5xl gap-6 sm:grid-cols-3">
-            {HOW_IT_WORKS.map((s) => (
-              <div key={s.step} className="rounded-xl border border-white/10 bg-white/5 p-6">
-                <span className="font-display text-3xl font-black text-brand-300">{s.step}</span>
-                <h3 className="mt-4 font-display text-xl font-bold">{s.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-brand-100">{s.desc}</p>
-              </div>
-            ))}
+          <SectionHeading eyebrow="How It Works" title="Plan. Practice. Track." align="left" />
+          <div className="relative mx-auto mt-16 max-w-5xl">
+            <div className="absolute left-[26px] top-[26px] hidden h-px w-[calc(100%-52px)] bg-brand-200 sm:block" />
+            <div className="grid gap-10 sm:grid-cols-3 sm:gap-8">
+              {HOW_IT_WORKS.map((s) => (
+                <div key={s.step} className="relative flex flex-col items-start">
+                  <span className="relative z-10 flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full border-4 border-brand-50/60 bg-brand-700 font-display text-lg font-black text-white shadow-card">
+                    {s.step}
+                  </span>
+                  <h3 className="mt-5 font-display text-xl font-bold text-ink-950">{s.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-500">{s.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -312,33 +316,30 @@ export default function HealthyPlannerPage() {
         </div>
       </section>
 
-      {/* FINAL CTA */}
-      <section className="section-pad bg-brand-900">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl rounded-2xl bg-brand-800 px-6 py-14 text-center sm:px-14 sm:py-16">
-            <span className="eyebrow bg-white/10 text-gold-300">
+      {/* FINAL CTA — full-width asymmetric split, matching the shared CTASection pattern */}
+      <section className="relative overflow-hidden border-y border-brand-900/10 bg-gradient-to-br from-brand-50 via-cream to-gold-50/40 py-16 sm:py-20">
+        <div className="container-page grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:items-center lg:gap-16">
+          <div>
+            <span className="eyebrow">
               <Sparkles size={13} /> Get Started
             </span>
-            <h2 className="mt-5 font-display text-3xl font-bold text-balance text-white sm:text-4xl lg:text-5xl">
+            <h2 className="mt-5 max-w-xl font-display text-3xl font-bold text-balance text-ink-950 sm:text-4xl lg:text-5xl">
               Ready to Plan a Healthier Life?
             </h2>
-            <p className="mx-auto mt-5 max-w-xl text-balance text-base leading-relaxed text-brand-100 sm:text-lg">
+            <p className="mt-5 max-w-lg text-balance text-base leading-relaxed text-ink-600 sm:text-lg">
               Get the Complete Healthy Planner — 7 guides, 7 planners, 7
               30-day systems, 2 free bonuses, and the Wellness System to
               keep it all organized.
             </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Link href="/checkout" className="btn-gold w-full sm:w-auto">
-                Get the Healthy Planner
-                <ArrowRight size={16} />
-              </Link>
-              <Link
-                href="/access"
-                className="btn w-full border-2 border-white/20 text-white hover:bg-white/10 sm:w-auto"
-              >
-                Access Your Wellness System
-              </Link>
-            </div>
+          </div>
+          <div className="flex flex-col items-start gap-3 lg:items-end">
+            <Link href="/checkout" className="btn-gold w-full justify-center lg:w-auto">
+              Get the Healthy Planner
+              <ArrowRight size={16} />
+            </Link>
+            <Link href="/access" className="btn-secondary w-full justify-center lg:w-auto">
+              Access Your Wellness System
+            </Link>
           </div>
         </div>
       </section>

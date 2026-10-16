@@ -1,5 +1,4 @@
 import Breadcrumbs from "@/components/Breadcrumbs";
-import SectionHeading from "@/components/SectionHeading";
 import ProductCard from "@/components/ProductCard";
 import CTASection from "@/components/CTASection";
 import { PRODUCTS, BONUS_PRODUCTS } from "@/data/products";
@@ -35,7 +34,17 @@ export default function LibraryPage() {
 
       <section className="section-pad">
         <div className="container-page">
-          <SectionHeading eyebrow="Core Guides" title="The 7 core guides" align="left" />
+          <div className="flex flex-col gap-6 border-b border-ink-900/8 pb-8 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <span className="eyebrow">Core Guides</span>
+              <h2 className="mt-4 font-display text-3xl font-bold text-balance text-ink-950 sm:text-4xl">
+                The 7 core guides
+              </h2>
+            </div>
+            <p className="font-display text-sm font-bold uppercase tracking-wide text-brand-700">
+              {PRODUCTS.length} Guides &middot; Ebook + Planner + System
+            </p>
+          </div>
           <div className="mx-auto mt-10 grid max-w-6xl gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {PRODUCTS.map((p) => (
               <ProductCard key={p.slug} product={p} />
@@ -46,7 +55,17 @@ export default function LibraryPage() {
 
       <section className="section-pad bg-white">
         <div className="container-page">
-          <SectionHeading eyebrow="Free Bonuses" title="2 free bonus guides" align="left" />
+          <div className="flex flex-col gap-6 border-b border-ink-900/8 pb-8 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <span className="eyebrow">Free Bonuses</span>
+              <h2 className="mt-4 font-display text-3xl font-bold text-balance text-ink-950 sm:text-4xl">
+                {BONUS_PRODUCTS.length} free bonus guides
+              </h2>
+            </div>
+            <p className="font-display text-sm font-bold uppercase tracking-wide text-gold-700">
+              Included Free With Every Purchase
+            </p>
+          </div>
           <div className="mx-auto mt-10 grid max-w-6xl gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {BONUS_PRODUCTS.map((b) => (
               <ProductCard key={b.slug} product={b} />

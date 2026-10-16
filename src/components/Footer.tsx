@@ -50,7 +50,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 gap-10 sm:grid-cols-5">
           <div className="col-span-2 sm:col-span-2">
             <Link href="/" className="flex items-center gap-2.5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-md bg-white font-display text-sm font-black text-brand-950">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white font-display text-sm font-black text-brand-950">
                 N
               </span>
               <span className="font-display text-lg font-bold text-white">
