@@ -296,6 +296,19 @@ export const IMAGE_LIBRARY: Record<ImageKey, ImageAsset> = {
     height: 800,
     credit: "Pexels — photo by MART PRODUCTION, free Pexels License",
   },
+  // Homepage hero only — a woman holding a mug surrounded by lush indoor
+  // plants, chosen to match the warm, natural-wellness editorial reference.
+  // The soft out-of-focus leaves in the foreground are part of the real
+  // photo, not an added graphic overlay.
+  womanMugIndoorPlants: {
+    key: "womanMugIndoorPlants",
+    url: "/blog-images/woman-mug-indoor-plants.jpg",
+    alt: "A woman with auburn hair holding a dark ceramic mug, looking down thoughtfully, surrounded by lush green houseplants with soft natural window light",
+    filename: "woman-mug-indoor-plants.jpg",
+    width: 1280,
+    height: 1600,
+    credit: "Pexels — photo by Airam Dato-on, free Pexels License",
+  },
 };
 
 export function getImage(key: ImageKey): ImageAsset {

@@ -81,7 +81,8 @@ export type ImageKey =
   | "choppingFreshVegetables"
   | "homeCanningPantry"
   | "bakingFreshCake"
-  | "mensWellnessStretch";
+  | "mensWellnessStretch"
+  | "womanMugIndoorPlants";
 
 export interface ImageAsset {
   key: ImageKey;

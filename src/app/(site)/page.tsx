@@ -4,8 +4,10 @@ import {
   BookOpen,
   CheckCircle2,
   ClipboardList,
+  Gift,
   Leaf,
   ListChecks,
+  Lock,
   Quote,
   ShieldCheck,
   Smartphone,
@@ -23,6 +25,7 @@ import NewsletterCTA from "@/components/NewsletterCTA";
 import JsonLd from "@/components/JsonLd";
 import ResponsiveImage from "@/components/ResponsiveImage";
 import ProductCarousel from "@/components/ProductCarousel";
+import BotanicalAccent from "@/components/BotanicalAccent";
 import { PRODUCTS, BONUS_PRODUCTS, STANDALONE_PRODUCTS, BUNDLE_PRICE } from "@/data/products";
 import { FAQS } from "@/data/faq";
 import { buildMetadata, productJsonLd } from "@/lib/seo";
@@ -96,6 +99,8 @@ export default function Home() {
 
       {/* HERO — asymmetric column ratio, top-aligned text against a taller, dominant photo */}
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-50 via-cream to-cream">
+        <div className="pointer-events-none absolute -left-20 top-10 -z-0 h-72 w-72 rounded-full bg-brand-100/50 blur-3xl" />
+        <BotanicalAccent className="pointer-events-none absolute -left-4 bottom-0 -z-0 h-40 w-40 text-brand-700/[0.07] sm:h-56 sm:w-56" />
         <div className="container-page relative grid gap-10 py-14 sm:py-16 lg:grid-cols-[0.95fr_1.3fr] lg:items-start lg:gap-16 lg:py-24">
           <div className="order-2 lg:order-1 lg:pt-10">
             <span className="eyebrow">The Complete Wellness Library</span>
@@ -117,12 +122,16 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-medium text-ink-500">
-              <span>Instant digital access</span>
-              <span>·</span>
-              <span>Works on any device</span>
-              <span>·</span>
-              <span>One-time payment</span>
+            <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2.5 text-xs font-medium text-ink-500">
+              {[
+                { icon: Zap, label: "Instant digital access" },
+                { icon: Smartphone, label: "Works on any device" },
+                { icon: Lock, label: "One-time payment" },
+              ].map((f) => (
+                <span key={f.label} className="flex items-center gap-1.5">
+                  <f.icon size={14} className="text-brand-600" /> {f.label}
+                </span>
+              ))}
             </div>
 
             <p className="mt-5 text-sm text-ink-500">
@@ -135,7 +144,7 @@ export default function Home() {
 
           <div className="order-1 lg:order-2 lg:relative lg:mr-[calc((100vw-100%)/-2)]">
             <ResponsiveImage
-              imageKey="personPlanningMorning"
+              imageKey="womanMugIndoorPlants"
               priority
               className="h-[320px] w-full sm:h-[440px] lg:h-[640px]"
               sizes="(min-width: 1024px) 55vw, 100vw"
@@ -146,15 +155,16 @@ export default function Home() {
       </section>
 
       {/* STAT STRIP — a distinct editorial band, not nested inside the hero */}
-      <section className="border-b border-ink-900/8 bg-white">
+      <section className="border-b border-ink-900/8 bg-brand-50/50">
         <div className="container-page grid grid-cols-2 divide-x divide-y divide-ink-900/8 sm:grid-cols-4 sm:divide-y-0">
           {[
-            { count: PRODUCTS.length, label: "Wellness Ebooks" },
-            { count: PRODUCTS.length, label: "Planners" },
-            { count: PRODUCTS.length, label: "30-Day Systems" },
-            { count: BONUS_PRODUCTS.length, label: "Free Bonuses" },
+            { icon: BookOpen, count: PRODUCTS.length, label: "Wellness Ebooks" },
+            { icon: ClipboardList, count: PRODUCTS.length, label: "Planners" },
+            { icon: ListChecks, count: PRODUCTS.length, label: "30-Day Systems" },
+            { icon: Gift, count: BONUS_PRODUCTS.length, label: "Free Bonuses" },
           ].map((s) => (
-            <div key={s.label} className="flex flex-col items-center justify-center gap-1 px-4 py-8 text-center sm:py-10">
+            <div key={s.label} className="flex flex-col items-center justify-center gap-1.5 px-4 py-8 text-center sm:py-10">
+              <s.icon size={20} className="mb-1 text-brand-600" />
               <p className="font-display text-4xl font-bold text-brand-700 sm:text-5xl">{s.count}</p>
               <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-ink-500">{s.label}</p>
             </div>
@@ -211,8 +221,12 @@ export default function Home() {
         <div className="container-page grid items-center gap-8 py-14 sm:py-16 lg:grid-cols-[0.9fr_1.3fr] lg:gap-0 lg:py-0">
           <div className="relative mx-auto flex w-full max-w-[260px] justify-center py-2 sm:max-w-[300px] lg:max-w-none lg:py-24">
             <div className="pointer-events-none absolute inset-0 -z-10 m-auto h-[75%] w-[75%] rounded-full bg-gold-200/50 blur-3xl" />
-            <div className="w-full max-w-[280px] lg:max-w-[340px] lg:-rotate-2">
+            <div className="relative w-full max-w-[280px] lg:max-w-[340px] lg:-rotate-2">
               <ProductCover product={CAKE_COOKBOOK} className="aspect-[3/4] w-full shadow-lift" />
+              <div className="absolute -bottom-4 -right-4 flex h-20 w-20 flex-col items-center justify-center rounded-full border-4 border-cream bg-gold-400 text-ink-950 shadow-lift">
+                <span className="text-[9px] font-bold uppercase leading-none">Only</span>
+                <span className="font-display text-xl font-black leading-tight">${CAKE_COOKBOOK.price}</span>
+              </div>
             </div>
           </div>
 
@@ -246,6 +260,18 @@ export default function Home() {
                     View Details
                   </Link>
                 </div>
+              </div>
+
+              <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-medium text-ink-500">
+                <span className="flex items-center gap-1.5">
+                  <Zap size={14} className="text-gold-700" /> Instant Digital Access
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <BookOpen size={14} className="text-gold-700" /> {CAKE_COOKBOOK.pageCount} Pages
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <Gift size={14} className="text-gold-700" /> 5 Bonus Frostings &amp; Glazes
+                </span>
               </div>
             </div>
           </div>
@@ -309,6 +335,14 @@ export default function Home() {
           />
           <div className="relative mx-auto mt-16 max-w-5xl">
             <div className="absolute left-[26px] top-[26px] hidden h-px w-[calc(100%-52px)] bg-brand-200 sm:block" />
+            <ArrowRight
+              size={16}
+              className="absolute left-[33.33%] top-[26px] hidden -translate-x-1/2 -translate-y-1/2 rounded-full bg-cream p-0.5 text-brand-400 sm:block"
+            />
+            <ArrowRight
+              size={16}
+              className="absolute left-[66.66%] top-[26px] hidden -translate-x-1/2 -translate-y-1/2 rounded-full bg-cream p-0.5 text-brand-400 sm:block"
+            />
             <div className="grid gap-10 sm:grid-cols-3 sm:gap-8">
               {HOW_IT_WORKS.map((s) => (
                 <div key={s.step} className="relative flex flex-col items-start">
