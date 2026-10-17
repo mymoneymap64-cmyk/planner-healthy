@@ -309,6 +309,19 @@ export const IMAGE_LIBRARY: Record<ImageKey, ImageAsset> = {
     height: 1600,
     credit: "Pexels — photo by Airam Dato-on, free Pexels License",
   },
+  // Replaces womanMugIndoorPlants as the homepage hero photo — a genuine
+  // landscape-oriented photo (1.5:1) so the wide hero box no longer forces
+  // a tight crop into a close-up; the mug, hands, and surrounding plants
+  // are all visible without relying on object-position tricks.
+  womanMugPlantsLandscape: {
+    key: "womanMugPlantsLandscape",
+    url: "/blog-images/woman-mug-plants-landscape.jpg",
+    alt: "A woman with a short buzz cut sitting on a sofa in a bright, plant-filled living room, drinking from a white mug with her eyes closed, a laptop and open book on her lap",
+    filename: "woman-mug-plants-landscape.jpg",
+    width: 1800,
+    height: 1200,
+    credit: "Pexels — photo by Michelle Leman, free Pexels License",
+  },
 };
 
 export function getImage(key: ImageKey): ImageAsset {

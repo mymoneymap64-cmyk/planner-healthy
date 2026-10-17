@@ -5,7 +5,8 @@ import BotanicalAccent from "./BotanicalAccent";
 export default function CTASection() {
   return (
     <section className="relative overflow-hidden border-y border-brand-900/10 bg-gradient-to-br from-brand-50 via-cream to-gold-50/50 py-16 sm:py-20">
-      <BotanicalAccent className="pointer-events-none absolute -right-6 -top-6 -z-0 h-44 w-44 rotate-[135deg] text-brand-700/[0.08] sm:h-64 sm:w-64" />
+      <BotanicalAccent className="pointer-events-none absolute -right-8 -top-8 -z-0 h-56 w-56 rotate-[135deg] text-brand-700/[0.16] sm:h-80 sm:w-80" />
+      <BotanicalAccent className="pointer-events-none absolute -bottom-10 -left-8 -z-0 hidden h-64 w-64 text-brand-700/[0.12] sm:block" />
       <div className="container-page grid gap-8 lg:grid-cols-[1.3fr_1fr] lg:items-center lg:gap-16">
         <div>
           <span className="eyebrow">The Complete Library</span>
