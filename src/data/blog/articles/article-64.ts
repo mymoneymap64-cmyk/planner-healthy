@@ -1,6 +1,6 @@
-import { BlogPostDraft } from "@/lib/types";
+import { BlogPost } from "@/lib/types";
 
-export const article64: BlogPostDraft = {
+export const article64: BlogPost = {
   number: 64,
   slug: "short-walk-to-clear-your-head",
   title: "A Short Walk to Clear Your Head: How Walking Supports Your Mood",
@@ -11,6 +11,9 @@ export const article64: BlogPostDraft = {
   tags: ["walking for stress", "walking for mood", "clear your head", "mental clarity", "outdoor walk"],
   excerpt:
     "When your head feels crowded, a walk is often the simplest thing to try. Here's what public health sources say about activity and mood, a 10-minute walk built for clearing your head, and where walking stops being enough.",
+  imageKey: "walkingPathAutumnPark",
+  publishedAt: "2026-10-14",
+  editorsPick: true,
   intro: [
     "Most people have stepped outside for a few minutes and come back feeling a little clearer. A short walk is one of the easiest ways to give your mind a break, and it needs nothing more than a pair of shoes and a few free minutes.",
     "This guide looks at what health organizations say about walking and mood, and gives a simple ten-minute walk you can use when you're stressed or stuck. It's general wellness information. Walking is a healthy habit, not a treatment for any mental health condition.",
@@ -72,14 +75,14 @@ export const article64: BlogPostDraft = {
       heading: "Fit It Into a Busy Day",
       level: 2,
       paragraphs: [
-        "The easiest walks to keep are the ones attached to something you already do. Take a lap after lunch, walk while you take a phone call, get off the bus a stop early, or step outside between meetings. [How to stay active during a busy day](/blog/how-to-stay-active-during-a-busy-day) has more ways to build movement into a full schedule, and [how to reduce everyday stress in 10 minutes or less](/blog/how-to-reduce-everyday-stress-in-10-minutes) puts walking alongside other quick resets.",
+        "The easiest walks to keep are the ones attached to something you already do. Take a lap after lunch, walk while you take a phone call, get off the bus a stop early, or step outside between meetings. [How to reduce everyday stress in 10 minutes or less](/blog/how-to-reduce-everyday-stress-in-10-minutes) puts walking alongside other quick resets you can use the same way.",
       ],
     },
     {
       heading: "Building Up Gradually",
       level: 2,
       paragraphs: [
-        "If a ten-minute walk feels easy, you can build up. The [beginner walking plan](/blog/beginner-walking-plan-for-better-fitness) adds time in small steps over four weeks, and [walking vs running for beginners](/blog/walking-vs-running-for-beginners) explains how to think about progressing. If you have a health condition, pain, or haven't been active in a while, check with a healthcare professional before increasing how much you do. Stop and get medical advice if you notice chest discomfort, dizziness, or sharp pain.",
+        "If a ten-minute walk feels easy, you can build up over time, a few extra minutes a week. If you have a health condition, pain, or haven't been active in a while, check with a healthcare professional before increasing how much you do. Stop and get medical advice if you notice chest discomfort, dizziness, or sharp pain.",
       ],
     },
     {
@@ -109,7 +112,7 @@ export const article64: BlogPostDraft = {
     {
       question: "What if I don't feel like going out?",
       answer:
-        "Commit to five minutes and give yourself permission to turn back. Most of the difficulty is in starting, and you can often keep going once you're moving. If it doesn't help, that's fine, and you can try another quick reset from the list in [this guide](/blog/how-to-reduce-everyday-stress-in-10-minutes).",
+        "Commit to five minutes and give yourself permission to turn back. Most of the difficulty is in starting, and you can often keep going once you're moving. If it doesn't help, that's fine, and you can try another quick reset instead.",
     },
   ],
   conclusion: [
@@ -140,9 +143,9 @@ export const article64: BlogPostDraft = {
     },
   ],
   relatedSlugs: [
-    "beginner-walking-plan-for-better-fitness",
-    "walking-vs-running-for-beginners",
-    "how-to-stay-active-during-a-busy-day",
     "how-to-reduce-everyday-stress-in-10-minutes",
+    "what-to-do-when-you-feel-overwhelmed",
+    "how-to-decompress-after-a-stressful-day",
+    "how-to-do-an-emotional-check-in",
   ],
 };

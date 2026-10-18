@@ -1,6 +1,6 @@
-import { BlogPostDraft } from "@/lib/types";
+import { BlogPost } from "@/lib/types";
 
-export const article61: BlogPostDraft = {
+export const article61: BlogPost = {
   number: 61,
   slug: "how-to-do-an-emotional-check-in",
   title: "How to Do an Emotional Check-In: A Simple Daily Practice",
@@ -11,6 +11,8 @@ export const article61: BlogPostDraft = {
   tags: ["emotional check-in", "naming feelings", "self-awareness", "emotional wellbeing", "daily practice"],
   excerpt:
     "Asked how you're doing, most of us say 'fine.' An emotional check-in is a two-minute practice for noticing what's actually going on and choosing one small thing that helps. It's self-awareness, not a diagnosis.",
+  imageKey: "emotionalCheckInCupOfTea",
+  publishedAt: "2026-10-08",
   intro: [
     "Ask someone how they're doing and the usual answer is 'fine' or 'busy'. Often that's true enough. But sometimes it's a way of skipping past a feeling that would be useful to notice: irritation you didn't recognize, tiredness that isn't about sleep, a low-level worry that's shaping your day.",
     "An emotional check-in is a short, regular pause to notice what you're feeling and what might help. This guide gives you a simple four-step version, a list of feeling words to draw from, and some ways to handle the common snags. It's a self-awareness practice. It isn't a test, a diagnosis, or a replacement for professional support.",
@@ -61,7 +63,6 @@ export const article61: BlogPostDraft = {
         "Drained: food, water, rest, and lowering the bar for the evening",
         "Lonely: a short call or message to someone you trust",
         "Tense in your body: slow breathing or gentle stretching. See [simple breathing exercises to calm down](/blog/simple-breathing-exercises-to-calm-down)",
-        "Frustrated after work: [how to decompress after a stressful day](/blog/how-to-decompress-after-a-stressful-day)",
       ],
     },
     {
@@ -80,8 +81,8 @@ export const article61: BlogPostDraft = {
       heading: "Make It a Habit",
       level: 2,
       paragraphs: [
-        "A check-in works best as a regular habit rather than an emergency measure. Tie it to something you already do: while the kettle boils, on your commute, or before you turn the light off. Once a day is plenty; some people add a quick midday check. Writing your answer in a notebook makes the practice easy to look back on, and [journaling for beginners](/blog/journaling-for-beginners) explains how to start. [How to build healthy habits that actually last](/blog/how-to-build-healthy-habits-that-actually-last) covers how to keep a small practice going.",
-        "If you like the idea of a rating, keep it simple and personal, such as a one-to-five score for your energy or your stress. Use it as a note for yourself, not as a measurement of your health. And if you look for patterns, do it lightly, in the same spirit as [tracking your progress without obsessing over results](/blog/how-to-track-progress-without-obsessing-over-results).",
+        "A check-in works best as a regular habit rather than an emergency measure. Tie it to something you already do: while the kettle boils, on your commute, or before you turn the light off. Once a day is plenty; some people add a quick midday check. Writing your answer in a notebook makes the practice easy to look back on, and [journaling for beginners](/blog/journaling-for-beginners) explains how to start.",
+        "If you like the idea of a rating, keep it simple and personal, such as a one-to-five score for your energy or your stress. Use it as a note for yourself, not as a measurement of your health.",
       ],
     },
     {
@@ -152,9 +153,9 @@ export const article61: BlogPostDraft = {
     },
   ],
   relatedSlugs: [
-    "simple-self-care-habits-for-everyday-life",
-    "how-to-track-progress-without-obsessing-over-results",
-    "how-to-get-back-on-track-after-a-bad-day",
+    "short-walk-to-clear-your-head",
+    "what-to-do-when-you-feel-overwhelmed",
+    "simple-breathing-exercises-to-calm-down",
     "journaling-for-beginners",
   ],
 };

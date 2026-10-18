@@ -1,6 +1,6 @@
-import { BlogPostDraft } from "@/lib/types";
+import { BlogPost } from "@/lib/types";
 
-export const article59: BlogPostDraft = {
+export const article59: BlogPost = {
   number: 59,
   slug: "work-life-boundaries-when-working-from-home",
   title: "Work-Life Boundaries When You Work From Home: How to Switch Off",
@@ -11,6 +11,8 @@ export const article59: BlogPostDraft = {
   tags: ["work-life boundaries", "work from home", "switching off", "shutdown routine", "mental wellness"],
   excerpt:
     "When your kitchen table is also your desk, the workday has no natural end. Here's how to set boundaries that actually hold, from a shutdown ritual to what to say when a message arrives at 8 p.m.",
+  imageKey: "closingLaptopEndOfWorkday",
+  publishedAt: "2026-10-05",
   intro: [
     "When work lives on the same laptop, in the same room, and often on the same phone as everything else, the day stops having edges. You check one more message before dinner, answer one more email in bed, and by the weekend you're not sure when you were last fully off.",
     "Boundaries fix that, but they only work if they're specific and easy to keep. This guide covers practical ones: start and end times, a physical boundary, a five-minute shutdown ritual, notification rules, and short scripts for the moments someone tests them. It's general wellness information, not workplace or medical advice.",
@@ -90,7 +92,7 @@ export const article59: BlogPostDraft = {
       heading: "Protect Breaks and Lunch",
       level: 2,
       paragraphs: [
-        "Boundaries aren't only about the end of the day. Stepping away for lunch, taking a couple of short movement breaks, and getting outside at some point all make the workday easier to leave behind. [How to stay active during a busy day](/blog/how-to-stay-active-during-a-busy-day) has easy ways to build movement into a desk-bound day.",
+        "Boundaries aren't only about the end of the day. Stepping away for lunch, taking a couple of short movement breaks, and getting outside at some point all make the workday easier to leave behind.",
       ],
     },
     {
@@ -105,7 +107,7 @@ export const article59: BlogPostDraft = {
       level: 2,
       paragraphs: [
         "Boundaries can help, but they can't solve every situation. If work pressure is leaving you exhausted, keeping you awake, or affecting your mood or appetite for two weeks or more, the National Institute of Mental Health advises seeking professional help. A doctor or licensed mental health professional can look at the full picture with you. If the issue is workload rather than habits, that may also be a conversation for your manager or HR.",
-        "For the habit side of this, [a weekly wellness routine](/blog/how-to-create-a-weekly-wellness-routine) and [simple self-care habits](/blog/simple-self-care-habits-for-everyday-life) can help you protect time outside work. And if the pile itself is the problem, see [what to do when you feel overwhelmed](/blog/what-to-do-when-you-feel-overwhelmed).",
+        "And if the pile itself is the problem, see [what to do when you feel overwhelmed](/blog/what-to-do-when-you-feel-overwhelmed).",
       ],
     },
   ],
@@ -151,9 +153,9 @@ export const article59: BlogPostDraft = {
     },
   ],
   relatedSlugs: [
-    "simple-self-care-habits-for-everyday-life",
-    "how-to-create-a-weekly-wellness-routine",
-    "sunday-reset-routine-for-a-healthier-week",
     "how-to-decompress-after-a-stressful-day",
+    "what-to-do-when-you-feel-overwhelmed",
+    "how-to-do-an-emotional-check-in",
+    "short-walk-to-clear-your-head",
   ],
 };

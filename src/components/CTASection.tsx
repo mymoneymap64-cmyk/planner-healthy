@@ -1,13 +1,14 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import BotanicalAccent from "./BotanicalAccent";
+import ResponsiveImage from "./ResponsiveImage";
 
 export default function CTASection() {
   return (
     <section className="relative overflow-hidden border-y border-brand-900/10 bg-gradient-to-br from-brand-50 via-cream to-gold-50/50 py-16 sm:py-20">
       <BotanicalAccent className="pointer-events-none absolute -right-8 -top-8 -z-0 h-56 w-56 rotate-[135deg] text-brand-700/[0.16] sm:h-80 sm:w-80" />
       <BotanicalAccent className="pointer-events-none absolute -bottom-10 -left-8 -z-0 hidden h-64 w-64 text-brand-700/[0.12] sm:block" />
-      <div className="container-page grid gap-8 lg:grid-cols-[1.3fr_1fr] lg:items-center lg:gap-16">
+      <div className="container-page grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-16">
         <div>
           <span className="eyebrow">The Complete Library</span>
           <h2 className="mt-5 max-w-xl font-display text-3xl font-bold text-balance text-ink-950 sm:text-4xl lg:text-5xl">
@@ -18,15 +19,23 @@ export default function CTASection() {
             30-day system — plus 2 free bonus guides, all in one digital
             library.
           </p>
+          <div className="mt-7 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
+            <Link href="/checkout" className="btn-gold w-full justify-center sm:w-auto">
+              Get the Complete Library
+              <ArrowRight size={16} />
+            </Link>
+            <Link href="/library" className="btn-secondary w-full justify-center sm:w-auto">
+              Browse the Library
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col items-start gap-3 lg:items-end">
-          <Link href="/checkout" className="btn-gold w-full justify-center lg:w-auto">
-            Get the Complete Library
-            <ArrowRight size={16} />
-          </Link>
-          <Link href="/library" className="btn-secondary w-full justify-center lg:w-auto">
-            Browse the Library
-          </Link>
+        <div className="relative">
+          <ResponsiveImage
+            imageKey="readingCozyWindowSeat"
+            className="aspect-[4/3] w-full shadow-lift"
+            sizes="(min-width: 1024px) 40vw, 100vw"
+            rounded="rounded-[2rem]"
+          />
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
-import { BlogPostDraft } from "@/lib/types";
+import { BlogPost } from "@/lib/types";
 
-export const article53: BlogPostDraft = {
+export const article53: BlogPost = {
   number: 53,
   slug: "simple-breathing-exercises-to-calm-down",
   title: "Simple Breathing Exercises to Calm Down in Five Minutes",
@@ -11,6 +11,8 @@ export const article53: BlogPostDraft = {
   tags: ["breathing exercises", "slow breathing", "relaxation techniques", "stress relief", "mental wellness"],
   excerpt:
     "Slow breathing is one of the simplest relaxation techniques there is. Here are three easy exercises, a five-minute routine, and what to do if breathing practice makes you feel worse instead of calmer.",
+  imageKey: "breathingExerciseHandOnChest",
+  publishedAt: "2026-09-26",
   intro: [
     "When you're tense, your breathing often gets quick and shallow without you noticing. Slowing it down on purpose is one of the simplest things you can do to help your body settle, and it needs nothing but a couple of minutes and a place to sit.",
     "This guide walks through three easy breathing exercises, a five-minute routine that combines them, and some honest notes about what breathing can and can't do. It's general wellness information, not a treatment for any condition or a substitute for medical advice.",
@@ -89,14 +91,14 @@ export const article53: BlogPostDraft = {
       level: 2,
       paragraphs: [
         "Breathing exercises work best when you practice them at a calm moment, so they're familiar when you need them. Try them at a few predictable points: after you sit down at your desk, before a difficult conversation, in the car before you walk into the house, or as part of a short wind-down at night. [How to reduce everyday stress in 10 minutes or less](/blog/how-to-reduce-everyday-stress-in-10-minutes) has other quick resets, and [what to do when you feel overwhelmed](/blog/what-to-do-when-you-feel-overwhelmed) uses a minute of slow breathing as the first step.",
-        "To make it stick, attach it to something you already do, such as after you brush your teeth. [How to build healthy habits that actually last](/blog/how-to-build-healthy-habits-that-actually-last) explains how to do that.",
+        "To make it stick, attach it to something you already do, such as after you brush your teeth.",
       ],
     },
     {
       heading: "If Breathing Practice Doesn't Feel Right",
       level: 2,
       paragraphs: [
-        "A few things can make slow breathing uncomfortable, and most have simple fixes. If you feel lightheaded, you're probably breathing too deeply or too fast; return to gentle, quiet breaths. If focusing on your breathing makes you feel tense or stirs up unpleasant thoughts, try keeping your eyes open, breathe out through your mouth, or switch to a different reset such as a short walk or a [gentle stretching routine](/blog/simple-stretching-routine-for-beginners).",
+        "A few things can make slow breathing uncomfortable, and most have simple fixes. If you feel lightheaded, you're probably breathing too deeply or too fast; return to gentle, quiet breaths. If focusing on your breathing makes you feel tense or stirs up unpleasant thoughts, try keeping your eyes open, breathe out through your mouth, or switch to a different reset such as a short walk.",
         "NCCIH also notes rare reports that certain relaxation techniques might cause or worsen symptoms in people with epilepsy, certain psychiatric conditions, or a history of abuse or trauma. If any of those apply to you, or if you have a heart or lung condition, talk with your healthcare provider before starting a new practice. NCCIH recommends telling your providers about any complementary health approaches you use.",
       ],
     },
@@ -110,7 +112,7 @@ export const article53: BlogPostDraft = {
     {
       question: "Can breathing exercises help me sleep?",
       answer:
-        "They can be a calming part of a wind-down routine, and some people find them helpful for settling in at night. NCCIH notes that research on relaxation techniques for chronic insomnia is insufficient, so think of them as one relaxing habit rather than a way to address sleep problems. See [how to build a healthy evening routine](/blog/how-to-build-a-healthy-evening-routine), and talk with a healthcare professional if sleep troubles last for weeks.",
+        "They can be a calming part of a wind-down routine, and some people find them helpful for settling in at night. NCCIH notes that research on relaxation techniques for chronic insomnia is insufficient, so think of them as one relaxing habit rather than a way to address sleep problems. Talk with a healthcare professional if sleep troubles last for weeks.",
     },
     {
       question: "Should I breathe through my nose or my mouth?",
@@ -149,7 +151,7 @@ export const article53: BlogPostDraft = {
   relatedSlugs: [
     "how-to-reduce-everyday-stress-in-10-minutes",
     "what-to-do-when-you-feel-overwhelmed",
-    "how-to-build-a-healthy-evening-routine",
-    "simple-stretching-routine-for-beginners",
+    "progressive-muscle-relaxation-for-beginners",
+    "how-to-quiet-a-busy-mind-before-bed",
   ],
 };

@@ -1,6 +1,6 @@
-import { BlogPostDraft } from "@/lib/types";
+import { BlogPost } from "@/lib/types";
 
-export const article63: BlogPostDraft = {
+export const article63: BlogPost = {
   number: 63,
   slug: "how-to-decompress-after-a-stressful-day",
   title: "How to Decompress After a Stressful Day: 10 Healthy Ways to Reset",
@@ -11,6 +11,8 @@ export const article63: BlogPostDraft = {
   tags: ["decompress", "after work", "stress relief", "evening reset", "mental wellness"],
   excerpt:
     "The workday ends, but your mind hasn't caught up. Here are ten healthy ways to close out a stressful day, and a simple 20-minute reset you can adapt to your evening.",
+  imageKey: "decompressTeaBlanketSofa",
+  publishedAt: "2026-10-11",
   intro: [
     "You walk through the door, and your body is home while your mind is still in the meeting that ran long. Many people spend the first hour of the evening replaying the day, scrolling, or snapping at whoever happens to be nearby. That isn't a character flaw. It's what happens when there's no clear moment between 'work' and 'home'.",
     "A short, deliberate reset creates that moment. The ideas below are all small and practical, and you only need a few of them. Use this as a menu, not a checklist, and it's general wellness information rather than medical advice.",
@@ -31,10 +33,10 @@ export const article63: BlogPostDraft = {
         "Physical resets are often the fastest, because a tense body keeps the mind on alert.",
       ],
       list: [
-        "Take a ten-minute walk. The National Institute of Mental Health says 30 minutes of walking a day can boost mood and improve health, and the CDC counts physical activity among its stress-management tips. A short walk right after work is an easy way to build that habit. See the [beginner walking plan](/blog/beginner-walking-plan-for-better-fitness) if you'd like structure.",
-        "Stretch for five minutes. The CDC lists stretching as a relaxation technique. The [simple stretching routine for beginners](/blog/simple-stretching-routine-for-beginners) covers the neck, shoulders, hips, and back, where many people hold tension.",
+        "Take a ten-minute walk. The National Institute of Mental Health says 30 minutes of walking a day can boost mood and improve health, and the CDC counts physical activity among its stress-management tips. [A short walk to clear your head](/blog/short-walk-to-clear-your-head) has a simple version built for right after work.",
+        "Stretch for five minutes. The CDC lists stretching as a relaxation technique, and loosening your neck, shoulders, hips, and back is often where the day's tension collects.",
         "Change your clothes or take a shower. It's a small ritual that many people find marks the end of the workday, and it costs nothing.",
-        "Slow your breathing for a minute or two. NCCIH describes slow, deep breathing as a simple relaxation technique.",
+        "Slow your breathing for a minute or two. NCCIH describes slow, deep breathing as a simple relaxation technique. See [simple breathing exercises to calm down](/blog/simple-breathing-exercises-to-calm-down).",
       ],
     },
     {
@@ -71,7 +73,7 @@ export const article63: BlogPostDraft = {
       heading: "Eat Something Real and Keep Alcohol Out of the Job",
       level: 2,
       paragraphs: [
-        "The National Institute of Mental Health suggests eating healthy, regular meals as part of managing stress, and a simple dinner (see the [15-minute meal formula](/blog/easy-healthy-meals-for-busy-people)) is a decompression step in itself.",
+        "The National Institute of Mental Health suggests eating healthy, regular meals as part of managing stress, and a simple dinner is a decompression step in itself.",
         "It's tempting to use alcohol as the reset. The CDC's stress guidance suggests limiting it, and its sleep tips include avoiding alcohol before bedtime. If a drink is part of your evening, it's worth noticing whether it's helping you relax or just delaying the reset.",
       ],
     },
@@ -105,7 +107,7 @@ export const article63: BlogPostDraft = {
       heading: "Protect the Next Day Too",
       level: 2,
       paragraphs: [
-        "A good decompression habit protects your sleep, and good sleep makes the next stressful day easier to handle. The CDC says adults need 7 or more hours a night and recommends going to bed and waking at the same time each day. The [healthy evening routine](/blog/how-to-build-a-healthy-evening-routine) picks up where this reset leaves off. If work bleeds into your evenings, it also helps to work on the boundary itself, which is covered in [work-life boundaries when working from home](/blog/work-life-boundaries-when-working-from-home).",
+        "A good decompression habit protects your sleep, and good sleep makes the next stressful day easier to handle. The CDC says adults need 7 or more hours a night and recommends going to bed and waking at the same time each day. If work bleeds into your evenings, it also helps to work on the boundary itself, which is covered in [work-life boundaries when working from home](/blog/work-life-boundaries-when-working-from-home).",
       ],
     },
   ],
@@ -123,7 +125,7 @@ export const article63: BlogPostDraft = {
     {
       question: "How do I stop replaying the day in my head?",
       answer:
-        "Write it down before you start your evening: what happened, what's unresolved, and one first step for tomorrow. Getting it out of your head and onto paper often quiets the replay. If it still keeps you up, [the evening routine](/blog/how-to-build-a-healthy-evening-routine) has a short wind-down for bedtime.",
+        "Write it down before you start your evening: what happened, what's unresolved, and one first step for tomorrow. Getting it out of your head and onto paper often quiets the replay. If it still keeps you up, [how to quiet a busy mind before bed](/blog/how-to-quiet-a-busy-mind-before-bed) has a short wind-down for bedtime.",
     },
     {
       question: "When is this more than a bad day?",
@@ -163,9 +165,9 @@ export const article63: BlogPostDraft = {
     },
   ],
   relatedSlugs: [
-    "how-to-build-a-healthy-evening-routine",
-    "how-to-stay-active-during-a-busy-day",
-    "simple-self-care-habits-for-everyday-life",
+    "work-life-boundaries-when-working-from-home",
     "how-to-reduce-everyday-stress-in-10-minutes",
+    "progressive-muscle-relaxation-for-beginners",
+    "how-to-quiet-a-busy-mind-before-bed",
   ],
 };

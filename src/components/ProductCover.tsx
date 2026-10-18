@@ -24,16 +24,6 @@ export default function ProductCover({
     );
   }
 
-  // This cover's source art has a narrower native aspect ratio than the
-  // standard 3:4 card box (and the other 6 covers, which are all a close
-  // match to 3:4). object-cover would crop noticeably more off its top and
-  // bottom than any sibling cover to fill the same box, making it look
-  // zoomed in relative to the rest of the grid. object-contain shows the
-  // complete, uncropped artwork at the same box size instead — the small
-  // side margins that results in are filled with a color sampled from the
-  // cover itself so they read as part of the design, not empty space.
-  const needsContainFit = product.slug === "natural-healing-handbook";
-
   // The wrapper always needs a positioned ancestor for the `fill` Image
   // below to size itself against. Callers that need this cover absolutely
   // positioned (e.g. the fanned homepage hero stack) pass an "absolute ..."
@@ -46,14 +36,14 @@ export default function ProductCover({
 
   return (
     <div
-      className={`${hasOwnPosition ? "" : "relative "}overflow-hidden rounded-lg shadow-lift ${needsContainFit ? "bg-brand-900" : "bg-ink-100"} ${className}`}
+      className={`${hasOwnPosition ? "" : "relative "}overflow-hidden rounded-lg shadow-lift bg-ink-100 ${className}`}
     >
       <Image
         src={product.coverImage}
         alt={`${product.title} ebook cover`}
         fill
         priority={priority}
-        className={needsContainFit ? "object-contain" : "object-cover"}
+        className="object-cover"
         sizes="(min-width: 1024px) 320px, 45vw"
       />
     </div>

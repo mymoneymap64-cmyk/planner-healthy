@@ -1,6 +1,6 @@
-import { BlogPostDraft } from "@/lib/types";
+import { BlogPost } from "@/lib/types";
 
-export const article55: BlogPostDraft = {
+export const article55: BlogPost = {
   number: 55,
   slug: "journaling-for-beginners",
   title: "Journaling for Beginners: How to Start (and What to Write)",
@@ -11,6 +11,9 @@ export const article55: BlogPostDraft = {
   tags: ["journaling", "journaling for beginners", "writing habit", "stress relief", "mental wellness"],
   excerpt:
     "Journaling doesn't need beautiful handwriting, a fancy notebook, or a lot to say. Here's how to start with five minutes, choose a format that suits you, and get past the blank page.",
+  imageKey: "journalingRedNotebook",
+  publishedAt: "2026-10-02",
+  editorsPick: true,
   intro: [
     "Journaling has a reputation for being either deeply profound or a bit precious: pages of poetic reflection in a leather-bound book. In practice, most useful journaling is plain. A few lines about what's on your mind, a short list, a sentence about the day. The barrier for beginners is rarely the writing. It's not knowing what to say, and feeling that anything less than a thoughtful entry isn't worth doing.",
     "This guide takes the pressure off. You'll get a way to choose a format, a five-minute setup, starter sentences for days when nothing comes, and simple rules that keep the habit going. Journaling is a self-help practice, not a treatment, and there's a note at the end about when to seek other support.",
@@ -35,14 +38,14 @@ export const article55: BlogPostDraft = {
         "A brain dump: list everything on your mind, unsorted. This is the quickest way to feel lighter when you're overwhelmed. See [what to do when you feel overwhelmed](/blog/what-to-do-when-you-feel-overwhelmed).",
         "One line a day: a single sentence about the day. It's easy to keep, and the entries add up.",
         "Three specific good things: the CDC lists daily gratitude among its stress-management tips, and the National Institute of Mental Health's advice is to be specific rather than general.",
-        "Bullet check-in: three bullets covering how you feel, what's taking your energy, and what you want to do tomorrow.",
+        "Bullet check-in: three bullets covering how you feel, what's taking your energy, and what you want to do tomorrow. [How to do an emotional check-in](/blog/how-to-do-an-emotional-check-in) walks through a version of this.",
       ],
     },
     {
       heading: "Set It Up So It Actually Happens",
       level: 2,
       paragraphs: [
-        "The best journaling habit is the one that fits into a spot you already have. Attach it to something you do every day, such as after your morning coffee or just before you turn out the light. [How to build healthy habits that actually last](/blog/how-to-build-healthy-habits-that-actually-last) explains how to pair a new habit with an old one.",
+        "The best journaling habit is the one that fits into a spot you already have. Attach it to something you do every day, such as after your morning coffee or just before you turn out the light, and pair the new habit with the old one on purpose.",
         "Keep the setup small. Five minutes is plenty. Choose paper or an app based on what you'll really use: a notebook by the bed is easy for many people, while others prefer a notes app they always have on them. Keep it private, and decide in advance that you won't judge what you write.",
       ],
     },
@@ -70,7 +73,7 @@ export const article55: BlogPostDraft = {
       list: [
         "No grammar, no editing, and no rereading right away",
         "Five minutes is a full session, and one line counts",
-        "Missing a day isn't failing. Pick up the next day without catching up. [How to get back on track after a bad day](/blog/how-to-get-back-on-track-after-a-bad-day) has more on that",
+        "Missing a day isn't failing. Pick up the next day without catching up.",
         "Write the truth, not what sounds good. Nobody has to see it",
       ],
     },
@@ -101,7 +104,7 @@ export const article55: BlogPostDraft = {
       heading: "Look Back Once a Week",
       level: 2,
       paragraphs: [
-        "Journaling becomes more useful when you occasionally read what you wrote. Once a week, spend five minutes scanning your entries for patterns: what tends to drain you, what reliably helps, which days are hardest. That's the same idea as tracking progress in other areas, covered in [how to track your progress without obsessing over results](/blog/how-to-track-progress-without-obsessing-over-results). Use what you notice to adjust your week, not to grade yourself.",
+        "Journaling becomes more useful when you occasionally read what you wrote. Once a week, spend five minutes scanning your entries for patterns: what tends to drain you, what reliably helps, which days are hardest. Use what you notice to adjust your week, not to grade yourself.",
       ],
     },
     {
@@ -158,9 +161,9 @@ export const article55: BlogPostDraft = {
     },
   ],
   relatedSlugs: [
-    "how-to-track-progress-without-obsessing-over-results",
-    "how-to-get-back-on-track-after-a-bad-day",
-    "sunday-reset-routine-for-a-healthier-week",
     "what-to-do-when-you-feel-overwhelmed",
+    "how-to-do-an-emotional-check-in",
+    "how-to-decompress-after-a-stressful-day",
+    "how-to-quiet-a-busy-mind-before-bed",
   ],
 };

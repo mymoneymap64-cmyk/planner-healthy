@@ -19,7 +19,6 @@ import ProductCard from "@/components/ProductCard";
 import ProductCover from "@/components/ProductCover";
 import PriceBadge from "@/components/PriceBadge";
 import PricingCard from "@/components/PricingCard";
-import PlannerMockup from "@/components/PlannerMockup";
 import NewsletterCTA from "@/components/NewsletterCTA";
 import JsonLd from "@/components/JsonLd";
 import ResponsiveImage from "@/components/ResponsiveImage";
@@ -65,14 +64,6 @@ const WHY_THIS_LIBRARY = [
   { icon: ShieldCheck, title: "No exaggerated claims", desc: "These are practical, educational wellness guides — not medical advice, and not a promise of specific results." },
   { icon: BookOpen, title: "Realistic, not extreme", desc: "No fad rules or all-or-nothing systems — habits you can keep up with a normal, busy life." },
   { icon: ClipboardList, title: "Plain language, clearly structured", desc: "Written to be read and used, not decoded — paired with a planner and 30-day system to apply what you read, not just skim once." },
-];
-
-const SYSTEM_WEEKS = [
-  { label: "Week 1", desc: "Getting started" },
-  { label: "Week 2", desc: "Building momentum" },
-  { label: "Week 3", desc: "Strengthening consistency" },
-  { label: "Week 4", desc: "Locking the habit in" },
-  { label: "Days 29–30", desc: "Review & plan ahead" },
 ];
 
 const CAKE_COOKBOOK = STANDALONE_PRODUCTS.find((p) => p.slug === "the-cake-cookbook")!;
@@ -197,23 +188,25 @@ export default function Home() {
               return (
                 <div
                   key={product.slug}
-                  className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-16"
+                  className="grid gap-10 lg:grid-cols-[320px_1fr] lg:items-center lg:gap-14"
                 >
                   <div className={isReversed ? "lg:order-2" : ""}>
-                    <div className="mx-auto w-full max-w-[280px] lg:max-w-none">
-                      <ProductCover product={product} className="aspect-[3/4] w-full shadow-lift" />
+                    <div className="mx-auto w-full max-w-[260px] lg:max-w-[320px]">
+                      <ProductCover product={product} className="aspect-[2/3] w-full shadow-lift" />
                     </div>
                   </div>
-                  <div className={isReversed ? "lg:order-1" : ""}>
+                  <div className={`max-w-[46ch] ${isReversed ? "lg:order-1" : ""}`}>
                     <span className="eyebrow">{product.categoryLabel}</span>
-                    <h3 className="mt-4 font-display text-3xl font-bold text-balance text-ink-950 sm:text-4xl">
+                    <h3 className="mt-4 font-display text-3xl font-bold leading-tight text-balance text-ink-950 sm:text-4xl">
                       {product.title}
                     </h3>
-                    <p className="mt-3 text-base leading-relaxed text-ink-600">{product.subtitle}</p>
-                    <p className="mt-3 text-sm leading-relaxed text-ink-500">{product.description}</p>
+                    <p className="mt-3 font-display text-lg italic leading-snug text-ink-600">
+                      {product.subtitle}
+                    </p>
+                    <p className="mt-4 text-sm leading-relaxed text-ink-500">{product.description}</p>
 
                     {product.benefits.length > 0 && (
-                      <ul className="mt-5 space-y-2">
+                      <ul className="mt-5 space-y-2.5">
                         {product.benefits.slice(0, 3).map((b) => (
                           <li key={b} className="flex items-start gap-2.5 text-sm leading-relaxed text-ink-700">
                             <CheckCircle2 size={16} className="mt-0.5 shrink-0 text-brand-600" />
@@ -394,44 +387,26 @@ export default function Home() {
               </div>
             </div>
           </div>
-
-          {/* Compact visual proof of the planner + 30-day system, replacing
-              the two separate full-width spotlight sections that used to
-              repeat this same explanation. */}
-          <div className="mx-auto mt-20 grid max-w-5xl gap-10 border-t border-ink-900/8 pt-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-14">
-            <PlannerMockup />
-            <div>
-              <span className="eyebrow">Inside the Planner &amp; System</span>
-              <h3 className="mt-4 font-display text-xl font-bold text-ink-950">
-                Daily pages, weekly reviews, and a simple 30-day structure
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink-600">
-                Every core guide&apos;s planner includes daily planning pages, habit trackers, and
-                reflection prompts — paired with a 30-day system that turns the plan into a routine,
-                week by week.
-              </p>
-              <div className="mt-6 grid grid-cols-3 gap-2.5 sm:grid-cols-5">
-                {SYSTEM_WEEKS.map((w) => (
-                  <div key={w.label} className="rounded-lg border border-ink-900/10 bg-cream p-3 text-center">
-                    <p className="font-display text-xs font-bold text-ink-950">{w.label}</p>
-                    <p className="mt-0.5 text-[10px] leading-snug text-ink-500">{w.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
       {/* HOW IT WORKS — a connected timeline, not a repeat of the card grid above */}
       <section id="how-it-works" className="section-pad bg-gradient-to-b from-white to-brand-50/60">
         <div className="container-page">
-          <SectionHeading
-            eyebrow="How It Works"
-            title="Learn. Plan. Apply."
-            description="For every core guide: the ebook teaches it, the planner plans it, the 30-day system helps you apply it."
-            align="left"
-          />
+          <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-14">
+            <SectionHeading
+              eyebrow="How It Works"
+              title="Learn. Plan. Apply."
+              description="For every core guide: the ebook teaches it, the planner plans it, the 30-day system helps you apply it."
+              align="left"
+            />
+            <ResponsiveImage
+              imageKey="plannerWritingMarbleDesk"
+              className="aspect-[3/4] w-full max-w-xs mx-auto lg:mx-0 lg:ml-auto shadow-lift"
+              sizes="(min-width: 1024px) 320px, 70vw"
+              rounded="rounded-[2rem]"
+            />
+          </div>
           <div className="relative mx-auto mt-16 max-w-5xl">
             <div className="absolute left-[26px] top-[26px] hidden h-px w-[calc(100%-52px)] bg-brand-200 sm:block" />
             <ArrowRight

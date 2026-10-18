@@ -1,6 +1,6 @@
-import { BlogPostDraft } from "@/lib/types";
+import { BlogPost } from "@/lib/types";
 
-export const article54: BlogPostDraft = {
+export const article54: BlogPost = {
   number: 54,
   slug: "progressive-muscle-relaxation-for-beginners",
   title: "Progressive Muscle Relaxation for Beginners: A Step-by-Step Guide",
@@ -11,6 +11,8 @@ export const article54: BlogPostDraft = {
   tags: ["progressive muscle relaxation", "relaxation techniques", "muscle tension", "stress relief", "mental wellness"],
   excerpt:
     "Progressive muscle relaxation means tensing and then releasing one muscle group at a time. Here's a beginner-friendly walk-through, a script you can follow, and the cautions worth knowing first.",
+  imageKey: "progressiveMuscleRelaxationMat",
+  publishedAt: "2026-09-29",
   intro: [
     "Many people carry tension without realizing it: clenched jaws, raised shoulders, tight hands on a keyboard. Progressive muscle relaxation is a simple technique for noticing that tension and letting it go, one part of your body at a time.",
     "This guide explains what it is, how to do it step by step, and how to fit it into a busy day. It's a relaxation practice, not a treatment for any condition, and there are a few cautions to read before you start.",
@@ -89,7 +91,7 @@ export const article54: BlogPostDraft = {
       heading: "Using It in the Evening",
       level: 2,
       paragraphs: [
-        "Many people like to do progressive muscle relaxation before bed, since a body that's been holding tension all day can feel restless. It can make a calming addition to an evening wind-down; see [how to build a healthy evening routine](/blog/how-to-build-a-healthy-evening-routine) and [how to create a better sleep routine](/blog/how-to-create-a-better-sleep-routine) for what else to include.",
+        "Many people like to do progressive muscle relaxation before bed, since a body that's been holding tension all day can feel restless. It can make a calming addition to an evening wind-down; see [how to quiet a busy mind before bed](/blog/how-to-quiet-a-busy-mind-before-bed) for what to pair it with.",
         "Keep expectations realistic. NCCIH notes that research on relaxation techniques for chronic insomnia is insufficient, so think of this as one relaxing habit, not a fix for sleep problems. If you regularly struggle to sleep for weeks, talk with a healthcare professional.",
       ],
     },
@@ -111,7 +113,7 @@ export const article54: BlogPostDraft = {
       heading: "How It Differs From Stretching",
       level: 2,
       paragraphs: [
-        "Progressive muscle relaxation is about tension and release, not flexibility. You don't pull or lengthen the muscles as you would in stretching. If you'd like to combine the two, do the relaxation first, then move on to a [simple stretching routine](/blog/simple-stretching-routine-for-beginners). And for other quick ways to take the edge off, see [how to reduce everyday stress in 10 minutes or less](/blog/how-to-reduce-everyday-stress-in-10-minutes).",
+        "Progressive muscle relaxation is about tension and release, not flexibility. You don't pull or lengthen the muscles as you would in stretching. And for other quick ways to take the edge off, see [how to reduce everyday stress in 10 minutes or less](/blog/how-to-reduce-everyday-stress-in-10-minutes).",
       ],
     },
   ],
@@ -157,9 +159,9 @@ export const article54: BlogPostDraft = {
     },
   ],
   relatedSlugs: [
-    "simple-stretching-routine-for-beginners",
-    "how-to-build-a-healthy-evening-routine",
     "simple-breathing-exercises-to-calm-down",
+    "how-to-decompress-after-a-stressful-day",
+    "how-to-quiet-a-busy-mind-before-bed",
     "how-to-reduce-everyday-stress-in-10-minutes",
   ],
 };

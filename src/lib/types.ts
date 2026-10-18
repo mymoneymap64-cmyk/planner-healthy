@@ -83,7 +83,19 @@ export type ImageKey =
   | "bakingFreshCake"
   | "mensWellnessStretch"
   | "womanMugIndoorPlants"
-  | "womanMugPlantsLandscape";
+  | "womanMugPlantsLandscape"
+  | "everydayStressDeskStretch"
+  | "overwhelmNotebookToDoList"
+  | "breathingExerciseHandOnChest"
+  | "progressiveMuscleRelaxationMat"
+  | "journalingRedNotebook"
+  | "closingLaptopEndOfWorkday"
+  | "emotionalCheckInCupOfTea"
+  | "decompressTeaBlanketSofa"
+  | "walkingPathAutumnPark"
+  | "bedsideLampBookWindDown"
+  | "readingCozyWindowSeat"
+  | "plannerWritingMarbleDesk";
 
 export interface ImageAsset {
   key: ImageKey;

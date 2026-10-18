@@ -1,6 +1,6 @@
-import { BlogPostDraft } from "@/lib/types";
+import { BlogPost } from "@/lib/types";
 
-export const article52: BlogPostDraft = {
+export const article52: BlogPost = {
   number: 52,
   slug: "what-to-do-when-you-feel-overwhelmed",
   title: "What to Do When You Feel Overwhelmed: A Step-by-Step Reset",
@@ -11,6 +11,9 @@ export const article52: BlogPostDraft = {
   tags: ["overwhelm", "stress relief", "mental wellness", "prioritizing", "daily reset"],
   excerpt:
     "Too much to do and no idea where to start? Here's a calm, practical reset you can run through in about fifteen minutes, plus how to tell when it's time to ask for support.",
+  imageKey: "overwhelmNotebookToDoList",
+  publishedAt: "2026-09-23",
+  editorsPick: true,
   intro: [
     "Overwhelm rarely arrives because of one big thing. It's usually a pile: the email you haven't answered, the appointment you keep forgetting to book, the thing you promised a friend, and the low hum of everything else. When it all sits in your head at once, every item feels equally urgent, and that's exactly what makes it hard to start on any of them.",
     "This guide is a short, repeatable reset for those moments. It won't fix whatever is causing the pile, but it can help you get from frozen to one clear next step. It's general wellness information, not medical advice, and there's a note at the end about when a bigger conversation with a professional makes sense.",
@@ -50,7 +53,7 @@ export const article52: BlogPostDraft = {
       level: 2,
       paragraphs: [
         "From the Today list, pick a single item and shrink it until it's physically small: not 'sort out the taxes' but 'find the folder', not 'answer all the email' but 'reply to the one from the landlord'. Set a ten-minute timer and do only that.",
-        "The aim isn't to finish the pile. It's to prove to yourself that you can move, and momentum from one small completed thing often makes the next one easier to start. If you want a longer-term way to make this a habit, [how to build healthy habits that actually last](/blog/how-to-build-healthy-habits-that-actually-last) covers starting small on purpose.",
+        "The aim isn't to finish the pile. It's to prove to yourself that you can move, and momentum from one small completed thing often makes the next one easier to start.",
       ],
     },
     {
@@ -79,7 +82,6 @@ export const article52: BlogPostDraft = {
       level: 2,
       paragraphs: [
         "Overwhelm and poor basics feed each other. When you're depleted, everything looks bigger. The CDC's stress guidance points to a consistent sleep schedule (adults need 7 or more hours), regular physical activity, nutritious food, limiting alcohol, and cutting back on news and social media. None of that has to be dramatic. A short walk, a real meal, and an earlier night do more than they sound like they should.",
-        "If your days are consistently packed, [healthy habits for people with busy schedules](/blog/healthy-habits-for-people-with-busy-schedules) and the [Sunday reset routine](/blog/sunday-reset-routine-for-a-healthier-week) are practical ways to stop the pile from rebuilding.",
       ],
     },
     {
@@ -110,7 +112,7 @@ export const article52: BlogPostDraft = {
     {
       question: "What if I can't stop thinking about it at night?",
       answer:
-        "Writing your list down before bed can help you set the worries aside until morning. The [evening routine guide](/blog/how-to-build-a-healthy-evening-routine) has a short wind-down that includes writing a line about tomorrow.",
+        "Writing your list down before bed can help you set the worries aside until morning. [How to quiet a busy mind before bed](/blog/how-to-quiet-a-busy-mind-before-bed) has a short wind-down version built for exactly that.",
     },
   ],
   conclusion: [
@@ -141,9 +143,9 @@ export const article52: BlogPostDraft = {
     },
   ],
   relatedSlugs: [
-    "healthy-habits-for-people-with-busy-schedules",
-    "sunday-reset-routine-for-a-healthier-week",
-    "how-to-get-back-on-track-after-a-bad-day",
     "how-to-reduce-everyday-stress-in-10-minutes",
+    "journaling-for-beginners",
+    "how-to-do-an-emotional-check-in",
+    "how-to-decompress-after-a-stressful-day",
   ],
 };

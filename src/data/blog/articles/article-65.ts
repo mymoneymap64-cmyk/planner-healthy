@@ -1,6 +1,6 @@
-import { BlogPostDraft } from "@/lib/types";
+import { BlogPost } from "@/lib/types";
 
-export const article65: BlogPostDraft = {
+export const article65: BlogPost = {
   number: 65,
   slug: "how-to-quiet-a-busy-mind-before-bed",
   title: "How to Quiet a Busy Mind Before Bed: A 10-Minute Brain Dump",
@@ -11,6 +11,9 @@ export const article65: BlogPostDraft = {
   tags: ["busy mind at night", "brain dump", "bedtime routine", "overthinking", "sleep habits"],
   excerpt:
     "Lying awake with tomorrow's to-do list on a loop? A short written brain dump before bed can get it out of your head and onto paper. Here's a 10-minute method, plus a plan for the middle of the night.",
+  imageKey: "bedsideLampBookWindDown",
+  publishedAt: "2026-10-17",
+  editorsPick: true,
   intro: [
     "The moment the lights go out is often when the mind gets loudest. There are no distractions left, so everything you didn't get to during the day, and everything you're worried about for tomorrow, shows up at once. For many people it's the to-do list, the unanswered message, the thing they meant to remember.",
     "One simple way to help is to write it all down before you get into bed. This guide gives you a ten-minute method, a plan for nights when you wake up thinking, and honest notes about what a notebook can and can't do. It's general wellness information, not treatment for sleep problems.",
@@ -58,14 +61,14 @@ export const article65: BlogPostDraft = {
       level: 2,
       paragraphs: [
         "Keep a small notepad and pen by the bed, with a dim light if you need one. If a thought or a task pops up, write a few words, then lie back down. You're not solving it, just parking it. Avoid picking up your phone, since the light and the content can make it harder to settle again.",
-        "If you can't get back to sleep after a while, it can help to get up, sit somewhere dim, and do something quiet, like slow breathing or reading a few pages, until you feel sleepy. [How to create a better sleep routine](/blog/how-to-create-a-better-sleep-routine) explains this idea in more detail.",
+        "If you can't get back to sleep after a while, it can help to get up, sit somewhere dim, and do something quiet, like slow breathing or reading a few pages, until you feel sleepy.",
       ],
     },
     {
       heading: "Build It Into Your Evening",
       level: 2,
       paragraphs: [
-        "A brain dump fits well into a wind-down. Try it right after dinner or before you start your evening routine, then follow it with something calming. [How to build a healthy evening routine](/blog/how-to-build-a-healthy-evening-routine) lays out a short sequence, and [how to decompress after a stressful day](/blog/how-to-decompress-after-a-stressful-day) has ideas for closing out the day. The CDC's sleep guidance also includes keeping a consistent sleep schedule, keeping your bedroom quiet, relaxing, and cool, and avoiding large meals, alcohol, and caffeine close to bedtime.",
+        "A brain dump fits well into a wind-down. Try it right after dinner or before you start winding down for bed, then follow it with something calming, such as [how to decompress after a stressful day](/blog/how-to-decompress-after-a-stressful-day). The CDC's sleep guidance also includes keeping a consistent sleep schedule, keeping your bedroom quiet, relaxing, and cool, and avoiding large meals, alcohol, and caffeine close to bedtime.",
       ],
     },
     {
@@ -130,9 +133,9 @@ export const article65: BlogPostDraft = {
     },
   ],
   relatedSlugs: [
-    "how-to-build-a-healthy-evening-routine",
-    "how-to-create-a-better-sleep-routine",
-    "simple-ways-to-improve-your-sleep-habits",
+    "simple-breathing-exercises-to-calm-down",
     "journaling-for-beginners",
+    "what-to-do-when-you-feel-overwhelmed",
+    "how-to-decompress-after-a-stressful-day",
   ],
 };
