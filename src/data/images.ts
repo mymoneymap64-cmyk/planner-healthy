@@ -437,6 +437,21 @@ export const IMAGE_LIBRARY: Record<ImageKey, ImageAsset> = {
     height: 2400,
     credit: "Pexels — photo by Karola G., free Pexels License",
   },
+  // Homepage "What You Get" section — provided directly by the project
+  // owner (not stock photography) to visually show the real ebook +
+  // planner + Interactive Wellness System bundle. Features The Natural
+  // Healing Handbook's real cover as a representative example; the
+  // surrounding section copy and footnote make clear which products this
+  // applies to, so this image is never shown as a standalone claim.
+  ebookPlannerSystemPromo: {
+    key: "ebookPlannerSystemPromo",
+    url: "/product-images/ebook-planner-wellness-system-promo.png",
+    alt: "The Natural Healing Handbook ebook cover next to a daily planner and weekly planner notebook, with a laptop showing the Interactive Wellness System dashboard, captioned Ebook, Planner, and Interactive Wellness System",
+    filename: "ebook-planner-wellness-system-promo.png",
+    width: 1536,
+    height: 1024,
+    credit: "Natural Wellness Library — original project asset",
+  },
 };
 
 export function getImage(key: ImageKey): ImageAsset {

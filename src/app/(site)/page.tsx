@@ -341,8 +341,8 @@ export default function Home() {
           <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16">
             <div className="order-2 lg:order-1">
               <ResponsiveImage
-                imageKey="personPlanningMorning"
-                className="h-[300px] w-full sm:h-[400px] lg:h-[540px]"
+                imageKey="ebookPlannerSystemPromo"
+                className="aspect-[3/2] w-full"
                 sizes="(min-width: 1024px) 45vw, 100vw"
                 rounded="rounded-[2rem]"
               />

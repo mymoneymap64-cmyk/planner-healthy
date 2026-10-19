@@ -95,7 +95,8 @@ export type ImageKey =
   | "walkingPathAutumnPark"
   | "bedsideLampBookWindDown"
   | "readingCozyWindowSeat"
-  | "plannerWritingMarbleDesk";
+  | "plannerWritingMarbleDesk"
+  | "ebookPlannerSystemPromo";
 
 export interface ImageAsset {
   key: ImageKey;
