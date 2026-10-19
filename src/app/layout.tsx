@@ -19,6 +19,11 @@ export const metadata: Metadata = {
   description:
     "A curated collection of 7 practical wellness guides — natural healing, mental wellness, women's and men's wellness, herbal remedies, sleep & recovery, and healthy eating — each with a matching planner and 30-day system. Instant digital access.",
   metadataBase: new URL(SITE_URL),
+  verification: {
+    other: {
+      "p:domain_verify": "7fd0ff7b7b39db5084bd661f3b9fc38d",
+    },
+  },
   openGraph: {
     title: "Natural Wellness Library — Your Complete Wellness Library, In One Place",
     description:
