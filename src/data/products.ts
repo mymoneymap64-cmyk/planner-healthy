@@ -349,6 +349,73 @@ export const STANDALONE_PRODUCTS: Product[] = [
     systemPdf: null,
     systemPageCount: null,
   },
+  {
+    // Both the recipe count and the "not all test-baked" caveat below come
+    // directly from the book's own intro page, verified by extracting and
+    // counting every numbered recipe card in the real PDF (2,400 distinct
+    // IDs, 1-2400, zero duplicates) rather than trusting the cover claim.
+    // The 2,400 are real, complete, non-duplicated recipe cards (full
+    // ingredients + method each) generated from a combinatorial matrix of
+    // 40 cake-base styles x 10 flavor profiles x 6 finishes — not 2,400
+    // independently-developed concepts, and not all individually
+    // test-baked, per the book's own "Important kitchen note."
+    id: "standalone-03",
+    slug: "ultimate-cake-recipe-collection",
+    title: "The Ultimate Cake Recipe Collection",
+    subtitle: "2,400 Cake Recipe Combinations — Classic, Chocolate, Fruit & Spice Cakes",
+    tagline: "Baking & Recipes",
+    description:
+      "A cake recipe collection featuring classic cakes, chocolate cakes, vanilla cakes, fruit cakes, layer cakes, cheesecakes, cupcakes, and cakes for special occasions.",
+    category: "baking",
+    categoryLabel: "Baking & Recipes",
+    benefits: [
+      "2,400 numbered cake recipe cards, organized by style",
+      "Full ingredient list, pan size, oven setting, and bake time on every card",
+      "Classic, chocolate, fruit, and spice-based cakes for everyday baking and special occasions",
+    ],
+    price: 2.99,
+    compareAtPrice: null,
+    pageCount: 609,
+    badge: "Baking & Recipes",
+    includedInBundle: false,
+    coverImage: "/ultimate-cake-recipe-collection/cover.png",
+    ebookPdf: "/ultimate-cake-recipe-collection/ebook.pdf",
+    plannerPdf: null,
+    plannerPageCount: null,
+    systemPdf: null,
+    systemPageCount: null,
+  },
+  {
+    // Same verification as above, run independently against this PDF:
+    // 2,400 distinct numbered recipe cards (IDs 1-2400, zero duplicates),
+    // same combinatorial-matrix methodology and test-baking caveat stated
+    // in the book's own intro page.
+    id: "standalone-04",
+    slug: "modern-cakes-creative-desserts",
+    title: "Modern Cakes & Creative Desserts",
+    subtitle: "2,400 Modern Cake & Dessert Combinations for Every Celebration",
+    tagline: "Baking & Recipes",
+    description:
+      "A creative cake and dessert collection covering modern cakes, celebration cakes, cheesecakes, cupcakes, decorative cakes, and creative dessert ideas.",
+    category: "baking",
+    categoryLabel: "Baking & Recipes",
+    benefits: [
+      "2,400 numbered cake and dessert recipe cards, organized by style",
+      "Full ingredient list, pan size, oven setting, and bake time on every card",
+      "Celebration cakes, cheesecakes, cupcakes, and creative decorating ideas",
+    ],
+    price: 2.99,
+    compareAtPrice: null,
+    pageCount: 609,
+    badge: "Baking & Recipes",
+    includedInBundle: false,
+    coverImage: "/modern-cakes-creative-desserts/cover.png",
+    ebookPdf: "/modern-cakes-creative-desserts/ebook.pdf",
+    plannerPdf: null,
+    plannerPageCount: null,
+    systemPdf: null,
+    systemPageCount: null,
+  },
 ];
 
 export const ALL_PRODUCTS: Product[] = [...PRODUCTS, ...BONUS_PRODUCTS, ...STANDALONE_PRODUCTS];
