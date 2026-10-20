@@ -81,8 +81,10 @@ const ADDITIONAL_GUIDES = [
   FOOD_PRESERVATION,
 ];
 
-// The full Cake & Baking Collection shown on the homepage: the two existing
-// 2,400-recipe-combination ebooks plus the four newly written ebooks.
+// The full Cake & Baking Collection shown on the homepage: the two original
+// 2,400-recipe-combination ebooks plus all eight newly written ebooks. Kept
+// as one horizontal carousel (not separate sections) so the collection can
+// keep growing without lengthening the homepage.
 const CAKE_BAKING_SLUGS = [
   "ultimate-cake-recipe-collection",
   "modern-cakes-creative-desserts",
@@ -90,6 +92,10 @@ const CAKE_BAKING_SLUGS = [
   "cake-decorating-and-frosting-handbook",
   "cheesecake-cupcake-mini-cake-cookbook",
   "celebration-cakes-for-every-occasion",
+  "cookies-brownies-dessert-bars",
+  "pies-tarts-fruit-desserts",
+  "no-bake-desserts-chilled-cakes",
+  "sweet-breads-rolls-breakfast-bakes",
 ];
 const CAKE_BAKING_COLLECTION = CAKE_BAKING_SLUGS.map(
   (slug) => STANDALONE_PRODUCTS.find((p) => p.slug === slug)!
@@ -349,9 +355,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CAKE & BAKING COLLECTION — all 6 cake/baking ebooks (2 existing
-          2,400-recipe-combination books + 4 newly written ones) in one
-          horizontal carousel, instead of 6 separate oversized sections. */}
+      {/* CAKE & BAKING COLLECTION — all 10 cake/baking ebooks (2 original
+          2,400-recipe-combination books + 8 newly written ones) in one
+          horizontal carousel, instead of 10 separate oversized sections. */}
       <section className="section-pad bg-cream">
         <div className="container-page">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
@@ -361,9 +367,9 @@ export default function Home() {
                 The Cake &amp; Baking Collection
               </h2>
               <p className="mt-3 text-base leading-relaxed text-ink-600">
-                Six standalone baking ebooks, each $2.99 — from beginner
-                technique and decorating to cheesecakes, cupcakes, and
-                celebration cakes.
+                Ten standalone baking ebooks, each $2.99 — cakes, cookies,
+                pies, no-bake desserts, and breakfast bakes, from beginner
+                technique to advanced decorating.
               </p>
             </div>
             <Link
