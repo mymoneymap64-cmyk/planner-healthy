@@ -23,6 +23,7 @@ import NewsletterCTA from "@/components/NewsletterCTA";
 import JsonLd from "@/components/JsonLd";
 import ResponsiveImage from "@/components/ResponsiveImage";
 import ProductCarousel from "@/components/ProductCarousel";
+import CakeCollectionCarousel from "@/components/CakeCollectionCarousel";
 import { PRODUCTS, BONUS_PRODUCTS, STANDALONE_PRODUCTS, BUNDLE_PRICE } from "@/data/products";
 import { FAQS } from "@/data/faq";
 import { buildMetadata, productJsonLd } from "@/lib/seo";
@@ -79,6 +80,20 @@ const ADDITIONAL_GUIDES = [
   ...PRODUCTS.filter((p) => !FEATURED_GUIDE_SLUGS.includes(p.slug)),
   FOOD_PRESERVATION,
 ];
+
+// The full Cake & Baking Collection shown on the homepage: the two existing
+// 2,400-recipe-combination ebooks plus the four newly written ebooks.
+const CAKE_BAKING_SLUGS = [
+  "ultimate-cake-recipe-collection",
+  "modern-cakes-creative-desserts",
+  "cake-baking-for-beginners",
+  "cake-decorating-and-frosting-handbook",
+  "cheesecake-cupcake-mini-cake-cookbook",
+  "celebration-cakes-for-every-occasion",
+];
+const CAKE_BAKING_COLLECTION = CAKE_BAKING_SLUGS.map(
+  (slug) => STANDALONE_PRODUCTS.find((p) => p.slug === slug)!
+);
 
 export default function Home() {
   return (
@@ -330,6 +345,41 @@ export default function Home() {
                 </span>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CAKE & BAKING COLLECTION — all 6 cake/baking ebooks (2 existing
+          2,400-recipe-combination books + 4 newly written ones) in one
+          horizontal carousel, instead of 6 separate oversized sections. */}
+      <section className="section-pad bg-cream">
+        <div className="container-page">
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+            <div className="max-w-xl">
+              <span className="eyebrow">Baking &amp; Recipes</span>
+              <h2 className="mt-4 font-display text-3xl font-bold text-balance text-ink-950 sm:text-4xl">
+                The Cake &amp; Baking Collection
+              </h2>
+              <p className="mt-3 text-base leading-relaxed text-ink-600">
+                Six standalone baking ebooks, each $2.99 — from beginner
+                technique and decorating to cheesecakes, cupcakes, and
+                celebration cakes.
+              </p>
+            </div>
+            <Link
+              href="/library"
+              className="hidden shrink-0 items-center gap-1.5 text-sm font-bold text-brand-700 hover:underline sm:inline-flex"
+            >
+              View Full Library <ArrowRight size={14} />
+            </Link>
+          </div>
+          <div className="mt-10">
+            <CakeCollectionCarousel products={CAKE_BAKING_COLLECTION} />
+          </div>
+          <div className="mt-6 text-center sm:hidden">
+            <Link href="/library" className="text-sm font-bold text-brand-700 hover:underline inline-flex items-center gap-1.5">
+              View Full Library <ArrowRight size={14} />
+            </Link>
           </div>
         </div>
       </section>
