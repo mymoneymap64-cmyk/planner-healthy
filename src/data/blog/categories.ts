@@ -56,6 +56,12 @@ export const BLOG_CATEGORIES: BlogCategory[] = [
     description: "Morning routines, evening routines, and everyday self-care.",
     icon: "Sunrise",
   },
+  {
+    slug: "baking-recipes",
+    name: "Baking & Recipes",
+    description: "Practical cake and baking technique — mixing, measuring, decorating, and troubleshooting.",
+    icon: "ChefHat",
+  },
 ];
 
 export function getCategory(slug: string) {

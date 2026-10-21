@@ -2,6 +2,7 @@ import Link from "next/link";
 import {
   ArrowRight,
   BookOpen,
+  ChefHat,
   CheckCircle2,
   ClipboardList,
   Gift,
@@ -10,6 +11,7 @@ import {
   Lock,
   ShieldCheck,
   Smartphone,
+  Sparkles,
   Zap,
 } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
@@ -24,6 +26,7 @@ import JsonLd from "@/components/JsonLd";
 import ResponsiveImage from "@/components/ResponsiveImage";
 import ProductCarousel from "@/components/ProductCarousel";
 import CakeCollectionCarousel from "@/components/CakeCollectionCarousel";
+import BakingVideoSection from "@/components/BakingVideoSection";
 import { PRODUCTS, BONUS_PRODUCTS, STANDALONE_PRODUCTS, BUNDLE_PRICE } from "@/data/products";
 import { FAQS } from "@/data/faq";
 import { buildMetadata, productJsonLd } from "@/lib/seo";
@@ -65,6 +68,15 @@ const WHY_THIS_LIBRARY = [
   { icon: ShieldCheck, title: "No exaggerated claims", desc: "These are practical, educational wellness guides — not medical advice, and not a promise of specific results." },
   { icon: BookOpen, title: "Realistic, not extreme", desc: "No fad rules or all-or-nothing systems — habits you can keep up with a normal, busy life." },
   { icon: ClipboardList, title: "Plain language, clearly structured", desc: "Written to be read and used, not decoded — paired with a planner and 30-day system to apply what you read, not just skim once." },
+];
+
+// Compact benefit row for the new baking introduction — three short,
+// concrete claims about what the collection teaches, not generic
+// marketing filler. No ratings, certifications, or kitchen-tested claims.
+const BAKING_INTRO_FEATURES = [
+  { icon: ListChecks, title: "Clear, step-by-step guidance", desc: "Every recipe lists exact quantities, pan sizes, and timing — no guessing at what \"a handful\" or \"a splash\" means." },
+  { icon: ChefHat, title: "Practical techniques for home bakers", desc: "Mixing methods, leveling, and troubleshooting explained plainly, built for a home kitchen, not a professional one." },
+  { icon: Sparkles, title: "Frosting, decorating & presentation", desc: "From a basic crumb coat to piped flowers and finished celebration cakes, covered step by step." },
 ];
 
 const CAKE_COOKBOOK = STANDALONE_PRODUCTS.find((p) => p.slug === "the-cake-cookbook")!;
@@ -355,10 +367,64 @@ export default function Home() {
         </div>
       </section>
 
+      {/* BAKING INTRODUCTION — a compact teaser (not a second full hero)
+          that leads straight into the feature row, the video section, and
+          then the existing product carousel just below. */}
+      <section className="section-pad bg-white">
+        <div className="container-page">
+          <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:gap-16">
+            <div className="order-2 lg:order-1">
+              <span className="eyebrow">Baking &amp; Recipes</span>
+              <h2 className="mt-4 font-display text-3xl font-bold text-balance text-ink-950 sm:text-4xl">
+                Discover Your Next Baking Favorite
+              </h2>
+              <p className="mt-4 text-balance text-base leading-relaxed text-ink-600">
+                Ten standalone baking ebooks covering everyday cakes,
+                frosting and decorating technique, cheesecakes and
+                cupcakes, cookies and bars, pies and tarts, no-bake
+                desserts, and breakfast bakes — plus real video tutorials
+                below to go with them.
+              </p>
+              <div className="mt-7">
+                <a href="#cake-collection" className="btn-gold">
+                  Browse the Cake &amp; Baking Collection <ArrowRight size={16} />
+                </a>
+              </div>
+            </div>
+            <div className="order-1 lg:order-2">
+              <ResponsiveImage
+                imageKey="bakingFreshCake"
+                className="aspect-[4/5] w-full max-w-sm mx-auto lg:max-w-none"
+                sizes="(min-width: 1024px) 45vw, 90vw"
+              />
+            </div>
+          </div>
+
+          <div className="mt-14 grid gap-8 border-t border-ink-900/8 pt-10 sm:grid-cols-3">
+            {BAKING_INTRO_FEATURES.map((f) => (
+              <div key={f.title} className="flex items-start gap-3">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-700">
+                  <f.icon size={18} />
+                </span>
+                <div>
+                  <p className="font-display text-base font-bold text-ink-950">{f.title}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-ink-600">{f.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WATCH & LEARN — real, verified Preppy Kitchen tutorials, each
+          linked to the matching ebook. See src/data/bakingVideos.ts for the
+          verified title/channel/URL for every video. */}
+      <BakingVideoSection />
+
       {/* CAKE & BAKING COLLECTION — all 10 cake/baking ebooks (2 original
           2,400-recipe-combination books + 8 newly written ones) in one
           horizontal carousel, instead of 10 separate oversized sections. */}
-      <section className="section-pad bg-cream">
+      <section id="cake-collection" className="section-pad bg-cream">
         <div className="container-page">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <div className="max-w-xl">

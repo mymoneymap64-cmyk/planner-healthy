@@ -4,6 +4,7 @@ import {
   Apple,
   BookMarked,
   Brain,
+  ChefHat,
   Dumbbell,
   Footprints,
   Leaf,
@@ -30,6 +31,7 @@ const CATEGORY_ICONS: Record<string, typeof Sparkles> = {
   Leaf,
   Brain,
   Sunrise,
+  ChefHat,
 };
 
 export const metadata = buildMetadata({

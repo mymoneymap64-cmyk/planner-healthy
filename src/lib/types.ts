@@ -96,7 +96,17 @@ export type ImageKey =
   | "bedsideLampBookWindDown"
   | "readingCozyWindowSeat"
   | "plannerWritingMarbleDesk"
-  | "ebookPlannerSystemPromo";
+  | "ebookPlannerSystemPromo"
+  | "bakingVanillaCakeBatterBowl"
+  | "bakingSunkenCakeSlice"
+  | "bakingKitchenScaleFlour"
+  | "bakingButtercreamPipingTip"
+  | "bakingLayerCakeStacking"
+  | "bakingCakePansStack"
+  | "bakingCakeDecoratingTools"
+  | "bakingWrappedCakeStorage"
+  | "bakingChocolateCakeSlice"
+  | "bakingCupcakesCoolingRack";
 
 export interface ImageAsset {
   key: ImageKey;
@@ -119,7 +129,8 @@ export type BlogCategorySlug =
   | "sleep"
   | "mental-wellness"
   | "mindset"
-  | "lifestyle";
+  | "lifestyle"
+  | "baking-recipes";
 
 export interface BlogCategory {
   slug: BlogCategorySlug;
