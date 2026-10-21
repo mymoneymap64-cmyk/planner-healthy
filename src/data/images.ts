@@ -542,6 +542,42 @@ export const IMAGE_LIBRARY: Record<ImageKey, ImageAsset> = {
     height: 1067,
     credit: "Pexels — photo by Los Muertos Crew (Cristian Rojas), free Pexels License",
   },
+  familyBakingCakeTogether: {
+    key: "familyBakingCakeTogether",
+    url: "/cake-baking-collection/family-baking-cake-together.webp",
+    alt: "A mother and her two young daughters mixing cake batter together in a bright home kitchen, surrounded by cookie cutters and a mixing bowl",
+    filename: "family-baking-cake-together.webp",
+    width: 1600,
+    height: 1067,
+    credit: "Pexels — photo by Gustavo Fring, free Pexels License",
+  },
+  followingARecipe: {
+    key: "followingARecipe",
+    url: "/cake-baking-collection/following-a-recipe.webp",
+    alt: "A home baker reading a printed recipe book while gathering flour, a mixing bowl, and a kitchen scale on the counter",
+    filename: "following-a-recipe.webp",
+    width: 900,
+    height: 675,
+    credit: "Pexels — photo by Ron Lach, free Pexels License",
+  },
+  presentingBirthdayCake: {
+    key: "presentingBirthdayCake",
+    url: "/cake-baking-collection/presenting-birthday-cake.webp",
+    alt: "A woman proudly presenting a finished birthday cake with lit candles to her family in a home kitchen",
+    filename: "presenting-birthday-cake.webp",
+    width: 900,
+    height: 675,
+    credit: "Pexels — photo by August de Richelieu, free Pexels License",
+  },
+  familyEnjoyingCake: {
+    key: "familyEnjoyingCake",
+    url: "/cake-baking-collection/family-enjoying-cake.webp",
+    alt: "A family smiling and clapping together around the kitchen counter after sharing a homemade cake",
+    filename: "family-enjoying-cake.webp",
+    width: 900,
+    height: 675,
+    credit: "Pexels — photo by August de Richelieu, free Pexels License",
+  },
 };
 
 export function getImage(key: ImageKey): ImageAsset {

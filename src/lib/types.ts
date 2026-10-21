@@ -106,7 +106,11 @@ export type ImageKey =
   | "bakingCakeDecoratingTools"
   | "bakingWrappedCakeStorage"
   | "bakingChocolateCakeSlice"
-  | "bakingCupcakesCoolingRack";
+  | "bakingCupcakesCoolingRack"
+  | "familyBakingCakeTogether"
+  | "followingARecipe"
+  | "presentingBirthdayCake"
+  | "familyEnjoyingCake";
 
 export interface ImageAsset {
   key: ImageKey;
