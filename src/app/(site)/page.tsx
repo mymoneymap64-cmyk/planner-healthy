@@ -25,9 +25,8 @@ import NewsletterCTA from "@/components/NewsletterCTA";
 import JsonLd from "@/components/JsonLd";
 import ResponsiveImage from "@/components/ResponsiveImage";
 import ProductCarousel from "@/components/ProductCarousel";
-import CakeCollectionCarousel from "@/components/CakeCollectionCarousel";
 import BakingVideoSection from "@/components/BakingVideoSection";
-import CakeCollectionStack from "@/components/CakeCollectionStack";
+import FeaturedCakeCarousel from "@/components/FeaturedCakeCarousel";
 import { PRODUCTS, BONUS_PRODUCTS, STANDALONE_PRODUCTS, BUNDLE_PRICE } from "@/data/products";
 import { FAQS } from "@/data/faq";
 import { buildMetadata, productJsonLd } from "@/lib/seo";
@@ -80,22 +79,6 @@ const BAKING_INTRO_FEATURES = [
   { icon: Sparkles, title: "Frosting, decorating & presentation", desc: "From a basic crumb coat to piped flowers and finished celebration cakes, covered step by step." },
 ];
 
-// Featured in the top-of-page promo strip, below the nav and above the main
-// hero: three representative covers from the Cake & Baking Collection. Real
-// product data only — prices and covers come straight from
-// STANDALONE_PRODUCTS, never hardcoded. The remaining 7 ebooks in the
-// collection get full, equal billing just below in the existing
-// CAKE_BAKING_COLLECTION carousel — nothing here is a separate, duplicate
-// product list.
-const TOP_PROMO_SLUGS = [
-  "ultimate-cake-recipe-collection",
-  "modern-cakes-creative-desserts",
-  "cake-baking-for-beginners",
-];
-const TOP_PROMO_EBOOKS = TOP_PROMO_SLUGS.map(
-  (slug) => STANDALONE_PRODUCTS.find((p) => p.slug === slug)!
-);
-
 const CAKE_COOKBOOK = STANDALONE_PRODUCTS.find((p) => p.slug === "the-cake-cookbook")!;
 const FOOD_PRESERVATION = STANDALONE_PRODUCTS.find((p) => p.slug === "complete-guide-home-food-preservation")!;
 
@@ -129,59 +112,27 @@ const CAKE_BAKING_SLUGS = [
 const CAKE_BAKING_COLLECTION = CAKE_BAKING_SLUGS.map(
   (slug) => STANDALONE_PRODUCTS.find((p) => p.slug === slug)!
 );
-// Computed, never hardcoded, so the "from $X each" line in the top promo
-// can never drift out of sync if any ebook's price ever changes.
-const CAKE_COLLECTION_STARTING_PRICE = Math.min(
-  ...CAKE_BAKING_COLLECTION.map((p) => p.price!)
-);
 
 export default function Home() {
   return (
     <>
       <JsonLd data={productJsonLd({ price: BUNDLE_PRICE, path: "/" })} />
 
-      {/* TOP COLLECTION PROMO — an asymmetric editorial introduction to the
-          whole 10-ebook Cake & Baking Collection, below the nav and above
-          the main hero. Three representative covers are shown here, in an
-          overlapping fan rather than a plain grid, each still linking to
-          its own real product page; the remaining 7 get full, equal
-          billing in the existing CAKE_BAKING_COLLECTION carousel further
-          down — this section never duplicates that product list, only
-          introduces it. Price line is computed from real product data
-          (CAKE_COLLECTION_STARTING_PRICE), never hardcoded. No invented
-          discounts, countdowns, or review claims. */}
+      {/* FEATURED CAKE CAROUSEL — replaces the old static promo strip.
+          Auto-advancing, one slide per ebook, all 10 Cake & Baking
+          Collection products loaded straight from CAKE_BAKING_COLLECTION
+          (the same source of truth used by the compact library link further
+          down) — nothing here is a separate or duplicated product list. */}
       <section className="border-b border-ink-900/8 bg-cream">
         <div className="container-page py-10 sm:py-12 lg:py-14">
-          <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
-            <div className="text-center lg:text-left">
-              <span className="eyebrow">The Cake &amp; Baking Collection</span>
-              <h2 className="mt-4 font-display text-3xl font-bold leading-[1.1] text-balance text-ink-950 sm:text-4xl lg:text-[2.75rem]">
-                Make Something Beautiful.
-                <br className="hidden lg:block" /> Bake Something Delicious.
-              </h2>
-              <p className="mx-auto mt-4 max-w-md text-balance text-base leading-relaxed text-ink-600 lg:mx-0">
-                Explore 10 digital ebooks covering cake recipes, baking
-                basics, frosting, decorating, cheesecakes, cupcakes, and more.
-              </p>
-              <p className="mt-4 font-display text-lg font-bold text-brand-700">
-                Ebooks from ${CAKE_COLLECTION_STARTING_PRICE.toFixed(2)} each
-              </p>
-              <div className="mt-7 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
-                <a href="#cake-collection" className="btn-gold w-full justify-center sm:w-auto">
-                  Explore All Baking Ebooks <ArrowRight size={16} />
-                </a>
-              </div>
-              <Link
-                href="/library"
-                className="mt-4 inline-block text-sm font-bold text-brand-700 hover:underline"
-              >
-                Discover the Featured Collection
-              </Link>
-            </div>
-
-            <div>
-              <CakeCollectionStack products={TOP_PROMO_EBOOKS} />
-            </div>
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="eyebrow">Baking &amp; Recipes</span>
+            <h2 className="mt-4 font-display text-3xl font-bold text-balance text-ink-950 sm:text-4xl">
+              Explore Our Cake &amp; Baking Collection
+            </h2>
+          </div>
+          <div className="mt-8">
+            <FeaturedCakeCarousel products={CAKE_BAKING_COLLECTION} />
           </div>
         </div>
       </section>
@@ -489,37 +440,29 @@ export default function Home() {
           verified title/channel/URL for every video. */}
       <BakingVideoSection />
 
-      {/* CAKE & BAKING COLLECTION — all 10 cake/baking ebooks (2 original
-          2,400-recipe-combination books + 8 newly written ones) in one
-          horizontal carousel, instead of 10 separate oversized sections. */}
+      {/* CAKE & BAKING COLLECTION — LIBRARY LINK — all 10 ebooks are now
+          already fully featured, one at a time, in the FeaturedCakeCarousel
+          above, so this is deliberately a compact pointer to the full
+          Library rather than a second full product carousel repeating the
+          same 10 covers. Keeps the `cake-collection` id so the "Discover
+          Your Next Baking Favorite" CTA just above still resolves. */}
       <section id="cake-collection" className="section-pad bg-cream">
         <div className="container-page">
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-            <div className="max-w-xl">
-              <span className="eyebrow">Baking &amp; Recipes</span>
-              <h2 className="mt-4 font-display text-3xl font-bold text-balance text-ink-950 sm:text-4xl">
-                The Cake &amp; Baking Collection
-              </h2>
-              <p className="mt-3 text-base leading-relaxed text-ink-600">
-                Ten standalone baking ebooks, each $2.99 — cakes, cookies,
-                pies, no-bake desserts, and breakfast bakes, from beginner
-                technique to advanced decorating.
-              </p>
+          <div className="mx-auto max-w-2xl rounded-2xl border border-ink-900/8 bg-white px-6 py-10 text-center shadow-soft sm:px-10">
+            <span className="eyebrow">Baking &amp; Recipes</span>
+            <h2 className="mt-4 font-display text-2xl font-bold text-balance text-ink-950 sm:text-3xl">
+              10 Standalone Baking Ebooks, Each $2.99
+            </h2>
+            <p className="mt-3 text-base leading-relaxed text-ink-600">
+              Cakes, cookies, pies, no-bake desserts, and breakfast bakes —
+              from beginner technique to advanced decorating. Browse the
+              full Library to see every title, cover, and price.
+            </p>
+            <div className="mt-6">
+              <Link href="/library" className="btn-gold">
+                View Full Library <ArrowRight size={16} />
+              </Link>
             </div>
-            <Link
-              href="/library"
-              className="hidden shrink-0 items-center gap-1.5 text-sm font-bold text-brand-700 hover:underline sm:inline-flex"
-            >
-              View Full Library <ArrowRight size={14} />
-            </Link>
-          </div>
-          <div className="mt-10">
-            <CakeCollectionCarousel products={CAKE_BAKING_COLLECTION} />
-          </div>
-          <div className="mt-6 text-center sm:hidden">
-            <Link href="/library" className="text-sm font-bold text-brand-700 hover:underline inline-flex items-center gap-1.5">
-              View Full Library <ArrowRight size={14} />
-            </Link>
           </div>
         </div>
       </section>
