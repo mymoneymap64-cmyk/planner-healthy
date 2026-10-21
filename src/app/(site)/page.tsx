@@ -79,6 +79,11 @@ const BAKING_INTRO_FEATURES = [
   { icon: Sparkles, title: "Frosting, decorating & presentation", desc: "From a basic crumb coat to piped flowers and finished celebration cakes, covered step by step." },
 ];
 
+// Featured in the top-of-page ebook promo strip, below the nav and above
+// the main hero. Real product data only — price and cover come straight
+// from STANDALONE_PRODUCTS, never hardcoded here.
+const TOP_PROMO_EBOOK = STANDALONE_PRODUCTS.find((p) => p.slug === "ultimate-cake-recipe-collection")!;
+
 const CAKE_COOKBOOK = STANDALONE_PRODUCTS.find((p) => p.slug === "the-cake-cookbook")!;
 const FOOD_PRESERVATION = STANDALONE_PRODUCTS.find((p) => p.slug === "complete-guide-home-food-preservation")!;
 
@@ -117,6 +122,55 @@ export default function Home() {
   return (
     <>
       <JsonLd data={productJsonLd({ price: BUNDLE_PRICE, path: "/" })} />
+
+      {/* TOP EBOOK PROMO — a compact, premium strip below the nav and above
+          the main hero, featuring one real, live product (The Ultimate Cake
+          Recipe Collection). Price and cover both come from
+          TOP_PROMO_EBOOK/STANDALONE_PRODUCTS, never hardcoded, so this can
+          never drift out of sync with the real product data. No invented
+          discounts, countdowns, or review claims — just the real $2.99
+          offer, presented clearly. */}
+      <section className="border-b border-ink-900/8 bg-cream">
+        <div className="container-page py-8 sm:py-10">
+          <div className="grid items-center gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
+            <div className="text-center lg:text-left">
+              <span className="eyebrow">Baking &amp; Recipes · Digital PDF Ebook</span>
+              <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-balance text-ink-950 sm:text-4xl">
+                Your Next Show-Stopping Cake Starts Here!
+              </h2>
+              <p className="mt-3 font-display text-lg font-bold text-brand-700">
+                Discover 2,400 Cake Recipe Combinations
+              </p>
+              <p className="mx-auto mt-3 max-w-lg text-balance text-base leading-relaxed text-ink-600 lg:mx-0">
+                Explore inspiration for chocolate cakes, vanilla cakes, fruity bakes,
+                celebration cakes, and creative flavor combinations — all in one
+                digital ebook.
+              </p>
+              <div className="mt-7 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
+                <Link
+                  href={`/library/${TOP_PROMO_EBOOK.slug}`}
+                  className="btn-gold w-full justify-center sm:w-auto"
+                >
+                  Get the Ebook — ${TOP_PROMO_EBOOK.price!.toFixed(2)} <ArrowRight size={16} />
+                </Link>
+                <Link
+                  href="#cake-collection"
+                  className="text-sm font-bold text-brand-700 hover:underline"
+                >
+                  Explore All Cake &amp; Baking Ebooks
+                </Link>
+              </div>
+            </div>
+            <div className="mx-auto w-full max-w-[220px] lg:max-w-xs">
+              <ProductCover
+                product={TOP_PROMO_EBOOK}
+                className="aspect-[3/4] w-full shadow-lift"
+                priority
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* HERO — full-width photo background with dark overlay, centered headline */}
       <section className="relative overflow-hidden">
