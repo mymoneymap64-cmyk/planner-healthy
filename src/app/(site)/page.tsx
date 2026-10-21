@@ -2,16 +2,17 @@ import Link from "next/link";
 import {
   ArrowRight,
   BookOpen,
-  ChefHat,
   CheckCircle2,
   ClipboardList,
   Gift,
   Leaf,
+  LineChart,
   ListChecks,
   Lock,
+  NotebookPen,
+  PlayCircle,
   ShieldCheck,
   Smartphone,
-  Sparkles,
   Zap,
 } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
@@ -27,7 +28,10 @@ import ResponsiveImage from "@/components/ResponsiveImage";
 import ProductCarousel from "@/components/ProductCarousel";
 import BakingVideoSection from "@/components/BakingVideoSection";
 import FeaturedCakeCarousel from "@/components/FeaturedCakeCarousel";
+import BakingJourneySection from "@/components/BakingJourneySection";
+import DemoDashboardUI from "@/components/wellness-landing/DemoDashboardUI";
 import { PRODUCTS, BONUS_PRODUCTS, STANDALONE_PRODUCTS, BUNDLE_PRICE } from "@/data/products";
+import { BLOG_POSTS } from "@/data/blog/posts";
 import { FAQS } from "@/data/faq";
 import { buildMetadata, productJsonLd } from "@/lib/seo";
 
@@ -56,6 +60,16 @@ const HOW_IT_WORKS = [
   { icon: ListChecks, step: "03", title: "Apply", role: "30-Day System", desc: "Follow the 30-day system to build the habit into your routine, week by week." },
 ];
 
+// Three real, live features of the Wellness System dashboard — matching
+// exactly what DemoDashboardUI shows and what /wellness-system describes.
+// No invented capabilities (AI coaching, community, etc.) and no claimed
+// customer outcomes — just what the dashboard actually does.
+const WELLNESS_SYSTEM_FEATURES = [
+  { icon: ListChecks, title: "Daily Checklists", desc: "Simple, repeatable checklists for each guide so you can track what you actually did each day." },
+  { icon: NotebookPen, title: "Personal Notes", desc: "Jot down what's working (or not) as you go — private notes tied to your own progress." },
+  { icon: LineChart, title: "Progress Tracking", desc: "See how far you've gotten through each guide at a glance, instead of losing your place." },
+];
+
 // Absorbs the old separate "Designed For Real Life" section's writing-
 // philosophy points (realistic/plain-language/structured) alongside the
 // original value points — one list instead of two sections making
@@ -68,15 +82,6 @@ const WHY_THIS_LIBRARY = [
   { icon: ShieldCheck, title: "No exaggerated claims", desc: "These are practical, educational wellness guides — not medical advice, and not a promise of specific results." },
   { icon: BookOpen, title: "Realistic, not extreme", desc: "No fad rules or all-or-nothing systems — habits you can keep up with a normal, busy life." },
   { icon: ClipboardList, title: "Plain language, clearly structured", desc: "Written to be read and used, not decoded — paired with a planner and 30-day system to apply what you read, not just skim once." },
-];
-
-// Compact benefit row for the new baking introduction — three short,
-// concrete claims about what the collection teaches, not generic
-// marketing filler. No ratings, certifications, or kitchen-tested claims.
-const BAKING_INTRO_FEATURES = [
-  { icon: ListChecks, title: "Clear, step-by-step guidance", desc: "Every recipe lists exact quantities, pan sizes, and timing — no guessing at what \"a handful\" or \"a splash\" means." },
-  { icon: ChefHat, title: "Practical techniques for home bakers", desc: "Mixing methods, leveling, and troubleshooting explained plainly, built for a home kitchen, not a professional one." },
-  { icon: Sparkles, title: "Frosting, decorating & presentation", desc: "From a basic crumb coat to piped flowers and finished celebration cakes, covered step by step." },
 ];
 
 const CAKE_COOKBOOK = STANDALONE_PRODUCTS.find((p) => p.slug === "the-cake-cookbook")!;
@@ -113,31 +118,17 @@ const CAKE_BAKING_COLLECTION = CAKE_BAKING_SLUGS.map(
   (slug) => STANDALONE_PRODUCTS.find((p) => p.slug === slug)!
 );
 
+// A small, honest sample of recent posts for the compact blog link row —
+// not a duplicate of the full /blog index, just enough to invite a click.
+const FEATURED_BLOG_POSTS = BLOG_POSTS.slice(0, 3);
+
 export default function Home() {
   return (
     <>
       <JsonLd data={productJsonLd({ price: BUNDLE_PRICE, path: "/" })} />
 
-      {/* FEATURED CAKE CAROUSEL — replaces the old static promo strip.
-          Auto-advancing, one slide per ebook, all 10 Cake & Baking
-          Collection products loaded straight from CAKE_BAKING_COLLECTION
-          (the same source of truth used by the compact library link further
-          down) — nothing here is a separate or duplicated product list. */}
-      <section className="border-b border-ink-900/8 bg-cream">
-        <div className="container-page py-10 sm:py-12 lg:py-14">
-          <div className="mx-auto max-w-2xl text-center">
-            <span className="eyebrow">Baking &amp; Recipes</span>
-            <h2 className="mt-4 font-display text-3xl font-bold text-balance text-ink-950 sm:text-4xl">
-              Explore Our Cake &amp; Baking Collection
-            </h2>
-          </div>
-          <div className="mt-8">
-            <FeaturedCakeCarousel products={CAKE_BAKING_COLLECTION} />
-          </div>
-        </div>
-      </section>
-
-      {/* HERO — full-width photo background with dark overlay, centered headline */}
+      {/* HERO — the first thing every visitor sees: who we are and the two
+          paths through the site, not a product carousel. */}
       <section className="relative overflow-hidden">
         <ResponsiveImage
           imageKey="womanMugPlantsLandscape"
@@ -149,22 +140,23 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink-950/75 via-ink-950/65 to-ink-950/80" />
         <div className="container-page relative py-20 text-center sm:py-24 lg:py-28">
-          <span className="eyebrow bg-white/15 text-gold-300">The Complete Wellness Library</span>
+          <span className="eyebrow bg-white/15 text-gold-300">Natural Wellness Library</span>
           <h1 className="mx-auto mt-6 max-w-3xl font-display text-4xl font-bold leading-[1.08] text-balance text-white sm:text-5xl lg:text-6xl">
-            Your Complete Wellness Library — For Real Life.
+            Two Ways to Build a Better Everyday Routine
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-balance text-base leading-relaxed text-white/85 sm:text-lg">
-            Explore practical wellness guides and simple tools designed to
-            help you build healthier everyday routines, one small step at
-            a time.
+            Practical wellness guides with a built-in system to apply
+            them — and a full collection of baking ebooks to help you
+            create something delicious. Pick where you&apos;d like to
+            start.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <Link href="/library" className="btn-gold">
-              Explore the Wellness Library <ArrowRight size={16} />
+            <Link href="/wellness-system" className="btn-gold">
+              Explore the Wellness System <ArrowRight size={16} />
             </Link>
-            <Link href="/wellness-system" className="btn border-2 border-white/40 text-white hover:bg-white/10">
-              Discover the Wellness System
+            <Link href="/cake-baking-collection" className="btn border-2 border-white/40 text-white hover:bg-white/10">
+              Explore Cake &amp; Baking <ArrowRight size={16} />
             </Link>
           </div>
 
@@ -181,9 +173,9 @@ export default function Home() {
           </div>
 
           <p className="mt-6 text-sm text-white/70">
-            Already own a guide?{" "}
+            Already purchased?{" "}
             <Link href="/access" className="font-semibold text-gold-300 underline hover:text-gold-200">
-              Access Your Wellness System
+              Find Your Access Link
             </Link>
           </p>
         </div>
@@ -204,6 +196,94 @@ export default function Home() {
               <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-ink-500">{s.label}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* WELLNESS SYSTEM FEATURE — a real, dedicated feature near the top,
+          not just another ebook card. DemoDashboardUI is the same honest,
+          clearly-fictional mockup already used on /wellness-system — no new
+          capabilities invented here. */}
+      <section className="section-pad bg-cream">
+        <div className="container-page">
+          <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16">
+            <div>
+              <span className="eyebrow">The Wellness System</span>
+              <h2 className="mt-4 font-display text-3xl font-bold text-balance text-ink-950 sm:text-4xl">
+                Turn Any Guide Into a Daily Routine
+              </h2>
+              <p className="mt-4 text-balance text-base leading-relaxed text-ink-600">
+                Every core wellness guide comes with an interactive
+                dashboard that brings it to life — practical routines,
+                daily checklists, personal notes, and progress tracking,
+                so what you read actually turns into something you do.
+              </p>
+
+              <div className="mt-8 space-y-6 border-t border-ink-900/8 pt-7">
+                {WELLNESS_SYSTEM_FEATURES.map((item) => (
+                  <div key={item.title} className="flex gap-4">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-100 text-brand-700">
+                      <item.icon size={18} />
+                    </span>
+                    <div>
+                      <p className="font-display text-base font-bold text-ink-950">{item.title}</p>
+                      <p className="mt-1 text-sm leading-relaxed text-ink-500">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
+                <Link href="/wellness-system" className="btn-gold w-full justify-center sm:w-auto">
+                  Explore the Wellness System <ArrowRight size={16} />
+                </Link>
+                <Link
+                  href="/wellness-system/demo"
+                  className="flex items-center gap-1.5 text-sm font-bold text-brand-700 hover:underline"
+                >
+                  <PlayCircle size={16} /> See the Live Demo
+                </Link>
+              </div>
+            </div>
+
+            <div className="mx-auto w-full max-w-md overflow-hidden rounded-[1.75rem] border border-brand-100 bg-white p-4 shadow-soft sm:p-6">
+              <DemoDashboardUI variant="showcase" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CAKE & BAKING COLLECTION FEATURE — a major featured section, not a
+          text link: the family-baking lifestyle journey, the automatic
+          10-ebook carousel, and a strong CTA to the dedicated collection
+          page. The carousel now lives here, well below the brand and
+          Wellness System message, instead of at the very top of the page. */}
+      <section className="section-pad bg-white">
+        <div className="container-page">
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="eyebrow">Cake &amp; Baking Collection</span>
+            <h2 className="mt-4 font-display text-3xl font-bold text-balance text-ink-950 sm:text-4xl">
+              Ten Baking Ebooks, One Collection
+            </h2>
+            <p className="mt-4 text-balance text-base leading-relaxed text-ink-600">
+              From beginner cake basics to decorating, cheesecakes,
+              cookies, pies, no-bake desserts, and breakfast bakes — each
+              ebook is a one-time $2.99 digital PDF.
+            </p>
+          </div>
+
+          <div className="mt-12">
+            <BakingJourneySection ctaHref="/cake-baking-collection" ctaLabel="Explore the Full Collection" />
+          </div>
+
+          <div className="mt-16 border-t border-ink-900/8 pt-12">
+            <FeaturedCakeCarousel products={CAKE_BAKING_COLLECTION} />
+          </div>
+
+          <div className="mt-10 text-center">
+            <Link href="/cake-baking-collection" className="btn-gold">
+              Explore the Full Collection <ArrowRight size={16} />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -324,7 +404,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CAKE COOKBOOK SPOTLIGHT — full-bleed magazine feature, not a floating card */}
+      {/* CAKE COOKBOOK SPOTLIGHT — full-bleed magazine feature, not a floating
+          card. A separate, standalone product from the 10-ebook Cake &
+          Baking Collection above — not to be confused or merged with it. */}
       <section className="relative overflow-hidden bg-gold-50">
         <div className="container-page grid items-center gap-8 py-14 sm:py-16 lg:grid-cols-[0.9fr_1.3fr] lg:gap-0 lg:py-0">
           <div className="relative mx-auto flex w-full max-w-[260px] justify-center py-2 sm:max-w-[300px] lg:max-w-none lg:py-24">
@@ -386,83 +468,52 @@ export default function Home() {
         </div>
       </section>
 
-      {/* BAKING INTRODUCTION — a compact teaser (not a second full hero)
-          that leads straight into the feature row, the video section, and
-          then the existing product carousel just below. */}
-      <section className="section-pad bg-white">
-        <div className="container-page">
-          <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:gap-16">
-            <div className="order-2 lg:order-1">
-              <span className="eyebrow">Baking &amp; Recipes</span>
-              <h2 className="mt-4 font-display text-3xl font-bold text-balance text-ink-950 sm:text-4xl">
-                Discover Your Next Baking Favorite
-              </h2>
-              <p className="mt-4 text-balance text-base leading-relaxed text-ink-600">
-                Ten standalone baking ebooks covering everyday cakes,
-                frosting and decorating technique, cheesecakes and
-                cupcakes, cookies and bars, pies and tarts, no-bake
-                desserts, and breakfast bakes — plus real video tutorials
-                below to go with them.
-              </p>
-              <div className="mt-7">
-                <a href="#cake-collection" className="btn-gold">
-                  Browse the Cake &amp; Baking Collection <ArrowRight size={16} />
-                </a>
-              </div>
-            </div>
-            <div className="order-1 lg:order-2">
-              <ResponsiveImage
-                imageKey="bakingFreshCake"
-                className="aspect-[4/5] w-full max-w-sm mx-auto lg:max-w-none"
-                sizes="(min-width: 1024px) 45vw, 90vw"
-              />
-            </div>
-          </div>
-
-          <div className="mt-14 grid gap-8 border-t border-ink-900/8 pt-10 sm:grid-cols-3">
-            {BAKING_INTRO_FEATURES.map((f) => (
-              <div key={f.title} className="flex items-start gap-3">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-700">
-                  <f.icon size={18} />
-                </span>
-                <div>
-                  <p className="font-display text-base font-bold text-ink-950">{f.title}</p>
-                  <p className="mt-1 text-sm leading-relaxed text-ink-600">{f.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* WATCH & LEARN — real, verified Preppy Kitchen tutorials, each
           linked to the matching ebook. See src/data/bakingVideos.ts for the
           verified title/channel/URL for every video. */}
       <BakingVideoSection />
 
-      {/* CAKE & BAKING COLLECTION — LIBRARY LINK — all 10 ebooks are now
-          already fully featured, one at a time, in the FeaturedCakeCarousel
-          above, so this is deliberately a compact pointer to the full
-          Library rather than a second full product carousel repeating the
-          same 10 covers. Keeps the `cake-collection` id so the "Discover
-          Your Next Baking Favorite" CTA just above still resolves. */}
-      <section id="cake-collection" className="section-pad bg-cream">
+      {/* FROM THE BLOG — a compact pointer to the full blog, not a repeat of
+          the blog index. Mixes wellness and baking posts since both now
+          have equal billing on the homepage. */}
+      <section className="section-pad bg-cream">
         <div className="container-page">
-          <div className="mx-auto max-w-2xl rounded-2xl border border-ink-900/8 bg-white px-6 py-10 text-center shadow-soft sm:px-10">
-            <span className="eyebrow">Baking &amp; Recipes</span>
-            <h2 className="mt-4 font-display text-2xl font-bold text-balance text-ink-950 sm:text-3xl">
-              10 Standalone Baking Ebooks, Each $2.99
-            </h2>
-            <p className="mt-3 text-base leading-relaxed text-ink-600">
-              Cakes, cookies, pies, no-bake desserts, and breakfast bakes —
-              from beginner technique to advanced decorating. Browse the
-              full Library to see every title, cover, and price.
-            </p>
-            <div className="mt-6">
-              <Link href="/library" className="btn-gold">
-                View Full Library <ArrowRight size={16} />
-              </Link>
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+            <div className="max-w-xl">
+              <span className="eyebrow">From the Blog</span>
+              <h2 className="mt-4 font-display text-3xl font-bold text-balance text-ink-950 sm:text-4xl">
+                Wellness &amp; Baking Articles
+              </h2>
+              <p className="mt-3 text-base leading-relaxed text-ink-600">
+                Free, practical articles — no purchase required.
+              </p>
             </div>
+            <Link
+              href="/blog"
+              className="hidden shrink-0 items-center gap-1.5 text-sm font-bold text-brand-700 hover:underline sm:inline-flex"
+            >
+              View All Articles <ArrowRight size={14} />
+            </Link>
+          </div>
+          <div className="mt-10 grid gap-5 sm:grid-cols-3">
+            {FEATURED_BLOG_POSTS.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="card flex flex-col gap-2 p-5 transition-colors hover:border-brand-200"
+              >
+                <span className="text-[11px] font-bold uppercase tracking-wide text-brand-600">
+                  {post.category === "baking-recipes" ? "Baking & Recipes" : "Mental Wellness"}
+                </span>
+                <p className="font-display text-base font-bold leading-snug text-ink-950">{post.title}</p>
+                <p className="line-clamp-2 text-sm leading-relaxed text-ink-500">{post.excerpt}</p>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-8 text-center sm:hidden">
+            <Link href="/blog" className="btn-secondary">
+              View All Articles <ArrowRight size={16} />
+            </Link>
           </div>
         </div>
       </section>

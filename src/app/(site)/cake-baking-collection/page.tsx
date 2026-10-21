@@ -20,12 +20,12 @@ import FAQAccordion from "@/components/FAQAccordion";
 import BakingVideoCard from "@/components/BakingVideoCard";
 import BlogPostCard from "@/components/BlogPostCard";
 import JsonLd from "@/components/JsonLd";
-import ResponsiveImage from "@/components/ResponsiveImage";
+import BakingJourneySection from "@/components/BakingJourneySection";
 import { STANDALONE_PRODUCTS } from "@/data/products";
 import { BAKING_VIDEOS } from "@/data/bakingVideos";
 import { BLOG_POSTS } from "@/data/blog/posts";
 import { buildMetadata, breadcrumbJsonLd, faqJsonLd, productDetailJsonLd, SITE_URL } from "@/lib/seo";
-import { ImageKey, Product } from "@/lib/types";
+import { Product } from "@/lib/types";
 
 export const metadata = buildMetadata({
   title: "Cake & Baking Collection — 10 Digital Baking Ebooks | Natural Wellness Library",
@@ -37,34 +37,6 @@ export const metadata = buildMetadata({
 function getProduct(slug: string): Product {
   return STANDALONE_PRODUCTS.find((p) => p.slug === slug)!;
 }
-
-// The recipe-to-shared-moment journey: each photo is paired with one real,
-// existing product it genuinely relates to in tone or occasion — never a
-// random pairing. Captions describe the moment shown, not a claim about who
-// bought what; the "illustrative photography" note below the grid makes
-// that distinction explicit to visitors.
-const JOURNEY_MOMENTS: { imageKey: ImageKey; slug: string; caption: string }[] = [
-  {
-    imageKey: "followingARecipe",
-    slug: "cake-baking-for-beginners",
-    caption: "Start with a clear recipe and real ingredients — no guesswork, just a plan you can follow.",
-  },
-  {
-    imageKey: "familyBakingCakeTogether",
-    slug: "cheesecake-cupcake-mini-cake-cookbook",
-    caption: "Mixing the batter together turns a recipe into a shared activity, cookie cutters and all.",
-  },
-  {
-    imageKey: "presentingBirthdayCake",
-    slug: "celebration-cakes-for-every-occasion",
-    caption: "A finished cake is something to bring to the table and show off, candles and all.",
-  },
-  {
-    imageKey: "familyEnjoyingCake",
-    slug: "ultimate-cake-recipe-collection",
-    caption: "And then comes the best part — sharing it with the people you made it for.",
-  },
-];
 
 // Every category maps to one or more real, existing products — no invented
 // entries. The two 2,400-combination books get their own category so the
@@ -225,65 +197,10 @@ export default function CakeBakingCollectionPage() {
         </div>
       </section>
 
-      {/* MORE THAN RECIPES — MOMENTS WORTH SHARING — the recipe-to-shared-moment journey */}
+      {/* MORE THAN RECIPES — MOMENTS WORTH SHARING — shared component, also used on the homepage */}
       <section className="section-pad">
         <div className="container-page">
-          <div className="mx-auto max-w-2xl text-center">
-            <span className="eyebrow">From Recipe to Shared Moment</span>
-            <h2 className="mt-4 font-display text-3xl font-bold text-balance text-ink-950 sm:text-4xl">
-              More Than Recipes — Moments Worth Sharing
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-ink-600">
-              Discover new baking ideas, build confidence in the kitchen,
-              and create cakes and desserts to share with the people you
-              love.
-            </p>
-          </div>
-
-          <div className="mx-auto mt-12 grid max-w-5xl gap-6 sm:grid-cols-2">
-            {JOURNEY_MOMENTS.map((moment) => {
-              const product = getProduct(moment.slug);
-              return (
-                <div
-                  key={moment.imageKey}
-                  className="overflow-hidden rounded-[1.4rem] border border-ink-900/10 bg-white shadow-soft"
-                >
-                  <ResponsiveImage
-                    imageKey={moment.imageKey}
-                    className="aspect-[4/3] w-full"
-                    sizes="(min-width: 1024px) 40vw, 90vw"
-                    rounded="rounded-none"
-                    priority={moment.slug === JOURNEY_MOMENTS[0].slug}
-                  />
-                  <div className="p-5">
-                    <p className="text-sm leading-relaxed text-ink-600">{moment.caption}</p>
-                    <Link
-                      href={`/library/${product.slug}`}
-                      className="mt-4 flex items-center gap-3 rounded-xl border border-ink-900/10 bg-cream p-3 transition-colors hover:border-brand-200"
-                    >
-                      <ProductCover product={product} className="aspect-[2/3] w-12 shrink-0" />
-                      <span className="min-w-0 flex-1">
-                        <span className="block truncate text-sm font-bold text-ink-950">{product.title}</span>
-                        <span className="text-xs font-semibold text-brand-700">${product.price!.toFixed(2)} — View Ebook</span>
-                      </span>
-                      <ArrowRight size={16} className="shrink-0 text-ink-400" />
-                    </Link>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          <div className="mt-10 text-center">
-            <a href="#collection" className="btn-gold">
-              Find Your Next Favorite Recipe <ArrowRight size={16} />
-            </a>
-            <p className="mx-auto mt-5 max-w-xl text-xs text-ink-400">
-              Photos are illustrative lifestyle photography licensed for
-              this page. They are not photos of verified customers and
-              don&rsquo;t depict specific results from these ebooks.
-            </p>
-          </div>
+          <BakingJourneySection ctaHref="#collection" ctaLabel="Find Your Next Favorite Recipe" />
         </div>
       </section>
 
