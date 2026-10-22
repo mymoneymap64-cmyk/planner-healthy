@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/ebooks`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE_URL}/wellness-system`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/healthy-planner`, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE_URL}/cake-baking-collection`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/bonuses`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE_URL}/faq`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${SITE_URL}/blog`, lastModified: getLatestModified(posts), changeFrequency: "weekly", priority: 0.9 },
