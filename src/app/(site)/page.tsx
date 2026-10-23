@@ -122,72 +122,133 @@ const CAKE_BAKING_COLLECTION = CAKE_BAKING_SLUGS.map(
 // not a duplicate of the full /blog index, just enough to invite a click.
 const FEATURED_BLOG_POSTS = BLOG_POSTS.slice(0, 3);
 
+// Small cover samples for the three hero destination cards — real products
+// only, reusing the same slugs already featured elsewhere on the page
+// (FEATURED_GUIDE_SLUGS, CAKE_BAKING_SLUGS) so nothing new is invented here.
+const HERO_WELLNESS_COVERS = FEATURED_GUIDE_SLUGS.map((slug) => PRODUCTS.find((p) => p.slug === slug)!);
+const HERO_CAKE_COVERS = CAKE_BAKING_SLUGS.slice(0, 3).map(
+  (slug) => STANDALONE_PRODUCTS.find((p) => p.slug === slug)!
+);
+
 export default function Home() {
   return (
     <>
       <JsonLd data={productJsonLd({ price: BUNDLE_PRICE, path: "/" })} />
 
-      {/* HERO — the first thing every visitor sees: who we are and the two
-          paths through the site, not a product carousel. */}
-      <section className="relative overflow-hidden">
-        <ResponsiveImage
-          imageKey="womanMugPlantsLandscape"
-          priority
-          className="absolute inset-0 h-full w-full"
-          imageClassName="object-[70%_35%]"
-          sizes="100vw"
-          rounded="rounded-none"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink-950/75 via-ink-950/65 to-ink-950/80" />
-        <div className="container-page relative py-20 text-center sm:py-24 lg:py-28">
-          <span className="eyebrow bg-white/15 text-gold-300">Natural Wellness Library</span>
-          <h1 className="mx-auto mt-6 max-w-3xl font-display text-4xl font-bold leading-[1.08] text-balance text-white sm:text-5xl lg:text-6xl">
-            Two Ways to Build a Better Everyday Routine
+      {/* HERO — a premium-digital-bookstore first screen: real product
+          covers and the real Wellness System preview do the visual work,
+          not a stock lifestyle photo. No dark overlay, no background image. */}
+      <section className="bg-gradient-to-b from-brand-50 to-cream">
+        <div className="container-page py-14 text-center sm:py-18 lg:py-20">
+          <span className="eyebrow">Natural Wellness Library</span>
+          <h1 className="mx-auto mt-5 max-w-2xl font-display text-4xl font-bold leading-[1.1] text-balance text-ink-950 sm:text-5xl">
+            Discover Your Next Favorite Ebook
           </h1>
-          <p className="mx-auto mt-5 max-w-xl text-balance text-base leading-relaxed text-white/85 sm:text-lg">
-            Practical wellness guides with a built-in system to apply
-            them — and a full collection of baking ebooks to help you
-            create something delicious. Pick where you&apos;d like to
-            start.
+          <p className="mx-auto mt-4 max-w-xl text-balance text-base leading-relaxed text-ink-600 sm:text-lg">
+            Explore practical wellness ebooks, helpful planners, an
+            interactive Wellness System, and baking ebooks to inspire
+            your next creation.
           </p>
-
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <Link href="/wellness-system" className="btn-gold">
-              Explore the Wellness System <ArrowRight size={16} />
-            </Link>
-            <Link href="/cake-baking-collection" className="btn border-2 border-white/40 text-white hover:bg-white/10">
-              Explore Cake &amp; Baking <ArrowRight size={16} />
-            </Link>
-          </div>
-
-          <div className="mx-auto mt-10 flex max-w-2xl flex-wrap items-center justify-center gap-x-10 gap-y-4 text-sm font-medium text-white/85">
-            {[
-              { icon: Zap, label: "Instant digital access" },
-              { icon: Smartphone, label: "Works on any device" },
-              { icon: Lock, label: "One-time payment" },
-            ].map((f) => (
-              <span key={f.label} className="flex items-center gap-2">
-                <f.icon size={16} className="text-gold-300" /> {f.label}
-              </span>
-            ))}
-          </div>
-
-          <p className="mt-6 text-sm text-white/70">
+          <p className="mt-5 text-sm text-ink-500">
             Already purchased?{" "}
-            <Link href="/access" className="font-semibold text-gold-300 underline hover:text-gold-200">
+            <Link href="/access" className="font-semibold text-brand-700 underline hover:text-brand-800">
               Find Your Access Link
             </Link>
           </p>
         </div>
+
+        {/* THREE DESTINATIONS — real covers, the real Wellness System
+            preview, and real prices. No invented products or claims. */}
+        <div className="container-page pb-14 sm:pb-18 lg:pb-20">
+          <div className="grid gap-6 lg:grid-cols-3">
+            {/* CARD 1 — WELLNESS EBOOKS & PLANNERS */}
+            <div className="flex flex-col rounded-[1.75rem] border border-ink-900/8 bg-white p-6 shadow-soft sm:p-7">
+              <div className="flex h-36 items-center justify-center gap-0">
+                {HERO_WELLNESS_COVERS.map((p, i) => (
+                  <div
+                    key={p.slug}
+                    className="w-20 shrink-0 -ml-5 first:ml-0"
+                    style={{ zIndex: i, transform: `rotate(${(i - 1) * 6}deg)` }}
+                  >
+                    <ProductCover product={p} className="aspect-[2/3] w-full shadow-lift" />
+                  </div>
+                ))}
+              </div>
+              <h2 className="mt-5 font-display text-xl font-bold text-ink-950">
+                Wellness Ebooks &amp; Planners
+              </h2>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-600">
+                Practical digital guides and matching planners for
+                everyday wellness — natural healing, mental wellness,
+                sleep, and more.
+              </p>
+              <Link href="/library" className="btn-gold mt-5 w-full justify-center">
+                Explore Wellness Ebooks <ArrowRight size={16} />
+              </Link>
+            </div>
+
+            {/* CARD 2 — WELLNESS SYSTEM */}
+            <div className="flex flex-col rounded-[1.75rem] border border-brand-100 bg-brand-50/60 p-6 shadow-soft sm:p-7">
+              <div className="mx-auto w-full max-w-[260px] overflow-hidden rounded-xl border border-ink-900/10 bg-white shadow-soft">
+                <DemoDashboardUI variant="laptop" />
+              </div>
+              <h2 className="mt-5 font-display text-xl font-bold text-ink-950">Wellness System</h2>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-600">
+                Your Daily Plan, Checklists, Notes, and Progress Tracking
+                in one place — turning each guide into a routine you
+                actually follow.
+              </p>
+              <div className="mt-5 flex flex-col gap-3">
+                <Link href="/wellness-system" className="btn-gold w-full justify-center">
+                  Explore Wellness System <ArrowRight size={16} />
+                </Link>
+                <Link
+                  href="/wellness-system/demo"
+                  className="flex items-center justify-center gap-1.5 text-sm font-bold text-brand-700 hover:underline"
+                >
+                  <PlayCircle size={15} /> Try the Demo
+                </Link>
+              </div>
+            </div>
+
+            {/* CARD 3 — CAKE & BAKING EBOOKS */}
+            <div className="flex flex-col rounded-[1.75rem] border border-ink-900/8 bg-white p-6 shadow-soft sm:p-7">
+              <div className="flex h-36 items-center justify-center gap-0">
+                {HERO_CAKE_COVERS.map((p, i) => (
+                  <div
+                    key={p.slug}
+                    className="w-20 shrink-0 -ml-5 first:ml-0"
+                    style={{ zIndex: i, transform: `rotate(${(i - 1) * 6}deg)` }}
+                  >
+                    <ProductCover product={p} className="aspect-[2/3] w-full shadow-lift" />
+                  </div>
+                ))}
+              </div>
+              <h2 className="mt-5 font-display text-xl font-bold text-ink-950">Cake &amp; Baking Ebooks</h2>
+              <p className="mt-2 text-sm leading-relaxed text-ink-600">
+                Ten standalone baking ebooks, from beginner basics to
+                decorating, cheesecakes, and more.
+              </p>
+              <p className="mt-2 text-xs font-bold uppercase tracking-wide text-gold-700">
+                {CAKE_BAKING_SLUGS.length} digital baking ebooks · $2.99 each
+              </p>
+              <Link href="/cake-baking-collection" className="btn-gold mt-5 w-full justify-center">
+                Explore Cake &amp; Baking <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+        </div>
       </section>
 
-      {/* STAT STRIP — a distinct editorial band, not nested inside the hero */}
+      {/* OVERVIEW STRIP — accurate across both verticals (previously
+          wellness-only, which read as incomplete/confusing once baking
+          ebooks got equal billing above). */}
       <section className="border-b border-ink-900/8 bg-brand-50/50">
         <div className="container-page grid grid-cols-2 divide-x divide-y divide-ink-900/8 sm:grid-cols-4 sm:divide-y-0">
           {[
             { icon: BookOpen, count: PRODUCTS.length, label: "Wellness Ebooks" },
-            { icon: ClipboardList, count: PRODUCTS.length, label: "Planners" },
-            { icon: ListChecks, count: PRODUCTS.length, label: "30-Day Systems" },
+            { icon: BookOpen, count: CAKE_BAKING_SLUGS.length, label: "Baking Ebooks" },
+            { icon: ListChecks, count: 1, label: "Wellness System" },
             { icon: Gift, count: BONUS_PRODUCTS.length, label: "Free Bonuses" },
           ].map((s) => (
             <div key={s.label} className="flex flex-col items-center justify-center gap-1.5 px-4 py-8 text-center sm:py-10">
