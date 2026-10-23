@@ -240,6 +240,79 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FEATURED WELLNESS BUNDLE — a major promotional highlight reusing
+          the exact same PRODUCTS/BONUS_PRODUCTS/BUNDLE_PRICE data and
+          /checkout route as the PricingCard further down the page. This is
+          a bolder editorial presentation of the same real bundle, not a
+          second product or a new checkout — no discount, savings, or
+          "value" comparison figure is shown here, to avoid implying a sale
+          that doesn't exist. */}
+      <section className="section-pad border-y border-ink-900/8 bg-gradient-to-b from-cream to-brand-50/50">
+        <div className="container-page">
+          <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+            <div className="mx-auto flex justify-center lg:justify-start">
+              <div className="flex items-center">
+                {PRODUCTS.map((p, i) => (
+                  <div
+                    key={p.slug}
+                    className="w-16 shrink-0 -ml-7 first:ml-0 sm:w-20"
+                    style={{ zIndex: i, transform: `rotate(${(i - 3) * 5}deg)` }}
+                  >
+                    <ProductCover product={p} className="aspect-[2/3] w-full shadow-lift" />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <span className="eyebrow bg-gold-100 text-gold-700">Featured Bundle</span>
+              <h2 className="mt-4 font-display text-3xl font-bold text-balance text-ink-950 sm:text-4xl lg:text-5xl">
+                Your Complete Wellness Library
+              </h2>
+              <p className="mt-4 max-w-lg text-balance text-base leading-relaxed text-ink-600">
+                Every core wellness ebook in one collection, each paired
+                with a matching planner and 30-day system,* plus 2 free
+                bonus guides — all in a single digital library.
+              </p>
+
+              <ul className="mt-6 space-y-2.5">
+                {[
+                  `${PRODUCTS.length} premium wellness ebooks`,
+                  "A matching planner and 30-day system for each guide*",
+                  `${BONUS_PRODUCTS.length} free bonus guides included`,
+                  "Instant digital access, works on any device",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2.5 text-sm leading-relaxed text-ink-700">
+                    <CheckCircle2 size={16} className="mt-0.5 shrink-0 text-brand-600" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-7 flex items-end gap-3">
+                <span className="font-display text-5xl font-black text-ink-950">${BUNDLE_PRICE}</span>
+                <span className="mb-1.5 text-sm text-ink-500">one-time payment</span>
+              </div>
+
+              <div className="mt-7 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
+                <Link href="/checkout" className="btn-gold w-full justify-center sm:w-auto">
+                  Get the Complete Library <ArrowRight size={16} />
+                </Link>
+                <Link href="/library" className="text-sm font-bold text-brand-700 hover:underline">
+                  Browse the Full Library
+                </Link>
+              </div>
+
+              <p className="mt-5 text-xs leading-relaxed text-ink-400">
+                *The Natural Healing Handbook&apos;s planner and 30-day
+                system are built directly into its ebook rather than
+                shipped as separate files.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* OVERVIEW STRIP — accurate across both verticals (previously
           wellness-only, which read as incomplete/confusing once baking
           ebooks got equal billing above). */}
